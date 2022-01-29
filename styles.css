@@ -1,8 +1,12 @@
 html {
-  background-color: pink;
   font-size: 20px;
 }
 
-h2 {
-  color: red;
+.welcome {
+  color: blue;
+}
+
+.footer {
+  background-color: black;
+  color: white;
 }
