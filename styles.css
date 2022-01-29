@@ -6,7 +6,7 @@ html {
   color: blue;
 }
 
-.footer {
+footer, .footer {
   background-color: black;
   color: white;
 }
