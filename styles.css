@@ -1,7 +1,17 @@
+@font-face {
+  font-family: "zantrokeregular";
+  src: url("fonts/zantroke-webfont.woff2") format("woff2"),
+       url("fonts/zantroke-webfont.woff") format("woff"),
+       url("fonts/zantroke-webfont.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
   font-size: 20px;
 }
 
 .welcome {
   color: blue;
+  font-family: zantrokeregular;
 }
