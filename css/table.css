@@ -8,3 +8,11 @@ table {
 th, td {
   padding: 20px;
 }
+
+tbody td {
+  text-align: center;
+}
+
+td {
+  letter-spacing: 1px;
+}
