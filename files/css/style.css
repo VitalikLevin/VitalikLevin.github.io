@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "zantrokeregular";
+  src: url("files/fonts/zantroke.woff2") format("woff2"),
+       url("files/fonts/zantroke.woff") format("woff"),
+       url("files/fonts/zantroke.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  font-size: 20px;
+}
+
+.smile {
+  color: yellow;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px white;
+}
+
+header h2 {
+  color: white;
+  background-color: #000;
+}
+
+.start {
+  color: blue;
+  font-family: zantrokeregular;
+}
