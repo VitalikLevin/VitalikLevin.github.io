@@ -5,7 +5,15 @@
        url("files/fonts/zantroke.otf") format("otf");
   font-weight: normal;
   font-style: normal;
-  font-display: block;
+}
+
+@font-face {
+  font-family: "ciclefina";
+  src: url("files/fonts/cicle_fina.woff2") format("woff2"),
+       url("files/fonts/cicle_fina.woff") format("woff"),
+       url("files/fonts/cicle_fina") format("ttf");
+  font-weight: normal;
+  font-style: normal;
 }
 
 html {
