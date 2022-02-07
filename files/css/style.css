@@ -37,6 +37,7 @@ header h2 {
 }
 
 nav {
+  text-decoration: none;
   border: 2px solid #000;
-  background-color: #FFCF73;
+  background-color: #ffcf73;
 }
