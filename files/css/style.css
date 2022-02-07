@@ -37,7 +37,12 @@ header h2 {
 }
 
 nav {
-  text-decoration: none;
   border: 2px solid #000;
   background-color: #ffcf73;
+}
+
+.error {
+  background-image: url(files/images/open-graph.png);
+  background-position: top right;
+  background-repeat: no-repeat;
 }
