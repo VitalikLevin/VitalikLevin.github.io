@@ -42,6 +42,8 @@ nav {
 }
 
 .error {
+  width: 400px;
+  height: 300px;
   background-image: url(files/images/open-graph.png);
   background-position: top right;
   background-repeat: no-repeat;
