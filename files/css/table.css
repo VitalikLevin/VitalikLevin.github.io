@@ -6,13 +6,9 @@ table {
 }
 
 th, td {
-  padding: 12px;
+  padding: 7px;
 }
 
 tbody td {
   text-align: center;
-}
-
-td {
-  letter-spacing: 1px;
 }
