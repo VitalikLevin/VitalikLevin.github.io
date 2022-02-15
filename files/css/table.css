@@ -2,14 +2,17 @@ table {
   table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
-  border: 2px solid black;
+}
+
+table, caption {
+  border: 3px solid black;
 }
 
 th, td {
   padding: 5px;
 }
 
-tbody td {
+th, td {
   text-align: center;
 }
 
@@ -20,5 +23,5 @@ tbody tr:nth-child(odd) {
 }
 
 tbody tr:nth-child(even) {
-  background-color: blue;
+  background-color: white;
 }
