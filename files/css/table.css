@@ -2,13 +2,23 @@ table {
   table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
-  border: 3px solid black;
+  border: 2px solid black;
 }
 
 th, td {
-  padding: 7px;
+  padding: 5px;
 }
 
 tbody td {
   text-align: center;
+}
+
+/* Zebra */
+
+tbody tr:nth-child(odd) {
+  background-color: yellow;
+}
+
+tbody tr:nth-child(even) {
+  background-color: blue;
 }
