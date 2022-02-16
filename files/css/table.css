@@ -1,6 +1,6 @@
 table {
   table-layout: fixed;
-  width: 50%;
+  width: 80%;
   border-collapse: collapse;
   border: 2px solid black;
 }
@@ -20,5 +20,5 @@ tbody tr:nth-child(odd) {
 }
 
 tbody tr:nth-child(even) {
-  background-color: #0f0;
+  background-color: #00ff00;
 }
