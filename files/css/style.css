@@ -41,13 +41,8 @@ nav {
   background-color: #ffcf73;
 }
 
-.error {
-  background-color: rgb(0, 173, 239);
-}
-
 .bottom {
   background-image: url(../images/404.png);
-  background-position: top right;
   width: 400px;
   height: 300px;
 }
