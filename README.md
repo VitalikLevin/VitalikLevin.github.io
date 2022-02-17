@@ -1,3 +1,7 @@
+---
+permalink: readme.html
+---
+
 ## Readme
 
 Who reads "Readme" files?
