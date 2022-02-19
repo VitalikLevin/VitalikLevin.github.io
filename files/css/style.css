@@ -16,12 +16,6 @@
   font-style: normal;
 }
 
-@media screen and (max-width: 720px) {
-  .bottom {
-    width: 75%;
-  }
-}
-
 .smile {
   color: #fff44f;
   font-weight: bold;
@@ -45,6 +39,4 @@ nav {
 
 .bottom {
   background-image: url(../images/404.png);
-  width: 400px;
-  height: 300px;
 }
