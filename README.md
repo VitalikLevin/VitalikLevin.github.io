@@ -1,9 +1,10 @@
 ---
-permalink: readme.html
+layout: default
+lang: en-US
+title: Readme - Network Worms
+excerpt: Who reads "Readme" files?
 ---
 
-## Readme
-
-Who reads "Readme" files?
+Readme was eaten by Ghost#000.
 
 ![Something](/files/images/open-graph.png)
