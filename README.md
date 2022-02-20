@@ -1,6 +1,6 @@
 ---
-permalink: /readme.html
 layout: article
+permalink: /readme.html
 lang: en-US
 title: Readme - Network Worms
 excerpt: Who reads "Readme" files?
@@ -8,4 +8,4 @@ excerpt: Who reads "Readme" files?
 
 Readme was eaten by Ghost#000.
 
-![Something](/files/images/open-graph.png)
+<img src="files/images/open-graph.png">
