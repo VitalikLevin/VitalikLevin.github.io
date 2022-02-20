@@ -1,6 +1,6 @@
 ---
 permalink: /readme.html
-layout: default
+layout: article
 lang: en-US
 title: Readme - Network Worms
 excerpt: Who reads "Readme" files?
