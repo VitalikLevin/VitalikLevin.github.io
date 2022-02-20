@@ -13,6 +13,6 @@ Readme was eaten by <kbd>Ghost#000</kbd>.
 <details>
 <summary>Navigation</summary>
 
-<a href="index">Main page</a>
-<a href="/games">Our games</a>
+- <a href="index">Main page</a>
+- <a href="/games">Our games</a>
 </details>
