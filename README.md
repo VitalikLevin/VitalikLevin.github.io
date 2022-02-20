@@ -1,4 +1,5 @@
 ---
+permalink: /readme.html
 layout: default
 lang: en-US
 title: Readme - Network Worms
