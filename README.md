@@ -1,10 +1,4 @@
----
-layout: default
-permalink: /readme.html
-lang: en-US
-title: Readme - Network Worms
-excerpt: Who reads "Readme" files?
----
+## Readme
 
 Readme was eaten by ```Ghost#000```.
 
