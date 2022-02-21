@@ -11,13 +11,6 @@
   </head>
   <body>
     {% include header.html %}
-    <nav>
-      <h3>Navigation</h3>
-      <ul>
-        <li><a href="{{ "/blog/" | relative_url }}">Our blog</a></li>
-        <li><a href="{{ "/" | relative_url }}">Main page</a></li>
-      </ul>
-    </nav>
     <main>
       <h2 class="start">{{ page.title }}</h2>
       {{ content }}
