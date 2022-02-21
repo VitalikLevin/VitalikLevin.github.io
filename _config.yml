@@ -7,4 +7,4 @@ gems:
   - jekyll-paginate
   - jekyll-feed
 paginate: 10
-paginate_path: "/:num"
+paginate_path: "blog/:num"
