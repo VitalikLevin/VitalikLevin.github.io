@@ -24,7 +24,7 @@
 
 header h2 {
   color: white;
-  background-color: #000;
+  background-color: #000000;
 }
 
 .start {
@@ -33,11 +33,11 @@ header h2 {
 }
 
 nav {
-  border: 2px solid #000;
+  border: 2px solid #000000;
   background-color: #ffcf73;
 }
 
-a.visited {
+a {
   color: #2F8F00;
   font-family: ciclefina;
 }
