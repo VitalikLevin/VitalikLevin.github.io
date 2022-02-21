@@ -12,6 +12,27 @@
     <header>
       <h2>Network Worms<b class=smile>☺</b></h2>
     </header>
+    <main>
+      {% for post in paginator.posts %}
+        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        {{ post.excerpt }}
+      {% endfor %}
+      {% if paginator.total_pages > 1 %}
+        <ul>
+          {% if paginator.previous_page %}
+            <li><a href="{{ paginator.previous_page_path }}">Назад</a></li>
+          {% else %}
+            <li>Previous</li>
+          {% endif %}
+            <li>Page {{ paginator.page }} из {{ paginator.total_pages }}</li>
+          {% if paginator.next_page %}
+            <li><a href="{{ paginator.next_page_path }}">Вперёд</a></li>
+          {% else %}
+            <li class="next">Next</li>
+          {% endif %}
+        </ul>
+      {% endif %}
+    </main>
     <footer>
       <p>©<a href="https://github.com/vitaliklevin/" title="vl" target="_blank">VitalikLevin</a>, 2022. All rights reserved.</p>
     </footer>
