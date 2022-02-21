@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{% if page.title %}{{ page.title | escape }}{% else %}}{{ site.title | escape }}{% endif %}</title>
     <meta name="description" content="{{ page.excerpt | default: site.description">
+    <link rel="stylesheet" href="{{ "../files/css/style.css" | relative_url }}">
+    <link rel="shortcut icon" href="../files/icons/markdown.ico" type="image/x-icon">
   </head>
   <body>
     {{ content }}
