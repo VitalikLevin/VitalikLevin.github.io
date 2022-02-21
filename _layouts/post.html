@@ -4,24 +4,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="../../../../files/icons/markdown.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../../../../files/css/style.css">
+    <link rel="shortcut icon" href="{{ "/files/icons/markdown.ico" | relative_url }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ "/files/css/style.css" | relative_url }}">
     <title>{% if page.title %}{{ page.title | escape }}{% else %}}{{ site.title | escape }}{% endif %}</title>
     <meta name="description" content="{{ page.excerpt | default: site.description">
   </head>
   <body>
-    {% include ../../../../_includes/header.html %}
+    {% include header.html %}
     <nav>
       <h3>Navigation</h3>
       <ul>
-        <li><a href="../../../../blog/">Our blog</a></li>
-        <li><a href="../../../../">Main page</a></li>
+        <li><a href="{{ "/blog/" | relative_url }}">Our blog</a></li>
+        <li><a href="{{ "/" | relative_url }}">Main page</a></li>
       </ul>
     </nav>
     <main>
       <h2 class="start">{{ page.title }}</h2>
       {{ content }}
     </main>
-    {% include ../../../../_includes/footer.html %}
+    {% include footer.html %}
   </body>
 </html>
