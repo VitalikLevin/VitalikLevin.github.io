@@ -37,7 +37,6 @@ nav {
   background-color: #ffcf73;
 }
 
-a {
+a.visited {
   color: #2F8F00;
-  font-family: ciclefina;
 }
