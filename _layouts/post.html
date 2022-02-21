@@ -4,15 +4,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="../../../../files/icons/markdown.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./../../../files/css/style.css">
     <title>{% if page.title %}{{ page.title | escape }}{% else %}}{{ site.title | escape }}{% endif %}</title>
     <meta name="description" content="{{ page.excerpt | default: site.description">
+    <link rel="stylesheet" href="../../../../files/css/style.css">
+    <link rel="shortcut icon" href="../../../../files/icons/markdown.ico" type="image/x-icon">
   </head>
   <body>
+    <header>
+      <h2>Network Worms<b class=smile>☺</b></h2>
+    </header>
     <main>
       <h2 class="start">{{ page.title }}</h2>
       {{ content }}
     </main>
+    <footer>
+      <p>&copy;<a href="https://github.com/vitaliklevin/" title="vl" target="_blank">VitalikLevin</a>, 2022. All rights reserved.</p>
+    </footer>
   </body>
 </html>
