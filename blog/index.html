@@ -13,7 +13,10 @@
       <h2>Network Worms<b class=smile>☺</b></h2>
     </header>
     <main>
-      <strong style="color:brown;">Blog is not available now</strong>
+      {% for post in site.posts %}
+        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        {{ post.excerpt }}
+      {% endfor %}
     </main>
     <footer>
       <p>©<a href="https://github.com/vitaliklevin/" title="vl" target="_blank">VitalikLevin</a>, 2022. All rights reserved.</p>

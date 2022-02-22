@@ -16,10 +16,19 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "zillaslab";
+  src: url(../fonts/zilla_slab.woff2) format("woff2"),
+       url(../fonts/zilla_slab.woff) format("woff"),
+       url(../fonts/zilla_slab.otf) format("otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .smile {
   color: #fff44f;
   font-weight: bold;
-  text-shadow: 2px 2px 2px white;
+  text-shadow: 2px 2px 2px #ffffff;
 }
 
 header h2 {
@@ -37,6 +46,10 @@ nav {
   background-color: #ffcf73;
 }
 
-a.visited {
-  color: #2F8F00;
+a {
+  color: #000000;
+}
+
+footer {
+  font-family: "zillaslab";
 }
