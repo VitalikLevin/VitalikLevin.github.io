@@ -3,7 +3,6 @@ description: We create games for PC not PCs for games
 encoding: utf-8
 permalink: pretty
 highlighter: rogue
-markdown: kramdown
 # Ruby Gems
 gems:
   - jekyll-paginate
