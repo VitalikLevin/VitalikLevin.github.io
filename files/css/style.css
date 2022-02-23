@@ -38,7 +38,7 @@ nav {
 blockquote {
   margin: 0px;
   padding: 6px;
-  background-color: #7f7f7f;
+  background-color: #b0b0b0;
   border-left: 3px solid rgb(0, 173, 239);
 }
 
@@ -56,9 +56,9 @@ blockquote {
 .blog {
   background-color: #fff;
   font-family: "zillaslab";
-  color: #000;
 }
 
 .blog a {
   text-decoration: none;
+  color: #000;
 }
