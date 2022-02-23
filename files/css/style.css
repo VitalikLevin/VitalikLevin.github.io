@@ -55,3 +55,9 @@ a {
   font-family: "zillaslab";
   color: #000000;
 }
+
+blockquote {
+  margin: 0px;
+  padding: 6px;
+  border-left: 3px solid rgb(0, 173, 239);
+}
