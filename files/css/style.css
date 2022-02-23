@@ -25,20 +25,9 @@
   font-style: normal;
 }
 
-.smile {
-  color: #fff44f;
-  font-weight: bold;
-  text-shadow: 2px 2px 2px #fff;
-}
-
 header h2 {
   color: white;
   background-color: #000;
-}
-
-.start {
-  color: blue;
-  font-family: zantrokeregular;
 }
 
 nav {
@@ -46,21 +35,28 @@ nav {
   background-color: #ffcf73;
 }
 
-a {
-  color: #000;
+blockquote {
+  margin: 0px;
+  padding: 6px;
+  background-color: #7f7f7f;
+  border-left: 3px solid rgb(0, 173, 239);
+}
+
+.smile {
+  color: #fff44f;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #fff;
+}
+
+.start {
+  color: blue;
+  font-family: zantrokeregular;
 }
 
 .blog {
   background-color: #fff;
   font-family: "zillaslab";
   color: #000;
-}
-
-blockquote {
-  margin: 0px;
-  padding: 6px;
-  border-left: 3px solid rgb(0, 173, 239);
-  border: 1px solid #000;
 }
 
 .blog a {
