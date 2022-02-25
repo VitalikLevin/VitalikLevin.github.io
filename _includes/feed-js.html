@@ -1,10 +1,3 @@
----
-layout: article
-title: Blog (JavaScript)
-lang: en-US
----
-<p><a href="../">Blog (Without JS)</a></p>
-<p><a href="../../">Main page</a></p>
 <div id="posts"></div>
 <script>
   window.addEventListener('load', function() {
@@ -28,7 +21,6 @@ lang: en-US
         title: getAttribute(entry, 'link', 'title'),
         href: getAttribute(entry, 'link', 'href'),
         published: getTextContent(entry, 'published'),
-        author: getTextContent(entry, 'author > name'),
         summary: getTextContent(entry, 'summary')
       };
     }
@@ -49,7 +41,6 @@ lang: en-US
       appendHeaderLink(post.title, post.href);
       
       appendParagraph(post.published, 'date');
-      appendParagraph(post.author, 'author');
       appendParagraph(post.summary);
     }
 

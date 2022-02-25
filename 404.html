@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>404 Not Found</title>
     <link rel="stylesheet" href="https://vitaliklevin.github.io/files/css/style.css">
-    <link rel="stylesheet" href="https://vitaliklevin.github.io/files/css/table.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" href="https://vitaliklevin.github.io/files/icons/icon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
@@ -12,32 +12,18 @@
     <header>
       <h2>Network Worms<b class=smile>☺</b></h2>
     </header>
-    <main class="error">
+    <main>
       <h2 class="start">Error 404</h2>
       <h5>Also known as "404 Not Found"</h5>
-      <blockquote>Something went wrong.</blockquote>
-      <table>
-        <caption>Ways to solve this problem</caption>
-        <thead>
-          <tr>
-            <th scope="row">Way 1</th>
-            <th>Way 2</th>
-            <th>Way 3</th>
-            <th>Way 4</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td scope="row">Return to <a href="https://vitaliklevin.github.io/" title="Wormland">main page</a></td>
-            <td>Reload the page</td>
-            <td>Check the Internet connection</td>
-            <td>Close the browser</td>
-          </tr>
-        </tbody>
-      </table>
+      <ul>
+        <p>Ways to solve this problem</p>
+        <li>Return to <a href="https://vitaliklevin.github.io/" title="Wormland">main page</a></li>
+        <li>Reload the page</li>
+      </ul>
+      {% include feed-js.html %}
     </main>
     <footer>
-      <p>&copy;<a href="https://github.com/vitaliklevin/" title="vl" target="_blank">VitalikLevin</a>, 2022. All rights reserved.</p>
+      <p>&copy;<a href="https://github.com/vitaliklevin/" target="_blank">VitalikLevin</a>, <span class="num">2022</span>. All rights reserved.</p>
     </footer>
   </body>
 </html>

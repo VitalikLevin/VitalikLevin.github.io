@@ -12,4 +12,3 @@ Readme was eaten by ```Ghost#000```.
 <li><a href="https://vitaliklevin.github.io">Main page</a></li>
 <li><a href="https://vitaliklevin.github.io/games">Our games</a></li>
 <li><a href="https://vitaliklevin.github.io/blog">Our blog</a>
-<li><a href="https://vitaliklevin.github.io/blog/js">Our blog (JavaScript)</a>

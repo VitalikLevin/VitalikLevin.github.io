@@ -8,15 +8,6 @@
 }
 
 @font-face {
-  font-family: "ciclefina";
-  src: url("../fonts/cicle_fina.woff2") format("woff2"),
-       url("../fonts/cicle_fina.woff") format("woff"),
-       url("../fonts/cicle_fina") format("ttf");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "zillaslab";
   src: url(../fonts/zilla_slab.woff2) format("woff2"),
        url(../fonts/zilla_slab.woff) format("woff"),
@@ -39,7 +30,7 @@ blockquote {
   margin: 0px;
   padding: 6px;
   background-color: #f4f7f8;
-  border-left: 3px solid rgb(0, 173, 239);
+  border-left: 3px solid #00adef;
 }
 
 .smile {
@@ -61,4 +52,8 @@ blockquote {
 .blog a {
   text-decoration: none;
   color: #000;
+}
+
+.num {
+  font-family: "zillaslab";
 }
