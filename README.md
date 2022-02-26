@@ -1,14 +1,16 @@
 ## Readme
 
-[![GitHub license](https://img.shields.io/github/license/VitalikLevin/VitalikLevin.github.io)](https://github.com/VitalikLevin/VitalikLevin.github.io)
+[![GitHub license](https://img.shields.io/github/license/VitalikLevin/VitalikLevin.github.io)](/license.txt)
 [![GitHub issues](https://img.shields.io/github/issues/VitalikLevin/VitalikLevin.github.io)](https://github.com/VitalikLevin/VitalikLevin.github.io)
 
 Readme was eaten by ```Ghost#000```.
 
-<img src="files/images/open-graph.png">
+![Worm in Space](files/images/open-graph.png)
 
-<h3>URLs</h3>
+### URLs
 
-<li><a href="https://vitaliklevin.github.io">Main page</a></li>
-<li><a href="https://vitaliklevin.github.io/games">Our games</a></li>
-<li><a href="https://vitaliklevin.github.io/blog">Our blog</a>
+<ul>
+  <li><a href="https://vitaliklevin.github.io">Main page</a></li>
+  <li><a href="https://vitaliklevin.github.io/games">Our games</a></li>
+  <li><a href="https://vitaliklevin.github.io/blog">Our blog</a>
+</ul>
