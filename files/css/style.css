@@ -33,6 +33,11 @@ blockquote {
   border-left: 3px solid #00adef;
 }
 
+img {
+  margin: 0px;
+  padding: 0px 0px 0px 5px;
+}
+
 .smile {
   color: #fff44f;
   font-weight: bold;
