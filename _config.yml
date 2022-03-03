@@ -1,6 +1,8 @@
 title: Network Worms
 description: We create games for PC not PCs for games
 encoding: utf-8
+date_format: %-d.%m.%Y
+baseurl: ""
 permalink: pretty
 highlighter: rogue
 # Ruby Gems
