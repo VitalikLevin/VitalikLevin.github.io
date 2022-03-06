@@ -51,6 +51,8 @@ img {
 
 .blog, .games {
   background-color: #fff;
+  margin: 0px;
+  padding: 3px;
 }
 
 .blog a, .games a {
