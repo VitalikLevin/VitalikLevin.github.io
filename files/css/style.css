@@ -49,16 +49,15 @@ img {
   font-family: zantrokeregular;
 }
 
-.blog {
+.blog, .games {
   background-color: #fff;
-  font-family: "zillaslab";
 }
 
-.blog a {
+.blog a, .games a {
   text-decoration: none;
   color: #000;
 }
 
-.num {
+.num, .blog {
   font-family: "zillaslab";
 }
