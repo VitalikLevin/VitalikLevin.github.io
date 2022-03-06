@@ -16,9 +16,10 @@
   font-style: normal;
 }
 
-header h2 {
+header h2, header h2 a {
   color: white;
   background-color: #000;
+  text-decoration: none;
 }
 
 nav {
@@ -52,7 +53,6 @@ img {
 .blog {
   background-color: #fff;
   margin: 0px;
-  padding: 3px;
 }
 
 .blog a {
