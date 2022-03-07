@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: en-US }}">
+<html lang="{{ page.lang | default: en-US }}" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +8,9 @@
     <meta name="description" content="{{ page.excerpt | default: site.description }}">
     <link rel="stylesheet" href="{{ "../files/css/style.css" | relative_url }}">
     <link rel="shortcut icon" href="{{ "../files/icons/icon.ico" | relative_url }}" type="image/x-icon">
+    <meta property="og:title" content="Курсы Hexlet" />
+    <meta property="og:description" content="We develop games for PC not PCs for games" />
+    <meta property="og:image" content="https://vitaliklevin.github.io/files/images/open-graph.png" />
   </head>
   <body>
     {{ content }}
