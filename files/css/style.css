@@ -29,7 +29,7 @@ nav {
 
 blockquote {
   margin: 0px;
-  padding: 6px;
+  padding: 10px;
   background-color: #f4f7f8;
   border-left: 3px solid #00adef;
 }
@@ -60,6 +60,6 @@ img {
   color: #000;
 }
 
-.num, .blog, {
+.num, .blog {
   font-family: "zillaslab";
 }
