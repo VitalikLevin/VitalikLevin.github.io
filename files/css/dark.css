@@ -4,12 +4,12 @@ html {
 }
 
 header h2, header h2 a {
+  background-color: #121212;
   color: #fff;
 }
 
-nav {
-  color: #000;
-  background-color: #ffcf73;
+footer, nav {
+  background-color: #121212;
 }
 
 blockquote {
