@@ -16,22 +16,23 @@
   font-style: normal;
 }
 
-header h2, header h2 a {
-  color: white;
-  background-color: #000;
-  text-decoration: none;
+@font-face {
+  font-family: "lobster";
+  src: url(../fonts/lobster.woff2) format("woff2"), 
+       url(../fonts/lobster.woff) format("woff"), 
+       url(../fonts/lobster.ttf) format("ttf");
+  font-weight: normal;
+  font-style: normal;
 }
 
-nav {
-  border: 2px solid #000;
-  background-color: #ffcf73;
+header h2, header h2 a {
+  text-decoration: none;
 }
 
 blockquote {
   margin: 0px;
   padding: 10px;
-  background-color: #f4f7f8;
-  border-left: 3px solid #00adef;
+  font-family: "lobster";
 }
 
 header {
@@ -41,25 +42,16 @@ header {
   margin-bottom: 12px;
 }
 
-.smile {
-  color: #fff44f;
-  font-weight: bold;
-  text-shadow: 2px 2px 2px #fff;
-}
-
 .start {
-  color: blue;
   font-family: zantrokeregular;
 }
 
 .blog {
-  background-color: #fff;
   margin: 0px;
 }
 
 .blog a {
   text-decoration: none;
-  color: #000;
 }
 
 .num, .blog {
