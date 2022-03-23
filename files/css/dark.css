@@ -14,7 +14,12 @@ nav {
 
 blockquote {
   background-color: #f4f7f8;
+  color: #000;
   border-left: 3px solid #00adef;
+}
+
+img {
+  filter: brightness(.8) contrast(1.2);
 }
 
 .smile {
