@@ -25,11 +25,15 @@ img {
   color: rgb(255, 211, 0);
 }
 
-.start {
+.start, a {
   color: rgb(93, 138, 168);
 }
 
 .blog {
   background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
+}
+
+a:visited {
+  color: rgb(255, 211, 0);
 }
