@@ -3,7 +3,7 @@ html {
   color: rgb(255, 255, 255);
 }
 
-header h2, header h2 a {
+header h2, header h2 a, header h2 a:visited {
   background-color: rgb(12, 12, 12);
   color: rgb(243, 243, 243);
 }
