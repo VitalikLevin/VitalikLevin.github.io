@@ -5,6 +5,7 @@ date_format: "%-d.%m.%Y"
 permalink: pretty
 highlighter: rogue
 # Website
+url: "https://vitaliklevin.github.io/"
 baseurl: ""
 # Ruby Gems
 plugins:
