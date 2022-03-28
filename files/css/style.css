@@ -16,15 +16,6 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: "lobster";
-  src: url(../fonts/lobster.woff2) format("woff2"), 
-       url(../fonts/lobster.woff) format("woff"), 
-       url(../fonts/lobster.ttf) format("ttf");
-  font-weight: normal;
-  font-style: normal;
-}
-
 header h2, header h2 a {
   text-decoration: none;
 }
@@ -32,7 +23,6 @@ header h2, header h2 a {
 blockquote {
   margin: 0px;
   padding: 10px;
-  font-family: "lobster";
 }
 
 header {
