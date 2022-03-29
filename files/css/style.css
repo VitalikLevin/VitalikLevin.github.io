@@ -49,7 +49,7 @@ header {
 }
 
 @media screen (orientation: portrait) {
-  img {
+  body {
     align-content: center;
   }
 }
