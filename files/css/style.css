@@ -29,7 +29,7 @@ header {
   margin-top: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 }
 
 .start {
@@ -48,8 +48,9 @@ header {
   font-family: "zillaslab";
 }
 
-@media screen (orientation: portrait) {
+@media screen and (orientation: portrait) {
   body {
     align-content: center;
+    text-align: center;
   }
 }
