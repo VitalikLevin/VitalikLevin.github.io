@@ -47,3 +47,10 @@ header {
 .num, .blog {
   font-family: "zillaslab";
 }
+
+@media screen and (orientation: portrait) {
+  .img400 {
+    width: 400px;
+    height: 300px;
+  }
+}
