@@ -32,10 +32,6 @@ header {
   margin-bottom: 15px;
 }
 
-nav {
-  text-align: left;
-}
-
 .start {
   font-family: zantrokeregular;
 }
@@ -53,7 +49,7 @@ nav {
 }
 
 @media screen and (orientation: portrait) {
-  body {
+  header, footer, nav img {
     align-content: center;
     text-align: center;
   }
