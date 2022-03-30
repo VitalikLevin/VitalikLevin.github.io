@@ -47,10 +47,3 @@ header {
 .num, .blog {
   font-family: "zillaslab";
 }
-
-@media screen and (orientation: portrait) {
-  header, footer, nav img {
-    align-content: center;
-    text-align: center;
-  }
-}
