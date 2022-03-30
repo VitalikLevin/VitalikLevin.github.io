@@ -9,9 +9,9 @@
 
 @font-face {
   font-family: "zillaslab";
-  src: url(../fonts/zilla_slab.woff2) format("woff2"),
-       url(../fonts/zilla_slab.woff) format("woff"),
-       url(../fonts/zilla_slab.otf) format("otf");
+  src: url("../fonts/zilla_slab.woff2") format("woff2"),
+       url("../fonts/zilla_slab.woff") format("woff"),
+       url("../fonts/zilla_slab.otf") format("otf");
   font-weight: normal;
   font-style: normal;
 }
