@@ -37,3 +37,7 @@ img {
 a:visited {
   color: rgb(255, 211, 0);
 }
+
+.articlePart {
+  background-color: rgb(177, 177, 177);
+}
