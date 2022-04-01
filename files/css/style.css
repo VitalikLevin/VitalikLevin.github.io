@@ -48,9 +48,14 @@ header {
   font-family: "zillaslab";
 }
 
+.top {
+  object-position: bottom right;
+}
+
 @media screen and (orientation: portrait) {
   .img400 {
     width: 75%;
     height: 75%;
+    object-position: 50% 50%;
   }
 }

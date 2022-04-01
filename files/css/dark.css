@@ -8,13 +8,13 @@ header h2, header h2 a, header h2 a:visited {
   color: rgb(244, 244, 244);
 }
 
-footer, nav {
+nav, main, footer {
   background-color: rgb(55, 55, 55);
 }
 
 blockquote {
   color: rgb(0, 244, 0);
-  border-left: 3px solid #00adef;
+  border-left: 3px solid rgb(0, 173, 239);
 }
 
 img {
@@ -30,7 +30,7 @@ img {
 }
 
 .blog {
-  background-color: rgb(11, 11, 11);
+  background-color: rgb(12, 12, 12);
   color: rgb(244, 244, 244);
 }
 
@@ -40,4 +40,9 @@ a:visited {
 
 .articlePart {
   background-color: rgb(177, 177, 177);
+}
+
+.top {
+  color: rgb(244, 244, 244);
+  background-color: rgb(12, 12, 12);
 }
