@@ -16,8 +16,6 @@
   font-style: normal;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-
 header h2, header h2 a {
   text-decoration: none;
 }
@@ -55,10 +53,6 @@ footer {
 
 .num, .blog {
   font-family: "zillaslab";
-}
-
-.smile {
-  font-family: "Roboto", sans-serif;
 }
 
 .top {
