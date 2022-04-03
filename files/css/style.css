@@ -57,13 +57,13 @@ footer {
 
 .top {
   text-decoration: none;
-  float: right;
+  object-position: 100% 100%;
 }
 
 @media screen and (orientation: portrait) {
   .img400 {
     width: 75%;
     height: 75%;
-    vertical-align: middle;
+    object-position: 50% 50%;
   }
 }
