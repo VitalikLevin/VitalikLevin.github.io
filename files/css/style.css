@@ -25,7 +25,7 @@ blockquote {
   padding: 10px;
 }
 
-header {
+header, footer {
   margin-top: 0px;
   margin-left: 0px;
   margin-right: 0px;
@@ -34,9 +34,6 @@ header {
 
 footer {
   margin-top: 15px;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-bottom: 15px;
 }
 
 .start {
@@ -57,9 +54,9 @@ footer {
 
 .top {
   text-decoration: none;
-  font-size: 15px
+  font-size: 15px;
   margin-right: 0px;
-  margin-left: calc(100% - 15px);
+  margin-left: calc(98% - 15px);
 }
 
 @media screen and (orientation: portrait) {
