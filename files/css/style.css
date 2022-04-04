@@ -57,8 +57,9 @@ footer {
 
 .top {
   text-decoration: none;
+  font-size: 15px
   margin-right: 0px;
-  margin-left: 90%;
+  margin-left: calc(100% - 15px);
 }
 
 @media screen and (orientation: portrait) {
