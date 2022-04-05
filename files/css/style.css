@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "zantrokeregular";
+  font-family: "zantroke";
   src: url("../fonts/zantroke.woff2") format("woff2"),
        url("../fonts/zantroke.woff") format("woff"),
        url("../fonts/zantroke.otf") format("otf");
@@ -12,6 +12,14 @@
   src: url("../fonts/zilla_slab.woff2") format("woff2"),
        url("../fonts/zilla_slab.woff") format("woff"),
        url("../fonts/zilla_slab.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "notoemoji";
+  src: url("../fonts/noto_color_emoji.woff2") format("woff2"), 
+       url("../fonts/noto_color_emoji.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;
 }
@@ -37,7 +45,7 @@ footer {
 }
 
 .start {
-  font-family: zantrokeregular;
+  font-family: "zantroke";
 }
 
 .blog {
@@ -50,6 +58,10 @@ footer {
 
 .num, .blog {
   font-family: "zillaslab";
+}
+
+.smile {
+  font-family: "notoemoji";
 }
 
 .top {
@@ -65,6 +77,6 @@ footer {
     height: 75%;
   }
   .top {
-    margin-left: 95%;
+    margin-left: 92%;
   }
 }
