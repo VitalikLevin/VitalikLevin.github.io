@@ -66,15 +66,8 @@ footer {
 }
 
 .top {
-  text-decoration: none;
-  font-size: 16px;
   margin-right: 5px;
   margin-left: calc(95% - 30px);
-}
-
-.top object {
-  width: 32px;
-  height: 32px;
 }
 
 @media screen and (orientation: portrait) {
