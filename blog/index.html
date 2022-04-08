@@ -7,10 +7,18 @@ lang: en-US
   In this page you can find all posts from our site.
 </p>
 {% for post in paginator.posts %}
-  <div id="posts">
+  <div id="all-posts">
     <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
     <p>{{ post.excerpt }}</p>
   </div>
+{% endfor %}
+{% for tag in site.tags %}
+  <h3>{{ tag[0] }}</h3>
+  <ul>
+    {% for post in tag[1] %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
 {% endfor %}
 {% if paginator.total_pages > 1 %}
   <ul>
