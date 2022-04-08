@@ -12,13 +12,6 @@ lang: en-US
     <p>{{ post.excerpt }}</p>
   </div>
 {% endfor %}
-<h3 class="articlePart" id="enPosts">Posts</h3>
-<blockquote>Lang = en-US</blockquote>
-<ul>
-  {% for post in tag["en"] %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
 {% if paginator.total_pages > 1 %}
   <ul>
     {% if paginator.previous_page %}
