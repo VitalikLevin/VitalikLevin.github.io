@@ -12,9 +12,10 @@ lang: en-US
     <p>{{ post.excerpt }}</p>
   </div>
 {% endfor %}
-<h3 class="articlePart" id="enPosts">Posts (Language=English)</h3>
+<h3 class="articlePart" id="enPosts">Posts</h3>
+<blockquote>Lang = en-US</blockquote>
 <ul>
-  {% for post in tag[en] %}
+  {% for post in tag.en %}
     <li><a href="{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
 </ul>
