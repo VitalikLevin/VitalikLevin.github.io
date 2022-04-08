@@ -2,7 +2,7 @@
   font-family: "zantroke";
   src: url("../fonts/zantroke.woff2") format("woff2"),
        url("../fonts/zantroke.woff") format("woff"),
-       url("../fonts/zantroke.otf") format("otf");
+       url("../fonts/zantroke.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
@@ -11,7 +11,7 @@
   font-family: "zillaslab";
   src: url("../fonts/zilla_slab.woff2") format("woff2"),
        url("../fonts/zilla_slab.woff") format("woff"),
-       url("../fonts/zilla_slab.otf") format("otf");
+       url("../fonts/zilla_slab.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
@@ -20,7 +20,7 @@
   font-family: "notoemoji";
   src: url("../fonts/noto_color_emoji.woff2") format("woff2"),
        url("../fonts/noto_color_emoji.woff") format("woff"), 
-       url("../fonts/noto_color_emoji.ttf") format("ttf");
+       url("../fonts/noto_color_emoji.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -66,8 +66,7 @@ footer {
 }
 
 .top {
-  margin-right: 5px;
-  margin-left: calc(95% - 30px);
+  margin-left: calc(100% - 35px);
 }
 
 @media screen and (orientation: portrait) {

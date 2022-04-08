@@ -8,10 +8,6 @@ header h2, header h2 a, header h2 a:visited {
   color: rgb(12, 12, 12);
 }
 
-nav, main, footer {
-  background-color: rgb(200, 200, 200);
-}
-
 blockquote {
   border-left: 3px solid rgb(255, 82, 16);
 }
@@ -34,10 +30,11 @@ a:visited {
 }
 
 .articlePart {
-  background-color: rgb(246, 170, 126);
+  color: rgb(246, 170, 126);
+  text-shadow: 1px 1px 1px rgb(20, 20, 20);
 }
 
-.top {
-  color: rgb(12, 12, 12);
+.top img {
+  color: rgb(55, 55, 55);
   background-color: rgb(244, 244, 244);
 }
