@@ -34,7 +34,6 @@ a:visited {
   text-shadow: 1px 1px 1px rgb(20, 20, 20);
 }
 
-.top img {
-  color: rgb(55, 55, 55);
-  background-color: rgb(244, 244, 244);
+#topArrow {
+  color: rgb(12, 12, 12);
 }
