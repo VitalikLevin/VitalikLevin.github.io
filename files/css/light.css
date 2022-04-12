@@ -35,5 +35,5 @@ a:visited {
 }
 
 #topArrow {
-  color: rgb(12, 12, 12);
+  --topColor: rgb(12, 12, 12);
 }
