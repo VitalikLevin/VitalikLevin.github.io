@@ -33,7 +33,3 @@ a:visited {
   color: rgb(246, 170, 126);
   text-shadow: 1px 1px 1px rgb(20, 20, 20);
 }
-
-#topArrow {
-  --topColor: rgb(12, 12, 12);
-}
