@@ -5,5 +5,5 @@
     xmlns="http://www.w3.org/2000/svg">
   <polygon id="topArrow" 
     points="16 0, 32 16, 24 16, 24 32, 16 32, 8 32, 8 16, 0 16, 16 0" 
-    fill="rgb(12, 12, 12)"/>
+    fill="rgb(244, 244, 244)"/>
 </svg>
