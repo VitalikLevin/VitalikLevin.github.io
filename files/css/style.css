@@ -46,7 +46,7 @@ footer {
 }
 
 .start {
-  font-family: "zantroke";
+  font-family: zantroke;
 }
 
 .blog {
@@ -58,15 +58,15 @@ footer {
 }
 
 .num, .blog {
-  font-family: "zillaslab";
+  font-family: zillaslab;
 }
 
 .smile {
-  font-family: "notoemoji";
+  font-family: notoemoji;
 }
 
 .top {
-  margin-left: calc(100% - 35px);
+  margin-left: calc(100% - 40px);
 }
 
 @media screen and (orientation: portrait) {
