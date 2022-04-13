@@ -33,3 +33,7 @@ a:visited {
   color: rgb(246, 170, 126);
   text-shadow: 1px 1px 1px rgb(20, 20, 20);
 }
+
+.top {
+  filter: brightness(0);
+}
