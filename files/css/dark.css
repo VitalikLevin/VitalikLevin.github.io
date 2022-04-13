@@ -41,7 +41,3 @@ a:visited {
 .articlePart {
   background-color: rgb(177, 177, 177);
 }
-
-#topArrow {
-  --topColor: rgb(244, 244, 244);
-}
