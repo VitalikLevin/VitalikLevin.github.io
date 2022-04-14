@@ -3,7 +3,7 @@ html {
   color: rgb(244, 244, 244);
 }
 
-header h2, header h2 a, header h2 a:visited {
+header h2, header h2 a, header h2 a:visited, header h2 a:hover {
   background-color: rgb(12, 12, 12);
   color: rgb(244, 244, 244);
 }
@@ -13,7 +13,7 @@ nav, main, footer {
 }
 
 blockquote {
-  color: rgb(0, 244, 0);
+  color: rgb(177, 177, 177);
   border-left: 3px solid rgb(0, 173, 239);
 }
 
@@ -38,6 +38,10 @@ a:visited {
   color: rgb(255, 211, 0);
 }
 
+a:hover {
+  color: rgb(246, 170, 126);
+}
+
 .articlePart {
-  background-color: rgb(177, 177, 177);
+  background-color: rgb(55, 55, 55);
 }
