@@ -19,7 +19,8 @@
 @font-face {
   font-family: "notoemoji";
   src: url("../fonts/noto_color_emoji.woff2") format("woff2"),
-       url("../fonts/noto_color_emoji.woff") format("woff"), 
+       url("../fonts/noto_color_emoji.woff") format("woff"),
+       url("../fonts/noto_color_emoji.svg") format("svg"),
        url("../fonts/noto_color_emoji.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
