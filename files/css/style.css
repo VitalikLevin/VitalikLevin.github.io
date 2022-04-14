@@ -24,6 +24,7 @@
        url("../fonts/noto_color_emoji.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+  text-rendering: optimizeLegibility;
 }
 
 header h2, header h2 a {
@@ -67,7 +68,7 @@ footer {
 }
 
 .top {
-  margin-left: calc(100% - 40px);
+  margin-left: calc(98% - 40px);
 }
 
 @media screen and (orientation: portrait) {
