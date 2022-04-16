@@ -25,6 +25,7 @@
   font-weight: normal;
   font-style: normal;
   text-rendering: optimizeLegibility;
+  unicode-range: U+1F600—1F64F;
 }
 
 header h2, header h2 a {
