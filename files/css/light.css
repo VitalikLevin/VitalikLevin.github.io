@@ -35,5 +35,5 @@ a:visited {
 }
 
 .top {
-  filter: brightness(0);
+  filter: invert(100%);
 }
