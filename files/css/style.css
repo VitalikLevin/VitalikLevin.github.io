@@ -78,6 +78,7 @@ footer {
 
 .bread li {
   margin-top: 0px;
+  margin-left: 5px;
 }
 
 @media screen and (orientation: portrait) {
