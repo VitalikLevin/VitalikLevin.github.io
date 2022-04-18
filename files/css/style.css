@@ -20,7 +20,6 @@
   font-family: "notoemoji";
   src: url("../fonts/noto_color_emoji.woff2") format("woff2"),
        url("../fonts/noto_color_emoji.woff") format("woff"),
-       url("../fonts/noto_color_emoji.svg") format("svg"),
        url("../fonts/noto_color_emoji.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
@@ -69,7 +68,7 @@ footer {
 }
 
 .top {
-  margin-left: calc(98% - 40px);
+  margin-left: calc(98% - 32px);
 }
 
 .bread {
