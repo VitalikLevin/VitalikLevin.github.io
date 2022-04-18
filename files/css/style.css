@@ -74,7 +74,10 @@ footer {
 
 .bread {
   list-style: none;
-  line-height: 0px;
+}
+
+.bread li {
+  margin-top: 0px;
 }
 
 @media screen and (orientation: portrait) {
