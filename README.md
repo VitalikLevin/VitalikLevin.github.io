@@ -1,7 +1,6 @@
 ## Readme
 
 [![GitHub license](https://img.shields.io/github/license/VitalikLevin/VitalikLevin.github.io)](https://github.com/VitalikLevin/VitalikLevin.github.io/blob/master/LICENSE.txt)
-[![GitHub issues](https://img.shields.io/github/issues/VitalikLevin/VitalikLevin.github.io)](https://github.com/VitalikLevin/VitalikLevin.github.io/issues)
 
 Readme was eaten by ```Ghost#000```.
 
@@ -9,10 +8,11 @@ Readme was eaten by ```Ghost#000```.
 - [The Code of Conduct](/CODE_OF_CONDUCT.md)
 
 ![Worm in Space](files/images/open-graph.png)
-### URLs
 
-<ul>
-  <li><a href="https://vitaliklevin.github.io">Main page</a></li>
-  <li><a href="https://vitaliklevin.github.io/games">Our games</a></li>
-  <li><a href="https://vitaliklevin.github.io/blog">Our blog</a>
-</ul>
+### Sitemap
+
+- [Main page](https://vitaliklevin.github.io/)
+- [Our blog](https://vitaliklevin.github.io/blog/)
+- [Our games](https://vitaliklevin.github.io/games)
+  - [Bounce's Adventure](https://vitaliklevin.github.io/games/bsa/)
+  - [Nature vs. Evil Spirits](https://vitaliklevin.github.io/games/nves/)
