@@ -18,11 +18,7 @@ blockquote {
 }
 
 img {
-  filter: brightness(.8) contrast(1.2);
-}
-
-.smile {
-  color: rgb(255, 211, 0);
+  filter: brightness(0.8) contrast(1.2);
 }
 
 .start, a {
