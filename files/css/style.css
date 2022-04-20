@@ -71,15 +71,6 @@ footer {
   margin-left: calc(98% - 32px);
 }
 
-.bread {
-  list-style: none;
-}
-
-.bread li {
-  margin-top: 0px;
-  margin-left: 5px;
-}
-
 @media screen and (orientation: portrait) {
   .img400 {
     width: 75%;
