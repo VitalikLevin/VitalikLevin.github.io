@@ -4,9 +4,9 @@
   xmlns:turbo="http://turbo.yandex.ru"
   version="2.0">
   <channel>
-    <title>Network Worms</title>
+    <title>Сетевые червяки</title>
     <link>https://vitaliklevin.github.io/</link>
-    <description>Turbo Network Worms' Blog</description>
+    <description>E = M(C x C)</description>
     <language>ru</language>
     <item turbo="true">
       <turbo:extendedHtml>true</turbo:extendedHtml>
@@ -15,7 +15,28 @@
       <author>Виталий Лёвин</author>
       <turbo:content>
         <![CDATA[
-          <p>Все "любят" рикроллы.</p>
+          <header>
+            <h2>
+              Сетевые червяки
+              <img src="files/svg/1f642.svg"
+                width="32px"
+                height="32px">
+            </h2>
+          </header>
+          <main>
+            <p>
+              Все &#34;любят&#34; рикроллы.
+            </p>
+          </main>
+          <footer id="footer">
+            <p>
+              &copy;Виталий Лёвин, <span class="num">2022</span>.<br>
+              Мы используем лицензию <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution Share Alike 4.0 International</a><br>
+              <a class="top" href="#top">
+                <img src="https://vitaliklevin.github.io/files/svg/top.svg">
+              </a>
+            </p>
+          </footer>
         ]]>
       </turbo:content>
     </item>
