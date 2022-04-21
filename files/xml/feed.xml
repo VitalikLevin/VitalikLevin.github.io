@@ -28,13 +28,10 @@
               Все &#34;любят&#34; рикроллы.
             </p>
           </main>
-          <footer id="footer">
+          <footer>
             <p>
-              &copy;Виталий Лёвин, <span class="num">2022</span>.<br>
-              Мы используем лицензию <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution Share Alike 4.0 International</a><br>
-              <a class="top" href="#top">
-                <img src="https://vitaliklevin.github.io/files/svg/top.svg">
-              </a>
+              &copy;Виталий Лёвин, 2022.<br>
+              Мы используем лицензию <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution Share Alike 4.0 International</a>
             </p>
           </footer>
         ]]>
