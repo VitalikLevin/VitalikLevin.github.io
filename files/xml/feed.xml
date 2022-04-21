@@ -9,6 +9,7 @@
     <description>E = M(C x C)</description>
     <language>ru</language>
     <item turbo="true">
+      <title>История рикролла</title>
       <turbo:extendedHtml>true</turbo:extendedHtml>
       <link>https://vitaliklevin.github.io/2022/04/08/second-post/</link>
       <turbo:source>https://vitaliklevin.github.io/2022/04/08/second-post/</turbo:source>
@@ -24,7 +25,8 @@
           </header>
           <main>
             <p>
-              Все &#34;любят&#34; рикроллы.
+              Все &#34;любят&#34; rickroll'ы. 
+              Но немногие знают о существовании duckroll'ов.
             </p>
           </main>
           <footer>
