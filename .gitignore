@@ -2,3 +2,7 @@
 
 .vscode/
 .vs/
+
+# Build cache
+
+_site/

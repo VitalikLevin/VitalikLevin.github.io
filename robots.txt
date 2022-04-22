@@ -1,0 +1,3 @@
+User-agent: Yandex #
+Disallow: /CODE_OF_CONDUCT.md
+Disallow: /feed.xml
