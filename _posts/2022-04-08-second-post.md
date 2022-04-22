@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 title: Проверка работы блога
 excerpt: Сьешь этих булочек
 lang: ru
