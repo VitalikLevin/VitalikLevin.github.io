@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 title: The First Post
 excerpt: There is no jokes in this post.
 lang: en-US
