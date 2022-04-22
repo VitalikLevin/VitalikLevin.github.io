@@ -4,39 +4,38 @@ title: Blog
 lang: en-US
 ---
 <div class="bread" itemscope itemtype="https://schema.org/BreadcrumbList">
-  <span itemprop="itemListElement">
-    <a itemscope
-       itemtype="https://schema.org/ListItem"
-       itemprop="item"
-       href="https://vitaliklevin.github.io/">
-      <span itemprop="name">Network Worms</span>
-      <meta itemprop="position" content="1" />
-    </a>
-  </span>
-  &#47;
-  <strong>Blog</strong>
+	<span itemprop="itemListElement">
+		<a itemscope
+			 itemtype="https://schema.org/ListItem"
+			 href="https://vitaliklevin.github.io/">
+			<span itemprop="name">Network Worms</span>
+			<meta itemprop="position" content="1" />
+		</a>
+	</span>
+	&#47;
+	<strong>Blog</strong>
 </div>
 <p>
-  In this page you can find all posts from our site.
+	In this page you can find all posts from our site.
 </p>
 {% for post in paginator.posts %}
-  <div id="all-posts">
-    <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
-    <p>{{ post.excerpt }}</p>
-  </div>
+	<div id="all-posts">
+		<h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+		<p>{{ post.excerpt }}</p>
+	</div>
 {% endfor %}
 {% if paginator.total_pages > 1 %}
-  <ul>
-    {% if paginator.previous_page %}
-      <li><a href="{{ paginator.previous_page_path }}">Back</a></li>
-    {% else %}
-      <li>Back</li>
-    {% endif %}
-      <li>Page {{ paginator.page }} from {{ paginator.total_pages }}</li>
-    {% if paginator.next_page %}
-      <li><a href="{{ paginator.next_page_path }}">Next</a></li>
-    {% else %}
-      <li class="next">Next</li>
-    {% endif %}
-  </ul>
+	<ul>
+		{% if paginator.previous_page %}
+			<li><a href="{{ paginator.previous_page_path }}">Back</a></li>
+		{% else %}
+			<li>Back</li>
+		{% endif %}
+			<li>Page {{ paginator.page }} from {{ paginator.total_pages }}</li>
+		{% if paginator.next_page %}
+			<li><a href="{{ paginator.next_page_path }}">Next</a></li>
+		{% else %}
+			<li class="next">Next</li>
+		{% endif %}
+	</ul>
 {% endif %}

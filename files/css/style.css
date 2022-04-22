@@ -1,67 +1,59 @@
-@font-face {
-  font-family: "zantroke";
-  src: url("../fonts/zantroke.woff2") format("woff2"),
-       url("../fonts/zantroke.woff") format("woff"),
-       url("../fonts/zantroke.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
+@import url(fonts.css);
+
+:root {
+	font-family: liberastika;
 }
 
-@font-face {
-  font-family: "zillaslab";
-  src: url("../fonts/zilla_slab.woff2") format("woff2"),
-       url("../fonts/zilla_slab.woff") format("woff"),
-       url("../fonts/zilla_slab.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
+strong {
+	font-family: libold;
 }
 
 header h2, header h2 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 blockquote {
-  margin: 0px;
-  padding: 10px;
+	margin: 0px;
+	padding: 10px;
 }
 
 header, footer {
-  margin-top: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-bottom: 15px;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 15px;
 }
 
 footer {
-  margin-top: 15px;
+	margin-top: 15px;
 }
 
 .start {
-  font-family: zantroke;
+	font-family: zantroke, liberastika;
 }
 
 .blog {
-  margin: 0px;
+	margin: 0px;
 }
 
 .blog a, .bread span a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 .num, .blog {
-  font-family: zillaslab;
+	font-family: zillaslab;
 }
 
 .top {
-  margin-left: calc(98% - 32px);
+	margin-left: calc(98% - 32px);
 }
 
 @media screen and (orientation: portrait) {
-  .img400 {
-    width: 75%;
-    height: 75%;
-  }
-  .top {
-    margin-left: 85%;
-  }
+	.img400 {
+		width: 75%;
+		height: 75%;
+	}
+	.top {
+		margin-left: 85%;
+	}
 }

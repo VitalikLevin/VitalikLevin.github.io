@@ -1,0 +1,53 @@
+@font-face {
+	font-family: "zantroke";
+	src: url("../fonts/zantroke.woff2") format("woff2"),
+		url("../fonts/zantroke.woff") format("woff"),
+		url("../fonts/zantroke.otf") format("opentype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "zillaslab";
+	src: url("../fonts/zilla_slab.woff2") format("woff2"),
+		url("../fonts/zilla_slab.woff") format("woff"),
+		url("../fonts/zilla_slab.otf") format("opentype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "liberastika";
+	src: url("../fonts/liberastika_regular.woff2") format("woff2"),
+		url("../fonts/liberastika_regular.woff") format("woff"),
+		url("../fonts/liberastika_regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "libold";
+	src: url("../fonts/liberastika_bold.woff2") format("woff2"),
+		url("../fonts/liberastika_bold.woff") format("woff"),
+		url("../fonts/liberastika_bold.ttf") format("truetype");
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "libitalic";
+	src: url("../fonts/liberastika_italic.woff2") format("woff2"),
+		url("../fonts/liberastika_italic.woff") format("woff"),
+		url("../fonts/liberastika_italic.ttf") format("truetype");
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "libolditalic";
+	src: url("../fonts/liberastika_bolditalic.woff2") format("woff2"),
+		url("../fonts/liberastika_bolditalic.woff") format("woff"),
+		url("../fonts/liberastika_bolditalic.ttf") format("truetype");
+	font-weight: bold;
+	font-style: italic;
+}

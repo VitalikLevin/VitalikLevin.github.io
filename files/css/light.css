@@ -1,35 +1,35 @@
 html {
-  background-color: rgb(244, 244, 244);
-  color: rgb(12, 12, 12);
+	background-color: rgb(244, 244, 244);
+	color: rgb(12, 12, 12);
 }
 
 header h2, header h2 a, header h2 a:visited {
-  background-color: rgb(246, 170, 126);
-  color: rgb(12, 12, 12);
+	background-color: rgb(246, 170, 126);
+	color: rgb(12, 12, 12);
+}
+
+h3 {
+	color: rgb(246, 170, 126);
+	text-shadow: 1px 1px 1px rgb(20, 20, 20);
 }
 
 blockquote {
-  border-left: 3px solid rgb(255, 82, 16);
+	border-left: 3px solid rgb(255, 82, 16);
 }
 
 .start, a {
-  color: rgb(93, 138, 168);
+	color: rgb(93, 138, 168);
 }
 
 .blog {
-  background-color: rgb(244, 244, 244);
-  color: rgb(12, 12, 12);
+	background-color: rgb(244, 244, 244);
+	color: rgb(12, 12, 12);
 }
 
 a:visited {
-  color: rgb(246, 170, 126);
-}
-
-.articlePart {
-  color: rgb(246, 170, 126);
-  text-shadow: 1px 1px 1px rgb(20, 20, 20);
+	color: rgb(246, 170, 126);
 }
 
 .top {
-  filter: invert(100%);
+	filter: invert(100%);
 }

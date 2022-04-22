@@ -1,15 +1,12 @@
 ---
-layout: default
-lang: en-US
-title: Nature vs. Evil Spirits
-excerpt: Tower Defence
+layout: b-default
 ---
 <header>
 	<h2>
-		<a href="../../index">Network Worms</a>
-		<img src="../../files/svg/1f642.svg"
-				 width="32px"
-				 height="32px">
+		<a href="https://vitaliklevin.github.io/">Network Worms</a>
+		<img src="https://vitaliklevin.github.io/files/svg/1f642.svg"
+			width="32px"
+			height="32px">
 	</h2>
 </header>
 <div class="bread" itemscope itemtype="https://schema.org/BreadcrumbList">
@@ -25,16 +22,16 @@ excerpt: Tower Defence
 	<span itemprop="itemListElement">
 		<a itemscope
 			 itemtype="https://schema.org/ListItem"
-			 href="https://vitaliklevin.github.io/games/">
-			<span itemprop="name">Games</span>
+			 href="https://vitaliklevin.github.io/blog/">
+			<span itemprop="name">Blog</span>
 			<meta itemprop="position" content="2" />
 		</a>
 	</span>
 	&#47;
-	<strong>Nature vs. Evil Spirits</strong>
+	<strong>{{ page.title }}</strong>
 </div>
 <main>
-	<h2 class="start">Nature vs. Evil Spirits</h2>
-	<img class="img400" src="../../files/images/nves.png" />
+	<h2 class="start">{{ page.title }}</h2>
+	{{ content }}
 </main>
 {% include footer.html %}
