@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-	xmlns:xhtml="http://www.w3.org/1999/xhtml">
+	xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 	<url>
 		<loc>https://vitaliklevin.github.io/</loc>
 		<lastmod>2022-04-22</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>1.0</priority>
+    <image:image>
+      <image:loc>https://vitaliklevin.github.io/files/icons/favicon.svg</image:loc>
+      <image:title>Wormfolder</image:title>
+      <image:license>https://creativecommons.org/licenses/by-sa/4.0/</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://vitaliklevin.github.io/favicon.ico</image:loc>
+      <image:license>https://creativecommons.org/licenses/by-sa/4.0/</image:license>
+    </image:image>
 	</url>
 	<url>
 		<loc>https://vitaliklevin.github.io/blog/</loc>
