@@ -18,7 +18,9 @@
     </image:image>
     <image:image>
       <image:loc>https://vitaliklevin.github.io/files/images/open-graph.png</image:loc>
+      <image:caption>Worm in Space</image:caption>
       <image:license>https://creativecommons.org/licenses/by-sa/4.0/</image:license>
+    </image:image>
 	</url>
 	<url>
 		<loc>https://vitaliklevin.github.io/blog/</loc>
