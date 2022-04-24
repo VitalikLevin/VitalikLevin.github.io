@@ -16,6 +16,9 @@
       <image:loc>https://vitaliklevin.github.io/files/icons/favicon.ico</image:loc>
       <image:license>https://creativecommons.org/licenses/by-sa/4.0/</image:license>
     </image:image>
+    <image:image>
+      <image:loc>https://vitaliklevin.github.io/files/images/open-graph.png</image:loc>
+      <image:license>https://creativecommons.org/licenses/by-sa/4.0/</image:license>
 	</url>
 	<url>
 		<loc>https://vitaliklevin.github.io/blog/</loc>
