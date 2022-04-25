@@ -48,6 +48,10 @@ footer {
 	margin-left: calc(98% - 32px);
 }
 
+.language-plaintext highlighter-rouge {
+  font-family: libitalic;
+}
+
 @media screen and (orientation: portrait) {
 	.img400 {
 		width: 75%;
