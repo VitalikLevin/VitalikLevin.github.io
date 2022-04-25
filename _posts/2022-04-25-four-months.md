@@ -15,4 +15,4 @@ It is not the ```final version``` of this post.
         Show(post);
     }
 
-> Debug.Log(new Number(1.0-0.6).ToString);
+> Debug.Log("2022");
