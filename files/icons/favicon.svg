@@ -1,98 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-<svg
-   width="256"
-   height="256"
-   viewBox="0 0 256 256"
-   version="1.1"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:dc="http://purl.org/dc/elements/1.1/">
-  <title>Wormfolder</title>
-  <g>
-    <rect
-       style="fill:#f9ad81;fill-opacity:1"
-       id="folder"
-       width="215"
-       height="108"
-       x="21"
-       y="86" />
-  </g>
-  <g
-     style="display:inline">
-    <rect
-       style="fill:#f9ad81;fill-opacity:1;stroke:none;stroke-width:1.02299;stroke-opacity:1"
-       id="tab"
-       width="90"
-       height="32"
-       x="26"
-       y="56" />
-  </g>
-  <g
-     style="display:inline">
-    <rect
-       style="fill:#f4f4f4;fill-opacity:1"
-       id="line"
-       width="16"
-       height="2"
-       x="-30"
-       y="-124"
-       transform="rotate(135)" />
-    <rect
-       style="fill:#f4f4f4;fill-opacity:1"
-       id="line2"
-       width="16"
-       height="2"
-       x="114"
-       y="-23"
-       transform="rotate(45)" />
-  </g>
-  <g>
-    <circle
-       style="fill:#f4f4f4;fill-opacity:1"
-       id="w1"
-       cx="180"
-       cy="167"
-       r="22" />
-    <circle
-       style="fill:#121212;fill-opacity:1"
-       id="b1"
-       cx="192"
-       cy="167"
-       r="10" />
-  </g>
-  <g>
-    <circle
-       style="fill:#f4f4f4;fill-opacity:1"
-       id="w2"
-       cx="212"
-       cy="135"
-       r="22" />
-    <circle
-       style="fill:#121212;fill-opacity:1"
-       id="b2"
-       cx="217"
-       cy="143"
-       r="10" />
-  </g>
-  <g>
-    <rect
-       style="fill:#f4f4f4;fill-opacity:1"
-       id="mouth"
-       width="35"
-       height="9"
-       x="-49"
-       y="-281"
-       transform="rotate(135)" />
-  </g>
-  <metadata>
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:title>wormfolder</dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
+<svg version="1.1"
+	 width="256"
+	 height="256"
+	 viewBox="0 0 256 256"
+	 xmlns="http://www.w3.org/2000/svg"
+	 xmlns:svg="http://www.w3.org/2000/svg">
+	<title>Wormfolder</title>
+	<g fill="#f9ad81"
+		fill-opacity="1"
+		id="folder">
+		<rect width="215"
+			 height="108"
+			 x="21"
+			 y="86"/>
+	</g>
+	<g fill="#f9ad81"
+		fill-opacity="1">
+		<rect id="tab"
+			width="90"
+			height="32"
+			x="26"
+			y="56" />
+	</g>
+	<g style="display:inline"
+		fill-opacity="1"
+		fill="#f4f4f4">
+		<rect id="line1"
+			width="16"
+			height="2"
+			x="-30"
+			y="-124"
+			transform="rotate(135)" />
+		<rect id="line2"
+			width="16"
+			height="2"
+			x="114"
+			y="-23"
+			transform="rotate(45)" />
+	</g>
+	<g fill-opacity="1">
+		<circle id="w1"
+			fill="#f4f4f4"
+			cx="180"
+			cy="167"
+			r="22" />
+		<circle id="b1"
+			fill="#121212"
+			cx="192"
+			cy="167"
+			r="10" />
+	</g>
+	<g fill-opacity="1">
+		<circle id="w2"
+			 fill="#f4f4f4"
+			 cx="212"
+			 cy="135"
+			 r="22" />
+		<circle id="b2"
+			 fill="#121212"
+			 cx="217"
+			 cy="143"
+			 r="10" />
+	</g>
+	<g fill="#f4f4f4">
+		<path d="m 200,188 25,-30 v 0 c 5,27 -13,32 -25,30 z"
+			id="mouth" />
+	</g>
 </svg>
