@@ -9,9 +9,10 @@ Readme was eaten by ```Ghost#000```.
 
 ![Worm in Space](files/images/open-graph.png)
 
-### Sitemap
+### Links
 
 - [Main page](https://vitaliklevin.github.io/)
+  - [Real 404 Page](https://vitaliklevin.github.io/404.html)
 - [Our blog](https://vitaliklevin.github.io/blog/)
 - [Our games](https://vitaliklevin.github.io/games)
   - [Bounce's Adventure](https://vitaliklevin.github.io/games/bsa/)
