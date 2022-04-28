@@ -1,6 +1,7 @@
 User-agent: Googlebot
 Disallow: /*?
 # Yandex.Robots
-User-agent: Yandex
+User-agent: Yandex *
 Disallow: /CODE_OF_CONDUCT.md
+Disallow: /*?
 Sitemap: /sitemap.xml
