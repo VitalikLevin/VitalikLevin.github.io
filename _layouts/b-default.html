@@ -8,10 +8,15 @@
 		<meta name="description" content="{{ page.excerpt | default: site.description }}">
 		<link rel="stylesheet" href="{{ "../files/css/style.css" | relative_url }}">
 		<link rel="stylesheet" href="{{ "../files/css/dark.css" | relative_url }}">
-		<link rel="icon" href="{{ "../files/icons/favicon.svg" | relative_url }}" type="image/svg+xml" sizes="any">
-		<link rel="shortcut icon" href="{{ "../files/icons/favicon.ico" | relative_url }}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ "../files/icons/favicon192.png | relative_url }}" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon-precomposed" href="{{ "../files/icons/favicon180.png | relative_url }}" type="image/png" sizes="180x180">
+    <link rel="mask-icon" href="{{ "../files/icons/favicon.svg" | relative_url }}"color="#f9ad81">
+    <link rel="icon" href="{{ "../files/icons/favicon.svg" | relative_url }}" type="image/svg+xml" sizes="any">
+    <link rel="shortcut icon" href="{{ "../files/icons/favicon.ico" | relative_url }}" type="image/x-icon">
 		<link rel="manifest" href="{{ "../manifest.json" | relative_url }}">
 		<meta name="msapplication-config" content="https://vitaliklevin.github.io/browserconfig.xml">
+    <meta name="application-name" content="Network Worms">
+    <meta name="msapplication-tooltip" content="Network Worms">
 		<meta property="og:title" content="Network Worms Blog" />
 		<meta property="og:type" content="website" />
 		<meta property="og:description" content="We develop games for PC not PCs for games" />
