@@ -6,4 +6,4 @@ Disallow: /*?
 # Yandex.Robots
 User-agent: Yandex *
 Disallow: /*?
-Sitemap: /sitemap.xml
+Sitemap: https://vitaliklevin.github.io/sitemap.xml
