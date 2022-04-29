@@ -1,6 +1,5 @@
 {
 	"lang": "en",
-	"dir": "ltr",
 	"name": "Network Worms",
 	"short_name": "NetWorms",
 	"icons": [
@@ -18,6 +17,5 @@
 	"theme_color": "#121212",
 	"background_color": "#121212",
 	"start_url": "/",
-	"display": "standalone",
-	"orientation": "natural"
+	"display": "standalone"
 }
