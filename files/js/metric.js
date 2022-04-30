@@ -6,5 +6,6 @@ m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=
 ym(88314737, "init", {
     clickmap:true,
     trackLinks:true,
-    accurateTrackBounce:true
+    accurateTrackBounce:true,
+    webvisor:true
 });
