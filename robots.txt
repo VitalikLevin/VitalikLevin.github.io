@@ -1,9 +1,7 @@
 User-agent: *
 Disallow: /CODE_OF_CONDUCT.md
-# Google.Robots
-User-agent: Googlebot
 Disallow: /*?
 # Yandex.Robots
 User-agent: Yandex *
-Disallow: /*?
+Disallow: /feed.xml
 Sitemap: https://vitaliklevin.github.io/sitemap.xml
