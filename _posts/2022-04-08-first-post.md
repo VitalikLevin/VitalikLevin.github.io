@@ -3,7 +3,8 @@ layout: post
 title: The First Post
 excerpt: There is no jokes in this post.
 lang: en-US
-tag: en 
+tag: en
+canon: 2022/04/08/first-post/ 
 ---
 
 Welcome to our blog, User! 
