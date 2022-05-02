@@ -6,6 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>{{ page.title }} - NW Blog</title>
 		<meta name="description" content="{{ page.excerpt | default: site.description }}">
+    <link rel="canonical" href="{{ site.url }} / {{ page.canon }}">
 		<link rel="stylesheet" href="{{ "../files/css/style.css" | relative_url }}">
 		<link rel="stylesheet" href="{{ "../files/css/dark.css" | relative_url }}">
     <link rel="apple-touch-icon-precomposed" href="{{ "../files/icons/favicon192.png" | relative_url }}" type="image/png" sizes="192x192">
