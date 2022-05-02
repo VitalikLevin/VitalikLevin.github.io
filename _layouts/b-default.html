@@ -6,7 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>{{ page.title }} - NW Blog</title>
 		<meta name="description" content="{{ page.excerpt | default: site.description }}">
-    <link rel="canonical" href="{{ site.url }} / {{ page.canon }}">
+    <link rel="canonical" href="{{ site.url }}{{ page.canon }}">
 		<link rel="stylesheet" href="{{ "../files/css/style.css" | relative_url }}">
 		<link rel="stylesheet" href="{{ "../files/css/dark.css" | relative_url }}">
     <link rel="apple-touch-icon-precomposed" href="{{ "../files/icons/favicon192.png" | relative_url }}" type="image/png" sizes="192x192">
@@ -15,7 +15,7 @@
     <link rel="icon" href="{{ "../files/icons/favicon.svg" | relative_url }}" type="image/svg+xml" sizes="any">
     <link rel="shortcut icon" href="{{ "../files/icons/favicon.ico" | relative_url }}" type="image/x-icon">
 		<link rel="manifest" href="{{ "../manifest.json" | relative_url }}">
-		<meta name="msapplication-config" content="https://vitaliklevin.github.io/browserconfig.xml">
+		<meta name="msapplication-config" content="{{ site.url }}browserconfig.xml">
     <meta name="application-name" content="Network Worms Blog">
     <meta name="msapplication-tooltip" content="Network Worms">
 		<meta property="og:title" content="Network Worms Blog" />
