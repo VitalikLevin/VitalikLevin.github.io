@@ -4,9 +4,9 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>{{ page.title | default: site.title }} - Network Worms</title>
+		<title>{{ page.title }} - Network Worms</title>
 		<meta name="description" content="{{ page.excerpt | default: site.description }}">
-    <link rel="canonical" href="{{ site.url }}{{ page.canon }}">
+		<link rel="canonical" href="{{ site.url }}{{ page.canon }}">
 		<link rel="stylesheet" href="{{ "../files/css/style.css" | relative_url }}">
 		<link rel="stylesheet" href="{{ "../files/css/dark.css" | relative_url }}">
 		<link rel="apple-touch-icon-precomposed" href="{{ "../files/icons/favicon192.png" | relative_url }}" type="image/png" sizes="192x192">
@@ -15,12 +15,12 @@
 		<link rel="icon" href="{{ "../files/icons/favicon.svg" | relative_url }}" type="image/svg+xml" sizes="any">
 		<link rel="shortcut icon" href="{{ "../files/icons/favicon.ico" | relative_url }}" type="image/x-icon">
 		<link rel="manifest" href="{{ "../manifest.json" | relative_url }}">
-		<meta name="msapplication-config" content="{{ site.url }}browserconfig.xml">
+		<meta name="msapplication-config" content="{{ "../browserconfig.xml" | relative_url }}">
 		<meta name="application-name" content="Network Worms">
 		<meta name="msapplication-tooltip" content="Network Worms">
 		<meta property="og:title" content="Network Worms" />
 		<meta property="og:description" content="We develop games for PC not PCs for games" />
-    <meta property="og:url" content="{{ site.url }}{{ page.canon }}" />
+		<meta property="og:url" content="{{ site.url }}{{ page.canon }}" />
 		<meta property="og:type" content="website" />
 		<meta property="og:image" content="{{ site.url }}files/images/open-graph.png" />
 		<meta property="og:locale" content="en_US" />
@@ -29,7 +29,7 @@
 		<meta name="yandex-verification" content="b24725ffa2e7d4a6" />
 		<meta name="google-site-verification" content="yahAonXkmtS9ASTgJphU5M3HR9fHyvOG6pXX4kzQ2pw" />
 		<meta name="msvalidate.01" content="0B6583F3F8C1659E185F49DB6386D481" />
-    <meta name="wmail-verification" content="3b56574058b187713a11ec7821d2d1bd" />
+		<meta name="wmail-verification" content="3b56574058b187713a11ec7821d2d1bd" />
 	</head>
 	<body>
 		{{ content }}

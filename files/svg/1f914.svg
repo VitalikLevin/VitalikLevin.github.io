@@ -6,6 +6,7 @@
 	stroke-miterlimit="10"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
 	xmlns="http://www.w3.org/2000/svg">
+	<title>Thinking Face</title>
 	<clipPath id="p.0">
 		<path d="m0 0l128.0 0l0 128.0l-128.0 0l0 -128.0z" clip-rule="nonzero"/>
 	</clipPath>
