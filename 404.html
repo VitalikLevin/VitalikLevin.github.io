@@ -8,7 +8,7 @@
 		<meta name="description" content="There is nothing interesting on this page">
 		<link rel="stylesheet" href="https://vitaliklevin.github.io/files/css/style.css">
 		<link rel="stylesheet" href="https://vitaliklevin.github.io/files/css/light.css">
-		<link rel="apple-touch-icon-precomposed" href="{{ "../files/icons/favicon192.png" | relative_url }}" type="image/png" sizes="192x192">
+		<link rel="apple-touch-icon-precomposed" href="https://vitaliklevin.github.io/files/icons/favicon192.png" type="image/png" sizes="192x192">
 		<link rel="apple-touch-icon" href="https://vitaliklevin.github.io/files/icons/favicon180.png" type="image/png" sizes="180x180">
 		<link rel="mask-icon" href="https://vitaliklevin.github.io/files/icons/favicon.svg" color="#da532c">
 		<link rel="icon" href="https://vitaliklevin.github.io/files/icons/favicon.svg" type="image/svg+xml">
@@ -44,12 +44,12 @@
 			<p>
 				A client-side error that users get when they want to find a page that does not exist.
 			</p>
-			<img srcset="https://vitaliklevin.github.io/files/images/404-400.png 400w,
-				https://vitaliklevin.github.io/files/images/404-800.png 800w"
-				sizes="(max-height: 500px) 250px,
-					(max-width: 1200px) 600px,
-					800px"
-				src="https://vitaliklevin.github.io/files/images/404-400.png" alt="">
+			<picture>
+				<source media="max-width: 700px" srcset="https://vitaliklevin.github.io/files/images/404-400.png"/>
+				<source media="max-width: 900px" srcset="https://vitaliklevin.github.io/files/images/404-600.png"/>
+				<source media="min-width: 901px" srcset="https://vitaliklevin.github.io/files/images/404-800.png"/>
+				<img src="https://vitaliklevin.github.io/files/images/404-400.png" alt=""/>
+			</picture>
 		</main>
 		<footer>
 			<p>

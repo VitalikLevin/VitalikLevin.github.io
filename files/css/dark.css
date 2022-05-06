@@ -4,15 +4,11 @@ body {
 }
 
 header h2, header h2 a, header h2 a:visited, header h2 a:hover {
-	background-color: rgb(12, 12, 12);
+	background-color: rgb(18, 18, 18);
 	color: rgb(244, 244, 244);
 }
 
-h3 {
-	background-color: rgb(55, 55, 55);
-}
-
-nav, main, footer {
+nav, main, footer, h3 {
 	background-color: rgb(55, 55, 55);
 }
 
@@ -21,16 +17,12 @@ blockquote {
 	border-left: 3px solid rgb(0, 173, 239);
 }
 
-img {
-	filter: brightness(0.8) contrast(1.2);
-}
-
 .start, a {
 	color: rgb(93, 138, 168);
 }
 
 .blog {
-	background-color: rgb(12, 12, 12);
+	background-color: rgb(18, 18, 18);
 	color: rgb(244, 244, 244);
 }
 

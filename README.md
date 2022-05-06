@@ -1,6 +1,6 @@
-## Readme
+# Readme
 
-[![GitHub license](https://img.shields.io/github/license/VitalikLevin/VitalikLevin.github.io)](https://github.com/VitalikLevin/VitalikLevin.github.io/blob/master/LICENSE.txt)
+[![CC-BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-darklight.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
 Readme was eaten by ```Ghost#000```.
 

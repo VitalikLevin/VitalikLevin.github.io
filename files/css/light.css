@@ -1,11 +1,11 @@
 body {
 	background-color: rgb(244, 244, 244);
-	color: rgb(12, 12, 12);
+	color: rgb(18, 18, 18);
 }
 
 header h2, header h2 a, header h2 a:visited {
 	background-color: rgb(246, 170, 126);
-	color: rgb(12, 12, 12);
+	color: rgb(18, 18, 18);
 }
 
 h3 {
@@ -23,7 +23,7 @@ blockquote {
 
 .blog {
 	background-color: rgb(244, 244, 244);
-	color: rgb(12, 12, 12);
+	color: rgb(18, 18, 18);
 }
 
 a:visited {

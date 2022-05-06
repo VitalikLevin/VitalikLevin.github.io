@@ -1,0 +1,7 @@
+root = true
+[*.{html,md,xml}]
+indent_style = space
+indent_size = 2
+[*.{css,js,svg,yml}]
+indent_style = tabs
+indent_size = 2
