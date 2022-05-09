@@ -1,9 +1,8 @@
 # Readme
 
-[![CC-BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightdark.svg#gh-light-mode-only)](https://creativecommons.org/licenses/by-sa/4.0/)
-[![CC-BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-darklight.svg#gh-dark-mode-only)](https://creativecommons.org/licenses/by-sa/4.0/)
+[![CC-BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-darklight.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
-Readme was eaten by ```Ghost#000```.
+Readme was eaten by ```VitalikLevin```.
 
 - [The License](/LICENSE.txt)
 - [The Code of Conduct](/CODE_OF_CONDUCT.md)
