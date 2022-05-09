@@ -4,7 +4,6 @@ author: Vitaliy Levin
 encoding: utf-8
 date_format: "%-d.%m.%Y"
 permalink: pretty
-highlighter: rogue
 # Website
 url: "https://vitaliklevin.github.io/"
 baseurl: ""
