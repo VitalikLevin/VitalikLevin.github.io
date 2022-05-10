@@ -8,8 +8,8 @@
 		<changefreq>monthly</changefreq>
 		<priority>1.0</priority>
 		<image:image>
-			<image:loc>https://vitaliklevin.github.io/files/icons/favicon.svg</image:loc>
-			<image:title>Wormfolder</image:title>
+			<image:loc>https://vitaliklevin.github.io/files/images/spaceworm.png</image:loc>
+			<image:title>Worm in Space</image:title>
 			<image:license>https://creativecommons.org/licenses/by-sa/4.0/</image:license>
 		</image:image>
 	</url>
@@ -41,7 +41,7 @@
 		<loc>https://vitaliklevin.github.io/2022/04/08/second-post/</loc>
 		<lastmod>2022-04-08</lastmod>
 		<changefreq>never</changefreq>
-		<priority>0.9</priority>
+		<priority>0.6</priority>
 		<xhtml:link rel="alternate"
 			hreflang="en-us"
 			href="https://vitaliklevin.github.io/2022/04/08/first-post/"/>
