@@ -7,6 +7,7 @@ permalink: pretty
 # Website
 url: "https://vitaliklevin.github.io/"
 baseurl: ""
+license: https://creativecommons.org/licenses/by-sa/4.0/
 # Ruby Gems
 plugins:
   - jekyll-paginate
