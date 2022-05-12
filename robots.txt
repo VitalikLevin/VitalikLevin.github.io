@@ -1,10 +1,7 @@
 User-agent: *
 Disallow: /CODE_OF_CONDUCT.md
-Disallow: /*?_ym_status-check=88314737&_ym_lang=ru
-Disallow: /*?_ym_debug=1
-Disallow: /*?from=webmaster
+Disallow: /*?
 # Yandex.Robots
 User-agent: Yandex *
 Disallow: /feed.xml
-Disallow: /2022/04/2*
 Sitemap: https://vitaliklevin.github.io/sitemap.xml
