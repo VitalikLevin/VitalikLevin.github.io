@@ -48,7 +48,7 @@ footer {
 }
 
 .top {
-  display: none;
+  visibility: hidden;
 }
 
 @media screen and (orientation: portrait) {
@@ -58,6 +58,6 @@ footer {
 	}
 	.top {
     float: right;
-    display: inline;
+    visibility: visible;
 	}
 }
