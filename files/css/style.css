@@ -48,12 +48,16 @@ footer {
   font-family: libitalic;
 }
 
+.top {
+  display: none;
+}
+
 @media screen and (orientation: portrait) {
 	.img400 {
 		width: 75%;
 		height: 75%;
 	}
 	.top {
-		margin-left: 85%;
+		float: right;
 	}
 }
