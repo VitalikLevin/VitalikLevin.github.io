@@ -2,13 +2,11 @@ title: Network Worms
 description: We create games for PC not PCs for games
 author: Vitaliy Levin
 encoding: utf-8
-date_format: "%-d.%m.%Y"
+date_format: %-d.%m.%Y
 permalink: pretty
-# Website
-url: "https://vitaliklevin.github.io/"
-baseurl: ""
+highlighter: rogue
+url: https://vitaliklevin.github.io/
 license: https://creativecommons.org/licenses/by-sa/4.0/
-# Ruby Gems
 plugins:
   - jekyll-paginate
   - jekyll-feed
