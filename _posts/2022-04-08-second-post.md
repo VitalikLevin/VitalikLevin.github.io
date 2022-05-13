@@ -2,9 +2,10 @@
 layout: post
 title: Проверка работы блога
 excerpt: Сьешь этих булочек
+date: 2022-04-08 23:30:00 +0300
 lang: ru
 tag: ru
-canon: 2022/04/08/second-post/
+canon: /2022/04/08/second-post/
 ---
 
 Добро пожаловать на наш блог, пользователь.
