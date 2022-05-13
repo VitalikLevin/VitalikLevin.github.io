@@ -2,7 +2,7 @@ title: Network Worms
 description: We create games for PC not PCs for games
 author: Vitaliy Levin
 encoding: utf-8
-date_format: "%-d.%m.%Y"
+date_format: "%d.%m.%Y"
 permalink: pretty
 highlighter: rogue
 url: https://vitaliklevin.github.io
