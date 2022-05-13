@@ -5,7 +5,7 @@ encoding: utf-8
 date_format: %-d.%m.%Y
 permalink: pretty
 highlighter: rogue
-url: https://vitaliklevin.github.io
+url: "https://vitaliklevin.github.io"
 license: https://creativecommons.org/licenses/by-sa/4.0/
 plugins:
   - jekyll-paginate
