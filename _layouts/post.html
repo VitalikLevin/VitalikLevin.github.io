@@ -1,14 +1,7 @@
 ---
 layout: b-default
 ---
-<header>
-	<h2>
-		<a href="{{ site.url }}">Network Worms</a>
-		<img src="https://vitaliklevin.github.io/files/svg/1f642.svg"
-			width="32px"
-			height="32px">
-	</h2>
-</header>
+{% include header.html %}
 <div class="bread" itemscope itemtype="https://schema.org/BreadcrumbList">
 	<span itemprop="itemListElement">
 		<a itemscope
@@ -31,7 +24,8 @@ layout: b-default
 	<strong>{{ page.title }}</strong>
 </div>
 <main>
-	<h2 class="start">{{ page.title }}</h2>
+  <h2 class="start">{{ page.title }}</h2>
+  <h4>{{ page.date | default: 2022-02-20 19:00:00 +0300 }}</h4>
 	{{ content }}
 </main>
 {% include footer.html %}
