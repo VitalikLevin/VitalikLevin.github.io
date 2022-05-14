@@ -1,0 +1,21 @@
+<svg version="1.1"
+  baseProfile="full"          
+  xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css"><![CDATA[
+      #paper {
+        fill: rgb(244, 244, 244);
+      }
+      #fix {
+        fill: rgb(244, 18, 18);
+      }
+    ]]></style>
+  </defs>
+  <title>Tear-off Calendar</title>
+  <rect id="paper"
+    x="16" y="16"
+    width="96" height="96"/>
+  <rect id="fix"
+    x="16" y"16"
+    width="96" height="16"/>
+</svg>
