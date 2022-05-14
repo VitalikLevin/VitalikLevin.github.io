@@ -1,9 +1,9 @@
 <svg version="1.1"
-  baseProfile="full"
-  viewbox="0 0 128 128"          
+  baseProfile="full"          
   xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style type="text/css"><![CDATA[
+      @import url(../css/fonts.css);
       #paper {
         fill: rgb(244, 244, 244);
       }
@@ -12,7 +12,11 @@
       }
       #date {
         text-anchor: middle;
-        font-size: 64;
+        font-size: 50px;
+        font-family: liberastika;
+      }
+      #paper2 {
+        fill: rgb(200, 200, 200);
       }
     ]]></style>
   </defs>
@@ -22,9 +26,12 @@
     width="96" height="96" />
   <rect id="fix"
     x="16" y="16"
-    width="96" height="16" />
-  <text id="date"
-    x="64" y="64">
-    28
-  </text>
+    width="96" height="24" />
+  <g id="date">
+    <text x="64" y="88">
+      28
+    </text>
+  </g>
+  <polygon id="paper2"
+    points="112 80, 80 112, 112 112, 112 80"/>
 </svg>
