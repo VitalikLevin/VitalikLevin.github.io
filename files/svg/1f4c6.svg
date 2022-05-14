@@ -21,7 +21,7 @@
     x="16" y="16"
     width="96" height="96" />
   <rect id="fix"
-    x="16" y"16"
+    x="16" y="16"
     width="96" height="16" />
   <text id="date"
     x="64" y="64">
