@@ -4,36 +4,31 @@
 	xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 	<url>
 		<loc>https://vitaliklevin.github.io/</loc>
-		<lastmod>2022-05-13</lastmod>
+		<lastmod>2022-05-14</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>1.0</priority>
-		<image:image>
-			<image:loc>https://vitaliklevin.github.io/files/images/spaceworm.png</image:loc>
-			<image:title>Worm in Space</image:title>
-			<image:license>https://creativecommons.org/licenses/by-sa/4.0/</image:license>
-		</image:image>
 	</url>
 	<url>
 		<loc>https://vitaliklevin.github.io/blog/</loc>
-		<lastmod>2022-05-13</lastmod>
+		<lastmod>2022-05-14</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://vitaliklevin.github.io/games/</loc>
-		<lastmod>2022-05-13</lastmod>
+		<lastmod>2022-05-14</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.8</priority>
 	</url>
 	<url>
 		<loc>https://vitaliklevin.github.io/games/bsa/</loc>
-		<lastmod>2022-05-13</lastmod>
+		<lastmod>2022-05-14</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 	<url>
 		<loc>https://vitaliklevin.github.io/games/nves/</loc>
-		<lastmod>2022-05-13</lastmod>
+		<lastmod>2022-05-14</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
@@ -46,7 +41,7 @@
 			hreflang="en-us"
 			href="https://vitaliklevin.github.io/2022/04/08/first-post/"/>
 		<xhtml:link rel="alternate"
-			hreflang="ru"
+			hreflang="ru-ru"
 			href="https://vitaliklevin.github.io/2022/04/08/second-post/"/>
 	</url>
 </urlset>

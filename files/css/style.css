@@ -44,11 +44,16 @@ footer {
 }
 
 .language-plaintext highlighter-rouge {
-  font-family: libitalic;
+	font-family: libitalic;
 }
 
 .top {
-  visibility: hidden;
+	visibility: hidden;
+}
+
+.pubDat {
+	font-family: libitalic;
+	font-size: 16px;
 }
 
 @media screen and (orientation: portrait) {
@@ -57,7 +62,7 @@ footer {
 		height: 75%;
 	}
 	.top {
-    float: right;
-    visibility: visible;
+		float: right;
+		visibility: visible;
 	}
 }

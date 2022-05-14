@@ -24,8 +24,8 @@ layout: b-default
 	<strong>{{ page.title }}</strong>
 </div>
 <main>
-  <h2 class="start">{{ page.title }}</h2>
-  <h4 class="pubDat">{{ page.date | date: "%d.%m.%Y" }}</h4>
-  {{ content }}
+	<h2 class="start">{{ page.title }}</h2>
+	<blockquote class="pubDat">{{ page.date | date: "%d.%m.%Y" }}</blockquote>
+	{{ content }}
 </main>
 {% include footer.html %}

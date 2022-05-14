@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Blog
-excerpt: Main page of Network Worms&#39; Blog
+excerpt: Main page of Network Worms' Blog
 lang: en-US
 canon: /blog/
 ---
@@ -9,7 +9,7 @@ canon: /blog/
 	<span itemprop="itemListElement">
 		<a itemscope
 			 itemtype="https://schema.org/ListItem"
-			 href="https://vitaliklevin.github.io/">
+			 href="../">
 			<span itemprop="name">Network Worms</span>
 			<meta itemprop="position" content="1" />
 		</a>
@@ -24,6 +24,7 @@ canon: /blog/
 	<div id="post">
 		<h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
 		<p>{{ post.excerpt }}</p>
+		<blockquote class="pubDat">{{ post.date }}</blockquote>
 	</div>
 {% endfor %}
 {% if paginator.total_pages > 1 %}
