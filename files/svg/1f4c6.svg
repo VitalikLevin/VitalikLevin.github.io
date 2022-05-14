@@ -6,16 +6,24 @@
       #paper {
         fill: rgb(244, 244, 244);
       }
-      #fix {
+      #fix, #date {
         fill: rgb(244, 18, 18);
+      }
+      #date {
+        text-anchor: middle;
+        font-size: 64;
       }
     ]]></style>
   </defs>
   <title>Tear-off Calendar</title>
   <rect id="paper"
     x="16" y="16"
-    width="96" height="96"/>
+    width="96" height="96" />
   <rect id="fix"
     x="16" y"16"
-    width="96" height="16"/>
+    width="96" height="16" />
+  <text id="date"
+    x="64" y="64">
+    28
+  </text>
 </svg>
