@@ -24,7 +24,7 @@ canon: /blog/
 	<div id="post">
 		<h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
 		<p>{{ post.excerpt }}</p>
-		<blockquote class="pubDat">{{ post.date }}</blockquote>
+		<blockquote class="pubDat">{{ post.date | date: "%d.%m.%Y" }}</blockquote>
 	</div>
 {% endfor %}
 {% if paginator.total_pages > 1 %}
