@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: en-US }}" prefix="og: http://ogp.me/ns#">
-<head>
+  <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,6 +35,26 @@
 	<meta name="twitter:title" content="{{ page.title }} - NW Blog">
 	<meta name="twitter:description" content="{{ site.description }}">
 	<meta name="twitter:image" content="{{ "../files/icons/tiles/medium.png" | relative_url }}">
+    {% if page.bread==!'null' %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement":
+      [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item":
+          {
+            "@id": "{{ site.url }}/",
+            "name": "Network Worms"
+          }
+        }
+      ]
+    }
+    </script>
+    {% endif %}
 	{% if jekyll.environment == 'production' %}
 	{% include tracking.html %}
 	{% endif %}
@@ -42,8 +62,8 @@
 	<meta name="google-site-verification" content="yahAonXkmtS9ASTgJphU5M3HR9fHyvOG6pXX4kzQ2pw" />
 	<meta name="msvalidate.01" content="0B6583F3F8C1659E185F49DB6386D481" />
 	<meta name="wmail-verification" content="3b56574058b187713a11ec7821d2d1bd" />
-</head>
-	<body>
-		{{ content }}
-	</body>
+  </head>
+  <body>
+    {{ content }}
+  </body>
 </html>
