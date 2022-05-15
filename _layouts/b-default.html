@@ -35,9 +35,6 @@
     <meta name="twitter:title" content="{{ page.title }} - NW Blog">
     <meta name="twitter:description" content="{{ site.description }}">
     <meta name="twitter:image" content="{{ "../files/icons/tiles/medium.png" | relative_url }}">
-    {% if page.bread == 'few' %}
-    <script type="application/ld+json" src="{{ "../files/js/fewBread.json" | relative_url }}"></script>
-    {% endif %}
     {% if jekyll.environment == 'production' %}
     {% include tracking.html %}
     {% endif %}
