@@ -36,24 +36,7 @@
     <meta name="twitter:description" content="{{ site.description }}">
     <meta name="twitter:image" content="{{ "../files/icons/tiles/medium.png" | relative_url }}">
     {% if page.bread=='1' %}
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement":
-      [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "item":
-          {
-            "@id": "{{ site.url }}/",
-            "name": "Network Worms"
-          }
-        }
-      ]
-    }
-    </script>
+    <script type="application/ld+json" src="{{ "../files/js/fewBread.json" | relative_url }}">
     {% endif %}
     {% if jekyll.environment == 'production' %}
     {% include tracking.html %}
