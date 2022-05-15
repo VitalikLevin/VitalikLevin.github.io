@@ -4,7 +4,6 @@ title: Blog
 excerpt: Main page of Network Worms' Blog
 lang: en-US
 canon: /blog/
-bread: few
 ---
 <p>
 	In this page you can find all posts from our site.
@@ -13,7 +12,11 @@ bread: few
 	<div id="post">
 		<h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
 		<p>{{ post.excerpt }}</p>
-		<blockquote class="pubDat">{{ post.date | date: "%d.%m.%Y" }}</blockquote>
+  <blockquote class="pubDat">
+    <img width="16px"
+      src="../files/svg/1f4c6.svg">
+    {{ post.date | date: "%d.%m.%Y" }}
+  </blockquote>
 	</div>
 {% endfor %}
 {% if paginator.total_pages > 1 %}
