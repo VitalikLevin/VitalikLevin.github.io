@@ -5,4 +5,6 @@ Disallow: /*?
 # Yandex.Robots
 User-agent: Yandex *
 Disallow: /feed.xml
+Disallow: /2022/04/25/
+Disallow: /2022/04/26/
 Sitemap: https://vitaliklevin.github.io/sitemap.xml
