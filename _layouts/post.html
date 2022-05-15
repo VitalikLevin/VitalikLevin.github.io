@@ -2,27 +2,6 @@
 layout: b-default
 ---
 {% include header.html %}
-<div class="bread" itemscope itemtype="https://schema.org/BreadcrumbList">
-	<span itemprop="itemListElement">
-		<a itemscope
-			itemtype="https://schema.org/ListItem"
-			href="{{ "../" | relative_url }}">
-			<span itemprop="name">Network Worms</span>
-			<meta itemprop="position" content="1" />
-		</a>
-	</span>
-	&#47;
-	<span itemprop="itemListElement">
-		<a itemscope
-			itemtype="https://schema.org/ListItem"
-			href="{{ "../blog/" | relative_url }}">
-			<span itemprop="name">Blog</span>
-			<meta itemprop="position" content="2" />
-		</a>
-	</span>
-	&#47;
-	<strong>{{ page.title }}</strong>
-</div>
 <main>
 	<h2 class="start">{{ page.title }}</h2>
 	<blockquote class="pubDat">{{ page.date | date: "%d.%m.%Y" }}</blockquote>
