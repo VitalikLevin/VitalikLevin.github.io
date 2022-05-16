@@ -1,49 +1,44 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: en-US }}" prefix="og: http://ogp.me/ns#">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ page.title }} - NW Blog</title>
-    <meta name="description" content="{{ page.excerpt | default: site.description }}">
-    <link rel="canonical" href="{{ site.url }}{{ page.canon }}">
-    <link href="{{ site.url }}/feed.xml" rel="alternate" type="application/atom+xml" />
-    <link rel="stylesheet" href="{{ "../files/css/style.css" | relative_url }}">
-    <link rel="stylesheet" href="{{ "../files/css/dark.css" | relative_url }}">
-    <link rel="apple-touch-icon-precomposed" href="{{ "../files/icons/favicon192.png" | relative_url }}" type="image/png" sizes="192x192">
-    <link rel="apple-touch-icon" href="{{ "../files/icons/favicon180.png" | relative_url }}" type="image/png" sizes="180x180">
-    <link rel="mask-icon" href="{{ "../files/icons/favicon.svg" | relative_url }}" color="#da532c">
-    <link rel="icon" href="{{ "../files/icons/favicon.svg" | relative_url }}" type="image/svg+xml" sizes="any">
-    <link rel="shortcut icon" href="{{ "../files/icons/favicon.ico" | relative_url }}" type="image/x-icon">
-    <link rel="manifest" href="{{ "../manifest.json" | relative_url }}">
-    <meta name="msapplication-config" content="{{ "../browserconfig.xml" | relative_url }}">
-    <meta name="application-name" content="{{ site.title }} Blog">
-    <meta name="msapplication-tooltip" content="{{ site.title }}">
-    <meta property="og:title" content="{{ page.title }} - NW Blog" />
-    <meta property="og:url" content="{{ site.url }}{{ page.canon }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content="We develop games for PC not PCs for games" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="ru_RU" />
-    <meta property="og:image" content="{{ "../files/images/spaceworm.png" | relative_url }}">
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="400" />
-    <meta property="og:image:height" content="300" />
-    <meta property="og:image:alt" content="A pink worm in space" />
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@vitaliyliovin">
-    <meta name="twitter:title" content="{{ page.title }} - NW Blog">
-    <meta name="twitter:description" content="{{ site.description }}">
-    <meta name="twitter:image" content="{{ "../files/icons/tiles/medium.png" | relative_url }}">
-    {% if jekyll.environment == 'production' %}
-    {% include tracking.html %}
-    {% endif %}
-    <meta name="yandex-verification" content="b24725ffa2e7d4a6" />
-    <meta name="google-site-verification" content="yahAonXkmtS9ASTgJphU5M3HR9fHyvOG6pXX4kzQ2pw" />
-    <meta name="msvalidate.01" content="0B6583F3F8C1659E185F49DB6386D481" />
-    <meta name="wmail-verification" content="3b56574058b187713a11ec7821d2d1bd" />
-  </head>
-  <body>
-    {{ content }}
-  </body>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>{{ page.title }} - NW Blog</title>
+		<meta name="description" content="{{ page.excerpt | default: site.description }}">
+		<link rel="canonical" href="{{ site.url }}{{ page.canon }}">
+		<link href="{{ "../feed.xml" | relative_url }}" rel="alternate" type="application/atom+xml" />
+		<link rel="stylesheet" href="{{ "../files/css/style.css" | relative_url }}">
+		<link rel="stylesheet" href="{{ "../files/css/dark.css" | relative_url }}">
+		<link rel="apple-touch-icon-precomposed" href="{{ "../files/icons/favicon192.png" | relative_url }}" type="image/png" sizes="192x192">
+		<link rel="apple-touch-icon" href="{{ "../files/icons/favicon180.png" | relative_url }}" type="image/png" sizes="180x180">
+		<link rel="mask-icon" href="{{ "../files/icons/favicon.svg" | relative_url }}" color="#da532c">
+		<link rel="icon" href="{{ "../files/icons/favicon.svg" | relative_url }}" type="image/svg+xml" sizes="any">
+		<link rel="shortcut icon" href="{{ "../files/icons/favicon.ico" | relative_url }}" type="image/x-icon">
+		<link rel="manifest" href="{{ "../manifest.json" | relative_url }}">
+		<meta name="msapplication-config" content="{{ "../browserconfig.xml" | relative_url }}">
+		<meta name="application-name" content="{{ site.title }} Blog">
+		<meta name="msapplication-tooltip" content="{{ site.title }}">
+		<meta property="og:title" content="{{ page.title }} - NW Blog" />
+		<meta property="og:url" content="{{ site.url }}{{ page.canon }}" />
+		<meta property="og:type" content="website" />
+		<meta property="og:description" content="We develop games for PC not PCs for games" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:locale:alternate" content="ru_RU" />
+		<meta property="og:image" content="{{ "../files/images/spaceworm.png" | relative_url }}">
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:image:width" content="400" />
+		<meta property="og:image:height" content="300" />
+		<meta property="og:image:alt" content="A pink worm in space" />
+		{% if jekyll.environment == 'production' %}
+		{% include tracking.html %}
+		{% endif %}
+		<meta name="yandex-verification" content="b24725ffa2e7d4a6" />
+		<meta name="google-site-verification" content="yahAonXkmtS9ASTgJphU5M3HR9fHyvOG6pXX4kzQ2pw" />
+		<meta name="msvalidate.01" content="0B6583F3F8C1659E185F49DB6386D481" />
+		<meta name="wmail-verification" content="3b56574058b187713a11ec7821d2d1bd" />
+	</head>
+	<body>
+		{{ content }}
+	</body>
 </html>

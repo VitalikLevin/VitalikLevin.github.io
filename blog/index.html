@@ -5,6 +5,17 @@ excerpt: Main page of Network Worms' Blog
 lang: en-US
 canon: /blog/
 ---
+<div class="crumb">
+	<ol itemscope itemtype="https://schema.org/BreadcrumbList">
+		<li itemprop="itemListElement" itemscope
+				itemtype="https://schema.org/ListItem">
+			<a itemprop="item" href="https://vitaliklevin.github.io/">
+				<span itemprop="name">Network Worms</span>
+			</a>
+			<meta itemprop="position" content="1" />
+		</li>
+	</ol>
+</div>
 <p>
 	In this page you can find all posts from our site.
 </p>
@@ -12,11 +23,11 @@ canon: /blog/
 	<div id="post">
 		<h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
 		<p>{{ post.excerpt }}</p>
-  <blockquote class="pubDat">
-    <img width="16px" height="16px"
-      src="../files/svg/1f4c6.svg">
-    {{ post.date | date: "%d.%m.%Y" }}
-  </blockquote>
+	<span class="pubDat">
+		<img width="24px" height="24px"
+			src="../files/svg/1f4c6.svg">
+		{{ post.date | date: "%d.%m.%Y" }}
+	</span>
 	</div>
 {% endfor %}
 {% if paginator.total_pages > 1 %}
