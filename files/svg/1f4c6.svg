@@ -11,9 +11,10 @@
 			#fix, #date {
 				fill: rgb(244, 18, 18);
 			}
-			#date {
+			#num {
 				text-anchor: middle;
-				font-size: 50px;
+				font-size: 54px;
+      font-family: sans-serif;
 			}
 			#paper2 {
 				fill: rgb(200, 200, 200);
@@ -27,11 +28,12 @@
 	<rect id="fix"
 		x="16" y="16"
 		width="96" height="24" />
-	<g id="date">
-		<text x="64" y="88">
-			28
-		</text>
-	</g>
+  <g id="date">
+    <text id="num"
+      x="64" y="92">
+      28
+    </text>
+  </g>
 	<polygon id="paper2"
 		points="112 80, 80 112, 112 112, 112 80" />
 </svg>
