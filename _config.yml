@@ -7,7 +7,7 @@ highlighter: rogue
 url: https://vitaliklevin.github.io
 license: https://creativecommons.org/licenses/by-sa/4.0/
 plugins:
-	- jekyll-paginate
-	- jekyll-feed
+  - jekyll-paginate
+  - jekyll-feed
 paginate: 10
 paginate_path: "blog/:num"
