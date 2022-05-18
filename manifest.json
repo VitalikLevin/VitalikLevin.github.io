@@ -9,11 +9,6 @@
 			"type": "image/png"
 		},
 		{
-			"src": "/files/icons/favicon180.png",
-			"sizes": "180x180",
-			"type": "image/png"
-		},
-		{
 			"src": "files/icons/favicon.svg",
 			"sizes": "any",
 			"type": "image/svg+xml"

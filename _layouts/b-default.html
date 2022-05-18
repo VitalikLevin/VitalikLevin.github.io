@@ -6,13 +6,14 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>{{ page.title }} - NW Blog</title>
 		<meta name="description" content="{{ page.excerpt | default: site.description }}">
+		<meta name="author" content="{{ page.author | default: site.author }}" />
 		<link rel="canonical" href="{{ site.url }}{{ page.canon }}">
-		<link href="{{ "../feed.xml" | relative_url }}" rel="alternate" type="application/atom+xml" />
+		<link href="{{ site.url }}/feed.xml" rel="alternate" type="application/atom+xml" />
 		<link rel="stylesheet" href="{{ "../files/css/style.css" | relative_url }}">
 		<link rel="stylesheet" href="{{ "../files/css/dark.css" | relative_url }}">
 		<link rel="apple-touch-icon-precomposed" href="{{ "../files/icons/favicon192.png" | relative_url }}" type="image/png" sizes="192x192">
 		<link rel="apple-touch-icon" href="{{ "../files/icons/favicon180.png" | relative_url }}" type="image/png" sizes="180x180">
-		<link rel="mask-icon" href="{{ "../files/icons/favicon.svg" | relative_url }}" color="#da532c">
+		<link rel="mask-icon" href="{{ "../files/icons/favicon.svg" | relative_url }}" color="#f9ad81">
 		<link rel="icon" href="{{ "../files/icons/favicon.svg" | relative_url }}" type="image/svg+xml" sizes="any">
 		<link rel="shortcut icon" href="{{ "../files/icons/favicon.ico" | relative_url }}" type="image/x-icon">
 		<link rel="manifest" href="{{ "../manifest.json" | relative_url }}">
@@ -22,7 +23,7 @@
 		<meta property="og:title" content="{{ page.title }} - NW Blog" />
 		<meta property="og:url" content="{{ site.url }}{{ page.canon }}" />
 		<meta property="og:type" content="website" />
-		<meta property="og:description" content="We develop games for PC not PCs for games" />
+		<meta property="og:description" content="{{ page.excerpt }}" />
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:locale:alternate" content="ru_RU" />
 		<meta property="og:image" content="{{ "../files/images/spaceworm.png" | relative_url }}">
@@ -36,7 +37,7 @@
 		<meta name="yandex-verification" content="b24725ffa2e7d4a6" />
 		<meta name="google-site-verification" content="yahAonXkmtS9ASTgJphU5M3HR9fHyvOG6pXX4kzQ2pw" />
 		<meta name="msvalidate.01" content="0B6583F3F8C1659E185F49DB6386D481" />
-		<meta name="wmail-verification" content="3b56574058b187713a11ec7821d2d1bd" />
+		<meta name="wmail-verification" content='3b56574058b187713a11ec7821d2d1bd' />
 	</head>
 	<body>
 		{{ content }}
