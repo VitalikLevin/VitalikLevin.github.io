@@ -7,7 +7,7 @@ layout: b-default
 {% for crumb in page.bread %}
     <li itemprop="itemListElement" itemscope
       itemtype="https://schema.org/ListItem">
-      <a itemprop="item" href="https://example.com/dresses">
+      <a itemprop="item" href="{{ site.url }}{{ page.bread.crumb.url }}">
       <span itemprop="name">{{ page.bread.crumb.title }}</span></a>
       <meta itemprop="position" content="{{ page.bread.crumb.num }}" />
     </li>
