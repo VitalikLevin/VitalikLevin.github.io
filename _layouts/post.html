@@ -3,22 +3,16 @@ layout: b-default
 ---
 {% include header.html %}
 <div class="crumb">
-	<ol itemscope itemtype="https://schema.org/BreadcrumbList">
-		<li itemprop="itemListElement" itemscope
-				itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="https://vitaliklevin.github.io/">
-				<span itemprop="name">Network Worms</span>
-			</a>
-			<meta itemprop="position" content="1" />
-		</li>
-		<li itemprop="itemListElement" itemscope
-				itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="https://vitaliklevin.github.io/blog/">
-				<span itemprop="name">Blog</span>
-			</a>
-			<meta itemprop="position" content="2" />
-		</li>
-	</ol>
+  <ul itemscope itemtype="https://schema.org/BreadcrumbList">
+{% for crumb in page.bread %}
+    <li itemprop="itemListElement" itemscope
+      itemtype="https://schema.org/ListItem">
+      <a itemprop="item" href="https://example.com/dresses">
+      <span itemprop="name">{{ page.bread.crumb.title }}</span></a>
+      <meta itemprop="position" content="{{ page.bread.crumb.num }}" />
+    </li>
+{% endfor %}
+  </ul>
 </div>
 <main>
 	<h2 class="start">{{ page.title }}</h2>
