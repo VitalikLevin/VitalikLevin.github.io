@@ -8,17 +8,17 @@ tag: ru
 canon: /2022/04/08/second-post/
 bread:
   - crumb:
-      - url: /
-      - title: Network Worms
-      - num: 1
+      url: /
+      title: Network Worms
+      num: 1
   - crumb:
-      - url: /blog/
-      - title: Blog
-      - num: 2
+      url: /blog/
+      title: Blog
+      num: 2
   - crumb:
-      - url: /2022/04/08/second-post/
-      - title: Проверка работы блога
-      - num: 3
+      url: /2022/04/08/second-post/
+      title: Проверка работы блога
+      num: 3
 ---
 
 Добро пожаловать на наш блог, пользователь.
