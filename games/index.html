@@ -7,15 +7,22 @@ canon: /games/
 ---
 {% include header.html %}
 <div class="crumb">
-  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+  <ul itemscope itemtype="https://schema.org/BreadcrumbList">
     <li itemprop="itemListElement" itemscope
         itemtype="https://schema.org/ListItem">
-      <a itemprop="item" href="https://vitaliklevin.github.io/">
+      <a itemprop="item" href="{{ site.url }}/">
         <span itemprop="name">Network Worms</span>
       </a>
       <meta itemprop="position" content="1" />
     </li>
-  </ol>
+    <li itemprop="itemListElement" itemscope
+        itemtype="https://schema.org/ListItem">
+      <a itemprop="item" href="{{ site.url }}/games/">
+        <span itemprop="name">Games</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </li>
+  </ul>
 </div>
 <nav>
 	<h5>Games:</h5>

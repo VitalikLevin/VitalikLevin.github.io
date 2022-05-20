@@ -6,19 +6,6 @@ date: 2022-04-08 23:30:00 +0300
 lang: ru
 tag: ru
 canon: /2022/04/08/second-post/
-bread:
-  - crumb
-  - crumb
-  - crumb:
-      - url: /
-      - url: /blog/
-      - url: /2022/04/08/second-post/
-      - title: Network Worms
-      - title: Blog
-      - title: Проверка работы блога
-      - num: 1
-      - num: 2
-      - num: 3
 ---
 
 Добро пожаловать на наш блог, пользователь.

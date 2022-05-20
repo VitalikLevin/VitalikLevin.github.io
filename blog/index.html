@@ -6,15 +6,22 @@ lang: en-US
 canon: /blog/
 ---
 <div class="crumb">
-	<ol itemscope itemtype="https://schema.org/BreadcrumbList">
+	<ul itemscope itemtype="https://schema.org/BreadcrumbList">
 		<li itemprop="itemListElement" itemscope
 				itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="https://vitaliklevin.github.io/">
+			<a itemprop="item" href="{{ site.url }}/">
 				<span itemprop="name">Network Worms</span>
 			</a>
 			<meta itemprop="position" content="1" />
 		</li>
-	</ol>
+		<li itemprop="itemListElement" itemscope
+				itemtype="https://schema.org/ListItem">
+			<a itemprop="item" href="{{ site.url }}/blog/">
+				<span itemprop="name">Blog</span>
+			</a>
+			<meta itemprop="position" content="2" />
+		</li>
+	</ul>
 </div>
 <p>
 	In this page you can find all posts from our site.
