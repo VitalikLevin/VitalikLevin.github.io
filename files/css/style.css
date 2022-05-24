@@ -61,6 +61,10 @@ footer {
 	margin-left: 8px;
 }
 
+.crumb ul {
+  list-style-type: none;
+}
+
 @media screen and (orientation: portrait) {
 	.img400 {
 		width: 75%;
