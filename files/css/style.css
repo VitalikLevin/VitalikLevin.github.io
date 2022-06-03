@@ -43,8 +43,8 @@ footer {
 	font-family: zillaslab;
 }
 
-.language-plaintext highlighter-rouge {
-	font-family: libitalic;
+.language-plaintext highlighter-rouge, code {
+	font-family: libitalic, monospace;
 }
 
 .top {
@@ -56,9 +56,16 @@ footer {
 	font-size: 16px;
 }
 
+header h2 img {
+	width: 32px;
+	height: 32px;
+}
+
 .pubDat img {
 	margin-right: 8px;
 	margin-left: 8px;
+	width: 24px;
+	height: 24px;
 }
 
 .crumb ul {
