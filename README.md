@@ -2,7 +2,7 @@
 
 [![CC-BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-darklight.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
-Readme was eaten by ```VitalikLevin```.
+Readme was eaten by `VitalikLevin`.
 
 - [The License](/LICENSE.txt)
 - [The Code of Conduct](/CODE_OF_CONDUCT.md)
@@ -10,7 +10,7 @@ Readme was eaten by ```VitalikLevin```.
 ![Worm in Space](files/images/spaceworm.png#gh-light-mode-only)
 ![Worm in Real Space](files/images/spaceworm-dark.png#gh-dark-mode-only)
 
-### Links
+## Links
 
 - [Main page](https://vitaliklevin.github.io/)
   - [Real 404 Page](https://vitaliklevin.github.io/404.html)
