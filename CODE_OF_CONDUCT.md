@@ -1,4 +1,10 @@
-# Contributor Covenant Code of Conduct
+---
+layout: article
+title: Contributor Covenant Code of Conduct
+excerpt: Network Worms' Code of Conduct
+lang: en-US
+permalink: /code-of-conduct/
+---
 
 ## Our Pledge
 
@@ -60,7 +66,7 @@ representative at an online or offline event.
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the community leaders responsible for enforcement at
-network_worms@mail.ru.
+[network_worms@mail.ru](mailto:network_worms@mail.ru).
 All complaints will be reviewed and investigated promptly and fairly.
 
 All community leaders are obligated to respect the privacy and security of the

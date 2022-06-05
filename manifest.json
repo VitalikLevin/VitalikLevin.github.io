@@ -1,7 +1,10 @@
 {
 	"dir": "ltr",
+	"lang": "en-US",
 	"name": "Network Worms",
 	"short_name": "NetWorms",
+	"description": "We make apps for PC not PCs for apps",
+	"categories": [ "games", "rpg", "strategy" ],
 	"icons": [
 		{
 			"src": "/files/icons/favicon192.png",
@@ -12,10 +15,16 @@
 			"src": "files/icons/favicon.svg",
 			"sizes": "any",
 			"type": "image/svg+xml"
+		},
+		{
+			"src": "files/icons/favicon.ico",
+			"sizes": "16x16 32x32 48x48 64x64",
+			"type": "image/x-icon"
 		}
 	],
 	"theme_color": "#121212",
 	"background_color": "#f4f4f4",
 	"start_url": "/",
+	"orientation": "any",
 	"display": "standalone"
 }
