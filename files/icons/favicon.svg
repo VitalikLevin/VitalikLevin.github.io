@@ -17,7 +17,8 @@
 		]]></style>
 	</defs>
 	<title>Wormfolder</title>
-	<rect width="215"
+	<rect id="folder"
+    width="215"
 		height="108"
 		x="21"
 		y="86"/>
