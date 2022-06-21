@@ -6,61 +6,58 @@
 	<defs>
 		<style type="text/css"><![CDATA[
 			#folder, #tab {
-				fill: #f9ad81;
+				fill: rgb(246, 170, 126);
 			}
-			#xSymbol, #w1, #w2, #mouth {
-				fill: #f4f4f4;
+			#w1, #w2, #mouth, #xSymbol {
+				fill: rgb(244, 244, 244);
 			}
 			#b1, #b2 {
-				fill: #121212;
+				fill: rgb(18, 18, 18);
 			}
 		]]></style>
 	</defs>
 	<title>Wormfolder</title>
 	<rect id="folder"
-    width="215"
-		height="108"
-		x="21"
-		y="86"/>
+		width="224"
+		height="128"
+		x="16"
+		y="80" />
 	<rect id="tab"
-		width="90"
+		width="80"
 		height="32"
-		x="26"
-		y="56" />
-	<g id="xSymbol">
-		<rect id="line1"
-			width="16"
+		x="32"
+		y="48" />
+	<g id="xSymbol"
+		transform="rotate (45, 96, 64)">
+		<rect width="2"
+			height="16"
+			x="95"
+			y="56"/>
+		<rect width="16"
 			height="2"
-			x="-30"
-			y="-124"
-			transform="rotate(135)" />
-		<rect id="line2"
-			width="16"
-			height="2"
-			x="114"
-			y="-23"
-			transform="rotate(45)" />
+			x="88"
+			y="63"/>
 	</g>
 	<g>
 		<circle id="w1"
-			cx="180"
-			cy="167"
+			cx="160"
+			cy="172"
 			r="22" />
 		<circle id="b1"
-			cx="192"
-			cy="167"
+			cx="168"
+			cy="180"
 			r="10" />
 	</g>
 	<g>
 		<circle id="w2"
-			cx="212"
-			cy="135"
+			cx="208"
+			cy="132"
 			r="22" />
 		<circle id="b2"
-			cx="217"
-			cy="143"
+			cx="212"
+			cy="142"
 			r="10" />
 	</g>
-	<path d="m 200,188 25,-30 v 0 c 5,27 -13,32 -25,30 z"
+	<path d="m 192,192 25,-30 v 0 c 5,27 -13,32 -25,30 z"
 		id="mouth" />
 </svg>

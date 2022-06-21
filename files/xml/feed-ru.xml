@@ -9,7 +9,7 @@
 		<description>E = M(C x C)</description>
 		<language>ru</language>
 		<item turbo="true">
-			<title>История рикролла</title>
+			<title>Тест турбо-блога</title>
 			<turbo:extendedHtml>true</turbo:extendedHtml>
 			<link>https://vitaliklevin.github.io/2022/04/08/second-post/</link>
 			<turbo:source>https://vitaliklevin.github.io/2022/04/08/second-post/</turbo:source>
