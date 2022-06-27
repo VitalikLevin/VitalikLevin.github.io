@@ -1,7 +1,7 @@
 title: Network Worms
 description: We make apps for PC not PCs for apps
 author: Vitaliy Levin
-encoding: utf-8
+encoding: "UTF-8"
 permalink: pretty
 highlighter: rogue
 url: https://vitaliklevin.github.io
@@ -11,3 +11,7 @@ plugins:
   - jekyll-feed
 paginate: 10
 paginate_path: "blog/:num"
+exclude:
+  - CODE_OF_CONDUCT.md
+  - LICENSE.txt
+  - README.md

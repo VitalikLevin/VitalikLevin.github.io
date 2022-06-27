@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /LICENSE.txt
-Disallow: /CODE_OF_CONDUCT.md
 Disallow: /*?
 # Yandex.Robots
 User-agent: Yandex *
