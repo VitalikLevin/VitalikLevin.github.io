@@ -1,0 +1,24 @@
+<svg version="1.1"
+	width="256"
+	height="256"
+	viewBox="0 0 256 256"
+	xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css"><![CDATA[
+			#folder, #tab {
+				fill: rgb(244, 244, 244);
+			}
+		]]></style>
+  </defs>
+  <title>Wormfolder's Body</title>
+  <rect id="folder"
+		width="224"
+		height="128"
+		x="16"
+		y="80" />
+	<rect id="tab"
+		width="80"
+		height="32"
+		x="32"
+		y="48" />
+</svg>
