@@ -28,7 +28,7 @@
     text-anchor="middle"
     text-rendering="geometricPrecision" font-size="110">
     <text x="505" y="140"
-      transform="scale(.1)"
+      transform="scale(0.1)"
       id="text1" textLength="890">
       Network Worms
     </text>
