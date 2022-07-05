@@ -5,20 +5,18 @@
 	xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style type="text/css"><![CDATA[
-			#folder, #tab {
+			svg {
 				fill: rgb(244, 244, 244);
 			}
 		]]></style>
   </defs>
   <title>Wormfolder's Body</title>
-  <rect id="folder"
-		width="224"
+  <rect width="224"
 		height="128"
 		x="16"
-		y="80" />
-	<rect id="tab"
-		width="80"
+		y="80"/>
+	<rect width="80"
 		height="32"
 		x="32"
-		y="48" />
+		y="48"/>
 </svg>
