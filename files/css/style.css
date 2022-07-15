@@ -1,7 +1,7 @@
 @import url(fonts.css);
 
 body {
-	font-family: liberastika;
+	font-family: liberastika, sans-serif;
 }
 
 strong {
