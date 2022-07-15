@@ -1,13 +1,4 @@
 @font-face {
-	font-family: "zantroke";
-	src: url("../fonts/zantroke.woff2") format("woff2"),
-		url("../fonts/zantroke.woff") format("woff"),
-		url("../fonts/zantroke.otf") format("opentype");
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
 	font-family: "zillaslab";
 	src: url("../fonts/zilla_slab.woff2") format("woff2"),
 		url("../fonts/zilla_slab.woff") format("woff"),
