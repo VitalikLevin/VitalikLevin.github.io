@@ -14,11 +14,11 @@ nav, main, footer, h3 {
 
 blockquote {
 	color: rgb(177, 177, 177);
-	border-left: 3px solid rgb(0, 173, 239);
+	border-left: 3px solid rgb(100, 181, 246);
 }
 
 .start, a {
-	color: rgb(93, 138, 168);
+	color: rgb(100, 181, 246);
 }
 
 .blog {

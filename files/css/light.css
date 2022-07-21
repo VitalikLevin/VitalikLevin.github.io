@@ -10,15 +10,15 @@ header h2, header h2 a, header h2 a:visited {
 
 h3 {
 	color: rgb(246, 170, 126);
-	text-shadow: 1px 1px 1px rgb(20, 20, 20);
+	text-shadow: 1px 1px 1px rgb(18, 18, 18);
 }
 
 blockquote {
-	border-left: 3px solid rgb(255, 82, 16);
+	border-left: 3px solid rgb(244, 67, 54);
 }
 
 .start, a {
-	color: rgb(93, 138, 168);
+	color: rgb(100, 181, 246);
 }
 
 .blog {
@@ -27,9 +27,9 @@ blockquote {
 }
 
 a:visited {
-	color: rgb(246, 170, 126);
+	color: rgb(249, 168, 37);
 }
 
-.top {
+.svg {
 	filter: invert(100%);
 }

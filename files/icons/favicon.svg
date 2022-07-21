@@ -1,6 +1,4 @@
 <svg version="1.1"
-	width="256"
-	height="256"
 	viewBox="0 0 256 256"
 	xmlns="http://www.w3.org/2000/svg">
 	<defs>
@@ -20,23 +18,19 @@
 	<rect id="folder"
 		width="224"
 		height="128"
-		x="16"
-		y="80" />
+		x="16" y="80" />
 	<rect id="tab"
 		width="80"
 		height="32"
-		x="32"
-		y="48" />
+		x="32" y="48" />
 	<g id="xSymbol"
-		transform="rotate (45, 96, 64)">
+		transform="rotate(45, 96, 64)">
 		<rect width="2"
 			height="16"
-			x="95"
-			y="56"/>
+			x="95" y="56"/>
 		<rect width="16"
 			height="2"
-			x="88"
-			y="63"/>
+			x="88" y="63"/>
 	</g>
 	<g>
 		<circle id="w1"
