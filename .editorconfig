@@ -5,6 +5,6 @@ max_line_length = off
 [*.{html,md,xml,yml}]
 indent_style = space
 indent_size = 2
-[*.{css,js,svg}]
+[*.{css,js,json,svg}]
 indent_style = tabs
 indent_size = 2
