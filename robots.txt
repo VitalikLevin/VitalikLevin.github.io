@@ -1,5 +1,6 @@
 User-agent: *
 Disallow: /*?
+Disallow: /*#
 # Yandex.Robots
 User-agent: Yandex *
 Disallow: /feed.xml
