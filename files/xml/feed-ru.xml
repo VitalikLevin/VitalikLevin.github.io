@@ -13,8 +13,8 @@
 			<turbo:extendedHtml>true</turbo:extendedHtml>
 			<link>https://vitaliklevin.github.io/2022/04/08/second-post/</link>
 			<turbo:source>https://vitaliklevin.github.io/2022/04/08/second-post/</turbo:source>
-			<turbo:topic>Юмор в интернете</turbo:topic>
-			<pubDate>Fri, 08 Apr 2022 19:00:00 +0300</pubDate>
+			<turbo:topic>Очень несмешные баяны</turbo:topic>
+			<pubDate>Fri, 05 Aug 2022 19:00:00 +0300</pubDate>
 			<author>Виталий Лёвин</author>
 			<turbo:content>
 				<![CDATA[
@@ -27,6 +27,10 @@
 						<p>
 							Все &#34;любят&#34; rickroll'ы. 
 							Но немногие знают о существовании duckroll'ов.
+						</p>
+						<h3>Дополнение к статье</h3>
+						<p>
+							Эксперимент оказался неудачным.
 						</p>
 					</main>
 					<footer>

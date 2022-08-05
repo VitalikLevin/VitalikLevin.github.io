@@ -1,7 +1,8 @@
 title: Network Worms
-description: We make apps for PC not PCs for apps
+description: We make software for PC not PCs for software
 author: Vitaliy Levin
 encoding: "UTF-8"
+timezone: Europe/Moscow
 permalink: pretty
 highlighter: rogue
 url: https://vitaliklevin.github.io
