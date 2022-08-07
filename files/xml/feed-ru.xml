@@ -13,8 +13,8 @@
 			<turbo:extendedHtml>true</turbo:extendedHtml>
 			<link>https://vitaliklevin.github.io/2022/04/08/second-post/</link>
 			<turbo:source>https://vitaliklevin.github.io/2022/04/08/second-post/</turbo:source>
-			<turbo:topic>Очень несмешные баяны</turbo:topic>
-			<pubDate>Fri, 05 Aug 2022 19:00:00 +0300</pubDate>
+			<turbo:topic>Тесты</turbo:topic>
+			<pubDate>Sun, 07 Aug 2022 23:00:00 +0300</pubDate>
 			<author>Виталий Лёвин</author>
 			<turbo:content>
 				<![CDATA[
@@ -25,12 +25,14 @@
 					</header>
 					<main>
 						<p>
-							Все &#34;любят&#34; rickroll'ы. 
-							Но немногие знают о существовании duckroll'ов.
+							Добро пожаловать на наш блог, USERNAME.
 						</p>
-						<h3>Дополнение к статье</h3>
+						<h3>Как найти блог</h3>
 						<p>
-							Эксперимент оказался неудачным.
+							<ol>
+								<li>Кликните на надпись "Blog" в начале оригинального поста</li>
+								<li>Напишите в поисковой строке <code>https://vitaliklevin.github.io/blog/</code></li>
+							</ol>
 						</p>
 					</main>
 					<footer>
