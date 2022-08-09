@@ -1,8 +1,7 @@
 # Visual Studio and VS Code Cache
-
 .vscode/
 .vs/
-
 # Windows Cache
-
 desktop.ini
+# Local Test Cache Directory
+_site/

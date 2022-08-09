@@ -33,3 +33,7 @@ a:visited {
 .svg {
 	filter: invert(100%);
 }
+
+#cookHate {
+	border-left: 3px solid rgb(244, 60, 54);
+}

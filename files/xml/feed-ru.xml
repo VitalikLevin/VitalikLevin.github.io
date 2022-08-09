@@ -6,7 +6,7 @@
 	<channel>
 		<title>Network Worms</title>
 		<link>https://vitaliklevin.github.io/</link>
-		<description>E = M(C x C)</description>
+		<description>E = M x (C x C)</description>
 		<language>ru</language>
 		<item turbo="true">
 			<title>Тест турбо-блога</title>
@@ -31,7 +31,7 @@
 						<p>
 							<ol>
 								<li>Кликните на надпись "Blog" в начале оригинального поста</li>
-								<li>Напишите в поисковой строке <code>https://vitaliklevin.github.io/blog/</code></li>
+								<li>Напишите в поисковой строке <i>https://vitaliklevin.github.io/blog/</i></li>
 							</ol>
 						</p>
 					</main>

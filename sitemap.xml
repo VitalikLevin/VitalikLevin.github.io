@@ -4,31 +4,31 @@
 	xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 	<url>
 		<loc>https://vitaliklevin.github.io/</loc>
-		<lastmod>2022-08-03</lastmod>
+		<lastmod>2022-08-09</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://vitaliklevin.github.io/blog/</loc>
-		<lastmod>2022-08-03</lastmod>
+		<lastmod>2022-08-09</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://vitaliklevin.github.io/games/</loc>
-		<lastmod>2022-08-03</lastmod>
+		<lastmod>2022-08-09</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.8</priority>
 	</url>
 	<url>
 		<loc>https://vitaliklevin.github.io/games/bsa/</loc>
-		<lastmod>2022-08-03</lastmod>
+		<lastmod>2022-08-09</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 	<url>
 		<loc>https://vitaliklevin.github.io/games/nves/</loc>
-		<lastmod>2022-08-03</lastmod>
+		<lastmod>2022-08-09</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
