@@ -17,7 +17,7 @@
 }
 
 @font-face {
-	font-family: "libold";
+	font-family: "liberastika";
 	src: url("../fonts/liberastika_bold.woff2") format("woff2"),
 		url("../fonts/liberastika_bold.woff") format("woff"),
 		url("../fonts/liberastika_bold.ttf") format("truetype");
@@ -26,7 +26,7 @@
 }
 
 @font-face {
-	font-family: "libitalic";
+	font-family: "liberastika";
 	src: url("../fonts/liberastika_italic.woff2") format("woff2"),
 		url("../fonts/liberastika_italic.woff") format("woff"),
 		url("../fonts/liberastika_italic.ttf") format("truetype");
@@ -35,7 +35,7 @@
 }
 
 @font-face {
-	font-family: "libolditalic";
+	font-family: "liberastika";
 	src: url("../fonts/liberastika_bolditalic.woff2") format("woff2"),
 		url("../fonts/liberastika_bolditalic.woff") format("woff"),
 		url("../fonts/liberastika_bolditalic.ttf") format("truetype");

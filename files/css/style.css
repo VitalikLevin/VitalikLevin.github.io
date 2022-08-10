@@ -5,7 +5,8 @@ body {
 }
 
 strong {
-	font-family: libold;
+	font-family: liberastika;
+	font-weight: bold;
 }
 
 header h2, header h2 a {
@@ -28,7 +29,8 @@ footer {
 }
 
 .start {
-	font-family: libold, serif;
+	font-family: liberastika, serif;
+	font-weight: bold;
 }
 
 .blog {
@@ -43,8 +45,9 @@ footer {
 	font-family: zillaslab;
 }
 
-.language-plaintext highlighter-rouge, code {
-	font-family: libitalic, monospace;
+.language-plaintext\ highlighter-rouge, code {
+	font-family: liberastika, monospace;
+	font-style: italic;
 }
 
 .top {
@@ -52,8 +55,9 @@ footer {
 }
 
 .pubDat {
-	font-family: libitalic;
+	font-family: liberastika;
 	font-size: 16px;
+	font-style: italic;
 }
 
 header h2 img {

@@ -2,7 +2,7 @@ function checkCookies(){
     let cookieDate = localStorage.getItem('cookieDate');
     let cooknote = document.querySelector('#cooknote');
     let cookieBtn = cooknote.querySelector('.cookagree');
-    if( !cookieDate || (+cookieDate + 31536000000) < Date.now() ){
+    if( !cookieDate || (+cookieDate + 31536000000) < Date.now() || document.cookie == null ){
         cooknote.classList.add('show');
     }
     cookieBtn.addEventListener('click', function(){
