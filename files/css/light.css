@@ -34,6 +34,11 @@ a:visited {
 	filter: invert(100%);
 }
 
-#cookHate {
+#cooknote.show {
 	border-left: 3px solid rgb(244, 60, 54);
+}
+
+#cooknote button {
+	background-color: rgb(244, 60, 54);
+	color: rgb(244, 244, 244);
 }

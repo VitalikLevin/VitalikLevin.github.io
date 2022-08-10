@@ -61,7 +61,7 @@ header h2 img {
 	height: 32px;
 }
 
-.pubDat img, #cookHate h3 img {
+.pubDat img, #cooknote h3 img {
 	margin-right: 8px;
 	margin-left: 8px;
 	width: 24px;
@@ -72,8 +72,13 @@ header h2 img {
   list-style-type: none;
 }
 
-#cookHate {
+#cooknote {
 	margin: 0px;
+	display: none;
+}
+
+#cooknote.show {
+	display: block;
 	padding-left: 10px;
 }
 
