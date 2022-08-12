@@ -86,6 +86,10 @@ header h2 img {
 	padding-left: 10px;
 }
 
+.cookagree {
+	border-radius: 4px;
+}
+
 @media screen and (orientation: portrait) {
 	.img400 {
 		width: 75%;

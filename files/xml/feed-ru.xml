@@ -25,13 +25,13 @@
 					</header>
 					<main>
 						<p>
-							Добро пожаловать на наш блог, USERNAME.
+							Добро пожаловать на наш блог, <code>USERNAME</code>.
 						</p>
 						<h3>Как найти блог</h3>
 						<p>
 							<ol>
 								<li>Кликните на надпись "Blog" в начале оригинального поста</li>
-								<li>Напишите в поисковой строке <i>https://vitaliklevin.github.io/blog/</i></li>
+								<li>Напишите в поисковой строке <code>https://vitaliklevin.github.io/blog/</code></li>
 							</ol>
 						</p>
 					</main>
