@@ -7,6 +7,7 @@ permalink: pretty
 highlighter: rogue
 url: https://vitaliklevin.github.io
 license: https://creativecommons.org/licenses/by-sa/4.0/
+status: /files/icons/favicon.svg
 plugins:
   - jekyll-paginate
   - jekyll-feed
