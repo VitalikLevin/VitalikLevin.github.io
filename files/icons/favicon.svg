@@ -13,6 +13,9 @@
 				fill: rgb(18, 18, 18);
 			}
 		]]></style>
+		<clipPath id="mouthClip">
+			<rect x="176" y="160" width="32" height="16"/>
+		</clipPath>
 	</defs>
 	<title>Wormfolder</title>
 	<rect id="folder"
@@ -33,6 +36,6 @@
 		<circle cx="168" cy="180" r="10"/>
 		<circle cx="212" cy="142" r="10" />
 	</g>
-	<path d="m 192,192 25,-30 v 0 c 5,27 -13,32 -25,30 z"
-		id="mouth" />
+	<ellipse cx="192" cy="176" rx="16" ry="16" transform="rotate(135, 200, 178)"
+		clip-path="url(#mouthClip)" id="mouth"/>
 </svg>
