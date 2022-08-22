@@ -90,6 +90,10 @@ header h2 img {
 	border-radius: 4px;
 }
 
+.imgs {
+	padding-left: 10px;
+}
+
 @media screen and (orientation: portrait) {
 	.img400 {
 		max-width: 75%;
