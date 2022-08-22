@@ -19,17 +19,13 @@
   </defs>
   <title>Wormfolder</title>
   <rect id="folder"
-     width="224" height="128"
-     x="16" y="80" />
+    width="224" height="128"
+    x="16" y="80" />
   <rect id="tab"
-    width="80" height="33"
-    x="32" y="48" />
-  <g id="xSymbol"
-    transform="rotate(45, 96, 64)">
-    <rect width="2" height="16"
-      x="95" y="56"/>
-    <rect width="16" height="2"
-      x="88" y="63"/>
+    width="80" height="33" x="32" y="48" />
+  <g id="xSymbol" transform="rotate(45, 96, 64)">
+    <rect width="2" height="16" x="95" y="56"/>
+    <rect width="16" height="2" x="88" y="63"/>
   </g>
   <g id="wh">
     <circle cx="164" cy="178" r="22"/>
