@@ -5,6 +5,7 @@
 		url("../fonts/zilla_slab.otf") format("opentype");
 	font-weight: normal;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
@@ -14,6 +15,7 @@
 		url("../fonts/liberastika_regular.ttf") format("truetype");
 	font-weight: normal;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
@@ -23,6 +25,7 @@
 		url("../fonts/liberastika_bold.ttf") format("truetype");
 	font-weight: bold;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
@@ -32,6 +35,7 @@
 		url("../fonts/liberastika_italic.ttf") format("truetype");
 	font-weight: normal;
 	font-style: italic;
+	font-display: swap;
 }
 
 @font-face {
@@ -41,4 +45,5 @@
 		url("../fonts/liberastika_bolditalic.ttf") format("truetype");
 	font-weight: bold;
 	font-style: italic;
+	font-display: swap;
 }

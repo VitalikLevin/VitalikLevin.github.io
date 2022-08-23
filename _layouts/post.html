@@ -20,7 +20,7 @@ layout: b-default
 		</li>
 		<li itemprop="itemListElement" itemscope
 				itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="{{ site.url }}{{ page.canon }}">
+			<a itemprop="item" href="{{ site.url }}{{ page.permalink }}">
 				<span itemprop="name">{{ page.title }}</span>
 			</a>
 			<meta itemprop="position" content="3" />
@@ -30,7 +30,7 @@ layout: b-default
 <main>
 	<h2 class="start">{{ page.title }}</h2>
 	<span class="pubDat">
-		<img src="{{ "../files/svg/1f4c6.svg" | relative_url }}">
+		<img src="{{ "../files/svg/1f4c6.svg" | relative_url }}" alt="Tear-off Calendar"/>
 		{{ page.date | date: "%d.%m.%Y" }}
 	</span>
 	{{ content }}
