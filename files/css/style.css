@@ -50,7 +50,7 @@ footer {
 	font-style: italic;
 }
 
-.top {
+.svg {
 	visibility: hidden;
 }
 
@@ -99,7 +99,7 @@ header h2 img {
 		max-width: 75%;
 		max-height: 75%;
 	}
-	.top {
+	.svg {
 		float: right;
 		visibility: visible;
 	}
