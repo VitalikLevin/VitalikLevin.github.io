@@ -88,10 +88,13 @@ header h2 img {
 
 .cookagree {
 	border-radius: 4px;
+	background-color: transparent;
+	border-color: transparent;
+	font-weight: bold;
 }
 
-.imgs {
-	padding-left: 10px;
+footer {
+	padding-left: 7px;
 }
 
 @media screen and (orientation: portrait) {

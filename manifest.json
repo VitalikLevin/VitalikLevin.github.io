@@ -11,15 +11,26 @@
 			"type": "image/svg+xml"
 		},
 		{
+			"src": "/files/icons/mask512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "maskable"
+		},
+		{
 			"src": "/files/icons/favicon512.png",
 			"sizes": "512x512",
 			"type": "image/png"
 		},
 		{
-			"src": "/files/icons/favicon192.png",
+			"src": "/files/icons/mask192.png",
 			"sizes": "192x192",
 			"type": "image/png",
-			"purpose": "any maskable"
+			"purpose": "maskable"
+		},
+		{
+			"src": "/files/icons/favicon192.png",
+			"sizes": "192x192",
+			"type": "image/png"
 		},
 		{
 			"src": "favicon.ico",
