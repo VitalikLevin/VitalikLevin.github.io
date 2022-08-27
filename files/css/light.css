@@ -8,10 +8,6 @@ header h2, header h2 a, header h2 a:visited {
 	color: rgb(244, 244, 244);
 }
 
-header h2 img {
-	box-shadow: 1px 1px 1px rgb(18, 18, 18);
-}
-
 h3 {
 	color: rgb(246, 170, 126);
 	text-shadow: 1px 1px 1px rgb(18, 18, 18);
