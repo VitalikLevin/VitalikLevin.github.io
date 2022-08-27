@@ -12,9 +12,6 @@
 			#bl {
 				fill: rgb(18, 18, 18);
 			}
-      svg:hover {
-        stroke: rgb(18, 18, 18);
-      }
 		]]></style>
     <clipPath id="mouthClip">
       <rect x="174" y="158" width="36" height="20"/>
