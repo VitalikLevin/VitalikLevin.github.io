@@ -3,16 +3,14 @@
 		<img src="/files/svg/1f36a.svg" alt="Cookie"/>
 		Important Message
 	</h3>
-	{% if page.lang == 'en-US' %}
 	<p>
-		We use <code>cookies</code> and <code>localStorage</code>. But you can turn these things off in the settings of your browser.
-	</p>
+	{% if page.lang == 'en-US' %}
+		We use <code>cookies</code> and <code>localStorage</code>. But you can turn these things off in the settings of the browser.
 	{% endif %}
 	{% if page.lang == 'ru' %}
-	<p>
-		Мы используем <code>cookies</code> и <code>localStorage</code>. Но вы можете их отключить в настройках вашего браузера.
-	</p>
+		Мы используем <code>cookies</code> и <code>localStorage</code>. Чтобы их отключить, зайдите в настройки браузера.
 	{% endif %}
+	</p>
 	<button class="cookagree">OK</button>
 </div>
 <footer id="footer">
