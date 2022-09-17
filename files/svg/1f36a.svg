@@ -3,12 +3,8 @@
 	xmlns="http://www.w3.org/2000/svg">
 	<defs>
 		<style type="text/css"><![CDATA[
-			#c1 {
-				fill: rgb(218, 159, 131);
-			}
-			#cg {
-				fill: rgb(138, 75, 56);
-			}
+			#c1 { fill: rgb(218, 159, 131); }
+			#cg { fill: rgb(138, 75, 56); }
 		]]></style>
 	</defs>
 	<title>Cookie</title>

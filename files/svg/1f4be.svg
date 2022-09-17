@@ -1,6 +1,22 @@
 <svg version="1.1" width="128" height="128"
   viewbox="0 0 128 128"
   xmlns="http://www.w3.org/2000/svg">
-  <defs></defs>
+  <defs>
+		<style type="text/css"><![CDATA[
+			#body { fill: rgb(55, 55, 55); }
+			#r1 { fill: rgb(33, 33, 33); }
+			#w1, #w2 { fill: rgb(244, 244, 244); }
+		]]></style>
+		<clipPath id="w1clip">
+      <rect x="64" y="16" width="32" height="4"/>
+			<rect x="64" y="44" width="32" height="4"/>
+			<rect x="64" y="16" width="12" height="32"/>
+			<rect x="90" y="16" width="6" height="32"/>
+    </clipPath>
+	</defs>
   <title>Floppy Disk</title>
+	<polygon id="body" points="16 16, 96 16, 112 32, 112 112, 16 112, 16 16"/>
+	<rect id="r1" x="32" y="16" width="64" height="32"/>
+	<rect id="w1" x="64" y="16" width="32" height="32" clip-path="url(#w1clip)"/>
+	<rect id="w2" x="32" y="64" width="64" height="48"/>
 </svg>
