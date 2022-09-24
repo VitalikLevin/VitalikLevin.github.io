@@ -3,15 +3,9 @@
   xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style type="text/css"><![CDATA[
-			#folder {
-				fill: rgb(246, 170, 126);
-			}
-			#wh, #mouth, #xSymbol {
-				fill: rgb(244, 244, 244);
-			}
-			#bl {
-				fill: rgb(18, 18, 18);
-			}
+			#folder { fill: rgb(246, 170, 126); }
+			#wh, #mouth, #xSymbol { fill: rgb(244, 244, 244); }
+			#bl { fill: rgb(18, 18, 18); }
 		]]></style>
     <clipPath id="mouthClip">
       <rect x="174" y="158" width="36" height="20"/>
