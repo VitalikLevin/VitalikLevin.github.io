@@ -33,15 +33,7 @@ footer {
 	font-weight: bold;
 }
 
-.blog {
-	margin: 0px;
-}
-
-.blog a {
-	text-decoration: none;
-}
-
-.num, .blog {
+.num, .pubDat {
 	font-family: zillaslab;
 }
 
@@ -55,9 +47,7 @@ footer {
 }
 
 .pubDat {
-	font-family: liberastika;
 	font-size: 16px;
-	font-style: italic;
 }
 
 header h2 img {
@@ -87,7 +77,6 @@ header h2 img {
 }
 
 .cookagree {
-	border-radius: 4px;
 	background-color: transparent;
 	border-color: transparent;
 	font-weight: bold;
