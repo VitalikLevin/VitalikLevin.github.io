@@ -8,7 +8,7 @@ highlighter: rogue
 url: https://vitaliklevin.github.io
 port: 1337
 license: https://creativecommons.org/licenses/by-sa/4.0/
-status: /files/icons/favicon.svg
+status: /files/svg/1f973.svg
 plugins:
   - jekyll-paginate
   - jekyll-feed

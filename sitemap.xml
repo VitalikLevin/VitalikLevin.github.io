@@ -3,31 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 	<url>
 		<loc>https://vitaliklevin.github.io/</loc>
-		<lastmod>2022-10-27</lastmod>
+		<lastmod>2022-10-30</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://vitaliklevin.github.io/blog/</loc>
-		<lastmod>2022-10-27</lastmod>
+		<lastmod>2022-10-30</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://vitaliklevin.github.io/games/</loc>
-		<lastmod>2022-10-27</lastmod>
+		<lastmod>2022-10-30</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.8</priority>
 	</url>
 	<url>
 		<loc>https://vitaliklevin.github.io/games/bsa/</loc>
-		<lastmod>2022-10-27</lastmod>
+		<lastmod>2022-10-30</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 	<url>
 		<loc>https://vitaliklevin.github.io/games/nves/</loc>
-		<lastmod>2022-10-27</lastmod>
+		<lastmod>2022-10-30</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
