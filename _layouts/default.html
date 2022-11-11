@@ -19,24 +19,24 @@
 		<meta name="theme-color" content="#121212">
 		<meta name="application-name" content="{{ site.title }}">
 		<meta name="msapplication-tooltip" content="{{ site.title }}">
-		<meta property="og:title" content="{{ page.title }} - Network Worms" />
-		<meta property="og:description" content="{{ page.excerpt | default: site.description }}" />
-		<meta property="og:url" content="{{ site.url }}{{ page.permalink }}" />
-		<meta property="og:type" content="website" />
-		<meta property="og:image" content="{{ "../files/images/spaceworm.png" | relative_url }}" />
-		<meta property="og:image:type" content="image/png" />
-		<meta property="og:image:width" content="400" />
-		<meta property="og:image:height" content="300" />
-		<meta property="og:image:alt" content="A pink worm in space" />
-		<meta property="og:locale" content="en_US" />
-		<meta property="og:locale:alternate" content="ru_RU" />
+		<meta property="og:title" content="{{ page.title }} - Network Worms">
+		<meta property="og:description" content="{{ page.excerpt | default: site.description }}">
+		<meta property="og:url" content="{{ site.url }}{{ page.permalink }}">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="{{ "../files/images/spaceworm.png" | relative_url }}">
+		<meta property="og:image:type" content="image/png">
+		<meta property="og:image:width" content="400">
+		<meta property="og:image:height" content="300">
+		<meta property="og:image:alt" content="A pink worm in space">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:locale:alternate" content="ru_RU">
 		{% if jekyll.environment == 'production' %}
 		{% include tracking.html %}
 		{% endif %}
-		<script type="text/javascript" defer src="{{ "../files/js/app.js" | relative_url }}"></script>
-		<meta name="yandex-verification" content="b24725ffa2e7d4a6" />
-		<meta name="google-site-verification" content="yahAonXkmtS9ASTgJphU5M3HR9fHyvOG6pXX4kzQ2pw" />
-		<meta name="msvalidate.01" content="0B6583F3F8C1659E185F49DB6386D481" />
+		<script defer src="{{ "../files/js/app.js" | relative_url }}"></script>
+		<meta name="yandex-verification" content="b24725ffa2e7d4a6">
+		<meta name="google-site-verification" content="yahAonXkmtS9ASTgJphU5M3HR9fHyvOG6pXX4kzQ2pw">
+		<meta name="msvalidate.01" content="0B6583F3F8C1659E185F49DB6386D481">
 	</head>
 	<body>
 		{{ content }}
