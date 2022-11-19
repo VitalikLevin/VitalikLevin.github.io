@@ -1,7 +1,7 @@
 <!--noindex-->
 <div id="cooknote">
 	<h3>
-		<img src="{{ "../files/svg/1f36a.svg" | relative_url }}" alt="Cookie">
+		<img src="/files/svg/1f36a.svg" alt="Cookie">
 		{% if page.lang == 'en-US'%}Important Message{% endif %}
 		{% if page.lang == 'ru' %}Важное сообщение{% endif %}
 	</h3>
@@ -24,16 +24,16 @@
 		{% if page.lang == 'ru' %}
 		Содержимое доступно по лицензии <a href="{{ site.license }}">Creative Commons Attribution Share Alike 4.0 International</a>.<br>
 		{% endif %}
-		<div class="imgs">
-			<img src="{{ "../files/svg/by-sa.svg" | relative_url }}"
-				width="120px" height="42px"
-				alt="CC-BY-SA 4.0">
-			<a class="top" href="#top">
-				<img src="{{ "../files/svg/top.svg" | relative_url }}"
-					width="42px" height="42px"
-					alt="Top">
-			</a>
-		</div>
 	</p>
+	<div class="imgs">
+		<img src="/files/svg/by-sa.svg" alt="CC-BY-SA 4.0"
+			width="120px" height="42px">
+		<a class="top" href="#top">
+			<object type="image/svg+xml"
+				data="/files/svg/top.svg"
+				width="42px" height="42px">
+			</object>
+		</a>
+	</div>
 </footer>
 <!--/noindex-->

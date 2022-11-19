@@ -24,8 +24,8 @@ a:visited {
 	color: rgb(249, 168, 37);
 }
 
-.top {
-	filter: invert(100%);
+.backtotop {
+	fill: rgb(18, 18, 18);
 }
 
 #cooknote.show {
