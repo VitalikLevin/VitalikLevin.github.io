@@ -9,6 +9,7 @@ url: https://vitaliklevin.github.io
 port: 1337
 license: https://creativecommons.org/licenses/by-sa/4.0/
 status: /files/icons/favicon.svg
+og_p: /files/images/spaceworm.png
 plugins:
   - jekyll-paginate
   - jekyll-feed
