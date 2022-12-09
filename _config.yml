@@ -10,6 +10,7 @@ port: 1337
 license: https://creativecommons.org/licenses/by-sa/4.0/
 status: /files/icons/favicon.svg
 og_p: /files/images/spaceworm.png
+og_pa: A pink worm in space
 plugins:
   - jekyll-paginate
   - jekyll-feed

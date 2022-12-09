@@ -28,6 +28,11 @@ layout: b-default
 	</ul>
 </div>
 <main>
+	<div itemscope itemtype="http://schema.org/ImageObject" class="image">
+		<meta itemprop="name" content="{{ page.title }}">
+		<img class="img400" src="{{ page.mainpic }}" itemprop="contentUrl"><br>
+		<span itemprop="description">{{ page.mp-desc }}</span>
+	</div>
 	<h2 class="start">{{ page.title }}</h2>
 	<span class="pubDat">
 		<img src="{{ "../files/svg/1f4c6.svg" | relative_url }}" alt="Tear-off Calendar">

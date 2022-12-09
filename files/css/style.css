@@ -33,7 +33,7 @@ footer {
 	font-weight: bold;
 }
 
-.num, .pubDat {
+.num, .pubDat, .image span {
 	font-family: zillaslab;
 }
 
@@ -80,6 +80,11 @@ header h2 img {
 	background-color: transparent;
 	border-color: transparent;
 	font-weight: bold;
+}
+
+.image {
+	margin-left: 5px;
+	padding-top: 5px;
 }
 
 footer {
