@@ -3,7 +3,7 @@ layout: post
 title: The First Post
 excerpt: There is no jokes in this post.
 mainpic: /files/images/first-post.png
-mp-desc: A debugging worm.
+mp-desc: A debugging worm
 date: 2022-04-08 23:00:00 +0300
 lang: en-US
 tag: en
