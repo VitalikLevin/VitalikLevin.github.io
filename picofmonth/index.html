@@ -1,0 +1,47 @@
+---
+layout: default
+lang: en-US
+title: Picture of the Month
+excerpt: A gallery for our pictures.
+permalink: /picofmonth/
+---
+{% include header.html %}
+<div class="crumb">
+	<ul itemscope itemtype="https://schema.org/BreadcrumbList">
+		<li itemprop="itemListElement" itemscope
+			itemtype="https://schema.org/ListItem">
+			<a itemprop="item" href="{{ site.url }}/">
+				<span itemprop="name">Network Worms</span>
+			</a>
+			<meta itemprop="position" content="1">
+		</li>
+		<li itemprop="itemListElement" itemscope
+			itemtype="https://schema.org/ListItem">
+			<a itemprop="item" href="{{ site.url }}/picofmonth/">
+				<span itemprop="name">Picture of the Month</span>
+			</a>
+			<meta itemprop="position" content="2">
+		</li>
+	</ul>
+</div>
+<main>
+  <h2 class="start">Picture of the Month</h2>
+  <h3 id="2022">2022</h3>
+  <h5>December</h5>
+  <div itemscope itemtype="https://schema.org/ImageObject" class="image">
+		<meta itemprop="name" content="New Year 2022 Picure">
+    <meta itemprop="width" content="400 px">
+    <meta itemprop="height" content="300 px">
+		<img class="img400" src="/files/images/newyear-22.png" itemprop="contentUrl"><br>
+		<span itemprop="description">A worm and a Christmas tree</span>
+	</div>
+  <h5>October</h5>
+  <div itemscope itemtype="https://schema.org/ImageObject" class="image">
+		<meta itemprop="name" content="Halloween 2022 Picture">
+    <meta itemprop="width" content="400 px">
+    <meta itemprop="height" content="300 px">
+		<img class="img400" src="/files/images/halloween-22.png" itemprop="contentUrl"><br>
+		<span itemprop="description">Network Worms' Graveyard</span>
+	</div>
+</main>
+{% include footer.html %}

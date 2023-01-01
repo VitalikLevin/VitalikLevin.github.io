@@ -17,6 +17,10 @@ blockquote {
 	border-left: 3px solid rgb(100, 181, 246);
 }
 
+blockquote h3 {
+	color: rgb(244, 244, 244);
+}
+
 .start, a {
 	color: rgb(100, 181, 246);
 }
