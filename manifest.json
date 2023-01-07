@@ -3,7 +3,7 @@
 	"name": "Network Worms",
 	"short_name": "NetWorms",
 	"description": "We make apps for PC not PCs for apps",
-	"categories": [ "games", "badwebsite", "strategy" ],
+	"categories": [ "games", "pictures", "strategy" ],
 	"icons": [
 		{
 			"src": "files/icons/favicon.svg",
@@ -34,7 +34,7 @@
 		},
 		{
 			"src": "favicon.ico",
-			"sizes": "64x64 48x48 32x32 16x16",
+			"sizes": "64x64",
 			"type": "image/x-icon"
 		}
 	],
