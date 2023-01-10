@@ -1,6 +1,3 @@
-User-agent: *
-Disallow: /*?
-# Yandex.Robots
 User-agent: Yandex *
 Disallow: /feed.xml
 Sitemap: https://vitaliklevin.github.io/sitemap.xml
