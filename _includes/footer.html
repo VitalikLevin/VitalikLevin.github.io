@@ -17,7 +17,7 @@
 </div>
 <footer id="footer">
 	<p>
-		&#169;Vitaliy Levin, <span class="num">2022 - 2023</span>. All rights reserved.<br>
+		&#169;Vitaliy Levin, <span class="num">2022 - {{ site.time | date: "%Y" }}</span>. All rights reserved.<br>
 		{% if page.lang == 'en-US' %}
 		Content is available under <a href="{{ site.license }}">Creative Commons Attribution Share Alike 4.0 International</a>.<br>
 		{% endif %}
@@ -29,8 +29,7 @@
 		<img src="/files/svg/by-sa.svg" alt="CC-BY-SA 4.0"
 			width="120px" height="42px">
 		<a class="top" href="#top">
-			<object type="image/svg+xml"
-				data="/files/svg/top.svg"
+			<object type="image/svg+xml" data="/files/svg/top.svg"
 				width="42px" height="42px">
 			</object>
 		</a>
