@@ -18,9 +18,7 @@
 			<author>Виталий Лёвин</author>
 			<turbo:content>
 				<![CDATA[
-					<header>
-						<h2>Сетевые червяки</h2>
-					</header>
+					<header><h2>Сетевые червяки</h2></header>
 					<main>
 						<p>
 							Добро пожаловать на наш блог, <code>USERNAME</code>.
