@@ -6,43 +6,43 @@ layout: null
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 	<url>
 		<loc>https://vitaliklevin.github.io/</loc>
-		<lastmod>{{ site.time | date: "%d-%m-%Y" }}</lastmod>
+		<lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://vitaliklevin.github.io/blog/</loc>
-		<lastmod>{{ site.time | date: "%d-%m-%Y" }}</lastmod>
+		<lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>1.0</priority>
 	</url>
 	<url>
 		<loc>https://vitaliklevin.github.io/exts/</loc>
-		<lastmod>{{ site.time | date: "%d-%m-%Y" }}</lastmod>
+		<lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.9</priority>
 	</url>
 	<url>
 		<loc>https://vitaliklevin.github.io/exts/steamyfish/</loc>
-		<lastmod>{{ site.time | date: "%d-%m-%Y" }}</lastmod>
+		<lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.7</priority>
 	</url>
 	<url>
 		<loc>https://vitaliklevin.github.io/games/</loc>
-		<lastmod>{{ site.time | date: "%d-%m-%Y" }}</lastmod>
+		<lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.8</priority>
 	</url>
 	<url>
 		<loc>https://vitaliklevin.github.io/games/bsa/</loc>
-		<lastmod>{{ site.time | date: "%d-%m-%Y" }}</lastmod>
+		<lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 	<url>
 		<loc>https://vitaliklevin.github.io/games/nves/</loc>
-		<lastmod>{{ site.time | date: "%d-%m-%Y" }}</lastmod>
+		<lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.4</priority>
 	</url>
