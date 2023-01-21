@@ -7,15 +7,15 @@
 		<title>{{ page.title }} - NW Blog</title>
 		<meta name="description" content="{{ page.excerpt | default: site.description }}">
 		<link rel="canonical" href="{{ site.url }}{{ page.permalink }}">
-		<link rel="stylesheet" href="{{ "../files/css/style.css" | relative_url }}">
-		<link rel="stylesheet" href="{{ "../files/css/dark.css" | relative_url }}">
-		<link rel="apple-touch-icon-precomposed" href="{{ "../files/icons/favicon192.png" | relative_url }}" type="image/png" sizes="192x192">
-		<link rel="apple-touch-icon" href="{{ "../files/icons/favicon180.png" | relative_url }}" type="image/png" sizes="180x180">
-		<link rel="mask-icon" href="{{ "../files/icons/favicon.svg" | relative_url }}" color="#f9ad81">
-		<link rel="icon" href="{{ "../files/icons/favicon.svg" | relative_url }}" type="image/svg+xml" sizes="any">
-		<link rel="shortcut icon" href="{{ "../favicon.ico" | relative_url }}" type="image/x-icon">
-		<link rel="manifest" href="{{ "../manifest.json" | relative_url }}">
-		<meta name="msapplication-config" content="{{ "../browserconfig.xml" | relative_url }}">
+		<link rel="stylesheet" href="/files/css/style.css">
+		<link rel="stylesheet" href="/files/css/dark.css">
+		<link rel="apple-touch-icon-precomposed" href="/files/icons/favicon192.png" type="image/png" sizes="192x192">
+		<link rel="apple-touch-icon" href="/files/icons/favicon180.png" type="image/png" sizes="180x180">
+		<link rel="mask-icon" href="/files/icons/favicon.svg" color="#f9ad81">
+		<link rel="icon" href="/files/icons/favicon.svg" type="image/svg+xml" sizes="any">
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="manifest" href="/manifest.json">
+		<meta name="msapplication-config" content="/browserconfig.xml">
 		<meta name="application-name" content="{{ site.title }} Blog">
 		<meta name="msapplication-tooltip" content="{{ site.title }}">
 		<meta name="theme-color" content="#121212">
@@ -33,7 +33,7 @@
 		{% if jekyll.environment == 'production' %}
 		{% include tracking.html %}
 		{% endif %}
-		<script defer src="{{ "../files/js/app.js" | relative_url }}"></script>
+		<script defer src="/files/js/app.js"></script>
 		<meta name="yandex-verification" content="b24725ffa2e7d4a6">
 		<meta name="google-site-verification" content="yahAonXkmtS9ASTgJphU5M3HR9fHyvOG6pXX4kzQ2pw">
 		<meta name="msvalidate.01" content="0B6583F3F8C1659E185F49DB6386D481">

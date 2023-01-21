@@ -25,12 +25,12 @@ blockquote h3 {
 	color: rgb(100, 181, 246);
 }
 
-a:visited {
-	color: rgb(249, 168, 37);
-}
-
 a:hover {
 	color: rgb(246, 170, 126);
+}
+
+a:visited {
+	color: rgb(249, 168, 37);
 }
 
 #cooknote.show {

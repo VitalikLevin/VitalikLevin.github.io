@@ -6,14 +6,14 @@
 	<channel>
 		<title>Network Worms</title>
 		<link>https://vitaliklevin.github.io/</link>
-		<description>E = M x (C x C)</description>
+		<description>E = M x C²</description>
 		<language>ru</language>
 		<item turbo="true">
 			<title>Тест турбо-блога</title>
 			<turbo:extendedHtml>true</turbo:extendedHtml>
 			<link>https://vitaliklevin.github.io/2022/04/08/second-post/</link>
 			<turbo:source>https://vitaliklevin.github.io/2022/04/08/second-post/</turbo:source>
-			<turbo:topic>Тесты</turbo:topic>
+			<turbo:topic>Hello World</turbo:topic>
 			<pubDate>Sat, 27 Aug 2022 23:00:00 +0300</pubDate>
 			<author>Виталий Лёвин</author>
 			<turbo:content>

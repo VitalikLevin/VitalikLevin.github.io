@@ -1,5 +1,4 @@
 @import url(fonts.css);
-
 body {
 	font-family: liberastika, sans-serif;
 }
@@ -26,14 +25,24 @@ header, footer {
 
 footer {
 	margin-top: 15px;
+	padding-left: 7px;
 }
 
-.start {
-	font-family: liberastika, serif;
+.cookagree {
+	background-color: transparent;
+	border-color: transparent;
 	font-weight: bold;
 }
 
-.num, .pubDat, .image span {
+.crumb ul {
+  list-style-type: none;
+}
+
+.image {
+	margin-left: 5px;
+	padding-top: 5px;
+}
+.image span, .num, .pubDat {
 	font-family: zillaslab;
 }
 
@@ -42,17 +51,17 @@ footer {
 	font-style: italic;
 }
 
-.top {
-	visibility: hidden;
-}
-
 .pubDat {
 	font-size: 16px;
 }
 
-header h2 img {
-	width: 32px;
-	height: 32px;
+.start {
+	font-family: liberastika, serif;
+	font-weight: bold;
+}
+
+.top {
+	visibility: hidden;
 }
 
 .pubDat img, #cooknote h3 img {
@@ -60,10 +69,6 @@ header h2 img {
 	margin-left: 8px;
 	width: 24px;
 	height: 24px;
-}
-
-.crumb ul {
-  list-style-type: none;
 }
 
 #cooknote {
@@ -76,19 +81,9 @@ header h2 img {
 	padding-left: 10px;
 }
 
-.cookagree {
-	background-color: transparent;
-	border-color: transparent;
-	font-weight: bold;
-}
-
-.image {
-	margin-left: 5px;
-	padding-top: 5px;
-}
-
-footer {
-	padding-left: 7px;
+#logo {
+	width: 32px;
+	height: 32px;
 }
 
 @media screen and (orientation: portrait) {
