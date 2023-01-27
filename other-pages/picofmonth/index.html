@@ -29,22 +29,15 @@ permalink: /picofmonth/
 	<p>
 		"Picture of the Month" is an event where you can see our new paintings.
 	</p>
-  <h3 id="2022">2022</h3>
-  <h5>December</h5>
+	{% for member in site.data.potm %}
+	<h5>{{ member.time }}</h5>
   <div itemscope itemtype="https://schema.org/ImageObject" class="image">
-		<meta itemprop="name" content="New Year 2022 Picture">
-    <meta itemprop="width" content="400 px">
-		<meta itemprop="height" content="300 px">
-		<img class="img400" src="/files/images/newyear-22.png" itemprop="contentUrl"><br>
-		<span itemprop="description">A worm and a Christmas tree</span>
-	</div>
-  <h5>October</h5>
-  <div itemscope itemtype="https://schema.org/ImageObject" class="image">
-		<meta itemprop="name" content="Halloween 2022 Picture">
+		<meta itemprop="name" content="{{ member.name }}">
     <meta itemprop="width" content="400 px">
     <meta itemprop="height" content="300 px">
-		<img class="img400" src="/files/images/halloween-22.png" itemprop="contentUrl"><br>
-		<span itemprop="description">Network Worms' Graveyard</span>
+		<img class="img400" src="{{ member.src }}" itemprop="contentUrl"><br>
+		<span itemprop="description">{{ member.desc }}</span>
 	</div>
+	{% endfor %}
 </main>
 {% include footer.html %}

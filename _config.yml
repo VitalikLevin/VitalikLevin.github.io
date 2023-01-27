@@ -10,13 +10,13 @@ port: 1337
 license: https://creativecommons.org/licenses/by-sa/4.0/
 og_p: /files/images/spaceworm.png
 og_pa: A pink worm in space
-status: /files/icons/favicon.svg
+status: /files/svg/1f973.svg
 steamyfish: https://marketplace.visualstudio.com/items?itemName=networkworms.steamyfish
 plugins:
   - jekyll-paginate
   - jekyll-feed
 paginate: 10
-paginate_path: "blog/:num"
+paginate_path: "blog/:num/"
 exclude:
   - Gemfile
   - Gemfile.lock
