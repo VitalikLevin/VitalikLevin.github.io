@@ -47,6 +47,12 @@ layout: null
 		<priority>0.4</priority>
 	</url>
 	<url>
+		<loc>https://vitaliklevin.github.io/games/nves/downloads/</loc>
+		<lastmod>2023-02-07</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.3</priority>
+	</url>
+	<url>
 		<loc>https://vitaliklevin.github.io/picofmonth/</loc>
 		<lastmod>2023-01-01</lastmod>
 		<changefreq>monthly</changefreq>
