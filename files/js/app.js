@@ -13,5 +13,6 @@ function checkCookies(){
 checkCookies();
 window.onload = function() {
   var a = document.title;
-  Console.log(a);
+  var elem = document.getElementsByTagName("title")[0];
+  console.log(a);
 }
