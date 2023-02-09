@@ -13,6 +13,7 @@ function checkCookies(){
 checkCookies();
 window.onload = function() {
   var a = document.title;
-  var elem = document.getElementsByTagName("title")[0];
+  var text = ":( 410 Gone";
   console.log(a);
+  console.log(text);
 }
