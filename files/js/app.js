@@ -11,3 +11,7 @@ function checkCookies(){
     })
 }
 checkCookies();
+window.onload = function() {
+  var a = document.title;
+  Console.log(a);
+}
