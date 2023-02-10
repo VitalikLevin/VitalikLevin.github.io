@@ -1,3 +1,5 @@
+User-agent: *
+Disallow: /teapot/
 User-agent: Yandex *
 Disallow: /feed.xml
 Sitemap: https://vitaliklevin.github.io/sitemap.xml

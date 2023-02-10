@@ -42,6 +42,7 @@ footer {
 	margin-left: 5px;
 	padding-top: 5px;
 }
+
 .image span, .num, .pubDat {
 	font-family: zillaslab;
 }
@@ -84,6 +85,15 @@ footer {
 #logo {
 	width: 32px;
 	height: 32px;
+}
+
+a[href^="."], a[href^="/"] a[href*="https://vitaliklevin.github.io"] {
+	background-image: none;
+}
+
+a {
+	background-image: url(../svg/external.svg);
+	background-position: center right;
 }
 
 @media screen and (orientation: portrait) {
