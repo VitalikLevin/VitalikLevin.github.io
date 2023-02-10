@@ -10,7 +10,6 @@ strong {
 
 header h2, header h2 a {
 	text-decoration: none;
-	background-image: none;
 }
 
 blockquote {
@@ -86,17 +85,6 @@ footer {
 #logo {
 	width: 32px;
 	height: 32px;
-}
-
-a[href^="."], a[href^="/"], a[href^="https://vitaliklevin.github.io"] {
-	background-image: none;
-}
-
-a::after {
-	background-image: url(../svg/external.svg);
-	background-position: center right;
-	background-repeat: no-repeat;
-	background-size: auto 100%;
 }
 
 @media screen and (orientation: portrait) {
