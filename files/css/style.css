@@ -92,10 +92,11 @@ a[href^="."], a[href^="/"], a[href^="https://vitaliklevin.github.io"] {
 	background-image: none;
 }
 
-a {
+a::after {
 	background-image: url(../svg/external.svg);
 	background-position: center right;
 	background-repeat: no-repeat;
+	background-size: auto 100%;
 }
 
 @media screen and (orientation: portrait) {
