@@ -1,0 +1,49 @@
+---
+layout: default
+lang: en-US
+title: Download Steamy Fish
+excerpt: History of Steamy Fish Extension
+permalink: /exts/steamyfish/downloads/
+---
+{% include header.html %}
+<div class="crumb">
+	<ul itemscope itemtype="https://schema.org/BreadcrumbList">
+		<li itemprop="itemListElement" itemscope
+			itemtype="https://schema.org/ListItem">
+			<a itemprop="item" href="{{ site.url }}/">
+				<span itemprop="name">Network Worms</span>
+			</a>
+			<meta itemprop="position" content="1">
+		</li>
+		<li itemprop="itemListElement" itemscope
+			itemtype="https://schema.org/ListItem">
+			<a itemprop="item" href="{{ site.url }}/exts/">
+				<span itemprop="name">Extensions</span>
+			</a>
+			<meta itemprop="position" content="2">
+		</li>
+		<li itemprop="itemListElement" itemscope
+			itemtype="https://schema.org/ListItem">
+			<a itemprop="item" href="{{ site.url }}/exts/steamyfish/">
+				<span itemprop="name">Steamy Fish</span>
+			</a>
+			<meta itemprop="position" content="3">
+		</li>
+    <li itemprop="itemListElement" itemscope
+			itemtype="https://schema.org/ListItem">
+			<a itemprop="item" href="{{ site.url }}/exts/steamyfish/downloads/">
+				<span itemprop="name">Downloads</span>
+			</a>
+			<meta itemprop="position" content="4">
+		</li>
+	</ul>
+</div>
+<main>
+  <h2 class="start">Steamy Fish Downloads</h2>
+	{% for member in site.data.sft %}
+	<h3 id="v{{ member.major }}.{{ member.minor }}.{{ member.patch }}">v{{ member.major }}.{{ member.minor }}.{{ member.patch }}</h3>
+	<p><a href="https://github.com/vitaliklevin/steamyfish-theme/blob/master/CHANGELOG.md#{{ member.major }}{{ member.minor }}{{ member.patch }}">Changelog Section</a></p>
+  <p><a href="https://marketplace.visualstudio.com/_apis/public/gallery/publishers/networkworms/vsextensions/steamyfish/{{ member.major }}.{{ member.minor }}.{{ member.patch }}/vspackage">VSIX file</a></p>
+	{% endfor %}
+</main>
+{% include footer.html %}
