@@ -6,6 +6,7 @@
 			#folder { fill: rgb(246, 170, 126); }
 			#wh, #mouth, #xSymbol { fill: rgb(244, 244, 244); }
 			#bl { fill: rgb(18, 18, 18); }
+      @media (prefers-color-scheme: light) { #folder { stroke: rgb(18, 18, 18); } }
 		]]></style>
     <clipPath id="mouthClip">
       <rect x="174" y="158" width="36" height="20"/>
@@ -14,7 +15,7 @@
   <title>Wormfolder</title>
   <g id="folder">
     <rect width="224" height="128" x="16" y="80"/>
-    <rect width="80" height="33" x="32" y="48"/>
+    <rect width="80" height="32" x="32" y="48"/>
   </g>
   <g id="xSymbol" transform="rotate(45, 96, 64)">
     <rect width="2" height="16" x="95" y="56"/>
@@ -28,7 +29,6 @@
     <circle cx="174" cy="182" r="10"/>
     <circle cx="208" cy="153" r="10"/>
   </g>
-  <circle id="mouth"
-		transform="rotate(135, 200, 185)" clip-path="url(#mouthClip)"
+  <circle id="mouth" transform="rotate(135, 200, 185)" clip-path="url(#mouthClip)"
     cx="192" cy="176" r="18"/>
 </svg>

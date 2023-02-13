@@ -32,7 +32,6 @@
     <circle cx="174" cy="182" r="10"/>
     <circle cx="208" cy="153" r="10"/>
   </g>
-  <circle id="mouth"
-		transform="rotate(135, 200, 185)" clip-path="url(#mouthClip)"
+  <circle id="mouth" transform="rotate(135, 200, 185)" clip-path="url(#mouthClip)"
     cx="192" cy="176" r="18"/>
 </svg>
