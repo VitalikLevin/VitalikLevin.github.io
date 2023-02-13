@@ -4,7 +4,7 @@
 	<defs>
 		<style type="text/css"><![CDATA[
 			#folder { fill: rgb(246, 170, 126); }
-			#wh, #mouth { fill: rgb(244, 244, 244); }
+			#wh, #xSymbol, #mouth { fill: rgb(244, 244, 244); }
 			#bl { fill: rgb(18, 18, 18); }
 			#hat, #horn, #hPart { fill: rgb(244, 18, 18); }
 			#hPart { stroke: rgb(244, 128, 18); }
@@ -16,6 +16,10 @@
     <rect width="112" height="64" x="8" y="40"/>
     <rect width="40" height="17" x="16" y="24"/>
   </g>
+	<g id="xSymbol" transform="rotate(45, 48, 32)">
+		<rect x="47" y="26" width="2" height="12"/>
+		<rect x="42" y="31" width="12" height="2"/>
+	</g>
 	<g id="wh">
     <circle cx="76" cy="64" r="11"/>
     <circle cx="104" cy="64" r="11"/>
