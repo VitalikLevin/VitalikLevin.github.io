@@ -4,7 +4,6 @@ body {
 }
 
 strong {
-	font-family: liberastika;
 	font-weight: bold;
 }
 
@@ -47,7 +46,7 @@ footer {
 	font-family: zillaslab;
 }
 
-.language-plaintext\ highlighter-rouge, code {
+.language-plaintext, code {
 	font-family: liberastika, monospace;
 	font-style: italic;
 }
@@ -57,7 +56,6 @@ footer {
 }
 
 .start {
-	font-family: liberastika, serif;
 	font-weight: bold;
 }
 

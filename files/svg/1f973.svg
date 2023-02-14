@@ -9,7 +9,6 @@
 			#hat, #horn, #hPart { fill: rgb(244, 18, 18); }
 			#hPart { stroke: rgb(244, 128, 18); }
 			#line { fill: rgb(244, 128, 18); }
-			@media (prefers-color-scheme: light) { #folder { stroke: rgb(18, 18, 18); } }
 		]]></style>
 	</defs>
 	<title>Face with Party Horn and Party Hat</title>

@@ -1,4 +1,4 @@
-body {
+:root {
 	background-color: rgb(0, 0, 0);
 	color: rgb(244, 244, 244);
 }
@@ -39,8 +39,4 @@ a:visited {
 
 #cooknote button {
 	color: rgb(244, 244, 244);
-}
-
-#backtotop {
-	fill: rgb(244, 244, 244);
 }

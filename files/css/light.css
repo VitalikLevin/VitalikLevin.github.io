@@ -1,4 +1,4 @@
-body {
+:root {
 	color: rgb(18, 18, 18);
 }
 
@@ -22,10 +22,6 @@ blockquote {
 
 a:visited {
 	color: rgb(249, 168, 37);
-}
-
-#backtotop {
-	fill: rgb(18, 18, 18);
 }
 
 #cooknote.show {

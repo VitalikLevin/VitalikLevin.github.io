@@ -6,7 +6,6 @@
 			#folder { fill: rgb(246, 170, 126); }
 			#wh, #mouth, #xSymbol { fill: rgb(244, 244, 244); }
 			#bl { fill: rgb(18, 18, 18); }
-      @media (prefers-color-scheme: light) { #folder { stroke: rgb(18, 18, 18); } }
 		]]></style>
     <clipPath id="mouthClip">
       <rect x="174" y="158" width="36" height="20"/>

@@ -6,7 +6,6 @@
 			#folder { fill: rgb(246, 170, 126); }
       .xEye { fill: rgb(18, 18, 18); }
 			#mouth, #xSymbol { fill: rgb(244, 244, 244); }
-			@media (prefers-color-scheme: light) { #folder { stroke: rgb(18, 18, 18); } }
 		]]></style>
 	</defs>
 	<title>Dizzy Face</title>
