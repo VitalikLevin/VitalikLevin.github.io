@@ -17,7 +17,7 @@ blockquote {
 	border-left: 3px solid rgb(100, 181, 246);
 }
 
-blockquote h3 {
+blockquote h3, #cooknote button {
 	color: rgb(244, 244, 244);
 }
 
@@ -35,8 +35,4 @@ a:visited {
 
 #cooknote.show {
 	border-left: 3px solid rgb(244, 60, 54);
-}
-
-#cooknote button {
-	color: rgb(244, 244, 244);
 }

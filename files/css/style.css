@@ -3,7 +3,7 @@ body {
 	font-family: liberastika, sans-serif;
 }
 
-strong {
+strong, .cookagree {
 	font-weight: bold;
 }
 
@@ -30,7 +30,6 @@ footer {
 .cookagree {
 	background-color: transparent;
 	border-color: transparent;
-	font-weight: bold;
 }
 
 .crumb ul {
