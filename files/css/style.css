@@ -85,7 +85,7 @@ footer {
 }
 
 @media screen and (orientation: portrait) {
-	.img400 {
+	.img400, .prodlogo {
 		max-width: 75%;
 	}
 	.top {
