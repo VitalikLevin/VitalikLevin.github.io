@@ -20,7 +20,7 @@ layout: null
 		<loc>https://vitaliklevin.github.io/exts/</loc>
 		<lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
 		<changefreq>weekly</changefreq>
-		<priority>0.8</priority>
+		<priority>0.6</priority>
 	</url>
 	<url>
 		<loc>https://vitaliklevin.github.io/exts/steamyfish/</loc>
@@ -59,6 +59,12 @@ layout: null
 		<priority>0.3</priority>
 	</url>
 	<url>
+		<loc>https://vitaliklevin.github.io/games/nves/about/</loc>
+		<lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://vitaliklevin.github.io/picofmonth/</loc>
 		<lastmod>2023-01-01</lastmod>
 		<changefreq>monthly</changefreq>
@@ -68,7 +74,7 @@ layout: null
 		<loc>https://vitaliklevin.github.io/2022/04/08/second-post/</loc>
 		<lastmod>2022-12-23</lastmod>
 		<changefreq>yearly</changefreq>
-		<priority>0.5</priority>
+		<priority>0.3</priority>
 		<xhtml:link rel="alternate"
 			hreflang="en-us"
 			href="https://vitaliklevin.github.io/2022/04/08/first-post/"/>

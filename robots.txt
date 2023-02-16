@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /?*
 Disallow: /teapot/
 User-agent: Yandex*
 Disallow: /feed.xml

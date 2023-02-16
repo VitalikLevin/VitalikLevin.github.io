@@ -18,6 +18,7 @@ README was eaten by `VitalikLevin`.
 - [Our games](https://vitaliklevin.github.io/games)
   - [Bounce's Adventure](https://vitaliklevin.github.io/games/bsa/)
   - [Nature vs. Spirits](https://vitaliklevin.github.io/games/nves/)
+    - [About Nature vs. Spirits](https://vitaliklevin.github.io/games/nves/about/)
     - [Nature vs. Spirits Downloads](https://vitaliklevin.github.io/games/nves/downloads/)
 - _[Picture of the Month](https://vitaliklevin.github.io/picofmonth/)_
 - ["I'm a Teapot" page](https://vitaliklevin.github.io/teapot/)
