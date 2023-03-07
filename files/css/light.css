@@ -23,3 +23,7 @@ blockquote, #cooknote.show {
 a:visited {
 	color: rgb(249, 168, 37);
 }
+
+mark {
+	background-color: rgb(249, 168, 37);
+}

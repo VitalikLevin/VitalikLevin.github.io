@@ -11,9 +11,22 @@ function checkCookies(){
   })
 }
 checkCookies();
+document.addEventListener('DOMContentLoaded', () => {
+  const now = new Date();
+  const doc = document.querySelector('html');
+  const sleepText = document.querySelector('#sleep');
+  const lang = doc.getAttribute('lang');
+  if ((now.getHours () > 22 || now.getHours () < 6)) {
+    if (lang == 'ru' || lang == 'ru-RU') {
+      sleepText.innerHTML = 'Человек треть своей жизни проводит во сне.';
+    } else {
+      sleepText.innerHTML = 'I recommend you to sleep.';
+    }
+  }
+});
 window.onload = function(){
-  var a = document.title;
-  var t = document.querySelector('title');
+  let a = document.title;
+  let t = document.querySelector('title');
   document.addEventListener('visibilitychange', function(){
     if(document.visibilityState == 'hidden'){
       t.innerHTML = ':( 410 Gone';

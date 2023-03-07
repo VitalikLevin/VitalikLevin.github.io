@@ -25,6 +25,10 @@ blockquote h3, #cooknote button {
 	color: rgb(100, 181, 246);
 }
 
+mark {
+	background-color: rgb(249, 168, 37);
+}
+
 a:hover {
 	color: rgb(246, 170, 126);
 }

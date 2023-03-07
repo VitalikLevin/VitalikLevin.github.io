@@ -7,7 +7,7 @@ strong, .cookagree {
 	font-weight: bold;
 }
 
-header h2, header h2 a {
+header h2, header h2 a, .crumb li:last-child a {
 	text-decoration: none;
 }
 
