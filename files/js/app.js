@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const lang = doc.getAttribute('lang');
   if ((now.getHours () > 22 || now.getHours () < 6)) {
     if (lang == 'ru' || lang == 'ru-RU') {
-      sleepText.innerHTML = 'Человек треть своей жизни проводит во сне.';
+      sleepText.innerHTML = 'Сон полезен не только в играх с открытым миром.<br>';
     } else {
-      sleepText.innerHTML = 'I recommend you to sleep.';
+      sleepText.innerHTML = 'I recommend you to sleep.<br>';
     }
   }
 });
