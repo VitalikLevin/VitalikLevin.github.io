@@ -3,7 +3,7 @@ body {
 	font-family: liberastika, sans-serif;
 }
 
-strong, .cookagree {
+strong, .cookagree, .start {
 	font-weight: bold;
 }
 
@@ -16,7 +16,7 @@ blockquote {
 	padding: 10px;
 }
 
-header, footer {
+header {
 	margin-top: 0px;
 	margin-left: 0px;
 	margin-right: 0px;
@@ -54,10 +54,6 @@ footer {
 	font-size: 16px;
 }
 
-.start {
-	font-weight: bold;
-}
-
 .top {
 	visibility: hidden;
 }
@@ -74,14 +70,14 @@ footer {
 	display: none;
 }
 
-#cooknote.show {
+#cooknote.show, .postLink:hover {
 	display: block;
 	padding-left: 10px;
 }
 
 #logo {
-	width: 32px;
-	height: 32px;
+	width: max-content;
+	height: 28px;
 }
 
 @media screen and (orientation: portrait) {

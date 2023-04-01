@@ -28,7 +28,7 @@ permalink: /blog/
 </p>
 {% for post in paginator.posts %}
 	<section class="post">
-		<h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+		<h4><a class="postLink" href="{{ post.url }}">{{ post.title }}</a></h4>
 		<p>{{ post.excerpt }}</p>
 		<span class="pubDat">
 			<img src="../files/svg/1f4c6.svg" alt="Tear-off Calendar">
