@@ -2,7 +2,7 @@
 	color: rgb(18, 18, 18);
 }
 
-header h2, header h2 a, header h2 a:visited {
+header h2, header h2 a:any-link {
 	background-color: rgb(246, 170, 126);
 	color: rgb(244, 244, 244);
 }
@@ -24,6 +24,6 @@ a:visited {
 	color: rgb(249, 168, 37);
 }
 
-mark {
+mark, ::selection {
 	background-color: rgb(249, 168, 37);
 }
