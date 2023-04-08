@@ -11,7 +11,7 @@ header h2, header h2 a, .crumb li:last-child a {
 	text-decoration: none;
 }
 
-blockquote {
+blockquote, .postLink:hover {
 	margin: 0px;
 	padding: 10px;
 }
@@ -70,7 +70,7 @@ footer {
 	display: none;
 }
 
-#cooknote.show, .postLink:hover {
+#cooknote.show {
 	display: block;
 	padding-left: 10px;
 }
