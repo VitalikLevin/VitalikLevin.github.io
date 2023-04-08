@@ -31,13 +31,13 @@ permalink: /picofmonth/
 	</p>
 	{% for member in site.data.potm %}
 	<h5>{{ member.time }}</h5>
-  <div itemscope itemtype="https://schema.org/ImageObject" class="image">
+  <section itemscope itemtype="https://schema.org/ImageObject" class="image">
 		<meta itemprop="name" content="{{ member.name }}">
     <meta itemprop="width" content="400 px">
     <meta itemprop="height" content="300 px">
 		<img class="img400" alt="{{ member.desc }}" src="{{ member.src }}" itemprop="contentUrl"><br>
 		<span itemprop="description">{{ member.desc }}</span>
-	</div>
+	</section>
 	{% endfor %}
 </main>
 {% include footer.html %}
