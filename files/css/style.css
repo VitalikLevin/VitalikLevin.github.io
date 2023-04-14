@@ -1,5 +1,5 @@
 @import url(fonts.css);
-body {
+:root {
 	font-family: liberastika, sans-serif;
 }
 
@@ -56,6 +56,13 @@ footer {
 
 .top {
 	visibility: hidden;
+}
+
+img, header h2 {
+	-moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+	user-select: none;
 }
 
 .pubDat img, #cooknote h3 img {

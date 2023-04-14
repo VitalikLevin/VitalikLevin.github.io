@@ -1,3 +1,5 @@
+const doc = document.querySelector('html');
+const lang = doc.getAttribute('lang');
 const now = new Date();
 function checkCookies(){
   let cookieDate = localStorage.getItem('cookieDate');
@@ -13,9 +15,7 @@ function checkCookies(){
 }
 checkCookies();
 document.addEventListener('DOMContentLoaded', () => {
-  const doc = document.querySelector('html');
   const sleepText = document.querySelector('#sleep');
-  const lang = doc.getAttribute('lang');
   if ((now.getHours() > 22 || now.getHours() < 6)) {
     if (lang == 'ru' || lang == 'ru-RU') {
       sleepText.innerHTML = 'Сон полезен не только в играх с открытым миром.<br>';
