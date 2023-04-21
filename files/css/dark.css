@@ -40,3 +40,7 @@ a:visited {
 #cooknote.show {
 	border-left: 3px solid rgb(244, 60, 54);
 }
+
+#sleep {
+	background-color: rgb(84, 110, 122);
+}
