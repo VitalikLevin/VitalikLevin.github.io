@@ -87,6 +87,10 @@ img, header h2 {
 	height: 28px;
 }
 
+.crumb li mark {
+  cursor: not-allowed;
+}
+
 @media screen and (orientation: portrait) {
 	.img400, .prodlogo {
 		max-width: 75%;
