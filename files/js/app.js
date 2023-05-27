@@ -29,7 +29,7 @@ window.onload = function(){
   let t = document.querySelector('title');
   document.addEventListener('visibilitychange', function(){
     if(document.visibilityState == 'hidden'){
-      t.innerHTML = ':( 410 Gone';
+      t.innerHTML = ':( NW410 Gone from the Tab';
     } else {
       t.innerHTML = a;
     }
