@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Blog
-excerpt: Main page of Network Worms' Blog
+excerpt: Main page of Network Worms’ Blog
 lang: en-US
 permalink: /blog/
 ---
@@ -23,17 +23,12 @@ permalink: /blog/
 		</li>
 	</ul>
 </div>
-<p>
-	In this page you can find all posts from our site.
-</p>
+<p>In this page you can find all posts from our site.</p>
 {% for post in paginator.posts %}
 	<section class="post">
 		<h4><a class="postLink" href="{{ post.url }}">{{ post.title }}</a></h4>
 		<p>{{ post.excerpt }}</p>
-		<span class="pubDat">
-			<img src="/files/svg/1f4c6.svg" alt="&#128198;">
-			{{ post.date | date: "%d.%m.%Y" }}
-		</span>
+		<span class="pubDat"><img src="/files/svg/1f4c6.svg" alt="&#128198;">{{ post.date | date: "%d.%m.%Y" }}</span>
 	</section>
 {% endfor %}
 {% if paginator.total_pages > 1 %}

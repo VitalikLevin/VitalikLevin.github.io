@@ -2,7 +2,7 @@
 layout: default
 lang: en-US
 title: Picture of the Month
-excerpt: A gallery for our pictures.
+excerpt: A gallery for Vitaliy Levin’s pictures
 permalink: /picofmonth/
 ---
 {% include header.html %}
@@ -26,9 +26,7 @@ permalink: /picofmonth/
 </div>
 <main>
   <h2 class="start">Picture of the Month</h2>
-	<p>
-		"Picture of the Month" is an event where you can see our new paintings.
-	</p>
+	<p>"Picture of the Month" is an event where you can see our new paintings.</p>
 	{% for member in site.data.potm %}
 	<h5>{{ member.time }}</h5>
   <section itemscope itemtype="https://schema.org/ImageObject" class="image">
