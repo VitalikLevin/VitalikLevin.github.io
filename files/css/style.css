@@ -99,4 +99,7 @@ img, header h2 {
 		float: right;
 		visibility: visible;
 	}
+	nav ul li {
+		min-height: 48px;
+	}
 }
