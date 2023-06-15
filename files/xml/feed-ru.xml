@@ -15,14 +15,12 @@
 			<turbo:source>https://vitaliklevin.github.io/2022/04/08/second-post/</turbo:source>
 			<turbo:topic>Hello World</turbo:topic>
 			<pubDate>Sat, 27 Aug 2022 23:00:00 +0300</pubDate>
-			<author>Виталий Лёвин</author>
+			<author>Виталий Левин</author>
 			<turbo:content>
 				<![CDATA[
 					<header><h2>Сетевые червяки</h2></header>
 					<main>
-						<p>
-							Добро пожаловать на наш блог, <code>USERNAME</code>.
-						</p>
+						<p>Добро пожаловать на наш блог, <code>USERNAME</code>.</p>
 						<h3>Как найти блог</h3>
 						<p>
 							<ol>
@@ -31,11 +29,7 @@
 							</ol>
 						</p>
 					</main>
-					<footer>
-						<p>
-							Мы используем лицензию <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution Share Alike 4.0 International</a>
-						</p>
-					</footer>
+					<footer><p>Мы используем лицензию <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution Share Alike 4.0 International</a></p></footer>
 				]]>
 			</turbo:content>
 		</item>

@@ -58,7 +58,7 @@ footer {
 	visibility: hidden;
 }
 
-img, header h2 {
+header h2 {
 	-moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -68,8 +68,6 @@ img, header h2 {
 .pubDat img, #cooknote h3 img {
 	margin-right: 8px;
 	margin-left: 8px;
-	width: 24px;
-	height: 24px;
 }
 
 #cooknote {
@@ -82,7 +80,7 @@ img, header h2 {
 	padding-left: 10px;
 }
 
-#logo {
+#logo, .pubDat img, #cooknote h3 img {
 	width: 28px;
 	height: 28px;
 }
