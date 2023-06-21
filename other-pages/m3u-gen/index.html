@@ -1,0 +1,36 @@
+---
+layout: default
+lang: en-US
+title: M3U Playlist Generator
+excerpt: Online .m3u playlist file generator
+permalink: /m3u-gen/
+---
+{% include header.html %}
+<section class="crumb">
+	<ul itemscope itemtype="https://schema.org/BreadcrumbList">
+		<li itemprop="itemListElement" itemscope
+			itemtype="https://schema.org/ListItem">
+			<a itemprop="item" href="{{ site.url }}/">
+				<span itemprop="name">Network Worms</span>
+			</a>
+			<meta itemprop="position" content="1">
+		</li>
+		<li itemprop="itemListElement" itemscope
+			itemtype="https://schema.org/ListItem">
+			<a itemprop="item" href="{{ site.url }}/m3u-gen/">
+				<mark itemprop="name">.m3u Generator</mark>
+			</a>
+			<meta itemprop="position" content="2">
+		</li>
+	</ul>
+</section>
+<main>
+  <h2 class="start"><code>.m3u</code> Playlist Generator</h2>
+	<p>Select files and write files&#8217; prefix (if you need it) to get your playlist file.</p>
+  <input type="file" id="input" multiple="true">
+	<input type="text" id="prefixInput" placeholder="Enter prefix here"><br>
+	<a id="dnld" href="#" download="playlist.m3u">Download</a>
+  <section id="playlist"></section>
+  <script defer src="/files/js/m3u-gen.js"></script>
+</main>
+{% include footer.html %}

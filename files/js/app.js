@@ -6,7 +6,7 @@ function checkCookies(){
   let cooknote = document.querySelector('#cooknote');
   let cookieBtn = cooknote.querySelector('.cookagree');
   if( !cookieDate || (+cookieDate + 31536000000) < now){
-      cooknote.classList.add('show');
+    cooknote.classList.add('show');
   }
   cookieBtn.addEventListener('click', function(){
     localStorage.setItem('cookieDate', now);

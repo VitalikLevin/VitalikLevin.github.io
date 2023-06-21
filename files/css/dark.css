@@ -12,12 +12,12 @@ nav, main, footer, h3 {
 	background-color: rgb(55, 55, 55);
 }
 
-blockquote {
+blockquote, #playlist.show {
 	color: rgb(177, 177, 177);
 	border-left: 3px solid rgb(100, 181, 246);
 }
 
-blockquote h3, #cooknote button {
+blockquote h3, #cooknote button, ::file-selector-button, ::selection {
 	color: rgb(244, 244, 244);
 }
 
