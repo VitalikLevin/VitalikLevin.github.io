@@ -21,23 +21,18 @@ header {
 	margin-left: 0px;
 }
 
-footer {
-	margin-top: 15px;
-	padding-left: 6px;
-}
-
-.cookagree, ::file-selector-button {
+button, ::file-selector-button {
 	background-color: transparent;
-	border-color: transparent;
+	border-width: 0.8px;
 }
 
 .crumb ul {
   list-style-type: none;
 }
 
-.image {
+footer, .image {
 	margin-left: 5px;
-	padding-top: 5px;
+	margin-top: 5px;
 }
 
 .image span, .num, .pubDat {
@@ -58,9 +53,6 @@ footer {
 }
 
 header h2 {
-	-moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
 	user-select: none;
 }
 
@@ -88,13 +80,20 @@ header h2 {
   cursor: not-allowed;
 }
 
+input[type="text"] {
+	min-width: 35vw;
+}
+
 @media screen and (orientation: portrait) {
 	.img400, .prodlogo {
-		max-width: 75%;
+		max-width: 75vw;
 	}
 	.top {
 		float: right;
 		visibility: visible;
+	}
+	input[type="text"] {
+		min-width: 55vw;
 	}
 	nav ul li {
 		min-height: 48px;

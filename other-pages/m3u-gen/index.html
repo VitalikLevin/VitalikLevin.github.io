@@ -27,8 +27,13 @@ permalink: /m3u-gen/
 <main>
   <h2 class="start"><code>.m3u</code> Playlist Generator</h2>
 	<p>Select files and write files&#8217; prefix (if you need it) to get your playlist file.</p>
-  <input type="file" id="input" multiple="true">
-	<input type="text" id="prefixInput" placeholder="Enter prefix here"><br>
+	<blockquote>
+		<h3>Warning</h3>
+		<p>Current version of <code>m3u-gen</code> sorts selected files.</p>
+	</blockquote>
+  <input type="file" id="input" multiple="true"><br>
+	<input type="text" id="prefixInput" placeholder="Enter files&#8217; prefix here"><br>
+	<input type="text" id="listName" placeholder="Playlist name"><br>
 	<a id="dnld" href="#" download="playlist.m3u">Download</a>
   <section id="playlist"></section>
   <script defer src="/files/js/m3u-gen.js"></script>

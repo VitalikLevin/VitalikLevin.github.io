@@ -1,4 +1,4 @@
-:root, #cooknote button {
+:root, button {
 	color: rgb(18, 18, 18);
 }
 
@@ -33,6 +33,6 @@ mark, ::selection {
 	color: rgb(244, 244, 244);
 }
 
-#sleep {
-	background-color: rgb(255, 214, 0);
+::file-selector-button, button {
+	border-color: rgb(18, 18, 18);
 }

@@ -17,7 +17,7 @@ blockquote, #playlist.show {
 	border-left: 3px solid rgb(100, 181, 246);
 }
 
-blockquote h3, #cooknote button, ::file-selector-button, ::selection {
+blockquote h3, #cooknote button, ::file-selector-button, ::selection, #sleep {
 	color: rgb(244, 244, 244);
 }
 
@@ -41,6 +41,6 @@ a:visited {
 	border-left: 3px solid rgb(244, 60, 54);
 }
 
-#sleep {
-	background-color: rgb(255, 214, 0);
+::file-selector-button, button {
+	border-color: rgb(244, 244, 244);
 }
