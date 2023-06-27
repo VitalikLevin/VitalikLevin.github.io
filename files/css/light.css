@@ -33,6 +33,10 @@ mark, ::selection {
 	color: rgb(244, 244, 244);
 }
 
-::file-selector-button, button {
+::file-selector-button, #cooknote button {
 	border-color: rgb(18, 18, 18);
+}
+
+button.flush {
+	color: rgb(244, 60, 54);
 }

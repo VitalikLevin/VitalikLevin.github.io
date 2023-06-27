@@ -1,0 +1,25 @@
+<svg version="1.1" width="128" height="128"
+  viewbox="0 0 128 128"
+  xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css"><![CDATA[
+			#folder { fill: rgb(246, 170, 126); }
+			.wh, #xSymbol, #mouth { fill: rgb(244, 244, 244); }
+			.bl { fill: rgb(18, 18, 18); }
+		]]></style>
+  </defs>
+  <title>Face with Open Mouth</title>
+  <g id="folder">
+    <rect width="112" height="64" x="8" y="40"/>
+    <rect width="40" height="16" x="16" y="24"/>
+  </g>
+  <g id="xSymbol" transform="rotate(45, 48, 32)">
+		<rect x="47" y="26" width="2" height="12"/>
+		<rect x="42" y="31" width="12" height="2"/>
+	</g>
+  <circle cx="76" cy="64" r="11" class="wh"/>
+  <circle cx="104" cy="64" r="11" class="wh"/>
+  <circle cx="80" cy="68" r="6" class="bl"/>
+  <circle cx="100" cy="68" r="6" class="bl"/>
+  <ellipse id="mouth" cx="90" cy="88" rx="10" ry="10"/>
+</svg>

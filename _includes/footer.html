@@ -2,16 +2,18 @@
 <section id="cooknote">
 	<h3>
 		<img src="/files/svg/1f36a.svg" alt="&#127850;">
-		{% if page.lang == 'en-US'%}Important Message{% endif %}
-		{% if page.lang == 'ru' %}Важное сообщение{% endif %}
+		{%- if page.lang == 'ru' -%}
+		Назойливое сообщение
+		{%- else -%}
+		Nasty message
+		{%- endif -%}
 	</h3>
 	<p>
-	{% if page.lang == 'en-US' %}
-		We use <code>cookies</code> and <code>localStorage</code>. But you can turn these things off in the settings of the browser.
-	{% endif %}
-	{% if page.lang == 'ru' %}
+	{%- if page.lang == 'ru' -%}
 		Мы используем <code>cookies</code> и <code>localStorage</code>. Чтобы их отключить, зайдите в настройки браузера.
-	{% endif %}
+	{%- else -%}
+		We use <code>cookies</code> and <code>localStorage</code>. But you can turn these things off in the settings of the browser.
+	{%- endif -%}
 	</p>
 	<button class="cookagree">OK</button>
 </section>
@@ -19,12 +21,11 @@
 	<p>
 		&#169;Vitaliy Levin, <span class="num">{{ site.time | date: "%Y" }}</span>. All rights reserved.<br>
 		<mark id="sleep"></mark>
-		{% if page.lang == 'en-US' %}
-		Content is available under <a href="{{ site.license }}">Creative Commons Attribution Share Alike 4.0 International</a>.
-		{% endif %}
-		{% if page.lang == 'ru' %}
+		{%- if page.lang == 'ru' -%}
 		Содержимое доступно по лицензии <a href="{{ site.license }}">Creative Commons Attribution Share Alike 4.0 International</a>.
-		{% endif %}
+		{%- else -%}
+		Content is available under <a href="{{ site.license }}">Creative Commons Attribution Share Alike 4.0 International</a>.
+		{%- endif -%}
 	</p>
 	<div class="imgs">
 		<img src="/files/svg/by-sa.svg" alt="" width="120px" height="42px">

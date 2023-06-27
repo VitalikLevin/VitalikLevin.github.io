@@ -5,7 +5,7 @@ title: Download Steamy Fish
 excerpt: History of Steamy Fish Extension
 permalink: /exts/steamyfish/downloads/
 ---
-{% include header.html %}
+{%- include header.html -%}
 <div class="crumb">
 	<ul itemscope itemtype="https://schema.org/BreadcrumbList">
 		<li itemprop="itemListElement" itemscope
@@ -40,10 +40,10 @@ permalink: /exts/steamyfish/downloads/
 </div>
 <main>
   <h2 class="start">Steamy Fish Downloads</h2>
-	{% for member in site.data.sft %}
+	{%- for member in site.data.sft -%}
 	<h3 id="v{{ member.major }}.{{ member.minor }}.{{ member.patch }}">v{{ member.major }}.{{ member.minor }}.{{ member.patch }}</h3>
 	<p><a href="https://github.com/vitaliklevin/steamyfish-theme/blob/master/CHANGELOG.md#{{ member.major }}{{ member.minor }}{{ member.patch }}">Changelog Section</a></p>
   <p><a href="https://marketplace.visualstudio.com/_apis/public/gallery/publishers/networkworms/vsextensions/steamyfish/{{ member.major }}.{{ member.minor }}.{{ member.patch }}/vspackage">VSIX file</a></p>
-	{% endfor %}
+	{%- endfor -%}
 </main>
-{% include footer.html %}
+{%- include footer.html -%}

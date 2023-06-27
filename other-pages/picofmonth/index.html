@@ -5,7 +5,7 @@ title: Picture of the Month
 excerpt: A gallery for Vitaliy Levin’s pictures
 permalink: /picofmonth/
 ---
-{% include header.html %}
+{%- include header.html -%}
 <div class="crumb">
 	<ul itemscope itemtype="https://schema.org/BreadcrumbList">
 		<li itemprop="itemListElement" itemscope
@@ -27,7 +27,7 @@ permalink: /picofmonth/
 <main>
   <h2 class="start">Picture of the Month</h2>
 	<p>"Picture of the Month" is an event where you can see our new paintings.</p>
-	{% for member in site.data.potm %}
+	{%- for member in site.data.potm -%}
 	<h5>{{ member.time }}</h5>
   <section itemscope itemtype="https://schema.org/ImageObject" class="image">
 		<meta itemprop="name" content="{{ member.name }}">
@@ -36,6 +36,6 @@ permalink: /picofmonth/
 		<img class="img400" title="{{ member.name }}" alt="{{ member.desc }}" src="{{ member.src }}" itemprop="contentUrl"><br>
 		<span itemprop="description">{{ member.desc }}</span>
 	</section>
-	{% endfor %}
+	{%- endfor -%}
 </main>
-{% include footer.html %}
+{%- include footer.html -%}

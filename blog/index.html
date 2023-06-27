@@ -24,25 +24,25 @@ permalink: /blog/
 	</ul>
 </div>
 <p>In this page you can find all posts from our site.</p>
-{% for post in paginator.posts %}
+{%- for post in paginator.posts -%}
 	<section class="post">
 		<h4><a class="postLink" href="{{ post.url }}">{{ post.title }}</a></h4>
 		<p>{{ post.excerpt }}</p>
 		<span class="pubDat"><img src="/files/svg/1f4c6.svg" alt="&#128198;">{{ post.date | date: "%d.%m.%Y" }}</span>
 	</section>
-{% endfor %}
-{% if paginator.total_pages > 1 %}
+{%- endfor -%}
+{%- if paginator.total_pages > 1 -%}
 	<ul>
-		{% if paginator.previous_page %}
+		{%- if paginator.previous_page -%}
 			<li><a href="{{ paginator.previous_page_path }}">Back</a></li>
-		{% else %}
+		{%- else -%}
 			<li>Back</li>
-		{% endif %}
+		{%- endif -%}
 			<li>Page {{ paginator.page }} / {{ paginator.total_pages }}</li>
-		{% if paginator.next_page %}
+		{%- if paginator.next_page -%}
 			<li><a href="{{ paginator.next_page_path }}">Next</a></li>
-		{% else %}
+		{%- else -%}
 			<li class="next">Next</li>
-		{% endif %}
+		{%- endif -%}
 	</ul>
-{% endif %}
+{%- endif -%}
