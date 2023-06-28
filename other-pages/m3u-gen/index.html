@@ -32,7 +32,9 @@ permalink: /m3u-gen/
 		<select id="sorting">
 			<option value="0">no sort (Preset from v1.0)</option>
 			<option value="1" selected>name (A to Z, 1 &#60; 10)</option>
-			<option value="2">modification date (1970-01-01 to {{ site.time | date: "%Y-%m-%d" }})</option>
+			<option value="2">name (Z to A, 1 &#62; 10)</option>
+			<option value="3">modification date (1970-01 to {{ site.time | date: "%Y-%m" }})</option>
+			<option value="4">modification date ({{ site.time | date: "%Y-%m" }} to 1970-01)</option>
 		</select>
 	</p><br>
   <input type="file" id="input" multiple="true"><br>

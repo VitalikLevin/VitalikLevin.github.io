@@ -28,7 +28,7 @@ window.onload = function(){
   let a = document.title;
   let t = document.querySelector('title');
   document.addEventListener('visibilitychange', function(){
-    if(document.visibilityState == 'hidden'){
+    if (document.visibilityState == 'hidden') {
       t.innerHTML = ':( NW410 Gone from tab';
     } else {
       t.innerHTML = a;

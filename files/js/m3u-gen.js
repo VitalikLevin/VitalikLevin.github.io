@@ -1,11 +1,12 @@
 const collator = new Intl.Collator("kn", { sensitivity: "base" });
 const downloadLink = document.getElementById("dnld");
-var fileContents = "#EXTM3U\n";
+var fileContents = "";
 const nameInput = document.getElementById("listName");
 const inputElement = document.getElementById("input");
 const prefixInput = document.getElementById("prefixInput");
 const playlist = document.getElementById("playlist");
 const sorting = document.getElementById("sorting");
+window.onload = loadSavedData;
 inputElement.addEventListener("change", handleFiles, true);
 function handleFiles() {
   const rawFileList = [...this.files];
@@ -16,7 +17,17 @@ function handleFiles() {
   }
   if (sorting.value == 2) {
     rawFileList.sort((a, b) => {
+      return collator.compare(b.name, a.name);
+    });
+  }
+  if (sorting.value == 3) {
+    rawFileList.sort((a, b) => {
       return compareNum(a.lastModified, b.lastModified);
+    });
+  }
+  if (sorting.value == 4) {
+    rawFileList.sort((a, b) => {
+      return compareNum(b.lastModified, a.lastModified);
     });
   }
   const fileList = rawFileList;
@@ -34,6 +45,20 @@ function handleFiles() {
   playlist.classList.add("show");
 }
 function flush(textInput) { textInput.value = null; }
-function compareNum(a, b) {
-  return a - b;
+function compareNum(a, b) { return a - b; }
+function beforeGoingAFK() {
+  localStorage.setItem("sortMethod", sorting.value);
+  if (prefixInput.value != null) { localStorage.setItem("prefix", prefixInput.value); }
+  if (nameInput.value != null) { localStorage.setItem("listName", nameInput.value); }
 }
+function loadSavedData() {
+  let listName = localStorage.getItem("listName");
+  let prefix = localStorage.getItem("prefix");
+  let sortMethod = localStorage.getItem("sortMethod");
+  if (listName || prefix || sortMethod) {
+    nameInput.value = listName;
+    prefixInput.value = prefix;
+    sorting.value = sortMethod;
+  }
+}
+window.addEventListener("visibilitychange", beforeGoingAFK, true);

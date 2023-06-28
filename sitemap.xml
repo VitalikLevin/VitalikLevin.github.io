@@ -67,7 +67,7 @@ layout: null
 	<url>
 		<loc>https://vitaliklevin.github.io/m3u-gen/</loc>
 		<lastmod>2023-06-28</lastmod>
-		<changefreq>monthly</changefreq>
+		<changefreq>weekly</changefreq>
 		<priority>0.9</priority>
 	</url>
 	<url>

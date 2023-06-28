@@ -39,7 +39,7 @@ footer, .image {
 	font-family: zillaslab;
 }
 
-.language-plaintext, code, ::placeholder, input[type="text"], select {
+.language-plaintext, code, ::placeholder {
 	font-family: monospace;
 }
 
