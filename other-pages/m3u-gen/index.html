@@ -38,10 +38,11 @@ permalink: /m3u-gen/
 		</select>
 	</p><br>
   <input type="file" id="input" multiple="true"><br>
-	<input type="text" id="prefixInput" placeholder="Files&#8217; prefix"><button class="flush" onclick="flush(prefixInput)">x</button><br>
-	<input type="text" id="listName" placeholder="Playlist name"><button class="flush" onclick="flush(nameInput)">x</button><br>
+	<input type="text" id="prefixInput" placeholder="Files&#8217; prefix"><br>
+	<input type="text" id="listName" placeholder="Playlist name"><br>
+	<input type="text" id="addNewOne" placeholder="New entry..."><button id="realAdd" onclick="manuallyAdd()">&#10003;</button><br>
 	<a id="dnld" href="#" download="playlist.m3u">Download</a>
   <section id="playlist"></section>
-  <script defer src="/files/js/m3u-gen.js"></script>
+  <script async src="/files/js/m3u-gen.js"></script>
 </main>
 {%- include footer.html -%}

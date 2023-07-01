@@ -45,6 +45,6 @@ a:visited {
 	border-color: rgb(244, 244, 244);
 }
 
-button.flush {
-	color: rgb(244, 60, 54);
+button#realAdd {
+	color: rgb(139, 195, 74);
 }
