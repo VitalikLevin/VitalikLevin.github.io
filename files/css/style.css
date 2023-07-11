@@ -1,9 +1,9 @@
 @import url(fonts.css);
-:root {
+:root, select, ::before, ::file-selector-button, dialog {
 	font-family: liberastika, sans-serif;
 }
 
-strong, .cookagree, .start, button[id^="flush"] {
+strong, .start, button#realAdd {
 	font-weight: bold;
 }
 
@@ -12,13 +12,8 @@ header h2, header h2 a, .crumb li:last-child a {
 }
 
 blockquote, .postLink:hover {
-	margin: 0px;
+	margin: 0;
 	padding: 10px;
-}
-
-header {
-	margin-top: 0px;
-	margin-left: 0px;
 }
 
 button, ::file-selector-button, select {
@@ -39,11 +34,11 @@ footer, .image {
 	font-family: zillaslab;
 }
 
-.language-plaintext, code, ::placeholder {
+code, ::placeholder {
 	font-family: monospace;
 }
 
-.pubDat, #cooknote h3, button.flush {
+.pubDat, #cooknote h3 {
 	font-size: 16px;
 }
 
@@ -61,7 +56,7 @@ header h2 {
 }
 
 #cooknote {
-	margin: 0px;
+	margin: 0;
 	display: none;
 }
 
@@ -79,7 +74,7 @@ header h2 {
   cursor: not-allowed;
 }
 
-input[type="text"] {
+input[type="text"], dialog {
 	min-width: 35vw;
 }
 
@@ -89,6 +84,19 @@ input[type="text"] {
 
 #sort::before {
 	content: "Sort selected files by:";
+}
+
+dialog {
+	border: none;
+}
+
+dialog h3 {
+	text-align: center;
+}
+
+dialog p, dialog h3 {
+	margin-top: 0;
+	margin-bottom: 5px;
 }
 
 @media screen and (orientation: portrait) {

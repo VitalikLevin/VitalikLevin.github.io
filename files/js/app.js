@@ -14,6 +14,7 @@ function checkCookies(){
   })
 }
 checkCookies();
+ifUserHasGone();
 document.addEventListener('DOMContentLoaded', () => {
   const sleepText = document.querySelector('#sleep');
   if ((now.getHours() > 22 || now.getHours() < 6)) {
@@ -24,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
-window.onload = function(){
+function ifUserHasGone(){
   let a = document.title;
   let t = document.querySelector('title');
   document.addEventListener('visibilitychange', function(){

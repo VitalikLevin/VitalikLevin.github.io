@@ -3,7 +3,7 @@
 	color: rgb(244, 244, 244);
 }
 
-header h2, header h2 a:any-link {
+header h2, header h2 a:any-link, dialog {
 	background-color: rgb(18, 18, 18);
 	color: rgb(244, 244, 244);
 }
@@ -17,7 +17,7 @@ blockquote, #playlist.show {
 	border-left: 3px solid rgb(100, 181, 246);
 }
 
-blockquote h3, #cooknote button, ::file-selector-button, ::selection, #sleep, select {
+blockquote h3, button, ::file-selector-button, ::selection, #sleep, select {
 	color: rgb(244, 244, 244);
 }
 
@@ -41,7 +41,7 @@ a:visited {
 	border-left: 3px solid rgb(244, 60, 54);
 }
 
-::file-selector-button, #cooknote button {
+::file-selector-button, button {
 	border-color: rgb(244, 244, 244);
 }
 

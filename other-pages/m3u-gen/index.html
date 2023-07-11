@@ -24,9 +24,17 @@ permalink: /m3u-gen/
 		</li>
 	</ul>
 </section>
+<dialog id="help">
+	<h3><code>m3u-gen</code> "Hot Keys"</h3>
+	<p><kbd>F1</kbd> <strong>Open/close this message</strong></p>
+	<p><kbd>Ctrl</kbd>+<kbd>O</kbd> <strong>Select files</strong></p>
+	<p><kbd>Ctrl</kbd>+<kbd>S</kbd> <strong>Save playlist</strong></p>
+	<button id="hClose">Close</button>
+</dialog>
 <main>
   <h2 class="start"><code>.m3u</code> Playlist Generator</h2>
 	<p>Select files and write files&#8217; prefix (if you need it) to get your playlist file.</p>
+	<button id="hOpen">Open hotkeys</button>
 	<h3>Options</h3>
 	<p id="sort">
 		<select id="sorting">
@@ -35,12 +43,14 @@ permalink: /m3u-gen/
 			<option value="2">name (Z to A, 1 &#62; 10)</option>
 			<option value="3">modification date (1970-01 to {{ site.time | date: "%Y-%m" }})</option>
 			<option value="4">modification date ({{ site.time | date: "%Y-%m" }} to 1970-01)</option>
+			<option value="5">size (byte to TiB)</option>
+			<option value="6">size (TiB to byte)</option>
 		</select>
 	</p><br>
   <input type="file" id="input" multiple="true"><br>
 	<input type="text" id="prefixInput" placeholder="Files&#8217; prefix"><br>
 	<input type="text" id="listName" placeholder="Playlist name"><br>
-	<input type="text" id="addNewOne" placeholder="New entry..."><button id="realAdd" onclick="manuallyAdd()">&#10003;</button><br>
+	<input type="text" id="addNewOne" placeholder="New entry"><button id="realAdd" onclick="manuallyAdd()">&#10003;</button><br>
 	<a id="dnld" href="#" download="playlist.m3u">Download</a>
   <section id="playlist"></section>
   <script async src="/files/js/m3u-gen.js"></script>
