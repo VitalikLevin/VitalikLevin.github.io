@@ -1,6 +1,7 @@
 const collator = new Intl.Collator("kn", { sensitivity: "base" });
 const downloadLink = document.getElementById("dnld");
 var fileContents = "";
+const force8 = document.getElementById("force8");
 const help = document.getElementById("help");
 const manuallyInput = document.getElementById("addNewOne");
 const nameInput = document.getElementById("listName");
@@ -65,9 +66,17 @@ function manuallyAdd() {
 }
 function showResult() {
   const theBlob = new Blob([fileContents], {type: "text/plain"});
-  if (nameInput.value !== "") { 
-    downloadLink.setAttribute("download", nameInput.value + ".m3u");
-    downloadLink.setAttribute("title", nameInput.value + ".m3u");
+  if (nameInput.value !== "") {
+    if (force8.checked) {
+      downloadLink.setAttribute("download", nameInput.value + ".m3u8");
+      downloadLink.setAttribute("title", nameInput.value + ".m3u8");
+    } else {
+      downloadLink.setAttribute("download", nameInput.value + ".m3u");
+      downloadLink.setAttribute("title", nameInput.value + ".m3u");
+    }
+  } else if (force8.checked) {
+    downloadLink.setAttribute("download", "playlist.m3u8");
+    downloadLink.setAttribute("title", "playlist.m3u8");
   }
   downloadLink.href = URL.createObjectURL(theBlob);
   if (!playlist.classList.contains("show")) { playlist.classList.add("show"); }
@@ -90,19 +99,33 @@ function loadSavedData() {
 manuallyInput.addEventListener("keydown", (e) => {
   if (e.key == "Enter") { manuallyAdd(); }
 });
-document.getElementById("hOpen").onclick = function() { help.showModal(); }
-document.getElementById("hClose").onclick = function() { help.close(); }
+document.getElementById("hOpen").onclick = function() {
+  help.showModal();
+  document.querySelector("body").classList.add("lockScroll");
+}
+document.getElementById("hClose").onclick = function() {
+  help.close();
+  document.querySelector("body").classList.remove("lockScroll");
+}
 document.addEventListener("visibilitychange", beforeGoingAFK);
 document.addEventListener("keydown", (e) => {
   if (e.key.toLowerCase() == "o" && e.ctrlKey) {
     e.preventDefault();
     inputElement.click();
   }
+  if (e.key > -1 && e.key < 7 && e.ctrlKey) {
+    e.preventDefault();
+    sorting.value = e.key;
+  }
+  if (e.key.toLowerCase() == "c" && e.altKey) {
+    e.preventDefault();
+    force8.click();
+  }
   if (e.key.toLowerCase() == "s" && e.ctrlKey) {
     e.preventDefault();
     downloadLink.click();
   }
-  if (e.code == "F1") {
+  if (e.key == "F1") {
     e.preventDefault();
     if (!help.open) {
       document.getElementById("hOpen").click();

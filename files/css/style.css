@@ -34,8 +34,8 @@ footer, .image {
 	font-family: zillaslab;
 }
 
-code, ::placeholder {
-	font-family: monospace;
+code, kbd, ::placeholder {
+	font-family: jbmono, monospace;
 }
 
 .pubDat, #cooknote h3 {
@@ -99,6 +99,9 @@ dialog p, dialog h3 {
 	margin-bottom: 5px;
 }
 
+.lockScroll {
+	overflow-y: hidden;
+}
 @media screen and (orientation: portrait) {
 	.img400, .prodlogo {
 		max-width: 75vw;

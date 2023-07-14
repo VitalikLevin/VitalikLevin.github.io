@@ -27,6 +27,8 @@ permalink: /m3u-gen/
 <dialog id="help">
 	<h3><code>m3u-gen</code> "Hot Keys"</h3>
 	<p><kbd>F1</kbd> <strong>Open/close this message</strong></p>
+	<p><kbd>Alt</kbd>+<kbd>C</kbd> <strong>Change file extension</strong></p>
+	<p><kbd>Ctrl</kbd>+<kbd>0-6</kbd> <strong>Choose sorting method</strong></p>
 	<p><kbd>Ctrl</kbd>+<kbd>O</kbd> <strong>Select files</strong></p>
 	<p><kbd>Ctrl</kbd>+<kbd>S</kbd> <strong>Save playlist</strong></p>
 	<button id="hClose">Close</button>
@@ -48,8 +50,9 @@ permalink: /m3u-gen/
 		</select>
 	</p><br>
   <input type="file" id="input" multiple="true"><br>
+	<input type="checkbox" id="force8"><label for="force8">Use <code>.m3u8</code></label><br>
 	<input type="text" id="prefixInput" placeholder="Files&#8217; prefix"><br>
-	<input type="text" id="listName" placeholder="Playlist name"><br>
+	<input type="text" id="listName" placeholder="Playlist name"><br><br>
 	<input type="text" id="addNewOne" placeholder="New entry"><button id="realAdd" onclick="manuallyAdd()">&#10003;</button><br>
 	<a id="dnld" href="#" download="playlist.m3u">Download</a>
   <section id="playlist"></section>
