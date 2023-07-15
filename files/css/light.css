@@ -9,7 +9,6 @@ header h2, header h2 a:any-link {
 
 h3 {
 	color: rgb(246, 170, 126);
-	text-shadow: 1px 1px 1px rgb(18, 18, 18);
 }
 
 #cooknote.show {
@@ -39,4 +38,8 @@ mark, ::selection {
 
 button#realAdd {
 	color: rgb(139, 195, 74);
+}
+
+::backdrop {
+	background-color: rgba(18, 18, 18, 0.5);
 }

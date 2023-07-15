@@ -48,3 +48,7 @@ a:visited {
 button#realAdd {
 	color: rgb(139, 195, 74);
 }
+
+::backdrop {
+	background-color: rgba(18, 18, 18, 0.5);
+}

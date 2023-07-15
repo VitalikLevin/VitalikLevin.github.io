@@ -1,5 +1,5 @@
 @import url(fonts.css);
-:root, select, ::before, ::file-selector-button, dialog {
+:root, button, select, ::before, ::file-selector-button, dialog {
 	font-family: liberastika, sans-serif;
 }
 
