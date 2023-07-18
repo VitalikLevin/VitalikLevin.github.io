@@ -1,5 +1,4 @@
-const doc = document.querySelector('html');
-const lang = doc.getAttribute('lang');
+const lang = document.querySelector('html').getAttribute('lang');
 const now = new Date();
 function checkCookies(){
   let cookieDate = localStorage.getItem('cookieDate');

@@ -1,5 +1,5 @@
 @import url(fonts.css);
-:root, button, select, ::before, ::file-selector-button, dialog {
+:root, button, dialog, input, select, ::before, ::file-selector-button {
 	font-family: liberastika, sans-serif;
 }
 
@@ -48,6 +48,9 @@ code, kbd, ::placeholder {
 
 header h2 {
 	user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
 }
 
 .pubDat img, #cooknote h3 img {
@@ -65,9 +68,10 @@ header h2 {
 	display: block;
 }
 
-#logo, .pubDat img, #cooknote h3 img {
-	width: 28px;
-	height: 28px;
+.pubDat img, #cooknote h3 img, button#realAdd {
+	width: 24px;
+	height: 24px;
+	padding: 0;
 }
 
 .crumb li mark {
@@ -83,7 +87,7 @@ input[type="text"], dialog {
 }
 
 #sort::before {
-	content: "Sort selected files by:";
+	content: attr(data-before);
 }
 
 dialog {
@@ -101,6 +105,19 @@ dialog p, dialog h3 {
 
 .lockScroll {
 	overflow-y: hidden;
+}
+
+button#realAdd {
+	background-image: url(../svg/2714.svg);
+	background-position: center;
+	background-size: cover;
+	position: absolute;
+	margin-left: 2px;
+}
+
+#logo {
+	width: 30px;
+	height: min-content;
 }
 @media screen and (orientation: portrait) {
 	.img400, .prodlogo {

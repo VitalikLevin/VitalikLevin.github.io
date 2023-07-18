@@ -36,10 +36,6 @@ mark, ::selection {
 	border-color: rgb(18, 18, 18);
 }
 
-button#realAdd {
-	color: rgb(139, 195, 74);
-}
-
 ::backdrop {
 	background-color: rgba(18, 18, 18, 0.5);
 }

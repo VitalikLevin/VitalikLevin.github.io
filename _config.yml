@@ -5,6 +5,8 @@ encoding: "UTF-8"
 timezone: Europe/Moscow
 permalink: pretty
 highlighter: rogue
+markdown: kramdown
+theme: null
 url: https://vitaliklevin.github.io
 port: 1337
 license: https://creativecommons.org/licenses/by-sa/4.0/

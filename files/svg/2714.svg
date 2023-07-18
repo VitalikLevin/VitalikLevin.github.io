@@ -1,0 +1,11 @@
+<svg version="1.1" width="128" height="128"
+	viewbox="0 0 128 128"
+	xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<style type="text/css"><![CDATA[
+      .gr { fill: rgb(139, 195, 74); }
+		]]></style>
+	</defs>
+  <title>Heavy Check Mark</title>
+  <polygon points="18 64, 8 69, 50 126, 70 126, 124 12, 114 2, 60 116" class="gr"/>
+</svg>

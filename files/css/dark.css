@@ -45,10 +45,6 @@ a:visited {
 	border-color: rgb(244, 244, 244);
 }
 
-button#realAdd {
-	color: rgb(139, 195, 74);
-}
-
 ::backdrop {
 	background-color: rgba(18, 18, 18, 0.5);
 }

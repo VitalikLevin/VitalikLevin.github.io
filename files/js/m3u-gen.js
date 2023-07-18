@@ -1,4 +1,5 @@
 const collator = new Intl.Collator("kn", { sensitivity: "base" });
+const dtFormat = new Intl.DateTimeFormat(document.querySelector("html").getAttribute("lang"), { year: "numeric", month: "2-digit", day: "numeric", hour: "2-digit", minute: "2-digit", second: "numeric" });
 const downloadLink = document.getElementById("dnld");
 var fileContents = "";
 const force8 = document.getElementById("force8");
@@ -39,8 +40,8 @@ function handleFiles() {
   const numFiles = fileList.length;
   for (var i = 0; i < numFiles; i++) {
     var file = fileList[i];
-    var rawTrD = new Date(file.lastModified);
-    var trackDate = rawTrD.getFullYear() + "-" + (rawTrD.getMonth() + 1) + "-" + rawTrD.getDate() + " " + rawTrD.getHours() + ":" + rawTrD.getMinutes() + ":" + rawTrD.getSeconds();
+    var rawDate = new Date(file.lastModified);
+    var trackDate = dtFormat.format(rawDate);
     var trackName = file.name;
     var trackSize = file.size;
     if (prefixInput.value !== null) { trackName = prefixInput.value + file.name; }
@@ -48,7 +49,7 @@ function handleFiles() {
       playlist.innerHTML += trackDate + " &#8212; ";
     }
     if (sorting.value == 5 || sorting.value == 6) {
-      playlist.innerHTML += trackSize + " bytes &#8212; ";
+      playlist.innerHTML += trackSize + " " + playlist.getAttribute("data-size-type") + " &#8212; ";
     }
     playlist.innerHTML += trackName + "<br>";
     fileContents += trackName + "\n";

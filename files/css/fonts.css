@@ -1,6 +1,8 @@
 @font-face {
 	font-family: "liberastika";
-	src: url("../fonts/liberastika_regular.woff2") format("woff2"),
+	src: local(Liberastika Regualar),
+		local(Liberastika-Regular),
+		url("../fonts/liberastika_regular.woff2") format("woff2"),
 		url("../fonts/liberastika_regular.woff") format("woff");
 	font-weight: normal;
 	font-style: normal;
@@ -16,7 +18,9 @@
 }
 @font-face {
 	font-family: "liberastika";
-	src: url("../fonts/liberastika_bold.woff2") format("woff2"),
+	src: local(Liberastika Bold),
+		local(Liberastika-Bold),
+		url("../fonts/liberastika_bold.woff2") format("woff2"),
 		url("../fonts/liberastika_bold.woff") format("woff");
 	font-weight: bold;
 	font-style: normal;
@@ -24,7 +28,9 @@
 }
 @font-face {
 	font-family: "liberastika";
-	src: url("../fonts/liberastika_italic.woff2") format("woff2"),
+	src: local(Liberastika Italic),
+		local(Liberastika-Italic),
+		url("../fonts/liberastika_italic.woff2") format("woff2"),
 		url("../fonts/liberastika_italic.woff") format("woff");
 	font-weight: normal;
 	font-style: italic;
@@ -32,7 +38,9 @@
 }
 @font-face {
 	font-family: "jbmono";
-	src: url("../fonts/jbmono_regular.woff2") format("woff2"),
+	src: local(JetBrains Mono Regular),
+		local(JetBrainsMono-Regular),
+		url("../fonts/jbmono_regular.woff2") format("woff2"),
 		url("../fonts/jbmono_regular.woff") format("woff");
 	font-weight: normal;
 	font-style: normal;
@@ -40,7 +48,9 @@
 }
 @font-face {
 	font-family: "liberastika";
-	src: url("../fonts/liberastika_bolditalic.woff2") format("woff2"),
+	src: local(Liberastika Bold Italic),
+		local(Liberastika-BoldItalic),
+		url("../fonts/liberastika_bolditalic.woff2") format("woff2"),
 		url("../fonts/liberastika_bolditalic.woff") format("woff");
 	font-weight: bold;
 	font-style: italic;
