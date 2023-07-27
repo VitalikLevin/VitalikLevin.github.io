@@ -1,5 +1,4 @@
 @import url(fonts.css);
-@import url(anim-s.css);
 :root, button, dialog, input, select, ::before, ::file-selector-button {
 	font-family: liberastika, sans-serif;
 }
@@ -43,7 +42,7 @@ code, kbd, ::placeholder {
 	font-size: 16px;
 }
 
-.top {
+.top, input[type="file"] + label {
 	visibility: hidden;
 }
 
@@ -131,7 +130,7 @@ button#realAdd {
 	input[type="text"] {
 		min-width: 55vw;
 	}
-}
-@media screen and (hover: none) {
-	nav ul li { min-height: 48px; }
+	nav ul li {
+		min-height: 48px;
+	}
 }

@@ -1,0 +1,3 @@
+Советую тебе поспать, <code contenteditable="true">username</code>.
+Чтобы повернуть элемент с помощью <code>CSS</code>, напиши <code>.yourSelector { transform: rotate([0.1-1.0]spin); }</code>.
+С помощью &#123;&#37; include &#37;&#125; в Jekyll можно вставлять HTML-код и SVG-изображения.

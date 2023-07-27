@@ -2,29 +2,19 @@
   from {
     width: 1px;
     height: 1px;
-  }
-  1% {
     overflow-x: hidden;
     overflow-y: hidden;
   }
   20% {
-    height: 5vw;
+    height: 3vw;
   }
   70% {
     height: 10vw;
   }
-}
-@keyframes spinning {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(0.8turn);
+  95% {
+    height: 14vw;
   }
 }
 dialog:modal {
   animation: 3s msgResize;
-}
-#logo:hover {
-  animation: 3s infinite alternate spinning;
 }

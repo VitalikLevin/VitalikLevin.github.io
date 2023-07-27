@@ -1,5 +1,5 @@
 const collator = new Intl.Collator("kn", { sensitivity: "base" });
-const dtFormat = new Intl.DateTimeFormat(document.querySelector("html").getAttribute("lang"), { year: "numeric", month: "2-digit", day: "numeric", hour: "2-digit", minute: "2-digit", second: "numeric" });
+const dtFormat = new Intl.DateTimeFormat(document.querySelector("html").lang, { year: "numeric", month: "2-digit", day: "numeric", hour: "2-digit", minute: "2-digit", second: "numeric" });
 const downloadLink = document.getElementById("dnld");
 var fileContents = "";
 const force8 = document.getElementById("force8");

@@ -1,0 +1,3 @@
+I recommend you to sleep.
+Press <kbd>Alt</kbd>+<kbd>F4</kbd> on your computer’s desktop screen to turn it off.
+Type <code>theme=none</code> in <code>jekyllSiteRoot/_config.yml</code> to delete <em>mysterious</em> `<code>/assets/css/style.css</code>` file.
