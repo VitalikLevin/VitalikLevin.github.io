@@ -51,16 +51,18 @@ function handleFiles() {
     if (sorting.value == 5 || sorting.value == 6) {
       playlist.innerHTML += trackSize + " " + playlist.getAttribute("data-size-type") + " &#8212; ";
     }
-    playlist.innerHTML += trackName + "<br>";
     fileContents += trackName + "\n";
+    playlist.innerText += trackName;
+    playlist.innerHTML += "<br>";
   }
   showResult();
 }
 function compareNum(a, b) { return a - b; }
 function manuallyAdd() {
   if (manuallyInput.value !== null && manuallyInput.value !== "") {
-    playlist.innerHTML += manuallyInput.value + "<br>";
     fileContents += manuallyInput.value + "\n";
+    playlist.innerText += manuallyInput.value;
+    playlist.innerHTML += "<br>";
     showResult();
     manuallyInput.value = null;
   }
@@ -81,6 +83,7 @@ function showResult() {
   }
   downloadLink.href = URL.createObjectURL(theBlob);
   if (!playlist.classList.contains("show")) { playlist.classList.add("show"); }
+  if (downloadLink.hasAttribute("hidden")) { downloadLink.removeAttribute("hidden"); }
 }
 function beforeGoingAFK() {
   localStorage.setItem("sortMethod", sorting.value);
