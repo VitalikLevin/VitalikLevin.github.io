@@ -120,7 +120,7 @@ button#realAdd {
 	height: min-content;
 }
 @media screen and (orientation: portrait) {
-	.img400, .prodlogo {
+	img[class^="img"], .prodlogo {
 		max-width: 75vw;
 	}
 	.top {
