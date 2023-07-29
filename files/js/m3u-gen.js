@@ -10,7 +10,6 @@ const inputElement = document.getElementById("input");
 const prefixInput = document.getElementById("prefixInput");
 const playlist = document.getElementById("playlist");
 const sorting = document.getElementById("sorting");
-window.onload = loadSavedData;
 inputElement.addEventListener("change", handleFiles, true);
 function handleFiles() {
   const rawFileList = [...this.files];
@@ -100,6 +99,7 @@ function loadSavedData() {
     sorting.value = sortMethod;
   }
 }
+document.addEventListener("DOMContentLoaded", loadSavedData());
 manuallyInput.addEventListener("keydown", (e) => {
   if (e.key == "Enter") { manuallyAdd(); }
 });

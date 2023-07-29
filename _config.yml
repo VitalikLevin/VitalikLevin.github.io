@@ -12,7 +12,7 @@ port: 1337
 license: https://creativecommons.org/licenses/by-sa/4.0/
 og_p: /files/images/spaceworm.png
 og_pa: A pink worm in space
-status: /files/icons/favicon.svg
+status: /files/svg/1f47e.svg
 steamyfish: https://marketplace.visualstudio.com/items?itemName=networkworms.steamyfish
 plugins:
   - jekyll-feed
