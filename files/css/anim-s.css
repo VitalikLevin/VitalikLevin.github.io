@@ -2,8 +2,6 @@
   from {
     width: 1px;
     height: 1px;
-    overflow-x: hidden;
-    overflow-y: hidden;
   }
   20% {
     height: 3vw;

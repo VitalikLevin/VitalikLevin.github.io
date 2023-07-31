@@ -16,7 +16,7 @@ function checkCookies() {
 function ifUserHasGone() {
   let a = document.title;
   let t = document.querySelector('title');
-  document.addEventListener('visibilitychange', function(){
+  document.addEventListener('visibilitychange', function() {
     if (document.visibilityState == 'hidden') {
       t.innerHTML = ':( NW410 Gone from tab';
     } else {
@@ -25,6 +25,12 @@ function ifUserHasGone() {
   })
 }
 function getAdvice() {
+  if (lang == null) {
+    lang = document.querySelector('script[src*="/files/js/app.js"').getAttribute('src').slice(-5);
+    if (lang[0] == "=") {
+      lang = lang.slice(-2);
+    }
+  }
   fetch('/files/texts/advice-' + lang + '.txt')
     .then(function(resp) {
       return resp.text();
