@@ -1,0 +1,11 @@
+.highlight {
+  background-color: rgb(39, 39, 39);
+  color: rgb(244, 244, 244);
+}
+.nv {
+  color: rgb(244, 60, 54);
+}
+.nt {
+  color: rgb(139, 195, 74);
+  font-weight: bold;
+}

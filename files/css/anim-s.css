@@ -15,6 +15,21 @@
     height: 14vw;
   }
 }
+@keyframes curPage {
+  from {
+    opacity: 0;
+  }
+  88% {
+    opacity: 0.05;
+  }
+  90% {
+    opacity: 1;
+  }
+}
 dialog:modal {
   animation: 3s msgResize;
+}
+.crumb li:last-child a::after {
+  animation: 5s curPage;
+  animation-iteration-count: infinite;
 }

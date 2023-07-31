@@ -28,7 +28,7 @@ permalink: /picofmonth/
   <h2 class="start">Picture of the Month</h2>
 	<p>"Picture of the Month" is an event where you can see our new paintings.</p>
 	{%- for member in site.data.potm -%}
-	<h5>{{ member.time }}</h5>
+	<h5 id="{{ member.time | slugify }}">{{ member.time }}</h5>
   <section itemscope itemtype="https://schema.org/ImageObject" class="image">
 		<meta itemprop="name" content="{{ member.name }}">
     <meta itemprop="width" content="{{ member.width | default: 400 }} px">

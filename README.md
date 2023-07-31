@@ -6,8 +6,11 @@ README was eaten by `VitalikLevin`.
 
 - [The License](/LICENSE.txt)
 
-![Worm in Space](files/images/spaceworm.png#gh-light-mode-only)
-![Worm in Real Space](files/images/spaceworm-dark.png#gh-dark-mode-only)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="files/images/spaceworm-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="files/images/spaceworm.png">
+  <img alt="A worm in space" src="files/images/spaceworm.png">
+</picture>
 
 ## Links
 - [Main page](https://vitaliklevin.github.io/)

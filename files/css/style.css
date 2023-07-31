@@ -1,4 +1,5 @@
 @import url(fonts.css);
+@import url(code.css);
 :root, button, dialog, input, select, ::before, ::file-selector-button {
 	font-family: liberastika, sans-serif;
 }
@@ -13,7 +14,7 @@ header h2, header h2 a, .crumb li:last-child a {
 
 blockquote, .postLink:hover {
 	margin: 0;
-	padding: 10px;
+	padding-left: 10px;
 }
 
 button, ::file-selector-button, select {
@@ -74,8 +75,9 @@ header h2 {
 	padding: 0;
 }
 
-.crumb li mark {
+.crumb li:last-child a {
   cursor: not-allowed;
+	padding-right: 15rem;
 }
 
 input[type="text"], dialog {
@@ -119,10 +121,20 @@ button#realAdd {
 	width: 30px;
 	height: min-content;
 }
+
+img[class^="img"], .prodlogo {
+	max-width: 75vw;
+}
+
+.crumb ul li:last-child a::after {
+	content: "\2190 You are here";
+}
+
+figure {
+	margin: 4px 4px;
+	max-width: 85vw;
+}
 @media screen and (orientation: portrait) {
-	img[class^="img"], .prodlogo {
-		max-width: 75vw;
-	}
 	.top {
 		float: right;
 		visibility: visible;
@@ -130,7 +142,7 @@ button#realAdd {
 	input[type="text"] {
 		min-width: 55vw;
 	}
-	nav ul li, .crumb ul li, input {
+	nav ul li, .crumb ul li, input, select {
 		margin-bottom: 8px;
 	}
 }
