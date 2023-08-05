@@ -3,12 +3,12 @@
 	color: rgb(244, 244, 244);
 }
 
-header h2, header h2 a:any-link, dialog {
+dialog, header h2, header h2 a:any-link {
 	background-color: rgb(18, 18, 18);
 	color: rgb(244, 244, 244);
 }
 
-nav, main, footer, h3, select option {
+footer, h3, main, nav, select option {
 	background-color: rgb(55, 55, 55);
 }
 
@@ -17,8 +17,12 @@ blockquote, #playlist.show {
 	border-left: 3px solid rgb(100, 181, 246);
 }
 
-blockquote h3, button, ::file-selector-button, ::selection, #sleep, select, .crumb ul li:last-child a::after {
+blockquote h3, button, select, ::file-selector-button, ::selection, .crumb ul li:last-child a::after, #sleep {
 	color: rgb(244, 244, 244);
+}
+
+.warn {
+	border-left: 3px solid rgb(249, 168, 37);
 }
 
 .start, a {
@@ -29,6 +33,10 @@ mark, ::selection {
 	background-color: rgb(249, 168, 37);
 }
 
+kbd {
+	border: 1px solid rgb(244, 244, 244);
+}
+
 a:hover {
 	color: rgb(246, 170, 126);
 }
@@ -37,7 +45,7 @@ a:visited {
 	color: rgb(249, 168, 37);
 }
 
-#cooknote.show {
+.error, #cooknote.show {
 	border-left: 3px solid rgb(244, 60, 54);
 }
 
@@ -46,7 +54,7 @@ a:visited {
 }
 
 ::backdrop {
-	background-color: rgba(18, 18, 18, 0.5);
+	background-color: rgba(18, 18, 18, 0.6);
 }
 
 #backtotop {

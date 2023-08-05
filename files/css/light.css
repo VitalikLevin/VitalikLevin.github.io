@@ -12,12 +12,20 @@ h3 {
 	color: rgb(246, 170, 126);
 }
 
-#cooknote.show {
+.error, #cooknote.show {
 	border-left: 3px solid rgb(244, 60, 54);
 }
 
 blockquote, #playlist.show {
 	border-left: 3px solid rgb(100, 181, 246);
+}
+
+.warn {
+	border-left: 3px solid rgb(249, 168, 37);
+}
+
+kbd {
+	border: 1px solid rgb(18, 18, 18);
 }
 
 .start, a {
@@ -38,7 +46,7 @@ mark, ::selection {
 }
 
 ::backdrop {
-	background-color: rgba(18, 18, 18, 0.5);
+	background-color: rgba(18, 18, 18, 0.6);
 }
 
 #backtotop {

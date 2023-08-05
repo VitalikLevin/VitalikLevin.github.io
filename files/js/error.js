@@ -14,12 +14,9 @@ const audioPlay = async url => {
   source.start();
 };
 document.addEventListener("DOMContentLoaded", () => {
-  if (window.location.hostname != "vitaliklevin.github.io") {
-    audioFile = "https://vitaliklevin.github.io" + audioFile;
-  }
   document.querySelector("#logo").onclick = () => audioPlay(audioFile);
   window.onkeydown = (e) => {
-    if((e.key == "F5") || (e.key.toLowerCase() == "r" && e.ctrlKey) || e.shiftKey) {
+    if ((e.key == "F5") || (e.key.toLowerCase() == "r" && e.ctrlKey) || e.shiftKey) {
       e.preventDefault();
       audioPlay(audioFile);
     }

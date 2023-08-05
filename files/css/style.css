@@ -47,7 +47,7 @@ code, kbd, ::placeholder {
 	visibility: hidden;
 }
 
-header h2 {
+header h2, label {
 	user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;

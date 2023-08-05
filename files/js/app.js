@@ -22,15 +22,9 @@ function ifUserHasGone() {
     } else {
       t.innerHTML = a;
     }
-  })
+  });
 }
 function getAdvice() {
-  if (lang == null) {
-    lang = document.querySelector('script[src*="/files/js/app.js"').getAttribute('src').slice(-5);
-    if (lang[0] == "=") {
-      lang = lang.slice(-2);
-    }
-  }
   fetch('/files/texts/advice-' + lang + '.txt')
     .then(function(resp) {
       return resp.text();
@@ -52,6 +46,15 @@ function getAdvice() {
       }
     });
 }
+function noSupport() {
+  if (/IEMobile|MSIE|Trident/i.test(navigator.userAgent)) {
+    document.querySelector('header').innerHTML += '<blockquote class="warn">Your browser is quiet old.</blockquote>';
+    var style = document.createElement('style');
+    style.innerHTML = 'header, main { display: block; }\ndialog { display: none; }';
+    document.head.appendChild(style);
+  }
+}
+noSupport();
 checkCookies();
 getAdvice();
 ifUserHasGone();

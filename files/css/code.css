@@ -1,6 +1,7 @@
 .highlight {
   background-color: rgb(39, 39, 39);
   color: rgb(244, 244, 244);
+  overflow-x: scroll;
 }
 .nv {
   color: rgb(244, 60, 54);
