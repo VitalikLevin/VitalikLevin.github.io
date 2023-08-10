@@ -25,7 +25,7 @@ function ifUserHasGone() {
   });
 }
 function getAdvice() {
-  fetch(`/files/advice/${lang}.txt`)
+  fetch(`/files/texts/advice-${lang}.txt`)
     .then(function(resp) {
       return resp.text();
     })
