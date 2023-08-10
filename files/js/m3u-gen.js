@@ -45,23 +45,21 @@ function handleFiles() {
     var trackSize = file.size;
     if (prefixInput.value !== null) { trackName = prefixInput.value + file.name; }
     if (sorting.value == 3 || sorting.value == 4) {
-      playlist.innerHTML += trackDate + " &#8212; ";
+      playlist.innerHTML += `${trackDate} &#8212;&#160;`;
     }
     if (sorting.value == 5 || sorting.value == 6) {
-      playlist.innerHTML += trackSize + " " + playlist.getAttribute("data-size-type") + " &#8212; ";
+      playlist.innerHTML += `${trackSize} ${playlist.getAttribute("data-size-type")} &#8212;&#160;`;
     }
-    fileContents += trackName + "\n";
-    playlist.innerText += trackName;
-    playlist.innerHTML += "<br>";
+    fileContents += `${trackName}\n`;
+    playlist.innerText += `${trackName}\n`;
   }
   showResult();
 }
 function compareNum(a, b) { return a - b; }
 function manuallyAdd() {
   if (manuallyInput.value !== null && manuallyInput.value !== "") {
-    fileContents += manuallyInput.value + "\n";
-    playlist.innerText += manuallyInput.value;
-    playlist.innerHTML += "<br>";
+    fileContents += `${manuallyInput.value}\n`;
+    playlist.innerText += `${manuallyInput.value}\n`;
     showResult();
     manuallyInput.value = null;
   }
@@ -70,11 +68,11 @@ function showResult() {
   const theBlob = new Blob([fileContents], {type: "text/plain"});
   if (nameInput.value !== "") {
     if (force8.checked) {
-      downloadLink.setAttribute("download", nameInput.value + ".m3u8");
-      downloadLink.setAttribute("title", nameInput.value + ".m3u8");
+      downloadLink.setAttribute("download", `${nameInput.value}.m3u8`);
+      downloadLink.setAttribute("title", `${nameInput.value}.m3u8`);
     } else {
-      downloadLink.setAttribute("download", nameInput.value + ".m3u");
-      downloadLink.setAttribute("title", nameInput.value + ".m3u");
+      downloadLink.setAttribute("download", `${nameInput.value}.m3u`);
+      downloadLink.setAttribute("title", `${nameInput.value}.m3u`);
     }
   } else if (force8.checked) {
     downloadLink.setAttribute("download", "playlist.m3u8");

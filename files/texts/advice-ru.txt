@@ -1,4 +1,4 @@
-Советую тебе поспать, <code contenteditable="true">username</code>.
-Чтобы повернуть элемент с помощью <code>CSS</code>, напиши <code>.yourSelector { transform: rotate([0.1-1.0]spin); }</code>.
+Советую тебе поспать, <code contenteditable>username</code>.
+Чтобы повернуть элемент с помощью <code>CSS</code>, напиши <code><span contenteditable class="nc">.yourSelector</span> <span class="p">{</span> <span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span contenteditable class="m">0.7</span><span class="n">spin</span><span class="p">);</span> <span class="p">}</span></code>.
 С помощью &#123;&#37; include &#37;&#125; в Jekyll можно вставлять HTML-код и SVG-изображения.
 Нажми <kbd>Windows</kbd>+<kbd>D</kbd>, чтобы показать или скрыть рабочий стол.

@@ -12,8 +12,13 @@ h3 {
 	color: rgb(246, 170, 126);
 }
 
-.error, #cooknote.show {
+.error {
 	border-left: 3px solid rgb(244, 60, 54);
+}
+
+#cooknote.show {
+	border-top: 2px solid rgb(244, 60, 54);
+	background-color: rgb(244, 244, 244);
 }
 
 blockquote, #playlist.show {

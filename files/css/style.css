@@ -12,7 +12,7 @@ header h2, header h2 a, .crumb li:last-child a {
 	text-decoration: none;
 }
 
-blockquote, .postLink:hover {
+blockquote, .postLink:hover, #playlist.show {
 	margin: 0;
 	padding-left: 10px;
 }
@@ -22,11 +22,16 @@ button, ::file-selector-button, select {
 	border-width: 0.5px;
 }
 
+button:hover, ::file-selector-button:hover {
+	opacity: 0.7;
+	cursor: pointer;
+}
+
 .crumb ul {
   list-style-type: none;
 }
 
-footer, .image {
+.image {
 	margin-left: 5px;
 	margin-top: 5px;
 }
@@ -60,24 +65,44 @@ header h2, label {
 }
 
 #cooknote {
-	margin: 0;
+	position: fixed;
 	display: none;
+	z-index: 3;
+	left: 0;
+	right: 0;
+	bottom: 0;
 }
 
-#cooknote.show, #playlist.show {
-	padding-left: 10px;
+.cookagree {
+	padding: 0;
+	position: fixed;
+	left: calc(98vw - 48px);
+	right: 2vw;
+	bottom: 2vh;
+	aspect-ratio: 1 / 1;
+	min-width: 48px;
+}
+
+#cooknote.show {
 	display: block;
 }
 
 .pubDat img, #cooknote h3 img, button#realAdd {
-	width: 24px;
+	aspect-ratio: 1 / 1;
 	height: 24px;
 	padding: 0;
 }
 
+#cooknote h3 {
+	margin: 0;
+}
+
+#cooknote p {
+	max-width: 80vw;
+}
+
 .crumb li:last-child a {
   cursor: not-allowed;
-	padding-right: 15rem;
 }
 
 input[type="text"], dialog {
@@ -119,7 +144,7 @@ button#realAdd {
 
 #logo {
 	width: 30px;
-	height: min-content;
+	aspect-ratio: 1 / 1;
 }
 
 img[class^="img"], .prodlogo {
@@ -136,7 +161,10 @@ figure {
 }
 @media screen and (orientation: portrait) {
 	.top {
-		float: right;
+		position: fixed;
+		right: 3px;
+		bottom: 10px;
+		z-index: 2;
 		visibility: visible;
 	}
 	input[type="text"] {

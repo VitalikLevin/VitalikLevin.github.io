@@ -25,7 +25,7 @@ function ifUserHasGone() {
   });
 }
 function getAdvice() {
-  fetch('/files/texts/advice-' + lang + '.txt')
+  fetch(`/files/advice/${lang}.txt`)
     .then(function(resp) {
       return resp.text();
     })
@@ -40,7 +40,7 @@ function getAdvice() {
         }
       }
       if (now.getHours() > 22 || now.getHours() < 6) {
-        sleep.innerHTML = array[i] + '<br>';
+        sleep.innerHTML = `${array[i]}\n`;
         i++;
         localStorage.setItem('i', i);
       }
