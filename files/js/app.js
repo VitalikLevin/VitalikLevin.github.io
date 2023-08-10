@@ -40,7 +40,7 @@ function getAdvice() {
         }
       }
       if (now.getHours() > 22 || now.getHours() < 6) {
-        sleep.innerHTML = `${array[i]}\n`;
+        sleep.innerHTML = `${array[i]}<br>`;
         i++;
         localStorage.setItem('i', i);
       }
