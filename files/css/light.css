@@ -50,7 +50,7 @@ mark, ::selection {
 	border-color: rgb(18, 18, 18);
 }
 
-::backdrop {
+::backdrop, [contenteditable]::selection {
 	background-color: rgba(18, 18, 18, 0.6);
 }
 

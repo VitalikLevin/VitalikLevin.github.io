@@ -13,14 +13,26 @@ function checkCookies() {
     cooknote.classList.remove('show');
   });
 }
+function binButton() {
+  var binArr = document.querySelectorAll('.bin');
+  for (let a = 0; a < binArr.length; a++) {
+    var button = binArr[a];
+    button.onclick = function() {
+      if (button.innerText != '1') {
+        button.innerText = '1';
+      } else {
+        button.innerText = '0';
+      }
+    }
+  }
+}
 function ifUserHasGone() {
-  let a = document.title;
   let t = document.querySelector('title');
   document.addEventListener('visibilitychange', function() {
     if (document.visibilityState == 'hidden') {
       t.innerHTML = ':( NW410 Gone from tab';
     } else {
-      t.innerHTML = a;
+      t.innerHTML = document.title;
     }
   });
 }
@@ -56,5 +68,6 @@ function noSupport() {
 }
 noSupport();
 checkCookies();
+binButton();
 getAdvice();
 ifUserHasGone();

@@ -67,14 +67,14 @@ function manuallyAdd() {
 function showResult() {
   const theBlob = new Blob([fileContents], {type: "text/plain"});
   if (nameInput.value !== "") {
-    if (force8.checked) {
+    if (force8.innerText == 1) {
       downloadLink.setAttribute("download", `${nameInput.value}.m3u8`);
       downloadLink.setAttribute("title", `${nameInput.value}.m3u8`);
     } else {
       downloadLink.setAttribute("download", `${nameInput.value}.m3u`);
       downloadLink.setAttribute("title", `${nameInput.value}.m3u`);
     }
-  } else if (force8.checked) {
+  } else if (force8.innerText == 1) {
     downloadLink.setAttribute("download", "playlist.m3u8");
     downloadLink.setAttribute("title", "playlist.m3u8");
   }
@@ -86,12 +86,19 @@ function beforeGoingAFK() {
   localStorage.setItem("sortMethod", sorting.value);
   if (prefixInput.value !== null) { localStorage.setItem("prefix", prefixInput.value); }
   if (nameInput.value !== null) { localStorage.setItem("listName", nameInput.value); }
+  if (force8.innerText == 1) {
+    localStorage.setItem("force8", 1);
+  } else {
+    localStorage.setItem("force8", 0);
+  }
 }
 function loadSavedData() {
+  let cacheForce8 = localStorage.getItem("force8");
   let listName = localStorage.getItem("listName");
   let prefix = localStorage.getItem("prefix");
   let sortMethod = localStorage.getItem("sortMethod");
-  if (listName || prefix || sortMethod) {
+  if (cacheForce8 || listName || prefix || sortMethod) {
+    force8.innerText = cacheForce8;
     nameInput.value = listName;
     prefixInput.value = prefix;
     sorting.value = sortMethod;

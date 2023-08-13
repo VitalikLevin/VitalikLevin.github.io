@@ -53,7 +53,7 @@ a:visited {
 	border-color: rgb(244, 244, 244);
 }
 
-::backdrop {
+::backdrop, [contenteditable]::selection {
 	background-color: rgba(18, 18, 18, 0.6);
 }
 
