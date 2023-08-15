@@ -55,7 +55,6 @@ function handleFiles() {
   }
   showResult();
 }
-function compareNum(a, b) { return a - b; }
 function manuallyAdd() {
   if (manuallyInput.value !== null && manuallyInput.value !== "") {
     fileContents += `${manuallyInput.value}\n`;
@@ -84,8 +83,8 @@ function showResult() {
 }
 function beforeGoingAFK() {
   localStorage.setItem("sortMethod", sorting.value);
-  if (prefixInput.value !== null) { localStorage.setItem("prefix", prefixInput.value); }
-  if (nameInput.value !== null) { localStorage.setItem("listName", nameInput.value); }
+  localStorage.setItem("prefix", prefixInput.value);
+  localStorage.setItem("listName", nameInput.value);
   if (force8.innerText == 1) {
     localStorage.setItem("force8", 1);
   } else {

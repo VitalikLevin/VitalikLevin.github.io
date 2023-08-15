@@ -25,4 +25,5 @@ README was eaten by `VitalikLevin`.
     - [Nature vs. Spirits Downloads](https://vitaliklevin.github.io/games/nves/downloads/)
 - [`m3u-gen`](https://vitaliklevin.github.io/m3u-gen/)
 - _[Picture of the Month](https://vitaliklevin.github.io/picofmonth/)_
+- [`pls-gen`](https://vitaliklevin.github.io/pls-gen/)
 - ["I'm a Teapot" page](https://vitaliklevin.github.io/teapot/)

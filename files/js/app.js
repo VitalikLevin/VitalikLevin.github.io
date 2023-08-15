@@ -13,6 +13,7 @@ function checkCookies() {
     cooknote.classList.remove('show');
   });
 }
+function compareNum(a, b) { return a - b; }
 function binButton() {
   var binArr = document.querySelectorAll('.bin');
   for (let a = 0; a < binArr.length; a++) {
