@@ -68,7 +68,7 @@ function noSupport() {
   }
 }
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js')
+  navigator.serviceWorker.register('/files/js/sw.js')
     .then(() => navigator.serviceWorker.ready.then((worker) => {
       worker.sync.register('syncdata');
     }))
