@@ -1,5 +1,6 @@
 ---
 layout: null
+permalink: /sw.js
 ---
 const CACHE = "offline-fallback-v1";
 const FALLBACK = `{%- include offline.html -%}`;
