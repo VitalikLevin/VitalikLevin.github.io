@@ -76,7 +76,14 @@ function manuallyAdd() {
   var title = miV.slice(0, miV.lastIndexOf("."));
   var duration = -1;
   if (document.getElementById("addSeconds").value !== "") {
-    duration = document.getElementById("addSeconds").value;
+    var secField = document.getElementById("addSeconds");
+    if (/(^-1$|^[1-9][\d]*$)/.test(secField.value)) {
+      duration = secField.value;
+    } else {
+      document.querySelector("#wDuration").showModal();
+      document.querySelector("body").classList.add("lockScroll");
+      return;
+    }
   }
   if (document.getElementById("addTitle").value !== "") {
     title = document.getElementById("addTitle").value;
@@ -85,7 +92,7 @@ function manuallyAdd() {
     fileContents += `File${entriesNum + 1}=${miV}\nTitle${entriesNum + 1}=${title}\nLength${entriesNum + 1}=${duration}\n`;
     playlist.innerText += `${miV}\n`;
     manuallyInput.value = null;
-    document.getElementById("addSeconds").value = 0;
+    document.getElementById("addSeconds").value = -1;
     document.getElementById("addTitle").value = null;
     entriesNum++;
     showResult();
@@ -123,6 +130,10 @@ document.getElementById("hClose").onclick = function() {
   help.close();
   document.querySelector("body").classList.remove("lockScroll");
 }
+document.getElementById("wClose").onclick = function() {
+  document.querySelector("#wDuration").close();
+  document.querySelector("body").classList.remove("lockScroll");
+}
 document.addEventListener("keydown", (e) => {
   if (e.key.toLowerCase() == "o" && e.ctrlKey) {
     e.preventDefault();
@@ -135,6 +146,10 @@ document.addEventListener("keydown", (e) => {
   if (e.key.toLowerCase() == "s" && e.ctrlKey) {
     e.preventDefault();
     downloadLink.click();
+  }
+  if (e.key.toLowerCase() == "x" && e.ctrlKey) {
+    e.preventDefault();
+    document.getElementById("wClose").click();
   }
   if (e.key == "F1") {
     e.preventDefault();

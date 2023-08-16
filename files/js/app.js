@@ -28,12 +28,12 @@ function binButton() {
   }
 }
 function ifUserHasGone() {
-  let t = document.querySelector('title');
+  const cachedT = document.title;
   document.addEventListener('visibilitychange', function() {
     if (document.visibilityState == 'hidden') {
-      t.innerHTML = ':( NW410 Gone from tab';
+      document.title = ':( NW410 Gone from tab';
     } else {
-      t.innerHTML = document.title;
+      document.title = cachedT;
     }
   });
 }
@@ -60,12 +60,19 @@ function getAdvice() {
     });
 }
 function noSupport() {
-  if (/IEMobile|MSIE|Trident/i.test(navigator.userAgent)) {
-    document.querySelector('header').innerHTML += '<blockquote class="warn">Your browser is quiet old.</blockquote>';
+  if (fetch == undefined) {
+    document.querySelector('header').innerHTML += '<blockquote class="warn">Your browser doesn’t support a bunch of website’s functions.</blockquote>';
     var style = document.createElement('style');
     style.innerHTML = 'header, main { display: block; }\ndialog { display: none; }';
     document.head.appendChild(style);
   }
+}
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js')
+    .then(() => navigator.serviceWorker.ready.then((worker) => {
+      worker.sync.register('syncdata');
+    }))
+    .catch((err) => console.log(err));
 }
 noSupport();
 checkCookies();

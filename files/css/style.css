@@ -121,13 +121,18 @@ dialog {
 	border: none;
 }
 
-dialog h3 {
+dialog h3, dialog button {
 	text-align: center;
 }
 
 dialog p, dialog h3 {
 	margin-top: 0;
 	margin-bottom: 5px;
+}
+
+dialog button {
+	float: right;
+	min-width: 48px;
 }
 
 .lockScroll {
