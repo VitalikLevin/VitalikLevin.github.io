@@ -59,14 +59,10 @@ function getAdvice() {
       }
     });
 }
-function noSupport() {
-  if (fetch == undefined) {
-    document.querySelector('header').innerHTML += '<blockquote class="warn">Your browser doesn’t support a bunch of website’s functions.</blockquote>';
-    var style = document.createElement('style');
-    style.innerHTML = 'header, main { display: block; }\ndialog { display: none; }';
-    document.head.appendChild(style);
-  }
-}
+checkCookies();
+binButton();
+getAdvice();
+ifUserHasGone();
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js', { scope: '/' })
     .then(() => navigator.serviceWorker.ready.then((worker) => {
@@ -74,8 +70,3 @@ if ('serviceWorker' in navigator) {
     }))
     .catch((err) => console.log(err));
 }
-noSupport();
-checkCookies();
-binButton();
-getAdvice();
-ifUserHasGone();

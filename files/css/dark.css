@@ -3,7 +3,7 @@
 	color: rgb(244, 244, 244);
 }
 
-dialog, header h2, header h2 a:any-link, #cooknote.show, #cooknote h3 {
+dialog, header h2, header h2 a:any-link, #cooknote.show {
 	background-color: rgb(18, 18, 18);
 	color: rgb(244, 244, 244);
 }
@@ -45,8 +45,8 @@ a:visited {
 	color: rgb(249, 168, 37);
 }
 
-.error {
-	border-left: 3px solid rgb(244, 60, 54);
+#wDuration {
+	background-color: rgb(244, 60, 54);
 }
 
 ::file-selector-button, button {
@@ -57,6 +57,18 @@ a:visited {
 	background-color: rgba(18, 18, 18, 0.6);
 }
 
-#backtotop {
+mark code::selection {
+	background-color: rgba(100, 181, 246, 0.8);
+}
+
+#backtotop, .fillWh {
 	fill: rgb(244, 244, 244);
+}
+
+#vinyl {
+	stroke: rgb(244, 244, 244);
+}
+
+.strWh {
+	stroke: rgb(18, 18, 18);
 }

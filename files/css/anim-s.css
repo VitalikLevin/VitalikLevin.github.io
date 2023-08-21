@@ -17,10 +17,10 @@
   from {
     opacity: 0;
   }
-  88% {
+  84% {
     opacity: 0.05;
   }
-  90% {
+  87% {
     opacity: 1;
   }
 }
@@ -37,8 +37,9 @@ dialog:modal {
 }
 .crumb li:last-child a::after {
   animation: 5s curPage;
+  animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
-#cooknote.show {
+#cooknote.show, #wDuration {
   animation: 4s run;
 }

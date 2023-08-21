@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <link rel="canonical" href="{{ page.redirect.to }}">
+    <script>window.location="{{ page.redirect.to }}";</script>
+    <meta http-equiv="refresh" content="0; url={{ page.redirect.to }}">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="/files/css/style.css">
+    <link rel="stylesheet" href="/files/css/light.css">
+  </head>
+  <body>
+    <header><h2>301</h2></header>
+    <a href="{{ page.redirect.to }}">Click here if you weren’t redirected</a>
+  </body>
+</html>

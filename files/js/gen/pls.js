@@ -3,16 +3,18 @@ const dtFormat = new Intl.DateTimeFormat(document.querySelector("html").lang, { 
 const downloadLink = document.getElementById("dnld");
 var entriesNum = 0;
 var fileContents = "[playlist]\n";
+const fileInput = document.getElementById("fileInput");
 const help = document.getElementById("help");
 const manuallyInput = document.getElementById("addNewOne");
 const nameInput = document.getElementById("listName");
-const fileInput = document.getElementById("fileInput");
 const prefixInput = document.getElementById("prefixInput");
 const playlist = document.getElementById("playlist");
+const props = document.getElementById("trProperties");
 const sorting = document.getElementById("sorting");
-fileInput.addEventListener("change", handleFiles, true);
+fileInput.addEventListener("change", handleFiles);
 function handleFiles() {
   delFooter();
+  document.body.style.cursor = "wait";
   const rawFileList = [...this.files];
   if (sorting.value != 0) {
     rawFileList.sort((a, b) => {
@@ -53,7 +55,13 @@ function handleFiles() {
     if (sorting.value == 5 || sorting.value == 6) {
       playlist.innerHTML += `${trackSize} ${playlist.getAttribute("data-size-type")} &#8212;&#160;`;
     }
-    fileContents += `File${trNum}=${trackPath}\nTitle${trNum}=${trackName.slice(0, trackName.lastIndexOf("."))}\nLength${trNum}=-1\n`
+    fileContents += `File${trNum}=${trackPath}\n`;
+    if (props.value <= 1) {
+      fileContents += `Title${trNum}=${trackName.slice(0, trackName.lastIndexOf("."))}\n`;
+    }
+    if (props.value % 2 == 0) {
+      fileContents += `Length${trNum}=-1\n`;
+    }
     playlist.innerText += `${trackPath}\n`;
   }
   entriesNum = numFiles + entriesNum;
@@ -69,37 +77,45 @@ function showResult() {
   downloadLink.href = URL.createObjectURL(theBlob);
   if (!playlist.classList.contains("show")) { playlist.classList.add("show"); }
   if (downloadLink.hasAttribute("hidden")) { downloadLink.removeAttribute("hidden"); }
+  if (document.body.style.cursor != "auto") { document.body.style.cursor = "auto"; }
 }
 function manuallyAdd() {
   delFooter();
   var miV = manuallyInput.value;
   var title = miV.slice(0, miV.lastIndexOf("."));
   var duration = -1;
-  if (document.getElementById("addSeconds").value !== "") {
+  if (document.getElementById("addSeconds").value !== "" && props.value % 2 == 0) {
     var secField = document.getElementById("addSeconds");
     if (/(^-1$|^[1-9][\d]*$)/.test(secField.value)) {
       duration = secField.value;
+      document.querySelector("#wClose").click();
     } else {
-      document.querySelector("#wDuration").showModal();
-      document.querySelector("body").classList.add("lockScroll");
+      document.querySelector("#wDuration").show();
       return;
     }
   }
-  if (document.getElementById("addTitle").value !== "") {
+  if (document.getElementById("addTitle").value !== "" && props.value <= 1) {
     title = document.getElementById("addTitle").value;
   }
   if (miV !== "") {
-    fileContents += `File${entriesNum + 1}=${miV}\nTitle${entriesNum + 1}=${title}\nLength${entriesNum + 1}=${duration}\n`;
+    fileContents += `File${entriesNum + 1}=${miV}\n`;
+    if (props.value <= 1) {
+      fileContents += `Title${entriesNum + 1}=${title}\n`;
+      document.getElementById("addTitle").value = null;
+    }
+    if (props.value % 2 == 0) {
+      fileContents += `Length${entriesNum + 1}=${duration}\n`;
+      document.getElementById("addSeconds").value = -1;
+    }
     playlist.innerText += `${miV}\n`;
     manuallyInput.value = null;
-    document.getElementById("addSeconds").value = -1;
-    document.getElementById("addTitle").value = null;
     entriesNum++;
     showResult();
   }
 }
 function beforeGoingAFK() {
   localStorage.setItem("pls_sort", sorting.value);
+  localStorage.setItem("pls_props", props.value);
   localStorage.setItem("pls_prefix", prefixInput.value);
   localStorage.setItem("pls_name", nameInput.value);
 }
@@ -107,8 +123,10 @@ function loadSavedData() {
   let pls_sort = localStorage.getItem("pls_sort");
   let pls_prefix = localStorage.getItem("pls_prefix");
   let pls_name = localStorage.getItem("pls_name");
-  if (pls_sort || pls_name || pls_prefix) {
+  let pls_props = localStorage.getItem("pls_props");
+  if (pls_sort || pls_name || pls_prefix || pls_props) {
     sorting.value = pls_sort;
+    props.value = pls_props;
     nameInput.value = pls_name;
     prefixInput.value = pls_prefix;
   }
@@ -132,7 +150,6 @@ document.getElementById("hClose").onclick = function() {
 }
 document.getElementById("wClose").onclick = function() {
   document.querySelector("#wDuration").close();
-  document.querySelector("body").classList.remove("lockScroll");
 }
 document.addEventListener("keydown", (e) => {
   if (e.key.toLowerCase() == "o" && e.ctrlKey) {
@@ -146,10 +163,6 @@ document.addEventListener("keydown", (e) => {
   if (e.key.toLowerCase() == "s" && e.ctrlKey) {
     e.preventDefault();
     downloadLink.click();
-  }
-  if (e.key.toLowerCase() == "x" && e.ctrlKey) {
-    e.preventDefault();
-    document.getElementById("wClose").click();
   }
   if (e.key == "F1") {
     e.preventDefault();

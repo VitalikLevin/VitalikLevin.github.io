@@ -12,6 +12,7 @@ const playlist = document.getElementById("playlist");
 const sorting = document.getElementById("sorting");
 inputElement.addEventListener("change", handleFiles, true);
 function handleFiles() {
+  document.body.style.cursor = "wait";
   const rawFileList = [...this.files];
   if (sorting.value != 0) {
     rawFileList.sort((a, b) => {
@@ -80,6 +81,7 @@ function showResult() {
   downloadLink.href = URL.createObjectURL(theBlob);
   if (!playlist.classList.contains("show")) { playlist.classList.add("show"); }
   if (downloadLink.hasAttribute("hidden")) { downloadLink.removeAttribute("hidden"); }
+  if (document.body.style.cursor != "auto") { document.body.style.cursor = "auto"; }
 }
 function beforeGoingAFK() {
   localStorage.setItem("sortMethod", sorting.value);

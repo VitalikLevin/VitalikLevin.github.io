@@ -3,7 +3,6 @@ layout: null
 permalink: /sw.js
 ---
 const CACHE = "offline-fallback-v1";
-const FALLBACK = `{%- include offline.html -%}`;
 self.addEventListener("install", (event) => {
   console.log("Installed");
   event.waitUntil(
@@ -27,6 +26,7 @@ function networkOrCache(request) {
     .then((response) => response.ok ? response : fromCache(request))
     .catch(() => fromCache(request));
 }
+const FALLBACK = `{%- include offline.html -%}`;
 function useFallback() {
   return Promise.resolve(new Response(FALLBACK, { headers: {
     "Content-Type": "text/html; charset=utf-8"

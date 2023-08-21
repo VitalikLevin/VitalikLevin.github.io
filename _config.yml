@@ -14,9 +14,16 @@ og_p: /files/images/spaceworm.png
 og_pa: A pink worm in space
 status: /files/icons/favicon.svg
 steamyfish: https://marketplace.visualstudio.com/items?itemName=networkworms.steamyfish
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
 plugins:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-redirect-from
 paginate: 10
 paginate_path: "blog/:num/"
 exclude:
@@ -24,3 +31,7 @@ exclude:
   - Gemfile.lock
   - LICENSE.txt
   - README.md
+whitelist:
+  - jekyll-redirect-from
+redirect_from:
+  json: false

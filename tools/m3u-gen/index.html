@@ -1,9 +1,10 @@
 ---
-layout: default
 lang: en-US
-title: PLS Playlist Generator
-excerpt: Online .pls playlist file generator
-permalink: /pls-gen/
+title: M3U Playlist Generator
+excerpt: Online .m3u playlist file generator
+permalink: /tools/m3u-gen/
+redirect_from:
+  - /m3u-gen/
 ---
 {%- include header.html -%}
 <section class="crumb">
@@ -17,35 +18,37 @@ permalink: /pls-gen/
 		</li>
 		<li itemprop="itemListElement" itemscope
 			itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="{{ site.url }}/pls-gen/">
-				<mark itemprop="name">.pls Generator</mark>
+			<a itemprop="item" href="{{ site.url }}/tools/">
+				<span itemprop="name">Tools</span>
 			</a>
 			<meta itemprop="position" content="2">
+		</li>
+		<li itemprop="itemListElement" itemscope
+			itemtype="https://schema.org/ListItem">
+			<a itemprop="item" href="{{ site.url }}/tools/m3u-gen/">
+				<mark itemprop="name">.m3u Generator</mark>
+			</a>
+			<meta itemprop="position" content="3">
 		</li>
 	</ul>
 </section>
 <dialog id="help">
-	<h3><code>pls-gen</code> "Hot Keys"</h3>
+	<h3><code>m3u-gen</code> "Hot Keys"</h3>
 	<p><kbd>F1</kbd> <strong>Open/close this message</strong></p>
+	<p><kbd>Alt</kbd>+<kbd>C</kbd> <strong>Change file extension</strong></p>
 	<p><kbd>Ctrl</kbd>+<kbd>0-6</kbd> <strong>Choose sorting method</strong></p>
 	<p><kbd>Ctrl</kbd>+<kbd>O</kbd> <strong>Select files</strong></p>
 	<p><kbd>Ctrl</kbd>+<kbd>S</kbd> <strong>Save playlist</strong></p>
 	<button id="hClose">Close</button>
 </dialog>
-<dialog id="wDuration">
-	<h3>Error</h3>
-	<p>Unsupported track duration was set.</p>
-	<blockquote>Supported durations: -1, 1 to 999999.</blockquote>
-	<button id="wClose">OK</button>
-</dialog>
 <main>
-  <h2 class="start"><code>.pls</code> Playlist Generator</h2>
-  <p>Select files and write files&#8217; prefix (if you need it) to get your playlist file.</p>
-  <button id="hOpen">Open hotkeys</button>
-  <h3>Options</h3>
-  <p id="sort" data-before="Sort selected files by:">
+  <h2 class="start"><code>.m3u</code> Playlist Generator</h2>
+	<p>Select files and write files&#8217; prefix (if you need it) to get your playlist file.</p>
+	<button id="hOpen">Open hotkeys</button>
+	<h3>Options</h3>
+	<p id="sort" data-before="Sort selected files by:">
 		<select id="sorting">
-			<option value="0">no sort</option>
+			<option value="0">no sort (Preset from v1.0)</option>
 			<option value="1" selected>name (A to Z, 1 &#60; 10)</option>
 			<option value="2">name (Z to A, 1 &#62; 10)</option>
 			<option value="3">modification date (1970-01 to {{ site.time | date: "%Y-%m" }})</option>
@@ -54,22 +57,16 @@ permalink: /pls-gen/
 			<option value="6">size (TiB to byte)</option>
 		</select>
 	</p><br>
-  <input type="file" id="fileInput" multiple="true"><br>
+	<button id="force8" class="bin">0</button><label for="force8"> Use <code>.m3u8</code></label><br>
+  <input type="file" id="input" multiple="true"><br>
 	<label for="prefixInput"><strong>Files&#8217; prefix (optional)</strong></label><br>
 	<input type="text" id="prefixInput" placeholder="Files&#8217; prefix"><br>
 	<label for="listName"><strong>Playlist name (optional)</strong></label><br>
 	<input type="text" id="listName" placeholder="Playlist name"><br><br>
 	<label for="addNewOne">New playlist member</label><br>
 	<span><input type="text" id="addNewOne" placeholder="New entry"><button title="Add" id="realAdd" onclick="manuallyAdd()"></button></span><br>
-	<details>
-		<summary>Advanced</summary>
-		<label for="addTitle">New member&#8217;s title (optional)</label><br>
-		<input type="text" id="addTitle" placeholder="Member&#8217;s title"><br>
-		<label for="addSeconds">Duration of new member in seconds (optional)</label><br>
-		<input type="number" id="addSeconds" placeholder="1min = 60s" min="-1">
-	</details>
-	<a id="dnld" href="#" download="playlist.pls" title="playlist.pls" hidden>Download</a>
+	<a id="dnld" href="#" download="playlist.m3u" title="playlist.m3u" hidden>Download</a>
   <section id="playlist" data-size-type="bytes"></section>
 </main>
-<script defer src="/files/js/gen/pls.js"></script>
+<script defer src="/files/js/gen/m3u.js"></script>
 {%- include footer.html -%}

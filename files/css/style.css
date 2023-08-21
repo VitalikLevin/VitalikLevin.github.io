@@ -22,9 +22,13 @@ button, ::file-selector-button, select {
 	border-width: 0.5px;
 }
 
-button:hover, ::file-selector-button:hover {
+button:hover, details > summary:hover, ::file-selector-button:hover, select:hover {
 	opacity: 0.7;
 	cursor: pointer;
+}
+
+#hOpen {
+	cursor: help;
 }
 
 .crumb ul {
@@ -59,7 +63,7 @@ header h2, label {
 	-webkit-user-select: none;
 }
 
-.pubDat img, #cooknote h3 img {
+.pubDat img, #cooknote img {
 	margin-right: 8px;
 	margin-left: 8px;
 }
@@ -73,28 +77,27 @@ header h2, label {
 	bottom: 0;
 }
 
-.cookagree {
+.cookagree, #wClose {
 	padding: 0;
 	position: fixed;
 	left: calc(98vw - 48px);
-	right: 2vw;
-	bottom: 2vh;
 	aspect-ratio: 1 / 1;
 	min-width: 48px;
+}
+
+.cookagree {
+	bottom: 1dvh;
+	right: 2vw;
 }
 
 #cooknote.show {
 	display: block;
 }
 
-.pubDat img, #cooknote h3 img, button#realAdd, button.bin {
+.pubDat img, #cooknote img, button#realAdd, button.bin {
 	aspect-ratio: 1 / 1;
 	height: 24px;
 	padding: 0;
-}
-
-#cooknote h3 {
-	margin: 0;
 }
 
 #cooknote p {
@@ -109,11 +112,11 @@ input[type="text"], dialog {
 	min-width: 35vw;
 }
 
-#sort {
+[data-before] {
 	display: inline;
 }
 
-#sort::before {
+[data-before]::before {
 	content: attr(data-before);
 }
 
@@ -132,7 +135,19 @@ dialog p, dialog h3 {
 
 dialog button {
 	float: right;
-	min-width: 48px;
+}
+
+#wDuration {
+	position: fixed;
+	top: 1vh;
+	left: 0vw;
+	width: 95vw;
+	z-index: 2;
+}
+
+#wClose {
+	top: 1.5vh;
+	right: 6vw;
 }
 
 .lockScroll {
@@ -150,6 +165,11 @@ button#realAdd {
 #logo {
 	width: 30px;
 	aspect-ratio: 1 / 1;
+	margin-bottom: -4px;
+}
+
+.listLogo {
+	margin-bottom: -6px;
 }
 
 img[class^="img"], .prodlogo {
@@ -163,6 +183,10 @@ img[class^="img"], .prodlogo {
 figure {
 	margin: 4px 4px;
 	max-width: 85vw;
+}
+
+code {
+	word-break: break-word;
 }
 @media screen and (orientation: portrait) {
 	.top {

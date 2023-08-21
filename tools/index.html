@@ -1,11 +1,11 @@
 ---
 lang: en-US
-title: Extensions
-excerpt: Currently we made one extension.
-permalink: /exts/
+title: Tools
+excerpt: Array of Vitaliy Levin’s tools
+permalink: /tools/
 ---
 {%- include header.html -%}
-<div class="crumb">
+<section class="crumb">
 	<ul itemscope itemtype="https://schema.org/BreadcrumbList">
 		<li itemprop="itemListElement" itemscope
 			itemtype="https://schema.org/ListItem">
@@ -16,21 +16,19 @@ permalink: /exts/
 		</li>
 		<li itemprop="itemListElement" itemscope
 			itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="{{ site.url }}/exts/">
-				<mark itemprop="name">Extensions</mark>
+			<a itemprop="item" href="{{ site.url }}/tools/">
+				<mark itemprop="name">Tools</mark>
 			</a>
 			<meta itemprop="position" content="2">
 		</li>
 	</ul>
-</div>
-<nav>
-	<h5>In this directory:</h5>
-	<ul>
-		<li><a href="./steamyfish/">Steamy Fish</a></li>
-	</ul>
-</nav>
+</section>
 <main>
-	<h2 class="start">Our Extensions</h2>
-	<p>In the first half of 2023 we ended developing of "<a href="{{ site.steamyfish }}">Steamy Fish</a>" icon pack for Visual Studio Code.</p>
+  <h2 class="start">Tools</h2>
+	<h3 id="music">Related to music</h3>
+	<ul>
+		<li><a href="./m3u-gen" title=".m3u playlist generator">{%- include svg/playlist.svg -%}<code>m3u-gen</code></a></li>
+		<li><a href="./pls-gen" title=".pls playlist generator">{%- include svg/playlist.svg -%}<code>pls-gen</code></a></li>
+	</ul>
 </main>
 {%- include footer.html -%}

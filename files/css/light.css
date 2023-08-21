@@ -12,8 +12,8 @@ h3 {
 	color: rgb(246, 170, 126);
 }
 
-.error {
-	border-left: 3px solid rgb(244, 60, 54);
+#wDuration {
+	background-color: rgb(244, 60, 54);
 }
 
 #cooknote.show {
@@ -54,6 +54,18 @@ mark, ::selection {
 	background-color: rgba(18, 18, 18, 0.6);
 }
 
-#backtotop {
+mark code::selection {
+	background-color: rgba(100, 181, 246, 0.8);
+}
+
+#backtotop, .fillWh {
 	fill: rgb(18, 18, 18);
+}
+
+#vinyl {
+	stroke: rgb(18, 18, 18);
+}
+
+.strWh {
+	stroke: rgb(244, 244, 244);
 }
