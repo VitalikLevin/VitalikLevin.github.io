@@ -4,16 +4,18 @@ permalink: /sw.js
 ---
 const C_VERSION = "1.0";
 const CACHE = `offline-v${C_VERSION}`;
-const OFFLINE_URL = "/offline/";
+const OFFLINE_URL = "/offline/index.html";
 self.addEventListener("install", (event) => {
   console.log("Installed");
   event.waitUntil(
     caches
       .open(CACHE)
-      .then((cache) => cache.addAll(["/files/css", "/files/fonts", "/files/icons", "/files/images", "/files/svg", "/files/texts"]))
+      .then((cache) => { 
+        cache.addAll(["/files/css", "/files/fonts", "/files/icons", "/files/images", "/files/svg", "/files/texts"]);
+        cache.add(new Request(OFFLINE_URL, { cache: "reload" }));
+      })
       .then(() => self.skipWaiting())
   );
-  await cache.add(new Request(OFFLINE_URL, { cache: "reload" }));
 });
 self.addEventListener("activate", (event) => {
   console.log("Activated");
