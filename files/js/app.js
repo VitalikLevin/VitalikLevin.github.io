@@ -1,5 +1,8 @@
 const lang = document.querySelector('html').lang.toLowerCase();
 const now = new Date();
+const promoApp = document.getElementById('promoPWA');
+const promoYes = document.getElementById('instPwa');
+const promoNo = document.getElementById('insClose');
 const sleep = document.getElementById('sleep');
 function checkCookies() {
   let cookieDate = localStorage.getItem('cookieDate');
@@ -70,3 +73,30 @@ if ('serviceWorker' in navigator) {
     }))
     .catch((err) => console.log(err));
 }
+window.addEventListener('beforeinstallprompt', function(e) {
+  e.preventDefault();
+  var deferredPrompt = e;
+  let lastClose = localStorage.getItem('promoClose');
+  if (!lastClose || (+lastClose + 3888000) > now) {
+    promoApp.hidden = false;
+  }
+  promoYes.onclick = (ev) => {
+    promoApp.hidden = true;
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice
+    .then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted');
+      } else {
+        console.log('User dismissed');
+        localStorage.setItem('promoClose', now);
+      }
+      deferredPrompt = null;
+    });
+  }
+  promoNo.onclick = (evt) => {
+    promoApp.hidden = true;
+    localStorage.setItem('promoClose', now);
+    deferredPrompt = null;
+  }
+});

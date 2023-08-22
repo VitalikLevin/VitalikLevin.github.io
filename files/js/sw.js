@@ -2,7 +2,9 @@
 layout: null
 permalink: /sw.js
 ---
-const CACHE = "offline-fallback-v1";
+const C_VERSION = "1.0";
+const CACHE = `offline-v${C_VERSION}`;
+const OFFLINE_URL = "/offline/";
 self.addEventListener("install", (event) => {
   console.log("Installed");
   event.waitUntil(
@@ -11,30 +13,38 @@ self.addEventListener("install", (event) => {
       .then((cache) => cache.addAll(["/files/css", "/files/fonts", "/files/icons", "/files/images", "/files/svg", "/files/texts"]))
       .then(() => self.skipWaiting())
   );
+  await cache.add(new Request(OFFLINE_URL, { cache: "reload" }));
 });
 self.addEventListener("activate", (event) => {
   console.log("Activated");
-  event.waitUntil(self.clients.claim());
+  event.waitUntil(
+    (async () => {
+      if ("navigationPreload" in self.registration) {
+        await self.registration.navigationPreload.enable();
+      }
+    })()
+  );
+  self.clients.claim();
 });
 self.addEventListener("fetch", (event) => {
   console.log("Fetching...");
-  event.respondWith(networkOrCache(event.request)
-    .catch(() => useFallback()));
+  if (event.request.mode === "navigate") {
+    event.respondWith(
+      (async () => {
+        try {
+          const preloadResponse = await event.preloadResponse;
+          if (preloadResponse) {
+            return preloadResponse;
+          }
+          const networkResponse = await fetch(event.request);
+          return networkResponse;
+        } catch (error) {
+          console.log("Failed to get data", error);
+          const cache = await caches.open(CACHE_NAME);
+          const cachedResponse = await cache.match(OFFLINE_URL);
+          return cachedResponse;
+        }
+      })()
+    );
+  }
 });
-function networkOrCache(request) {
-  return fetch(request)
-    .then((response) => response.ok ? response : fromCache(request))
-    .catch(() => fromCache(request));
-}
-const FALLBACK = `{%- include offline.html -%}`;
-function useFallback() {
-  return Promise.resolve(new Response(FALLBACK, { headers: {
-    "Content-Type": "text/html; charset=utf-8"
-  }}));
-}
-function fromCache(request) {
-  return caches.open(CACHE).then((cache) =>
-    cache.match(request).then((matching) =>
-      matching || Promise.reject("no-match")
-  ));
-}
