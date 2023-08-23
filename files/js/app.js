@@ -2,7 +2,6 @@ const lang = document.querySelector('html').lang.toLowerCase();
 const now = new Date();
 const promoApp = document.getElementById('promoPWA');
 const promoYes = document.getElementById('instPwa');
-const promoNo = document.getElementById('insClose');
 const sleep = document.getElementById('sleep');
 function checkCookies() {
   let cookieDate = localStorage.getItem('cookieDate');
@@ -76,7 +75,7 @@ if ('serviceWorker' in navigator) {
 window.addEventListener('beforeinstallprompt', function(e) {
   e.preventDefault();
   var deferredPrompt = e;
-  let lastClose = localStorage.getItem('promoClose');
+  var lastClose = localStorage.getItem('promoClose');
   if (!lastClose || (+lastClose + 3888000) > now) {
     promoApp.hidden = false;
   }
@@ -94,7 +93,7 @@ window.addEventListener('beforeinstallprompt', function(e) {
       deferredPrompt = null;
     });
   }
-  promoNo.onclick = (evt) => {
+  document.getElementById('insClose').onclick = (evt) => {
     promoApp.hidden = true;
     localStorage.setItem('promoClose', now);
     deferredPrompt = null;

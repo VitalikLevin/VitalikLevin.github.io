@@ -57,8 +57,12 @@ a:visited {
 	background-color: rgba(18, 18, 18, 0.6);
 }
 
-mark code::selection, #promoPWA {
+mark code::selection {
 	background-color: rgba(100, 181, 246, 0.8);
+}
+
+#promoPWA {
+	background-color: rgb(88, 116, 146);
 }
 
 #backtotop, .fillWh {

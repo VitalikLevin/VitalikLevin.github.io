@@ -100,7 +100,7 @@ header h2, label {
 	padding: 0;
 }
 
-#cooknote p {
+#cooknote p, #promoPWA span {
 	max-width: 80vw;
 }
 

@@ -10,6 +10,15 @@
 	</p>
 	<button class="cookagree">OK</button>
 </section>
+<section id="promoPWA" hidden>
+	{%- if page.lang == 'ru' -%}
+	<span>После установки появится возможность посещать страницы без доступа к Интернету.</span>
+	<span><button id="instPwa">Установить</button> | <button id="insClose">&#215;</button></span>
+	{%- else -%}
+	<span>After installation you can read parts of our website without Internet connection.</span>
+	<span><button id="instPwa">Install</button> | <button id="insClose">Hide</button></span>
+	{%- endif -%}
+</section>
 <footer id="footer">
 	<p>
 		&#169;Vitaliy Levin, <span class="num">{{ site.time | date: "%Y" }}</span>. All rights reserved.<br>
@@ -19,15 +28,6 @@
 		{%- else -%}
 		Content is available under <a href="{{ site.license }}" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a>.
 		{%- endif -%}
-		<section id="promoPWA" hidden>
-			{%- if page.lang == 'ru' -%}
-			<p>После установки появится возможность посещать страницы без доступа к Интернету.</p>
-			<button id="instPwa">Установить</button><button id="insClose">&#215;</button>
-			{%- else -%}
-			<p>After installation you can use our website without Internet connection.</p>
-			<button id="instPwa">Install</button><button id="insClose">&#215;</button>
-			{%- endif -%}
-		</section>
 	</p>
 	<div class="imgs">
 		<img src="/files/svg/by-sa.svg" alt="" width="120px" height="42px">

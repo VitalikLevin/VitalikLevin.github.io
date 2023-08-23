@@ -2,9 +2,9 @@
 layout: null
 permalink: /sw.js
 ---
-const C_VERSION = "1.0";
+const C_VERSION = "1.1";
 const CACHE = `offline-v${C_VERSION}`;
-const OFFLINE_URL = "/offline/index.html";
+const OFFLINE_URL = "/offline/";
 self.addEventListener("install", (event) => {
   console.log("Installed");
   event.waitUntil(
@@ -12,7 +12,7 @@ self.addEventListener("install", (event) => {
       .open(CACHE)
       .then((cache) => { 
         cache.addAll(["/files/css", "/files/fonts", "/files/icons", "/files/images", "/files/svg", "/files/texts"]);
-        cache.add(new Request(OFFLINE_URL, { cache: "reload" }));
+        await cache.add(new Request(OFFLINE_URL, { cache: "reload" }));
       })
       .then(() => self.skipWaiting())
   );
@@ -42,7 +42,7 @@ self.addEventListener("fetch", (event) => {
           return networkResponse;
         } catch (error) {
           console.log("Failed to get data", error);
-          const cache = await caches.open(CACHE_NAME);
+          const cache = await caches.open(CACHE);
           const cachedResponse = await cache.match(OFFLINE_URL);
           return cachedResponse;
         }
