@@ -2,17 +2,16 @@
 layout: null
 permalink: /sw.js
 ---
-const C_VERSION = "1.1";
+const C_VERSION = 2;
 const CACHE = `offline-v${C_VERSION}`;
-const OFFLINE_URL = "/offline/";
+const OFFLINE_URL = "/offline.html";
 self.addEventListener("install", (event) => {
   console.log("Installed");
   event.waitUntil(
     caches
       .open(CACHE)
       .then((cache) => { 
-        cache.addAll(["/files/css", "/files/fonts", "/files/icons", "/files/images", "/files/svg", "/files/texts"]);
-        await cache.add(new Request(OFFLINE_URL, { cache: "reload" }));
+        cache.addAll(["/files/css", "/files/fonts", OFFLINE_URL, "/files/icons", "/files/images", "/files/svg", "/files/texts"]);
       })
       .then(() => self.skipWaiting())
   );
@@ -29,24 +28,19 @@ self.addEventListener("activate", (event) => {
   self.clients.claim();
 });
 self.addEventListener("fetch", (event) => {
+  const { request } = event;
+  if (request.headers.has('range')) return;
   console.log("Fetching...");
-  if (event.request.mode === "navigate") {
-    event.respondWith(
-      (async () => {
-        try {
-          const preloadResponse = await event.preloadResponse;
-          if (preloadResponse) {
-            return preloadResponse;
-          }
-          const networkResponse = await fetch(event.request);
-          return networkResponse;
-        } catch (error) {
-          console.log("Failed to get data", error);
-          const cache = await caches.open(CACHE);
-          const cachedResponse = await cache.match(OFFLINE_URL);
-          return cachedResponse;
-        }
-      })()
-    );
-  }
+  event.respondWith(async function() {
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) { return cachedResponse; }
+    try {
+      return await fetch(request);
+    } catch (err) {
+      if (request.mode === 'navigate') {
+        return caches.match(OFFLINE_URL);
+      }
+      throw err;
+    }
+  }());
 });
