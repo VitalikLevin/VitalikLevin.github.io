@@ -54,7 +54,7 @@ mark, ::selection {
 	background-color: rgba(18, 18, 18, 0.6);
 }
 
-mark code::selection {
+mark::selection {
 	background-color: rgba(100, 181, 246, 0.8);
 }
 

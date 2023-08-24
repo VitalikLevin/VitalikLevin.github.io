@@ -1,5 +1,6 @@
 const lang = document.querySelector('html').lang.toLowerCase();
 const now = new Date();
+const darkMode = document.getElementById('darkMode');
 const promoApp = document.getElementById('promoPWA');
 const promoYes = document.getElementById('instPwa');
 const sleep = document.getElementById('sleep');
@@ -29,15 +30,39 @@ function binButton() {
     }
   }
 }
+function onLoadTheme() {
+  let isDark = localStorage.getItem('isDark');
+  if (!isDark) {
+    if (window.matchMedia('screen and (prefers-color-scheme: dark)') == true) {
+      darkMode.innerText = 1;
+    } else {
+      darkMode.innerText = 0;
+    }
+  } else {
+    darkMode.innerText = isDark;
+  }
+  changeTheme();
+}
 function ifUserHasGone() {
   const cachedT = document.title;
   document.addEventListener('visibilitychange', function() {
     if (document.visibilityState == 'hidden') {
       document.title = ':( NW410 Gone from tab';
+      localStorage.setItem('isDark', darkMode.innerText);
     } else {
       document.title = cachedT;
     }
   });
+}
+function changeTheme() {
+  if (darkMode.innerText != '1') {
+    document.querySelector('link[href="/files/css/dark.css"]').setAttribute('href', '/files/css/light.css');
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f4f4f4');
+  } else {
+    let temp = document.querySelector('link[href="/files/css/light.css"]');
+    if (temp) { temp.setAttribute('href', '/files/css/dark.css'); }
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000000');
+  }
 }
 function getAdvice() {
   fetch(`/files/texts/advice-${lang}.txt`)
@@ -63,8 +88,10 @@ function getAdvice() {
 }
 checkCookies();
 binButton();
+onLoadTheme();
 getAdvice();
 ifUserHasGone();
+darkMode.addEventListener('click', changeTheme);
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js', { scope: '/' })
     .then(() => navigator.serviceWorker.ready.then((worker) => {

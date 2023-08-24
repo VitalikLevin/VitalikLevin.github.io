@@ -1,6 +1,6 @@
 User-agent: *
 Disallow: /?*
-Disallow: /offline/
+Disallow: /offline.html
 Disallow: /teapot/
 User-agent: Google*
 Disallow: /files/js/metric.js
