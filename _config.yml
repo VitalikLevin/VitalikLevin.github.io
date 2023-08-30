@@ -20,6 +20,14 @@ defaults:
       type: "pages"
     values:
       layout: "default"
+  - scope:
+      path: "files"
+    values:
+      sw-include: true
+  - scope:
+      path: "files/xml"
+    values:
+      sw-include: false
 plugins:
   - jekyll-feed
   - jekyll-paginate

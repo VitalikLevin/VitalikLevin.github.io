@@ -48,27 +48,29 @@ redirect_from:
   <h2 class="start"><code>.pls</code> Playlist Generator</h2>
   <p>Select files and write files&#8217; prefix (if you need it) to get your playlist file.</p>
   <button id="hOpen">Open hotkeys</button>
-  <h3>Options</h3>
-  <p data-before="Sort selected files by:">
-		<select id="sorting">
-			<option value="0">no sort</option>
-			<option value="1" selected>name (A to Z, 1 &#60; 10)</option>
-			<option value="2">name (Z to A, 1 &#62; 10)</option>
-			<option value="3">modification date (1970-01 to {{ site.time | date: "%Y-%m" }})</option>
-			<option value="4">modification date ({{ site.time | date: "%Y-%m" }} to 1970-01)</option>
-			<option value="5">size (byte to TiB)</option>
-			<option value="6">size (TiB to byte)</option>
-		</select>
-	</p><br>
-	<p data-before="Track properties:">
-		<select id="trProperties">
-			<option value="0" selected>File, Title and Length</option>
-			<option value="1">File and Title</option>
-			<option value="2">File and Length</option>
-			<option value="3">File</option>
-		</select>
-	</p><br>
-  <input type="file" id="fileInput" multiple="true"><br>
+	<section id="options">
+		<h3>Options</h3>
+		<p data-before="Sort selected files by:">
+			<select id="sorting">
+				<option value="0">no sort</option>
+				<option value="1" selected>name (A to Z, 1 &#60; 10)</option>
+				<option value="2">name (Z to A, 1 &#62; 10)</option>
+				<option value="3">modification date (1970-01 to {{ site.time | date: "%Y-%m" }})</option>
+				<option value="4">modification date ({{ site.time | date: "%Y-%m" }} to 1970-01)</option>
+				<option value="5">size (byte to TiB)</option>
+				<option value="6">size (TiB to byte)</option>
+			</select>
+		</p><br>
+		<p data-before="Track properties:">
+			<select id="trProperties">
+				<option value="0" selected>File, Title and Length</option>
+				<option value="1">File and Title</option>
+				<option value="2">File and Length</option>
+				<option value="3">File</option>
+			</select>
+		</p><br>
+	</section>
+  <input type="file" id="fileInput" multiple="true" accept="audio/*"><br>
 	<label for="prefixInput"><strong>Files&#8217; prefix (optional)</strong></label><br>
 	<input type="text" id="prefixInput" placeholder="Files&#8217; prefix"><br>
 	<label for="listName"><strong>Playlist name (optional)</strong></label><br>

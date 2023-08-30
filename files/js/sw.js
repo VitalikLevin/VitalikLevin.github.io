@@ -2,15 +2,24 @@
 layout: null
 permalink: /sw.js
 ---
-const C_VERSION = 3;
+{%- assign infiles = site.static_files | where: "sw-include", true -%}
+const C_VERSION = 4;
 const CACHE = `offline-v${C_VERSION}`;
+const OFFLINE_ARR = [
+  {%- for file in infiles -%}
+  {%- unless file == infiles.last -%}
+    "{{ file.path }}",
+  {%- else -%}
+    "{{ file.path }}", "/offline.html"
+  {%- endunless -%}
+  {%- endfor -%}
+];
 const OFFLINE_URL = "/offline.html";
 self.addEventListener("install", (event) => {
   console.log("Installed");
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE);
-    await cache.addAll(["/files/css", "files/fonts", "/files/js", "/files/icons", "/files/images", "/files/svg", "/files/texts"]);
-    await cache.add(new Request(OFFLINE_URL, {cache: 'reload'}));
+    await cache.addAll(OFFLINE_ARR);
   })());
   self.skipWaiting();
 });

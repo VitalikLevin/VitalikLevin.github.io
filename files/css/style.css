@@ -128,7 +128,7 @@ dialog h3, dialog button {
 	text-align: center;
 }
 
-dialog p, dialog h3 {
+dialog p, dialog h3, #options h3 {
 	margin-top: 0;
 	margin-bottom: 5px;
 }

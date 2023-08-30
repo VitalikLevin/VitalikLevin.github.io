@@ -1,5 +1,5 @@
 <h3>Picture of the <strong>current</strong> month</h3>
-{% assign potm = site.data.potm %}
+{%- assign potm = site.data.potm -%}
 <section itemscope itemtype="https://schema.org/ImageObject" class="image">
 	<meta itemprop="name" content="{{ potm.first.name }}">
   <meta itemprop="width" content="{{ potm.first.width | default: 400 }} px">

@@ -24,7 +24,23 @@ permalink: /offline.html
         <li>Turning off airplane mode</li>
         <li>Checking the signal in your area</li>
         <li>Reloading your device/modem/router</li>
+        <li>an offline game, for example </li>
       </ul>
     </main>
+    <script>
+      var a = document.createElement("a");
+      const ua = navigator.userAgent;
+      if (ua.match(/edg/i)) {
+        a.href = "edge://surf";
+      } else if (/chrome/i.test(ua) && !ua.match(/YaBrowser/i) && !ua.match(/op(e)?r/i)) {
+        a.href = "chrome://dino";
+      }
+      if (a.href != "") {
+        a.innerText = a.href;
+        document.querySelector("ul li:nth-child(5)").appendChild(a);
+      } else {
+        document.querySelector("ul li:nth-child(5)").setAttribute("style", "text-decoration: line-through");
+      }
+    </script>
   </body>
 </html>

@@ -12,7 +12,7 @@ const playlist = document.getElementById("playlist");
 const props = document.getElementById("trProperties");
 const sorting = document.getElementById("sorting");
 fileInput.addEventListener("change", handleFiles);
-function handleFiles() {
+async function handleFiles() {
   delFooter();
   document.body.style.cursor = "wait";
   const rawFileList = [...this.files];
@@ -44,6 +44,7 @@ function handleFiles() {
     var file = fileList[i];
     var rawDate = new Date(file.lastModified);
     var trackDate = dtFormat.format(rawDate);
+    var trackDur = -1;
     var trackName = file.name;
     var trackPath = trackName;
     var trackSize = file.size;
@@ -60,7 +61,7 @@ function handleFiles() {
       fileContents += `Title${trNum}=${trackName.slice(0, trackName.lastIndexOf("."))}\n`;
     }
     if (props.value % 2 == 0) {
-      fileContents += `Length${trNum}=-1\n`;
+      fileContents += `Length${trNum}=${trackDur}\n`;
     }
     playlist.innerText += `${trackPath}\n`;
   }
@@ -86,7 +87,7 @@ function manuallyAdd() {
   var duration = -1;
   if (document.getElementById("addSeconds").value !== "" && props.value % 2 == 0) {
     var secField = document.getElementById("addSeconds");
-    if (/(^-1$|^[1-9][\d]*$)/.test(secField.value)) {
+    if (secField.value.match(/(^-1$|^[1-9][\d]*$)/)) {
       duration = secField.value;
       document.querySelector("#wClose").click();
     } else {

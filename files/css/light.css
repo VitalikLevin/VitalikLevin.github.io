@@ -29,7 +29,7 @@ blockquote, #playlist.show {
 	border-left: 3px solid rgb(249, 168, 37);
 }
 
-kbd {
+kbd, #options {
 	border: 1px solid rgb(18, 18, 18);
 }
 

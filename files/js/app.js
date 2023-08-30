@@ -33,7 +33,7 @@ function binButton() {
 function onLoadTheme() {
   let isDark = localStorage.getItem('isDark');
   if (!isDark) {
-    if (window.matchMedia('screen and (prefers-color-scheme: dark)') == true) {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       darkMode.innerText = 1;
     } else {
       darkMode.innerText = 0;
