@@ -9,9 +9,11 @@ permalink: /offline.html
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Error -106</title>
     <link rel="stylesheet" href="/files/css/style.css">
     <link rel="stylesheet" href="/files/css/light.css">
-    <title>Error -106</title>
+    <link rel="stylesheet" href="/files/css/anim-s.css" media="screen and (prefers-reduced-motion: no-preference)">
+    <meta name="description" content="Are you really offline?">
   </head>
   <body>
     <main>
@@ -20,24 +22,26 @@ permalink: /offline.html
       <img src="/files/svg/1f47e.svg" title="Alien Wormfolder" alt="Alien is here">
       <h3>Try:</h3>
       <ul>
-        <li><em>Clicking</em> <a href="/" title="Main page">this link</a></li>
+        <li><em>Pressing</em> <kbd>Alt</kbd>+<kbd>&#8678;</kbd> or <kbd>Alt</kbd>+<kbd>&#8680;</kbd></li>
         <li>Turning off airplane mode</li>
         <li>Checking the signal in your area</li>
         <li>Reloading your device/modem/router</li>
-        <li>an offline game, for example </li>
+        <li title="Nobody paid us for this.">an offline game, for example </li>
       </ul>
     </main>
     <script>
-      var a = document.createElement("a");
+      var c = document.createElement("code");
       const ua = navigator.userAgent;
       if (ua.match(/edg/i)) {
-        a.href = "edge://surf";
+        c.innerText = "edge://surf";
       } else if (/chrome/i.test(ua) && !ua.match(/YaBrowser/i) && !ua.match(/op(e)?r/i)) {
-        a.href = "chrome://dino";
+        c.innerText = "chrome://dino";
+      } else if (ua.match(/firefox/i)) {
+        c.innerText = "about:mozilla";
+        document.querySelector("ul li:nth-child(5)").innerText = "Reading the Book of Mozilla: ";
       }
-      if (a.href != "") {
-        a.innerText = a.href;
-        document.querySelector("ul li:nth-child(5)").appendChild(a);
+      if (c.innerText != "") {
+        document.querySelector("ul li:nth-child(5)").appendChild(c);
       } else {
         document.querySelector("ul li:nth-child(5)").setAttribute("style", "text-decoration: line-through");
       }

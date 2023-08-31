@@ -5,7 +5,7 @@ layout: null
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 	{%- for page in site.pages -%}
-	{%- if page.layout != null -%}
+	{%- if page.layout != null and page.layout != 'redirect' -%}
 	<url>
 		<loc>{{ page.url | absolute_url }}</loc>
 		<lastmod>{{ page.date | default: site.time | date: "%Y-%m-%d" }}</lastmod>

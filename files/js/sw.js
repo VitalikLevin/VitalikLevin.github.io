@@ -3,7 +3,7 @@ layout: null
 permalink: /sw.js
 ---
 {%- assign infiles = site.static_files | where: "sw-include", true -%}
-const C_VERSION = 4;
+const C_VERSION = 5;
 const CACHE = `offline-v${C_VERSION}`;
 const OFFLINE_ARR = [
   {%- for file in infiles -%}

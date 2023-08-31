@@ -4,7 +4,7 @@
 	"name": "Network Worms",
 	"short_name": "NetWorms",
 	"description": "We make apps for PC not PCs for apps",
-	"categories": [ "games", "pictures", "strategy", "pls-gen" ],
+	"categories": [ "games", "music", "utilities" ],
 	"icons": [
 		{
 			"src": "files/icons/favicon.svg",
