@@ -1,5 +1,4 @@
 ---
-layout: null
 permalink: /sw.js
 ---
 {%- assign infiles = site.static_files | where: "sw-include", true -%}

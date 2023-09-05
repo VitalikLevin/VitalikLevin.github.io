@@ -4,8 +4,9 @@ layout: null
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-	{%- for page in site.pages -%}
-	{%- if page.layout != null and page.layout != 'redirect' -%}
+	{%- for page in site.html_pages -%}
+	{%- unless page.layout != 'default' or page.layout != 'article' and page.url contains '.html' -%}
+	{%- if page.url != "/teapot/" -%}
 	<url>
 		<loc>{{ page.url | absolute_url }}</loc>
 		<lastmod>{{ page.date | default: site.time | date: "%Y-%m-%d" }}</lastmod>
@@ -13,23 +14,14 @@ layout: null
 		<priority>0.7</priority>
 	</url>
 	{%- endif -%}
+	{%- endunless -%}
 	{%- endfor -%}
+	{%- for post in site.posts -%}
 	<url>
-		<loc>https://vitaliklevin.github.io/2023/01/01/new-year/</loc>
-		<lastmod>2023-01-01</lastmod>
+		<loc>{{ post.url | absolute_url }}</loc>
+		<lastmod>{{ post.date | default: site.time | date: "%Y-%m-%d" }}</lastmod>
 		<changefreq>yearly</changefreq>
 		<priority>0.5</priority>
 	</url>
-	<url>
-		<loc>https://vitaliklevin.github.io/2022/04/08/second-post/</loc>
-		<lastmod>2022-12-23</lastmod>
-		<changefreq>yearly</changefreq>
-		<priority>0.3</priority>
-		<xhtml:link rel="alternate"
-			hreflang="en-us"
-			href="https://vitaliklevin.github.io/2022/04/08/first-post/"/>
-		<xhtml:link rel="alternate"
-			hreflang="ru-ru"
-			href="https://vitaliklevin.github.io/2022/04/08/second-post/"/>
-	</url>
+	{%- endfor -%}
 </urlset>

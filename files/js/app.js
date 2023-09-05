@@ -33,7 +33,7 @@ function binButton() {
 function onLoadTheme() {
   let isDark = localStorage.getItem('isDark');
   if (!isDark) {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches || window.location.search.match(/isdark=1/i)) {
       darkMode.innerText = 1;
     } else {
       darkMode.innerText = 0;
@@ -106,7 +106,7 @@ window.addEventListener('beforeinstallprompt', function(e) {
   if (!lastClose || (+lastClose + 3888000) > now) {
     promoApp.hidden = false;
   }
-  promoYes.onclick = (ev) => {
+  promoYes.onclick = () => {
     promoApp.hidden = true;
     deferredPrompt.prompt();
     deferredPrompt.userChoice
@@ -120,7 +120,7 @@ window.addEventListener('beforeinstallprompt', function(e) {
       deferredPrompt = null;
     });
   }
-  document.getElementById('insClose').onclick = (evt) => {
+  document.getElementById('insClose').onclick = () => {
     promoApp.hidden = true;
     localStorage.setItem('promoClose', now);
     deferredPrompt = null;

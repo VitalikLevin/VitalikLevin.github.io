@@ -24,6 +24,7 @@ defaults:
       path: "files"
     values:
       sw-include: true
+      layout: null
   - scope:
       path: "files/xml"
     values:
