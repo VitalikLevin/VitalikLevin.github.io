@@ -27,4 +27,5 @@ README was eaten by `VitalikLevin`.
 - [Our tools](https://vitaliklevin.github.io/tools/)
   - [`m3u-gen`](https://vitaliklevin.github.io/tools/m3u-gen/)
   - [`pls-gen`](https://vitaliklevin.github.io/tools/pls-gen/)
+- [About site](https://vitaliklevin.github.io/about/)
 - ["I’m a Teapot" page](https://vitaliklevin.github.io/teapot/)

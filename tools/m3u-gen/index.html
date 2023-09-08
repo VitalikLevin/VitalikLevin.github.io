@@ -45,19 +45,21 @@ redirect_from:
   <h2 class="start"><code>.m3u</code> Playlist Generator</h2>
 	<p>Select files and write files&#8217; prefix (if you need it) to get your playlist file.</p>
 	<button id="hOpen">Open hotkeys</button>
-	<h3>Options</h3>
-	<p id="sort" data-before="Sort selected files by:">
-		<select id="sorting">
-			<option value="0">no sort (Preset from v1.0)</option>
-			<option value="1" selected>name (A to Z, 1 &#60; 10)</option>
-			<option value="2">name (Z to A, 1 &#62; 10)</option>
-			<option value="3">modification date (1970-01 to {{ site.time | date: "%Y-%m" }})</option>
-			<option value="4">modification date ({{ site.time | date: "%Y-%m" }} to 1970-01)</option>
-			<option value="5">size (byte to TiB)</option>
-			<option value="6">size (TiB to byte)</option>
-		</select>
-	</p><br>
-	<button id="force8" class="bin">0</button><label for="force8"> Use <code>.m3u8</code></label><br>
+	<section id="options">
+		<h3>Options</h3>
+		<p id="sort" data-before="Sort selected files by:">
+			<select id="sorting">
+				<option value="0">no sort (Preset from v1.0)</option>
+				<option value="1" selected>name (A to Z, 1 &#60; 10)</option>
+				<option value="2">name (Z to A, 1 &#62; 10)</option>
+				<option value="3">modification date (1970-01 to {{ site.time | date: "%Y-%m" }})</option>
+				<option value="4">modification date ({{ site.time | date: "%Y-%m" }} to 1970-01)</option>
+				<option value="5">size (byte to TiB)</option>
+				<option value="6">size (TiB to byte)</option>
+			</select>
+		</p><br>
+		<button id="force8" class="bin">0</button><label for="force8"> Use <code>.m3u8</code></label><br>
+	</section>
   <input type="file" id="input" multiple="true"><br>
 	<label for="prefixInput"><strong>Files&#8217; prefix (optional)</strong></label><br>
 	<input type="text" id="prefixInput" placeholder="Files&#8217; prefix"><br>
@@ -68,5 +70,5 @@ redirect_from:
 	<a id="dnld" href="#" download="playlist.m3u" title="playlist.m3u" hidden>Download</a>
   <section id="playlist" data-size-type="bytes"></section>
 </main>
-<script defer src="/files/js/gen/m3u.js"></script>
 {%- include footer.html -%}
+<script defer src="/files/js/gen/m3u.js"></script>
