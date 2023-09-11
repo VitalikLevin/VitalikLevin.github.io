@@ -39,11 +39,11 @@ function handleFiles() {
   const fileList = rawFileList;
   const numFiles = fileList.length;
   for (var i = 0; i < numFiles; i++) {
-    var file = fileList[i];
-    var rawDate = new Date(file.lastModified);
-    var trackDate = dtFormat.format(rawDate);
+    const file = fileList[i];
+    const rawDate = new Date(file.lastModified);
+    const trackDate = dtFormat.format(rawDate);
     var trackName = file.name;
-    var trackSize = file.size;
+    const trackSize = file.size;
     if (prefixInput.value !== null) { trackName = prefixInput.value + file.name; }
     if (sorting.value == 3 || sorting.value == 4) {
       playlist.innerHTML += `${trackDate} &#8212;&#160;`;

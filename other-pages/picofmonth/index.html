@@ -27,7 +27,14 @@ permalink: /picofmonth/
   <h2 class="start">Picture of the Month</h2>
 	<p>"Picture of the Month" is an event where you can see our new paintings.</p>
 	{%- for member in site.data.potm -%}
-	<h5 id="{{ member.time | slugify }}">{{ member.time }}</h5>
+	{%- assign cut_month = member.time | size | minus: 4 -%}
+	{%- assign pic_year = member.time | slice: -4, 4 -%}
+	{%- assign prev_pics = site.data.potm | where_exp: "member", "member.time contains pic_year" -%}
+	{%- assign year = site.time | date: "%Y" -%}
+	{%- if year != pic_year and member == prev_pics.first -%}
+	<h3 id="{{ pic_year }}">{{ pic_year }}</h3>
+	{%- endif -%}
+	<h5 id="{{ member.time | slugify }}">{{ member.time | slice: 0, cut_month }}</h5>
   <section itemscope itemtype="https://schema.org/ImageObject" class="image">
 		<meta itemprop="name" content="{{ member.name }}">
     <meta itemprop="width" content="{{ member.width | default: 400 }} px">

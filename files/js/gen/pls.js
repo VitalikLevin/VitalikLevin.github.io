@@ -12,7 +12,7 @@ const playlist = document.getElementById("playlist");
 const props = document.getElementById("trProperties");
 const sorting = document.getElementById("sorting");
 fileInput.addEventListener("change", handleFiles);
-async function handleFiles() {
+function handleFiles() {
   delFooter();
   document.body.style.cursor = "wait";
   const rawFileList = [...this.files];
@@ -41,13 +41,13 @@ async function handleFiles() {
   const fileList = rawFileList;
   const numFiles = fileList.length;
   for (var i = 0; i < numFiles; i++) {
-    var file = fileList[i];
-    var rawDate = new Date(file.lastModified);
-    var trackDate = dtFormat.format(rawDate);
+    const file = fileList[i];
+    const rawDate = new Date(file.lastModified);
+    const trackDate = dtFormat.format(rawDate);
     var trackDur = -1;
-    var trackName = file.name;
+    const trackName = file.name;
     var trackPath = trackName;
-    var trackSize = file.size;
+    const trackSize = file.size;
     var trNum = i + entriesNum + 1;
     if (prefixInput.value !== null) { trackPath = prefixInput.value + trackName; }
     if (sorting.value == 3 || sorting.value == 4) {

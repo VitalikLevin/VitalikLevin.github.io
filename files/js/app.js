@@ -20,7 +20,7 @@ function compareNum(a, b) { return a - b; }
 function binButton() {
   var binArr = document.querySelectorAll('.bin');
   for (let a = 0; a < binArr.length; a++) {
-    var button = binArr[a];
+    const button = binArr[a];
     button.onclick = function() {
       if (button.innerText != '1') {
         button.innerText = '1';
@@ -34,9 +34,9 @@ function onLoadTheme() {
   let isDark = localStorage.getItem('isDark');
   if (!isDark) {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches || window.location.search.match(/isdark=1/i)) {
-      darkMode.innerText = 1;
+      darkMode.innerText = '1';
     } else {
-      darkMode.innerText = 0;
+      darkMode.innerText = '0';
     }
   } else {
     darkMode.innerText = isDark;
