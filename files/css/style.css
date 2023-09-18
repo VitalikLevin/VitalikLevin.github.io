@@ -12,7 +12,7 @@ header h2, header h2 a, .crumb li:last-child a {
 	text-decoration: none;
 }
 
-blockquote, .postLink:hover, #playlist.show {
+blockquote, .postLink:hover, #playlist {
 	margin: 0;
 	padding-left: 10px;
 }
@@ -168,7 +168,7 @@ button#realAdd {
 	margin-bottom: -4px;
 }
 
-.listLogo, .pubDat img {
+.listLogo, .pubDat img, #cooknote img {
 	margin-bottom: -6px;
 }
 

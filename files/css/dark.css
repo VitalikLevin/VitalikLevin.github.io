@@ -12,7 +12,7 @@ footer, h3, main, nav, select option {
 	background-color: rgb(55, 55, 55);
 }
 
-blockquote, #playlist.show {
+blockquote, #playlist {
 	color: rgb(177, 177, 177);
 	border-left: 3px solid rgb(100, 181, 246);
 }

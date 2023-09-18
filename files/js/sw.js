@@ -2,8 +2,8 @@
 permalink: /sw.js
 ---
 {%- assign infiles = site.static_files | where: "sw-include", true -%}
-const C_VERSION = 6;
-const CACHE = `offline-v${C_VERSION}`;
+const C_VERSION = 7;
+const CACHE = `nw-offline-v${C_VERSION}`;
 const OFFLINE_ARR = [
   {%- for file in infiles -%}
   {%- unless file == infiles.last -%}
@@ -35,7 +35,7 @@ self.addEventListener("activate", (event) => {
 });
 self.addEventListener("fetch", (event) => {
   const { request } = event;
-  if (request.headers.has('range')) return;
+  if (request.headers.has("range")) return;
   console.log("Fetching...");
   event.respondWith(async function() {
     const cachedResponse = await caches.match(request);
@@ -43,7 +43,7 @@ self.addEventListener("fetch", (event) => {
     try {
       return await fetch(request);
     } catch (err) {
-      if (request.mode === 'navigate') {
+      if (request.mode === "navigate") {
         return caches.match(OFFLINE_URL);
       }
       console.log(`Fetch falied | ${err}`);

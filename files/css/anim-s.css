@@ -1,16 +1,12 @@
 @keyframes msgResize {
   from {
-    width: 1px;
-    height: 1px;
+    height: 1vh;
   }
-  20% {
-    height: 3vw;
+  80% {
+    height: 10vh;
   }
-  70% {
-    height: 10vw;
-  }
-  95% {
-    height: 14vw;
+  to {
+    height: fit-content;
   }
 }
 @keyframes curPage {
@@ -26,18 +22,17 @@
 }
 @keyframes run {
   from {
-    transform: translateX(-103vw);
+    transform: translateX(-104vw);
   }
   to {
     transform: translateX(0);
   }
 }
 dialog:modal {
-  animation: 3s msgResize;
+  animation: 3s linear msgResize;
 }
 .crumb li:last-child a::after {
-  animation: 5s curPage;
-  animation-timing-function: linear;
+  animation: 5s linear curPage;
   animation-iteration-count: infinite;
 }
 #cooknote.show, #wDuration {

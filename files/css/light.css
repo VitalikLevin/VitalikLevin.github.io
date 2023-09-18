@@ -21,7 +21,7 @@ h3 {
 	background-color: rgb(244, 244, 244);
 }
 
-blockquote, #playlist.show {
+blockquote, #playlist {
 	border-left: 3px solid rgb(100, 181, 246);
 }
 

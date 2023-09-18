@@ -79,7 +79,6 @@ function showResult() {
     downloadLink.setAttribute("title", "playlist.m3u8");
   }
   downloadLink.href = URL.createObjectURL(theBlob);
-  if (!playlist.classList.contains("show")) { playlist.classList.add("show"); }
   if (downloadLink.hasAttribute("hidden")) { downloadLink.removeAttribute("hidden"); }
   if (document.body.style.cursor != "auto") { document.body.style.cursor = "auto"; }
 }
