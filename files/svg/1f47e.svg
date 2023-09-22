@@ -3,13 +3,13 @@
   xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style type="text/css"><![CDATA[
-			.body { fill: rgb(103, 58, 183); }
-			.bl { fill: rgb(18, 18, 18); }
+			#body { fill: rgb(252, 84, 252); }
+			.wh { fill: rgb(252, 252, 252); }
 		]]></style>
   </defs>
   <title>Alien Monster</title>
-  <polygon points="8 40, 16 40, 16 24, 48 24, 48 32, 56 32, 56 40, 120 40, 120 104, 8 104" class="body"/>
-  <polygon points="72 56, 88 56, 88 64, 80 64, 80 72, 72 72" class="bl"/>
-  <polygon points="96 56, 112 56, 112 72, 104 72, 104 64, 96 64" class="bl"/>
-  <rect x="80" y="80" width="24" height="8" class="bl"/>
+  <polygon points="8 40, 16 40, 16 24, 48 24, 48 32, 56 32, 56 40, 120 40, 120 104, 8 104" id="body"/>
+  <polygon points="72 56, 88 56, 88 64, 80 64, 80 72, 72 72" class="wh"/>
+  <polygon points="96 56, 112 56, 112 72, 104 72, 104 64, 96 64" class="wh"/>
+  <rect x="80" y="80" width="24" height="8" class="wh"/>
 </svg>

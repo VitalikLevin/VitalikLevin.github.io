@@ -2,7 +2,7 @@
 permalink: /sw.js
 ---
 {%- assign infiles = site.static_files | where: "sw-include", true -%}
-const C_VERSION = 7;
+const C_VERSION = 8;
 const CACHE = `nw-offline-v${C_VERSION}`;
 const OFFLINE_ARR = [
   {%- for file in infiles -%}
@@ -14,6 +14,15 @@ const OFFLINE_ARR = [
   {%- endfor -%}
 ];
 const OFFLINE_URL = "/offline.html";
+const deleteCache = async (key) => {
+  await caches.delete(key);
+};
+const deleteOldCaches = async () => {
+  const cacheKeepList = [CACHE];
+  const keyList = await caches.keys();
+  const cachesToDelete = keyList.filter((key) => !cacheKeepList.includes(key));
+  await Promise.all(cachesToDelete.map(deleteCache));
+};
 self.addEventListener("install", (event) => {
   console.log("Installed");
   event.waitUntil((async () => {
@@ -29,6 +38,7 @@ self.addEventListener("activate", (event) => {
       if ("navigationPreload" in self.registration) {
         await self.registration.navigationPreload.enable();
       }
+      deleteOldCaches();
     })()
   );
   self.clients.claim();

@@ -14,12 +14,14 @@ permalink: /offline.html
     <link rel="stylesheet" href="/files/css/light.css">
     <link rel="stylesheet" href="/files/css/anim-s.css" media="screen and (prefers-reduced-motion: no-preference)">
     <meta name="description" content="Are you really offline?">
+    <link rel="icon" href="/files/svg/1f635.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#f9ad81">
   </head>
   <body>
     <main>
       <h2 class="start">You are offline</h2>
       <blockquote>Network Status: -106 Offline</blockquote>
-      <img src="/files/svg/1f47e.svg" title="Alien Wormfolder" alt="Alien is here">
+      <img src="/files/svg/1f47e.svg" title="Alien Wormfolder" alt="IBM PC Alien is here">
       <h3>Try:</h3>
       <ul>
         <li><em>Pressing</em> <kbd>Alt</kbd>+<kbd>&#8678;</kbd> / <kbd>Back Button</kbd> or <kbd>Alt</kbd>+<kbd>&#8680;</kbd></li>
@@ -34,6 +36,8 @@ permalink: /offline.html
       const ua = navigator.userAgent;
       if (ua.match(/edg/i)) {
         c.innerText = "edge://surf";
+      } else if (ua.match(/Vivaldi/i)) {
+        document.querySelector("ul li:nth-child(5)").innerText = "We heard about offline game in Vivaldi";
       } else if (/chrome/i.test(ua) && !ua.match(/YaBrowser/i) && !ua.match(/op(e)?r/i)) {
         c.innerText = "chrome://dino";
       } else if (ua.match(/firefox/i)) {
