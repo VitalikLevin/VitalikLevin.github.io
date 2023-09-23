@@ -36,8 +36,6 @@ permalink: /offline.html
       const ua = navigator.userAgent;
       if (ua.match(/edg/i)) {
         c.innerText = "edge://surf";
-      } else if (ua.match(/Vivaldi/i)) {
-        document.querySelector("ul li:nth-child(5)").innerText = "We heard about offline game in Vivaldi";
       } else if (/chrome/i.test(ua) && !ua.match(/YaBrowser/i) && !ua.match(/op(e)?r/i)) {
         c.innerText = "chrome://dino";
       } else if (ua.match(/firefox/i)) {
