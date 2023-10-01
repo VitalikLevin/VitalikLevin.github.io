@@ -17,6 +17,7 @@
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
+  unicode-range: U+0020-00FF;
 }
 @font-face {
 	font-family: "liberastika";
