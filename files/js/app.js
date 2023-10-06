@@ -97,7 +97,7 @@ if ('serviceWorker' in navigator) {
     .then(() => navigator.serviceWorker.ready.then((worker) => {
       worker.sync.register('syncdata');
     }))
-    .catch((err) => console.log(err));
+    .catch((err) => console.log(`Service worker’s fail | ${err}`));
 }
 window.addEventListener('beforeinstallprompt', function(e) {
   e.preventDefault();

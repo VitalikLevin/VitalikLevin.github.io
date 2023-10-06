@@ -65,7 +65,7 @@ mark::selection {
 	background-color: rgb(88, 116, 146);
 }
 
-#backtotop, .fillWh {
+.fillWh {
 	fill: rgb(244, 244, 244);
 }
 

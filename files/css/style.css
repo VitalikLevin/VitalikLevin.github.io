@@ -22,7 +22,7 @@ button, ::file-selector-button, select {
 	border-width: 0.5px;
 }
 
-button:hover, details > summary:hover, ::file-selector-button:hover, select:hover {
+button:hover, details > summary:hover, ::file-selector-button:hover, button + label:hover, select:hover {
 	opacity: 0.7;
 	cursor: pointer;
 }

@@ -26,6 +26,10 @@ defaults:
       sw-include: true
       layout: null
   - scope:
+      path: "files/fonts/*f"
+    values:
+      sw-include: false
+  - scope:
       path: "files/xml"
     values:
       sw-include: false
