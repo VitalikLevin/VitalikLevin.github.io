@@ -2,7 +2,7 @@
 permalink: /sw.js
 ---
 {%- assign infiles = site.static_files | where: "sw-include", true -%}
-const C_VERSION = 9;
+const C_VERSION = 10;
 const CACHE = `nw-offline-v${C_VERSION}`;
 const OFFLINE_ARR = [
   {%- for file in infiles -%}
@@ -55,10 +55,8 @@ self.addEventListener("fetch", (event) => {
     } catch (err) {
       if (request.mode === "navigate") {
         return caches.match(OFFLINE_URL);
-      } else {
-        console.log(`Fetch falied | ${err}`);
-        return caches.match("/files/svg/1f635.svg");
       }
+      console.log(`Fetch falied | ${err}`);
     }
   }());
 });
