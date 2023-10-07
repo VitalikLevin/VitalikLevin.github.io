@@ -4,16 +4,16 @@ permalink: /sw.js
 {%- assign infiles = site.static_files | where: "sw-include", true -%}
 const C_VERSION = 10;
 const CACHE = `nw-offline-v${C_VERSION}`;
+const FALL_URL = "/offline/index.html";
 const OFFLINE_ARR = [
   {%- for file in infiles -%}
   {%- unless file == infiles.last -%}
     "{{ file.path }}",
   {%- else -%}
-    "{{ file.path }}", OFFLINE_URL
+    "{{ file.path }}", FALL_URL
   {%- endunless -%}
   {%- endfor -%}
 ];
-const OFFLINE_URL = "/offline/";
 const deleteCache = async (key) => {
   await caches.delete(key);
 };
@@ -54,7 +54,7 @@ self.addEventListener("fetch", (event) => {
       return await fetch(request);
     } catch (err) {
       if (request.mode === "navigate") {
-        return caches.match(OFFLINE_URL);
+        return caches.match(FALL_URL);
       }
       console.log(`Fetch falied | ${err}`);
     }
