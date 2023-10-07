@@ -46,7 +46,7 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   const { request } = event;
   if (request.headers.has("range")) return;
-  console.log("Fetching...");
+  console.log(`Fetching "${request.url}"`);
   event.respondWith(async function() {
     const cachedResponse = await caches.match(request);
     if (cachedResponse) { return cachedResponse; }
