@@ -2,8 +2,9 @@
 permalink: /sw.js
 ---
 {%- assign infiles = site.static_files | where: "sw-include", true -%}
-const C_VERSION = 10;
+const C_VERSION = 11;
 const CACHE = `nw-offline-v${C_VERSION}`;
+const FALL_IMG = "/files/svg/1f47b.svg";
 const FALL_URL = "/offline/index.html";
 const OFFLINE_ARR = [
   {%- for file in infiles -%}
@@ -23,6 +24,9 @@ const deleteOldCaches = async () => {
   const cachesToDelete = keyList.filter((key) => !cacheKeepList.includes(key));
   await Promise.all(cachesToDelete.map(deleteCache));
 };
+function isImage(fetchRequest) {
+  return fetchRequest.method === "GET" && fetchRequest.destination === "image";
+}
 self.addEventListener("install", (event) => {
   console.log("Installed");
   event.waitUntil((async () => {
@@ -46,7 +50,7 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   const { request } = event;
   if (request.headers.has("range")) return;
-  console.log(`Fetching "${request.url}"`);
+  console.log(`Fetching | ${request.url}`);
   event.respondWith(async function() {
     const cachedResponse = await caches.match(request);
     if (cachedResponse) { return cachedResponse; }
@@ -55,6 +59,9 @@ self.addEventListener("fetch", (event) => {
     } catch (err) {
       if (request.mode === "navigate") {
         return caches.match(FALL_URL);
+      }
+      if (isImage(request)) {
+        return caches.match(FALL_IMG);
       }
       console.log(`Fetch falied | ${err}`);
     }
