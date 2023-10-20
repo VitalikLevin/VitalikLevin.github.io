@@ -1,0 +1,42 @@
+<svg version="1.1" width="128" height="128"
+  viewbox="0 0 128 128"
+  xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css"><![CDATA[
+      #body { fill: rgb(246, 170, 126); }
+      .bShake { fill: rgb(249, 204, 177); }
+      .wh { fill: rgb(244, 244, 244); }
+      .whShake { fill: rgb(243, 205, 183); }
+    ]]></style>
+  </defs>
+  <title>Shaking Face</title>
+  <g class="bShake">
+    <rect width="128" height="64" x="0" y="40"/>
+    <rect width="56" height="16" x="8" y="24"/>
+  </g>
+  <g id="body">
+    <rect width="112" height="64" x="8" y="40"/>
+    <rect width="40" height="16" x="16" y="24"/>
+  </g>
+  <g class="whShake" transform="rotate(45, 44, 32)">
+		<rect x="43" y="26" width="2" height="12"/>
+		<rect x="38" y="31" width="12" height="2"/>
+	</g>
+	<g class="wh" transform="rotate(45, 48, 32)">
+		<rect x="47" y="26" width="2" height="12"/>
+		<rect x="42" y="31" width="12" height="2"/>
+	</g>
+  <g class="whShake">
+    <circle cx="72" cy="64" r="11"/>
+    <circle cx="108" cy="64" r="11"/>
+  </g>
+  <g class="wh">
+    <circle cx="76" cy="64" r="11"/>
+    <circle cx="104" cy="64" r="11"/>
+    <ellipse cx="90" cy="88" rx="9" ry="9"/>
+  </g>
+  <g class="bl">
+    <circle cx="78" cy="60" r="6"/>
+    <circle cx="106" cy="60" r="6"/>
+  </g>
+</svg>

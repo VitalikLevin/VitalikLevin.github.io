@@ -1,0 +1,37 @@
+<svg version="1.1" width="128" height="128"
+  viewbox="0 0 128 128"
+  xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css"><![CDATA[
+      .bl { fill: rgb(66, 43, 13); }
+			#body { fill: rgb(247, 99, 12); }
+      #gr { fill: rgb(46, 125, 50); }
+      #l { stroke: rgb(255, 152, 0); fill: none; stroke-width: 2; }
+      .wh { fill: rgb(244, 244, 244); }
+		]]></style>
+    <clipPath id="mouthClip">
+      <rect x="79" y="80" width="24" height="10"/>
+    </clipPath>
+  </defs>
+  <title>Jack-O-Lantern</title>
+  <rect width="112" height="64" x="8" y="40" id="body"/>
+  <rect width="40" height="16" x="16" y="24" id="gr"/>
+  <g id="l">
+    <line x1="36" y1="40" x2="36" y2="104"/>
+    <line x1="64" y1="40" x2="64" y2="104"/>
+    <line x1="92" y1="40" x2="92" y2="104"/>
+  </g>
+  <g class="wh" transform="rotate(45, 48, 32)">
+		<rect x="47" y="26" width="2" height="12"/>
+		<rect x="42" y="31" width="12" height="2"/>
+	</g>
+  <g class="wh">
+    <circle cx="76" cy="64" r="11"/>
+    <circle cx="104" cy="64" r="11"/>
+  </g>
+  <g class="bl">
+    <circle cx="80" cy="68" r="6"/>
+    <circle cx="100" cy="68" r="6"/>
+    <ellipse id="mouth" cx="90" cy="80" rx="10" ry="10" clip-path="url(#mouthClip)"/>
+  </g>
+</svg>

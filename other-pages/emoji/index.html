@@ -1,0 +1,36 @@
+---
+lang: en-US
+title: Emoji
+excerpt: A gallery for Vitaliy Levin’s stickers
+permalink: /emoji/
+---
+{%- include header.html -%}
+<section class="crumb">
+	<ul itemscope itemtype="https://schema.org/BreadcrumbList">
+		<li itemprop="itemListElement" itemscope
+			itemtype="https://schema.org/ListItem">
+			<a itemprop="item" href="{{ site.url }}/">
+				<span itemprop="name">Network Worms</span>
+			</a>
+			<meta itemprop="position" content="1">
+		</li>
+		<li itemprop="itemListElement" itemscope
+			itemtype="https://schema.org/ListItem">
+			<a itemprop="item" href="{{ site.url }}/emoji/">
+				<mark itemprop="name">Emoji</mark>
+			</a>
+			<meta itemprop="position" content="2">
+		</li>
+	</ul>
+</section>
+<main>
+  <h2 class="start">Emoji Pack</h2>
+  <p>You can see all Wormfolder’s faces below.</p>
+  {%- assign svg = site.static_files | where_exp: "file", "file.path contains 'files/svg/emoji'" -%}
+  {%- for file in svg -%}
+  <a href="{{ file.path }}" title="&#x{{ file.basename }};"><img src="{{ file.path }}" alt="&#x{{ file.basename }};"></a>
+  {%- endfor -%}
+	<h3 id="prebuilt">Prebuilt packs</h3>
+	<p>For <strong>Telegram</strong>: <a href="https://t.me/addstickers/Wormfolder">Wormfolder</a></p>
+</main>
+{%- include footer.html -%}
