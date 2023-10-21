@@ -2,9 +2,9 @@
 permalink: /sw.js
 ---
 {%- assign infiles = site.static_files | where: "sw-include", true -%}
-const C_VERSION = 11;
-const CACHE = `nw-offline-v${C_VERSION}`;
-const FALL_IMG = "/files/svg/1f47b.svg";
+const C_VERSION = 12;
+const CACHE = `fall-min-v${C_VERSION}`;
+const FALL_IMG = "/files/svg/emoji/1f47b.svg";
 const FALL_URL = "/offline/index.html";
 const OFFLINE_ARR = [
   {%- for file in infiles -%}

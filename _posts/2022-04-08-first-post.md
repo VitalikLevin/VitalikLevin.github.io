@@ -7,7 +7,6 @@ mp-desc: A debugging worm
 date: 2022-04-08 23:00:00 +0300
 lang: en-US
 tag: en
-permalink: /2022/04/08/first-post/ 
 ---
 
 Welcome to our blog, User! 

@@ -1,6 +1,6 @@
 # Readme
 
-[![CC-BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-darklight.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+[![CC-BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-darklight.svg)](https://creativecommons.org/licenses/by-sa/4.0/
 
 README was eaten by `VitalikLevin`.
 
@@ -12,23 +12,21 @@ README was eaten by `VitalikLevin`.
   <img alt="A worm in space" src="files/images/spaceworm.png">
 </picture>
 
-[site]: https://vitaliklevin.github.io
-
 ## Links
-- [Main page]([site]/)
-- [Our blog]([site]/blog/)
-- [Our emoji pack]([site]/emoji/)
-- [Our extensions]([site]/exts/)
-  - [Steamy Fish]([site]/exts/steamyfish/)
-    - [Steamy Fish Downloads]([site]/exts/steamyfish/downloads/)
-- [Our games]([site]/games)
-  - [Bounce's Adventure]([site]/games/bsa/)
-  - [Nature vs. Spirits]([site]/games/nves/)
-    - [About Nature vs. Spirits]([site]/games/nves/about/)
-    - [Nature vs. Spirits Downloads]([site]/games/nves/downloads/)
-- _[Picture of the Month]([site]/picofmonth/)_
-- [Our tools]([site]/tools/)
-  - [`m3u-gen`]([site]/tools/m3u-gen/)
-  - [`pls-gen`]([site]/tools/pls-gen/)
-- [About site]([site]/about/)
-- ["I’m a Teapot" page]([site]/teapot/)
+- [Main page](https://vitaliklevin.github.io/)
+- [Our blog](https://vitaliklevin.github.io/blog/)
+- [Our emoji pack](https://vitaliklevin.github.io/emoji/)
+- [Our extensions](https://vitaliklevin.github.io/exts/)
+  - [Steamy Fish](https://vitaliklevin.github.io/exts/steamyfish/)
+    - [Steamy Fish Downloads](https://vitaliklevin.github.io/exts/steamyfish/downloads/)
+- [Our games](https://vitaliklevin.github.io/games/)
+  - [Bounce's Adventure](https://vitaliklevin.github.io/games/bsa/)
+  - [Nature vs. Spirits](https://vitaliklevin.github.io/games/nves/)
+    - [About Nature vs. Spirits](https://vitaliklevin.github.io/games/nves/about/)
+    - [Nature vs. Spirits Downloads](https://vitaliklevin.github.io/games/nves/downloads/)
+- _[Picture of the Month](https://vitaliklevin.github.io/picofmonth/)_
+- [Our tools](https://vitaliklevin.github.io/tools/)
+  - [`m3u-gen`](https://vitaliklevin.github.io/tools/m3u-gen/)
+  - [`pls-gen`](https://vitaliklevin.github.io/tools/pls-gen/)
+- [About site](https://vitaliklevin.github.io/about/)
+- ["I’m a Teapot" page](https://vitaliklevin.github.io/teapot/)

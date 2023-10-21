@@ -41,7 +41,7 @@ button:hover, details > summary:hover, ::file-selector-button:hover, button + la
 }
 
 .image span, .num, .pubDat {
-	font-family: zillaslab;
+	font-family: zillaslab, serif;
 }
 
 code, kbd, ::placeholder {

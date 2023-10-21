@@ -5,7 +5,7 @@ excerpt: History of Steamy Fish Extension
 permalink: /exts/steamyfish/downloads/
 ---
 {%- include header.html -%}
-<div class="crumb">
+<section class="crumb">
 	<ul itemscope itemtype="https://schema.org/BreadcrumbList">
 		<li itemprop="itemListElement" itemscope
 			itemtype="https://schema.org/ListItem">
@@ -36,13 +36,12 @@ permalink: /exts/steamyfish/downloads/
 			<meta itemprop="position" content="4">
 		</li>
 	</ul>
-</div>
+</section>
 <main>
   <h2 class="start">Steamy Fish Downloads</h2>
 	{%- for member in site.data.sft -%}
 	<h3 id="v{{ member.major | default: 0 }}.{{ member.minor }}.{{ member.patch | default: 0 }}">v{{ member.major | default: 0 }}.{{ member.minor }}.{{ member.patch | default: 0 }}</h3>
-	<p><a href="https://github.com/vitaliklevin/steamyfish-theme/blob/master/CHANGELOG.md#{{ member.major | default: 0 }}{{ member.minor }}{{ member.patch | default: 0 }}">Changelog Section</a></p>
-  <p><a href="https://marketplace.visualstudio.com/_apis/public/gallery/publishers/networkworms/vsextensions/steamyfish/{{ member.major | default: 0 }}.{{ member.minor }}.{{ member.patch | default: 0 }}/vspackage">VSIX file</a></p>
+	<p><a href="https://github.com/vitaliklevin/steamyfish-theme/blob/master/CHANGELOG.md#{{ member.major | default: 0 }}{{ member.minor }}{{ member.patch | default: 0 }}">Changelog Section</a> | <a href="https://marketplace.visualstudio.com/_apis/public/gallery/publishers/networkworms/vsextensions/steamyfish/{{ member.major | default: 0 }}.{{ member.minor }}.{{ member.patch | default: 0 }}/vspackage">VSIX file</a></p>
 	{%- endfor -%}
 </main>
 {%- include footer.html -%}
