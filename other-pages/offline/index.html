@@ -21,7 +21,8 @@ permalink: /offline/
     <main>
       <h2 class="start">You are offline</h2>
       <blockquote>Network Status: -106 Offline</blockquote>
-      <img src="/files/svg/test.svg" title="Fallback Image Test" alt="You shoudn't see this message">
+      <img src="/files/svg/emoji/1f47e.svg" alt="CGA Alien is here">
+      <button id="reload">Reload</button>
       <h3>Try:</h3>
       <ul>
         <li><em>Pressing</em> <kbd>Alt</kbd>+<kbd>&#8678;</kbd> / <kbd>Back Button</kbd> or <kbd>Alt</kbd>+<kbd>&#8680;</kbd></li>
@@ -34,6 +35,7 @@ permalink: /offline/
     <script>
       var c = document.createElement("code");
       const ua = navigator.userAgent;
+      document.getElementById("reload").onclick = function() { window.location.reload(); }
       if (ua.match(/edg/i)) {
         c.innerText = "edge://surf";
       } else if (/chrome/i.test(ua) && !ua.match(/YaBrowser/i) && !ua.match(/op(e)?r/i)) {
