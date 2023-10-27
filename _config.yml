@@ -42,7 +42,7 @@ defaults:
     values:
       sw-include: false
   - scope:
-      path: "favicon.ico"
+      path: "manifest.json"
     values:
       sw-include: true
 plugins:

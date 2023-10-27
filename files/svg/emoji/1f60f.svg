@@ -1,0 +1,33 @@
+<svg version="1.1" width="128" height="128"
+  viewbox="0 0 128 128"
+  xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css"><![CDATA[
+      .bl { fill: rgb(18, 18, 18); }
+      .body { fill: rgb(246, 170, 126); }
+      #mouth { fill: none; stroke-width: 5; stroke: rgb(64, 42, 50); }
+      .wh { fill: rgb(244, 244, 244); }
+    ]]></style>
+    <clipPath id="eyeClip">
+      <circle cx="72" cy="60" r="11"/>
+      <circle cx="100" cy="60" r="11"/>
+    </clipPath>
+    <clipPath id="mouthClip">
+      <polygon points="76 88, 76 100, 110 100, 110 72, 90 88"/>
+    </clipPath>
+  </defs>
+  <title>Smirking Face</title>
+  <polygon points="8 104, 8 40, 16 40, 16 24, 56 24, 56 40, 120 40, 120 104" class="body"/>
+	<g class="wh" transform="rotate(45, 48, 32)">
+		<rect x="47" y="26" width="2" height="12"/>
+		<rect x="42" y="31" width="12" height="2"/>
+	</g>
+  <g clip-path="url(#eyeClip)">
+    <circle cx="72" cy="60" r="11" class="wh"/>
+    <circle cx="100" cy="60" r="11" class="wh"/>
+    <circle cx="77" cy="58" r="5.5" class="bl"/>
+    <circle cx="105" cy="58" r="5.5" class="bl"/>
+    <rect x="61" y="49" width="50" height="7" class="body"/>
+  </g>
+  <ellipse id="mouth" cx="92" cy="80" rx="15" ry="14" clip-path="url(#mouthClip)"/>
+</svg>

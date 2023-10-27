@@ -9,10 +9,7 @@
 		]]></style>
   </defs>
   <title>Ghost</title>
-  <g id="body">
-    <rect width="112" height="64" x="8" y="40"/>
-    <rect width="40" height="16" x="16" y="24"/>
-  </g>
+  <polygon points="8 104, 8 40, 16 40, 16 24, 56 24, 56 40, 120 40, 120 104" id="body"/>
 	<g class="bl" transform="rotate(45, 48, 32)">
 		<rect x="47" y="26" width="2" height="12"/>
 		<rect x="42" y="31" width="12" height="2"/>

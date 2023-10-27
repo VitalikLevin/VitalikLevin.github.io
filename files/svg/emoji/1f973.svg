@@ -3,8 +3,8 @@
 	xmlns="http://www.w3.org/2000/svg">
 	<defs>
 		<style type="text/css"><![CDATA[
-			#folder { fill: rgb(246, 170, 126); }
-			#wh, #xSymbol, #mouth { fill: rgb(244, 244, 244); }
+			#body { fill: rgb(246, 170, 126); }
+			.wh { fill: rgb(244, 244, 244); }
 			#bl { fill: rgb(18, 18, 18); }
 			#hat, #horn, #hPart { fill: rgb(244, 18, 18); }
 			#hPart { stroke: rgb(244, 128, 18); }
@@ -12,15 +12,12 @@
 		]]></style>
 	</defs>
 	<title>Face with Party Horn and Party Hat</title>
-	<g id="folder">
-    <rect width="112" height="64" x="8" y="40"/>
-    <rect width="40" height="16" x="16" y="24"/>
-  </g>
-	<g id="xSymbol" transform="rotate(45, 48, 32)">
+	<polygon points="8 104, 8 40, 16 40, 16 24, 56 24, 56 40, 120 40, 120 104" id="body"/>
+	<g class="wh" transform="rotate(45, 48, 32)">
 		<rect x="47" y="26" width="2" height="12"/>
 		<rect x="42" y="31" width="12" height="2"/>
 	</g>
-	<g id="wh">
+	<g class="wh">
     <circle cx="76" cy="64" r="11"/>
     <circle cx="104" cy="64" r="11"/>
   </g>
@@ -29,7 +26,7 @@
     <circle cx="100" cy="68" r="6"/>
   </g>
 	<polygon id="hat" points="80 40, 96 40, 88 16, 80 40"/>
-	<ellipse id="mouth" cx="88" cy="88" rx="6" ry="10"/>
+	<ellipse class="wh" cx="88" cy="88" rx="6" ry="10"/>
 	<rect id="horn" x="86" y="81" width="40" height="16"/>
 	<rect id="hPart" x="118" y="82" width="8" height="14" cx="16" cy="16"/>
 	<rect id="line" x="96" y="81" width="16" height="16"/>

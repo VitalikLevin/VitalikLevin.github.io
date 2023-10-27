@@ -40,8 +40,8 @@ button:hover, details > summary:hover, ::file-selector-button:hover, button + la
 	margin-top: 5px;
 }
 
-.image span, .num, .pubDat {
-	font-family: zillaslab, serif;
+.image span, .num, .pubDat, .robExample {
+	font-family: robotoslab, serif;
 }
 
 code, kbd, ::placeholder {

@@ -28,7 +28,11 @@ permalink: /emoji/
   <p>You can see all Wormfolder’s faces below.</p>
   {%- assign svg = site.static_files | where_exp: "file", "file.path contains 'files/svg/emoji'" -%}
   {%- for file in svg -%}
-  <a href="{{ file.path }}" title="&#x{{ file.basename }};"><img src="{{ file.path }}" alt="&#x{{ file.basename }};"></a>
+	{%- assign u_arr = file.basename | split: '-' -%}
+	{%- capture prep_str -%}
+	{%- for member in u_arr -%}&#x{{ member }};{%- endfor -%}
+	{%- endcapture -%}
+	<a href="{{ file.path }}" title="{{ prep_str }}"><img src="{{ file.path }}" alt="{{ prep_str }}"></a>
   {%- endfor -%}
 	<h3 id="prebuilt">Prebuilt packs</h3>
 	<p>For <strong>Telegram</strong>: <a href="https://t.me/addstickers/Wormfolder">Wormfolder</a></p>

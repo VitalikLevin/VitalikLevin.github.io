@@ -1,0 +1,23 @@
+<svg version="1.1" width="128" height="128"
+  viewbox="0 0 128 128"
+  xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css"><![CDATA[
+      #body { fill: rgb(246, 170, 126); }
+      .dcEye { fill: none; stroke: rgb(18, 18, 18); stroke-width: 3; }
+      #dcM { stroke: rgb(244, 244, 244); }
+      .wh { fill: rgb(244, 244, 244); }
+    ]]></style>
+  </defs>
+  <title>Face with Spiral Eyes</title>
+  <polygon points="8 104, 8 40, 16 40, 16 24, 56 24, 56 40, 120 40, 120 104" id="body"/>
+  <g class="wh" transform="rotate(45, 48, 32)">
+		<rect x="47" y="26" width="2" height="12"/>
+		<rect x="42" y="31" width="12" height="2"/>
+	</g>
+  <g class="dcEye">
+    <polyline points="65 64, 65 53, 87 53, 87 75, 70 75, 70 58, 81 58, 81 68, 73 68"/>
+    <polyline points="115 64, 115 75, 93 75, 93 53, 110 53, 110 70, 98 70, 98 60, 106 60"/>
+    <polyline points="69 85, 76 95, 83 85, 90 95, 97 85, 104 95, 111 85" id="dcM"/>
+  </g>
+</svg>

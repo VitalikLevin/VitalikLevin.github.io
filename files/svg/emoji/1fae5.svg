@@ -8,9 +8,6 @@
       polygon.str { fill: rgba(246, 170, 126, 0.6); }
       .bl { fill: rgb(18, 18, 18); }
 		]]></style>
-    <clipPath id="mouthClip">
-      <rect x="79" y="80" width="24" height="10"/>
-    </clipPath>
 	</defs>
 	<title>Dotted Line Face</title>
   <polygon points="8 104, 8 40, 16 40, 16 24, 56 24, 56 40, 120 40, 120 104" class="str" stroke-dasharray="6 6 6"/>
@@ -21,7 +18,7 @@
 	<g class="fill">
     <circle cx="76" cy="64" r="11"/>
     <circle cx="104" cy="64" r="11"/>
-    <ellipse id="mouth" cx="90" cy="80" rx="10" ry="10" clip-path="url(#mouthClip)"/>
+    <rect x="78" y="80" width="24" height="8"/>
   </g>
   <g class="bl">
     <circle cx="80" cy="68" r="6"/>

@@ -8,14 +8,13 @@
 	font-display: swap;
 }
 @font-face {
-	font-family: "zillaslab";
-	src: local(Zilla Slab Regualar),
-		url("../fonts/zilla_slab.woff2") format("woff2"),
-		url("../fonts/zilla_slab.woff") format("woff");
+	font-family: "robotoslab";
+	src: local(Roboto Slab),
+		url("../fonts/robotoslab.woff2") format("woff2"),
+		url("../fonts/robotoslab.woff") format("woff");
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
-  unicode-range: U+0020-00FF;
 }
 @font-face {
 	font-family: "liberastika";

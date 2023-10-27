@@ -40,7 +40,11 @@ permalink: /picofmonth/
 		<meta itemprop="name" content="{{ member.name }}">
     <meta itemprop="width" content="{{ member.width | default: 400 }} px">
     <meta itemprop="height" content="{{ member.height | default: 300 }} px">
+		{%- if forloop.index > 3 -%}
+		<img loading="lazy" class="img{{ member.width | default: 400 }}" title="{{ member.name }}" alt="{{ member.desc }}" src="{{ member.src }}" itemprop="contentUrl"><br>
+		{%- else -%}
 		<img class="img{{ member.width | default: 400 }}" title="{{ member.name }}" alt="{{ member.desc }}" src="{{ member.src }}" itemprop="contentUrl"><br>
+		{%- endif -%}
 		<span itemprop="description">{{ member.desc }}</span>
 	</section>
 	{%- endfor -%}

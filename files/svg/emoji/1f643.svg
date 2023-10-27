@@ -3,30 +3,27 @@
 	xmlns="http://www.w3.org/2000/svg">
 	<defs>
 		<style type="text/css"><![CDATA[
-			#folder { fill: rgb(246, 170, 126); }
-      #bl { fill: rgb(18, 18, 18); }
-			#mouth, #xSymbol, #wh { fill: rgb(244, 244, 244); }
+			#body { fill: rgb(246, 170, 126); }
+      .bl { fill: rgb(18, 18, 18); }
+			.wh { fill: rgb(244, 244, 244); }
 		]]></style>
     <clipPath id="mouthClip">
       <rect x="78" y="54" width="24" height="10"/>
     </clipPath>
 	</defs>
 	<title>Upside-Down Face</title>
-  <g id="folder">
-    <rect width="112" height="64" x="8" y="40"/>
-    <rect width="40" height="16" x="16" y="24"/>
-  </g>
-	<g id="xSymbol" transform="rotate(45, 48, 32)">
+  <polygon points="8 104, 8 40, 16 40, 16 24, 56 24, 56 40, 120 40, 120 104" id="body"/>
+	<g class="wh" transform="rotate(45, 48, 32)">
 		<rect x="47" y="26" width="2" height="12"/>
 		<rect x="42" y="31" width="12" height="2"/>
 	</g>
-  <g id="wh">
+  <g class="wh">
     <circle cx="76" cy="88" r="11"/>
     <circle cx="104" cy="88" r="11"/>
   </g>
-  <g id="bl">
+  <g class="bl">
     <circle cx="80" cy="84" r="6"/>
     <circle cx="100" cy="84" r="6"/>
   </g>
-  <ellipse id="mouth" cx="90" cy="64" rx="12" ry="10" clip-path="url(#mouthClip)"/>
+  <ellipse class="wh" cx="90" cy="64" rx="12" ry="10" clip-path="url(#mouthClip)"/>
 </svg>
