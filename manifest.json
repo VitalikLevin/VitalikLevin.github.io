@@ -1,9 +1,12 @@
+---
+layout: null
+---
 {
 	"dir": "ltr",
-	"lang": "en-US",
+	"lang": "en",
 	"name": "Network Worms",
 	"short_name": "NetWorms",
-	"description": "We make apps for PC not PCs for apps",
+	"description": "{{ site.description }}",
 	"categories": [ "games", "music", "utilities" ],
 	"icons": [
 		{
@@ -41,8 +44,9 @@
 	],
 	"theme_color": "#f4f4f4",
 	"background_color": "#121212",
-	"id": "/",
-	"start_url": "/",
+	"id": ".",
+	"start_url": ".",
+	"scope": "/",
 	"orientation": "any",
 	"display": "standalone"
 }

@@ -1,9 +1,9 @@
-<h3>Picture of the <strong>current</strong> month</h3>
-{%- assign potm = site.data.potm -%}
+{%- assign pic = site.data.potm.first -%}
+<h3>Picture of the <a href="/picofmonth/#{{ pic.time | slugify }}">current</a> month</h3>
 <section itemscope itemtype="https://schema.org/ImageObject" class="image">
-	<meta itemprop="name" content="{{ potm.first.name }}">
-  <meta itemprop="width" content="{{ potm.first.width | default: 400 }} px">
-  <meta itemprop="height" content="{{ potm.first.height | default: 300 }} px">
-	<img class="img{{ potm.first.width | default: 400 }}" title="{{ potm.first.name }}" alt="{{ potm.first.desc }}" src="{{ potm.first.src }}" itemprop="contentUrl"><br>
-	<span itemprop="description">{{ potm.first.desc }}</span>
+	<meta itemprop="name" content="{{ pic.name }}">
+  <meta itemprop="width" content="{{ pic.width | default: 400 }} px">
+  <meta itemprop="height" content="{{ pic.height | default: 300 }} px">
+	<img class="img{{ pic.width | default: 400 }}" title="{{ pic.name }}" alt="{{ pic.desc }}" src="{{ pic.src }}" itemprop="contentUrl"><br>
+	<span itemprop="description">{{ pic.desc }}</span>
 </section>

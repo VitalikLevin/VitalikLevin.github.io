@@ -56,10 +56,9 @@ code, kbd, ::placeholder {
 	visibility: hidden;
 }
 
-header h2, label {
+header h2, details > summary, dialog, label {
 	user-select: none;
 	-moz-user-select: none;
-	-ms-user-select: none;
 	-webkit-user-select: none;
 }
 
