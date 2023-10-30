@@ -2,7 +2,7 @@
 permalink: /sw.js
 ---
 {%- assign infiles = site.static_files | where: "sw-include", true -%}
-const C_VERSION = "{{ site.github.build_revision | default: 13 }}";
+const C_VERSION = "{{ site.github.build_revision | truncate: 8, '0' }}";
 const CACHE = `fall-min-v${C_VERSION}`;
 const FALL_IMG = "/files/svg/emoji/1f47b.svg";
 const FALL_URL = "/offline/index.html";

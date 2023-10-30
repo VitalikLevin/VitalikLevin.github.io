@@ -5,8 +5,8 @@ layout: null
   "version": "1.2",
   "api_version": 3,
   "layout": {
-      "logo": "{{ /files/icons/300x100.png | absolute_url }}",
+      "logo": "{{ site.url }}/files/icons/300x100.png",
       "color": "#F9AD81",
-      "show_title": none
+      "show_title": "none"
   }
 }
