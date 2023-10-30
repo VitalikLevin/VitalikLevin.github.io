@@ -6,6 +6,7 @@ timezone: Europe/Moscow
 permalink: pretty
 highlighter: rogue
 markdown: kramdown
+repository: VitalikLevin/VitalikLevin.github.io
 theme: null
 url: https://vitaliklevin.github.io
 port: 1337
@@ -41,10 +42,6 @@ defaults:
       path: "files/xml"
     values:
       sw-include: false
-  - scope:
-      path: "manifest.json"
-    values:
-      sw-include: true
 plugins:
   - jekyll-feed
   - jekyll-paginate

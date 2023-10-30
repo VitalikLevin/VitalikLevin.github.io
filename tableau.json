@@ -1,0 +1,12 @@
+---
+layout: null
+---
+{
+  "version": "1.2",
+  "api_version": 3,
+  "layout": {
+      "logo": "{{ /files/icons/300x100.png | absolute_url }}",
+      "color": "#F9AD81",
+      "show_title": none
+  }
+}

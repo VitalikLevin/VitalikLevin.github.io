@@ -2,7 +2,7 @@
 permalink: /sw.js
 ---
 {%- assign infiles = site.static_files | where: "sw-include", true -%}
-const C_VERSION = 12;
+const C_VERSION = "{{ site.github.build_revision | default: 13 }}";
 const CACHE = `fall-min-v${C_VERSION}`;
 const FALL_IMG = "/files/svg/emoji/1f47b.svg";
 const FALL_URL = "/offline/index.html";
@@ -53,10 +53,10 @@ self.addEventListener("fetch", (event) => {
   console.log(`Fetching | ${request.url}`);
   event.respondWith(async function() {
     const cachedResponse = await caches.match(request);
-    if (cachedResponse) { return cachedResponse; }
     try {
       return await fetch(request);
     } catch (err) {
+      if (cachedResponse) { return cachedResponse; }
       if (request.mode === "navigate") {
         return caches.match(FALL_URL);
       }
