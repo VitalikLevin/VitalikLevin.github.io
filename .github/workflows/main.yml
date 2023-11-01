@@ -10,10 +10,12 @@ jobs:
     steps:
       - name: Parse Sitemap
         id: parsed
+        runs_on: ubuntu-latest
         uses: simenandre/parse-sitemap@v1.1.1
         with:
           sitemap-url: https://vitaliklevin.github.io/sitemap.xml
       - name: Second encounter
+        runs_on: ubuntu-latest
         uses: actions/github-script@v6
         with:
           script: |
