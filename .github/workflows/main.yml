@@ -1,0 +1,23 @@
+name: IndexNow
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+jobs:
+  first_job:
+    runs_on: ubuntu-latest
+      steps:
+        - name: Parse Sitemap
+          id: parsed
+          uses: simenandre/parse-sitemap@v1.1.1
+          with:
+            sitemap-url: https://vitaliklevin.github.io/sitemap.xml
+        - name: Second encounter
+          uses: actions/github-script@v6
+          with:
+            script: |
+              for (i=0; i < context.steps.parsed.outputs.urls.length; i++) {
+                await fetch(`https://yandex.com/indexnow?url=${context.steps.parsed.outputs.urls[i]}&key=68537cd552ad4fc992f52fd5685725b2})
+                  .then(() => { console.log(context) })
+              }
