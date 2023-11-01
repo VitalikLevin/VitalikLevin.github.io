@@ -6,7 +6,7 @@ on:
     branches: [ "master" ]
 jobs:
   first_job:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Parse Sitemap
         id: parsed
