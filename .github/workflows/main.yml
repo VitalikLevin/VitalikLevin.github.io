@@ -5,22 +5,24 @@ on:
   pull_request:
     branches: [ "master" ]
 jobs:
-  first-job:
+  first_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Mega step
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Parse Sitemap
+        id: parsed
+        uses: simenandre/parse-sitemap@v1.1.1
+        with:
+          sitemap-url: "https://vitaliklevin.github.io/sitemap.xml"
+      - name: Second encounter
         uses: actions/github-script@v6
         with:
           script: |
-            require("fast-xml-parser");
-            import { XMLParser } from "fast-xml-parser";
-            const parser = new XMLParser();
-            var file;
-            fetch("https://vitaliklevin.github.io/sitemap.xml")
-              .then((res) => { return res.blob() })
-              .then((blob) => {
-                file = parser.parse(blob);
-                for(url in file.urlset) {
-                  fetch(`https://yandex.com/indexnow?url=${url.loc}&key=68537cd552ad4fc992f52fd5685725b2`)
-                }
-              })
+            for (var i=0; i < context.steps.parsed.outputs.urls.length; i++) {
+              await fetch(`https://yandex.com/indexnow?url=${context.steps.parsed.outputs.urls[i]}&key=68537cd552ad4fc992f52fd5685725b2})
+                .then(() => { console.log(context); });
+            }
+            console.log("End of script");
