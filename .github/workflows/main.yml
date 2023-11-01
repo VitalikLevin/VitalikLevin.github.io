@@ -22,6 +22,6 @@ jobs:
         with:
           script: |
             for (var i=0; i < context.steps.parsed.outputs.urls.length; i++) {
-              fetch(`https://yandex.com/indexnow?url=${context.steps.parsed.outputs.urls[i]}&key=68537cd552ad4fc992f52fd5685725b2});
+              fetch(`https://yandex.com/indexnow?url=${context.steps.parsed.outputs.urls[i]}&key=68537cd552ad4fc992f52fd5685725b2`);
             }
             console.log("End of script");
