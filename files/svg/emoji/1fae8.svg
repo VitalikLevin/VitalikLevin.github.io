@@ -3,7 +3,7 @@
   xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style type="text/css"><![CDATA[
-      #body { fill: rgb(246, 170, 126); }
+      #body { fill: rgb(249, 173, 129); }
       .bShake { fill: rgb(249, 204, 177); }
       .wh { fill: rgb(244, 244, 244); }
       .whShake { fill: rgb(243, 205, 183); }

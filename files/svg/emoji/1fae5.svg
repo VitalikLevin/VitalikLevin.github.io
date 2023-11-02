@@ -4,8 +4,8 @@
 	<defs>
 		<style type="text/css"><![CDATA[
       .fill { fill: rgb(244, 244, 244); }
-			.str { stroke: rgb(246, 170, 126); }
-      polygon.str { fill: rgba(246, 170, 126, 0.6); }
+			.str { stroke: rgb(249, 173, 129); }
+      polygon.str { fill: rgba(249, 173, 129, 0.6); }
       .bl { fill: rgb(18, 18, 18); }
 		]]></style>
 	</defs>

@@ -3,12 +3,16 @@
   xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style type="text/css"><![CDATA[
-			#body { fill: rgb(249, 173, 129); }
+      #body { fill: rgb(249, 173, 129); }
 			.wh { fill: rgb(244, 244, 244); }
 			.bl { fill: rgb(18, 18, 18); }
-		]]></style>
+    ]]></style>
+    <clipPath id="eyeClip">
+      <circle cx="76" cy="64" r="11"/>
+      <circle cx="104" cy="64" r="11"/>
+    </clipPath>
   </defs>
-  <title>Face with Open Mouth</title>
+  <title>Face with Rolling Eyes</title>
   <polygon points="8 104, 8 40, 16 40, 16 24, 56 24, 56 40, 120 40, 120 104" id="body"/>
   <g class="wh" transform="rotate(45, 48, 32)">
 		<rect x="47" y="26" width="2" height="12"/>
@@ -16,7 +20,9 @@
 	</g>
   <circle cx="76" cy="64" r="11" class="wh"/>
   <circle cx="104" cy="64" r="11" class="wh"/>
-  <circle cx="80" cy="68" r="6" class="bl"/>
-  <circle cx="100" cy="68" r="6" class="bl"/>
-  <ellipse class="wh" cx="90" cy="88" rx="10" ry="10"/>
+  <g class="bl" clip-path="url(#eyeClip)">
+    <circle cx="76" cy="59" r="6"/>
+    <circle cx="105" cy="59" r="6"/>
+  </g>
+  <rect x="78" y="86" width="22" height="6" class="wh"/>
 </svg>

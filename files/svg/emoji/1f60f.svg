@@ -4,7 +4,7 @@
   <defs>
     <style type="text/css"><![CDATA[
       .bl { fill: rgb(18, 18, 18); }
-      .body { fill: rgb(246, 170, 126); }
+      .body { fill: rgb(249, 173, 129); }
       #mouth { fill: none; stroke-width: 5; stroke: rgb(64, 42, 50); }
       .wh { fill: rgb(244, 244, 244); }
     ]]></style>

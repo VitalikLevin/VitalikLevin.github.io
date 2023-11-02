@@ -3,7 +3,7 @@
   xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style type="text/css"><![CDATA[
-			#folder { fill: rgb(246, 170, 126); }
+			#folder { fill: rgb(249, 173, 129); }
       .bl { fill: rgb(18, 18, 18); }
 			.wh { fill: rgb(244, 244, 244); }
 		]]></style>
