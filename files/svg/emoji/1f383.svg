@@ -32,6 +32,6 @@
   <g class="bl">
     <circle cx="80" cy="68" r="6"/>
     <circle cx="100" cy="68" r="6"/>
-    <ellipse id="mouth" cx="90" cy="80" rx="10" ry="10" clip-path="url(#mouthClip)"/>
+    <ellipse cx="90" cy="80" rx="10" ry="10" clip-path="url(#mouthClip)"/>
   </g>
 </svg>

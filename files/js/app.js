@@ -1,3 +1,4 @@
+const cachedT = document.title;
 const lang = document.querySelector('html').lang.toLowerCase();
 const now = new Date();
 const darkMode = document.getElementById('darkMode');
@@ -54,6 +55,17 @@ function ifUserHasGone() {
     }
   });
 }
+function sharePage() {
+  const cUrl = document.querySelector('link[rel=canonical]').href;
+  if ('share' in window.navigator) {
+    navigator.share({
+      title: cachedT,
+      text: `Check out Network Worms website ${cUrl}`,
+      url: cUrl
+    })
+    .catch((er) => { console.log(`Share error | ${er}`); });
+  }
+}
 function changeTheme() {
   if (darkMode.innerText != '1') {
     document.querySelector('link[href="/files/css/dark.css"]').setAttribute('href', '/files/css/light.css');
@@ -92,6 +104,7 @@ onLoadTheme();
 getAdvice();
 ifUserHasGone();
 darkMode.addEventListener('click', changeTheme);
+document.getElementById('share').addEventListener('click', sharePage);
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js', { scope: '/' })
     .then(() => navigator.serviceWorker.ready.then((worker) => {

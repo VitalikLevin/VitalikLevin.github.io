@@ -1,0 +1,9 @@
+<svg version="1.1" width="28" height="28"
+  viewbox="0 0 28 28" stroke-width="2"
+  xmlns="http://www.w3.org/2000/svg">
+  <circle cx="5" cy="14" r="4" class="fillWh"/>
+  <circle cx="21" cy="6" r="4" class="fillWh"/>
+  <circle cx="21" cy="22" r="4" class="fillWh"/>
+  <line x1="5" y1="14" x2="21" y2="6" class="strWh"/>
+  <line x1="5" y1="14" x2="21" y2="22" class="strWh"/>
+</svg>

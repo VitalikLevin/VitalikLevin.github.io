@@ -1,0 +1,36 @@
+<svg version="1.1" width="128" height="128"
+  viewbox="0 0 128 128" stroke-width="4"
+  xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css"><![CDATA[
+      .bl { fill: rgb(18, 18, 18); }
+      .body { fill: rgb(254, 254, 254); }
+      #mou { stroke: rgb(248, 48, 46); }
+      .red { fill: rgb(248, 48, 46); }
+      .wh { fill: rgb(244, 244, 244); stroke: rgb(0, 116, 185); }
+    ]]></style>
+    <clipPath id="mouthClip">
+      <rect x="71" y="86" width="38" height="18"/>
+    </clipPath>
+  </defs>
+  <title>Clown Face</title>
+  <rect width="112" height="64" x="8" y="40" class="body"/>
+  <rect width="40" height="16" x="16" y="24" class="red"/>
+  <g class="body" transform="rotate(45, 48, 32)">
+		<rect x="47" y="26" width="2" height="12"/>
+		<rect x="42" y="31" width="12" height="2"/>
+	</g>
+  <g class="wh">
+    <circle cx="76" cy="60" r="11"/>
+    <circle cx="104" cy="60" r="11"/>
+  </g>
+  <g class="bl">
+    <circle cx="80" cy="64" r="6"/>
+    <circle cx="100" cy="64" r="6"/>
+  </g>
+  <circle cx="90" cy="76" r="8" class="red"/>
+  <g id="mou">
+    <ellipse class="body" cx="90" cy="86" rx="15" ry="12" clip-path="url(#mouthClip)"/>
+    <line x1="73" y1="87" x2="107" y2="87"/>
+  </g>
+</svg>

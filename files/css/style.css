@@ -140,13 +140,19 @@ dialog button {
 	position: fixed;
 	top: 1vh;
 	left: 0vw;
-	width: 95vw;
+	width: 95dvw;
 	z-index: 2;
 }
 
 #wClose {
 	top: 1.5vh;
 	right: 6vw;
+}
+
+#share {
+	position: absolute;
+	right: 5dvw;
+	border: none;
 }
 
 .lockScroll {

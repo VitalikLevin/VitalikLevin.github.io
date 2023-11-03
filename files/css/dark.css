@@ -74,10 +74,10 @@ mark::selection {
 	fill: rgb(244, 244, 244);
 }
 
-#vinyl {
-	stroke: rgb(244, 244, 244);
+.strBl {
+	stroke: rgb(18, 18, 18);
 }
 
 .strWh {
-	stroke: rgb(18, 18, 18);
+	stroke: rgb(244, 244, 244);
 }
