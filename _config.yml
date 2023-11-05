@@ -42,6 +42,10 @@ defaults:
       path: "files/xml"
     values:
       sw-include: false
+  - scope:
+      path: "favicon.ico"
+    values:
+      sw-include: true
 plugins:
   - jekyll-feed
   - jekyll-paginate
