@@ -43,7 +43,7 @@ a:visited {
 
 mark, ::selection {
 	background-color: rgb(249, 168, 37);
-	color: rgb(244, 244, 244);
+	color: rgb(0, 0, 0);
 }
 
 ::file-selector-button, button {

@@ -1,10 +1,7 @@
 const cachedT = document.title;
-const lang = document.querySelector('html').lang.toLowerCase();
 const now = new Date();
 const darkMode = document.getElementById('darkMode');
 const promoApp = document.getElementById('promoPWA');
-const promoYes = document.getElementById('instPwa');
-const sleep = document.getElementById('sleep');
 function checkCookies() {
   let cookieDate = localStorage.getItem('cookieDate');
   let cooknote = document.querySelector('#cooknote');
@@ -56,12 +53,11 @@ function ifUserHasGone() {
   });
 }
 function sharePage() {
-  const cUrl = document.querySelector('link[rel=canonical]').href;
   if ('share' in window.navigator) {
     navigator.share({
       title: cachedT,
-      text: `Check out Network Worms website ${cUrl}`,
-      url: cUrl
+      text: `Check out Network Worms website`,
+      url: document.querySelector('link[rel=canonical]').href
     })
     .catch((er) => { console.log(`Share error | ${er}`); });
   }
@@ -77,7 +73,7 @@ function changeTheme() {
   }
 }
 function getAdvice() {
-  fetch(`/files/texts/advice-${lang}.txt`)
+  fetch(`/files/texts/advice-${document.querySelector('html').lang.toLowerCase()}.txt`)
     .then(function(resp) {
       return resp.text();
     })
@@ -92,7 +88,7 @@ function getAdvice() {
         }
       }
       if (now.getHours() > 22 || now.getHours() < 6) {
-        sleep.innerHTML = `${array[i]}<br>`;
+        document.getElementById('sleep').innerHTML = `${array[i]}<br>`;
         i++;
         localStorage.setItem('i', i);
       }
@@ -119,7 +115,7 @@ window.addEventListener('beforeinstallprompt', function(e) {
   if (!lastClose || (+lastClose + 3888000) > now) {
     promoApp.hidden = false;
   }
-  promoYes.onclick = () => {
+  document.getElementById('instPwa').onclick = () => {
     promoApp.hidden = true;
     deferredPrompt.prompt();
     deferredPrompt.userChoice
