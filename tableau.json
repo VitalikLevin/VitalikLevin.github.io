@@ -1,13 +1,9 @@
----
-layout: null
-sw-include: true
----
 {
-  "version": "1.2",
+  "version": "1.1",
   "api_version": 3,
   "layout": {
-      "logo": "{{ site.url }}/files/icons/300x100.png",
+      "logo": "https://vitaliklevin.github.io/files/icons/300x100.png",
       "color": "#F9AD81",
-      "show_title": "none"
+      "show_title": none
   }
 }

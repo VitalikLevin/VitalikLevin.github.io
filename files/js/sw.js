@@ -53,16 +53,16 @@ self.addEventListener("fetch", (event) => {
   console.log(`Fetching | ${request.url}`);
   event.respondWith(async function() {
     const cachedResponse = await caches.match(request);
+    const netResp = await fetch(request)
+      .then((res) => {
+        if (res.status < 400) {
+          (await caches.open(CACHE)).put(request.url, res.clone());
+        }
+      });
     try {
-      const netResp = await fetch(request)
-        .then((res) => {
-          if (res.status < 400) {
-            (await caches.open(CACHE)).put(request.url, res.clone());
-          }
-        });
+      if (cachedResponse) { return cachedResponse; }
       return netResp;
     } catch (err) {
-      if (cachedResponse) { return cachedResponse; }
       if (request.mode === "navigate") {
         return caches.match(FALL_URL);
       }

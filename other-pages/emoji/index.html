@@ -32,7 +32,11 @@ permalink: /emoji/
 	{%- capture prep_str -%}
 	{%- for member in u_arr -%}&#x{{ member }};{%- endfor -%}
 	{%- endcapture -%}
+	{%- if forloop.index > 7 -%}
+	<a href="{{ file.path }}" title="{{ prep_str }}"><img src="{{ file.path }}" alt="{{ prep_str }}" loading="lazy"></a>
+	{%- else -%}
 	<a href="{{ file.path }}" title="{{ prep_str }}"><img src="{{ file.path }}" alt="{{ prep_str }}"></a>
+	{%- endif -%}
   {%- endfor -%}
 	<h3 id="prebuilt">Prebuilt packs</h3>
 	<p>For <strong>Telegram</strong>: <a href="https://t.me/addstickers/Wormfolder">Wormfolder</a></p>
