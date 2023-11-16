@@ -1,0 +1,33 @@
+<svg version="1.1" width="128" height="128"
+  viewbox="0 0 128 128"
+  xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css"><![CDATA[
+      .bl { fill: rgb(18, 18, 18); }
+      #body { fill: rgb(53, 53, 53); }
+      #br { fill: rgb(198, 148, 97); }
+      #ex { fill: rgb(255, 227, 108); stroke: rgb(255, 143, 0); stroke-width: 3; }
+      .wh { fill: rgb(244, 244, 244); }
+    ]]></style>
+    <clipPath id="mClip">
+      <rect x="80" y="82" width="22" height="14"/>
+    </clipPath>
+  </defs>
+  <title>Bomb</title>
+  <polygon points="92 24, 92 8, 33 8, 33 24, 39 24, 39 14, 86 14, 86 24" id="br"/>
+  <polygon points="8 104, 8 40, 16 40, 16 24, 56 24, 56 40, 120 40, 120 104" id="body"/>
+  <g class="wh" transform="rotate(45, 48, 32)">
+		<rect x="47" y="26" width="2" height="12"/>
+		<rect x="42" y="31" width="12" height="2"/>
+	</g>
+  <g class="wh">
+    <circle cx="76" cy="64" r="11"/>
+    <circle cx="104" cy="64" r="11"/>
+    <ellipse class="wh" cx="90" cy="82" rx="10" ry="10" clip-path="url(#mClip)"/>
+  </g>
+  <g class="bl">
+    <circle cx="80" cy="68" r="5"/>
+    <circle cx="100" cy="68" r="5"/>
+  </g>
+  <polygon points="74 50, 79 37, 72 27, 83 27, 89 17, 95 27, 108 27, 99 37, 106 50, 89 42" id="ex"/>
+</svg>

@@ -1,0 +1,21 @@
+<svg version="1.1" width="128" height="128"
+  viewbox="0 0 128 128" stroke-width="3"
+  xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css"><![CDATA[
+      .bl { fill: rgb(18, 18, 18); }
+      #body { fill: none; stroke: rgb(155, 155, 155); }
+      .wh { fill: rgb(250, 250, 250); }
+    ]]></style>
+  </defs>
+  <title>Paperclip</title>
+  <polyline points="100 83, 82 83, 88 93, 104 93, 104 64, 76 64, 76 104, 8 104, 8 40, 16 40, 16 24, 56 24, 56 40, 120 40, 120 104" id="body"/>
+  <g class="wh">
+    <circle cx="76" cy="64" r="11"/>
+    <circle cx="104" cy="64" r="11"/>
+  </g>
+  <g class="bl">
+    <circle cx="80" cy="68" r="5"/>
+    <circle cx="100" cy="68" r="5"/>
+  </g>
+</svg>

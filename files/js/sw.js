@@ -53,17 +53,18 @@ self.addEventListener("fetch", (event) => {
   console.log(`Fetching | ${request.url}`);
   event.respondWith(async function() {
     const cachedResponse = await caches.match(request);
-      .then((resp) => {
-        return resp || fetch(request.url);
-      })
-      .catch((err) => {
-        if (request.mode === "navigate") {
-          return caches.match(FALL_URL);
-        }
-        if (isImage(request)) {
-          return caches.match(FALL_IMG);
-        }
-        console.log(`Fetch failed | ${err}`);
-      });
+    if (cachedResponse) { return cachedResponse; }
+    try {
+      return await fetch(request);
+    } catch (err) {
+      if (cachedResponse) { return cachedResponse; }
+      if (request.mode === "navigate") {
+        return caches.match(FALL_URL);
+      }
+      if (isImage(request)) {
+        return caches.match(FALL_IMG);
+      }
+      console.warn(`Fetch falied | ${err}`);
+    }
   }());
 });
