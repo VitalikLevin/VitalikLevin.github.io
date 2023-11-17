@@ -65,7 +65,7 @@ function manuallyAdd() {
   }
 }
 function showResult() {
-  const theBlob = new Blob([fileContents], {type: "text/plain"});
+  const theBlob = new Blob([fileContents], {type: "audio/mpegurl"});
   if (nameInput.value !== "") {
     if (force8.innerText == 1) {
       downloadLink.setAttribute("download", `${nameInput.value}.m3u8`);

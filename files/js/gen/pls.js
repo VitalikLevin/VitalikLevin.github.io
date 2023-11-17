@@ -70,7 +70,7 @@ function handleFiles() {
 }
 function showResult() {
   fileContents += `NumberOfEntries=${entriesNum}\nVersion=2`;
-  const theBlob = new Blob([fileContents], {type: "text/plain"});
+  const theBlob = new Blob([fileContents], {type: "audio/x-scpls"});
   if (nameInput.value !== "") {
     downloadLink.setAttribute("download", `${nameInput.value}.pls`);
     downloadLink.setAttribute("title", `${nameInput.value}.pls`);
