@@ -5,7 +5,7 @@ permalink: /sw.js
 const C_VERSION = "{{ site.github.build_revision | truncate: 8, '0' }}";
 const CACHE = `fallback-v${C_VERSION}`;
 const FALL_IMG = "/files/svg/emoji/1f47b.svg";
-const FALL_URL = "/offline/index.html";
+const FALL_URL = "/offline.html";
 const OFFLINE_ARR = [
   {%- for file in infiles -%}
   {%- unless file == infiles.last -%}
