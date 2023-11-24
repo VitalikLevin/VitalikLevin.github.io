@@ -45,7 +45,9 @@ permalink: /picofmonth/
 		{%- else -%}
 		<img class="img{{ member.width | default: 400 }}" title="{{ member.name }}" alt="{{ member.desc }}" src="{{ member.src }}" itemprop="contentUrl"><br>
 		{%- endif -%}
+		<meta itemprop="copyrightNotice" content="{{ site.author }}">
 		<span itemprop="description">{{ member.desc }}</span>
+		<meta itemprop="license" content="{{ site.license }}">
 	</section>
 	{%- endfor -%}
 </main>

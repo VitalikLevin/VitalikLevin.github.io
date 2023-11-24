@@ -2,7 +2,7 @@
 layout: b-default
 ---
 {%- include header.html -%}
-<div class="crumb">
+<section class="crumb">
 	<ul itemscope itemtype="https://schema.org/BreadcrumbList">
 		<li itemprop="itemListElement" itemscope
 				itemtype="https://schema.org/ListItem">
@@ -26,13 +26,15 @@ layout: b-default
 			<meta itemprop="position" content="3">
 		</li>
 	</ul>
-</div>
+</section>
 <main>
-	<div itemscope itemtype="https://schema.org/ImageObject" class="image">
+	<section itemscope itemtype="https://schema.org/ImageObject" class="image">
 		<meta itemprop="name" content="{{ page.title }}">
 		<img class="img400" src="{{ page.mainpic }}" itemprop="contentUrl"><br>
 		<span itemprop="description">{{ page.mp-desc }}</span>
-	</div>
+		<span itemprop="copyrightNotice">{{ page.mp-auth | default: site.author }}</span>
+		<meta itemprop="license" content="{{ page.mp-lice | default: site.license }}">
+	</section>
 	<h2 class="start">{{ page.title }}</h2>
 	<span class="pubDat">
 		<img src="/files/svg/1f4c6.svg" alt="&#128198;">

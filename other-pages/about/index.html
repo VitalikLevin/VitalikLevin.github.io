@@ -5,6 +5,14 @@ excerpt: Read more about Network Worms
 permalink: /about/
 ---
 {%- include header.html -%}
+<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Organization",
+		"url": "{{ site.url }}",
+		"logo": "{{ site.url }}/files/icons/favicon.svg"
+	}
+</script>
 <section class="crumb">
 	<ul itemscope itemtype="https://schema.org/BreadcrumbList">
 		<li itemprop="itemListElement" itemscope
@@ -38,7 +46,7 @@ permalink: /about/
 	<ul>
 		<li><code>JetBrains Mono Regular</code> [SIL Open Font License 1.1]</li>
 		<li>Liberastika Regular, <strong>Bold</strong>, <em>Italic</em> and <em><strong>Bold Italic</strong></em> [GNU GPL v2]</li>
-		<li><span class="robExample">Roboto Slab</span> [Apache License version 2]</li>
+		<li><span class="robExample">Roboto Slab</span> [Apache License v2]</li>
 	</ul>
 </main>
 {%- include footer.html -%}
