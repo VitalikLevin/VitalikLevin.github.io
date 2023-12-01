@@ -1,0 +1,31 @@
+<svg version="1.1" width="128" height="128"
+  viewbox="0 0 128 128"
+  xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css"><![CDATA[
+      .bl { fill: rgb(18, 18, 18); }
+      #body { fill: rgb(150, 195, 74); }
+      #mou { stroke: rgb(18, 18, 18); stroke-width: 2; fill: none; }
+      .wh { fill: rgb(254, 254, 254); }
+    ]]></style>
+  </defs>
+  <title>Troll</title>
+  <polygon points="8 104, 8 40, 16 40, 16 24, 56 24, 56 40, 120 40, 120 104" id="body"/>
+  <g class="wh" transform="rotate(45, 48, 32)">
+		<rect x="47" y="26" width="2" height="12"/>
+		<rect x="42" y="31" width="12" height="2"/>
+	</g>
+  <g class="wh">
+    <circle cx="76" cy="64" r="11"/>
+    <circle cx="104" cy="64" r="11"/>
+  </g>
+  <g class="bl">
+    <circle cx="80" cy="68" r="6"/>
+    <circle cx="100" cy="68" r="6"/>
+  </g>
+  <g id="mou">
+    <polygon points="65 75, 66 95, 100 95, 115 75, 90 80" class="wh"/>
+    <polyline points="100 95, 100 78, 90 80, 90 95, 82 95, 82 78, 71 77, 71 95"/>
+    <polygon class="bl" points="66 83, 67 89, 107 86, 108 84"/>
+  </g>
+</svg>
