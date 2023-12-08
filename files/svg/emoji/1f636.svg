@@ -1,0 +1,25 @@
+<svg version="1.1" width="128" height="128"
+  viewbox="0 0 128 128"
+  xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css"><![CDATA[
+      .bl { fill: rgb(18, 18, 18); }
+      #body { fill: rgb(249, 173, 129); }
+      .wh { fill: rgb(244, 244, 244); }
+    ]]></style>
+  </defs>
+  <title>Face Without Mouth</title>
+  <polygon points="8 104, 8 40, 16 40, 16 24, 56 24, 56 40, 120 40, 120 104" id="body"/>
+  <g class="wh" transform="rotate(45, 48, 32)">
+		<rect x="47" y="26" width="2" height="12"/>
+		<rect x="42" y="31" width="12" height="2"/>
+	</g>
+  <g class="wh">
+    <circle cx="76" cy="64" r="11"/>
+    <circle cx="104" cy="64" r="11"/>
+  </g>
+  <g class="bl">
+    <circle cx="80" cy="68" r="6"/>
+    <circle cx="100" cy="68" r="6"/>
+  </g>
+</svg>

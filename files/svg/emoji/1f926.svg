@@ -1,0 +1,28 @@
+<svg version="1.1" width="128" height="128"
+  viewbox="0 0 128 128"
+  xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css"><![CDATA[
+      #bl { fill: rgb(18, 18, 18); }
+      #body { fill: rgb(249, 173, 129); }
+      #glove { fill: rgb(241, 144, 32); }
+      .wh { fill: rgb(244, 244, 244); }
+    ]]></style>
+    <clipPath id="mClip">
+      <rect x="80" y="78" width="22" height="12"/>
+    </clipPath>
+  </defs>
+  <title>Face Palm</title>
+  <polygon points="8 104, 8 40, 16 40, 16 24, 56 24, 56 40, 120 40, 120 104" id="body"/>
+  <g class="wh" transform="rotate(45, 48, 32)">
+		<rect x="47" y="26" width="2" height="12"/>
+		<rect x="42" y="31" width="12" height="2"/>
+	</g>
+  <g class="wh">
+    <circle cx="76" cy="64" r="11"/>
+    <circle cx="104" cy="64" r="11"/>
+    <ellipse cx="90" cy="88" rx="10" ry="10" clip-path="url(#mClip)"/>
+  </g>
+  <circle cx="80" cy="68" r="5" id="bl"/>
+  <polygon id="glove" points="112 62, 106 67, 105 67, 105 55, 89 55, 84 62, 89 95, 105 95, 119 63"/>
+</svg>

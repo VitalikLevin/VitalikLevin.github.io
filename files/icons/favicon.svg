@@ -1,33 +1,31 @@
 <svg version="1.1" width="256" height="256" 
-  viewBox="0 0 256 256"
-  xmlns="http://www.w3.org/2000/svg">
+  viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style type="text/css"><![CDATA[
-			#folder { fill: rgb(249, 173, 129); }
-			#wh, #mouth, #xSymbol { fill: rgb(244, 244, 244); }
+			#body { fill: rgb(249, 173, 129); }
+			.wh { fill: rgb(244, 244, 244); }
 			#bl { fill: rgb(18, 18, 18); }
 		]]></style>
-    <clipPath id="mouthClip">
+    <clipPath id="mClip">
       <rect x="174" y="158" width="36" height="20"/>
     </clipPath>
   </defs>
   <title>Wormfolder</title>
-  <g id="folder">
+  <g id="body">
     <rect width="224" height="128" x="16" y="80"/>
-    <rect width="80" height="32" x="32" y="48"/>
+    <rect width="80" height="33" x="32" y="48"/>
   </g>
-  <g id="xSymbol" transform="rotate(45, 96, 64)">
+  <g class="wh" transform="rotate(45, 96, 64)">
     <rect width="2" height="16" x="95" y="56"/>
     <rect width="16" height="2" x="88" y="63"/>
   </g>
-  <g id="wh">
+  <g class="wh">
     <circle cx="164" cy="178" r="22"/>
     <circle cx="208" cy="142" r="22"/>
+    <circle transform="rotate(135, 200, 185)" clip-path="url(#mClip)" cx="192" cy="176" r="18"/>
   </g>
   <g id="bl">
     <circle cx="174" cy="182" r="10"/>
     <circle cx="208" cy="153" r="10"/>
   </g>
-  <circle id="mouth" transform="rotate(135, 200, 185)" clip-path="url(#mouthClip)"
-    cx="192" cy="176" r="18"/>
 </svg>
