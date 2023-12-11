@@ -3,6 +3,9 @@ Disallow: /?*
 Disallow: /404.html
 Disallow: /offline.html
 Disallow: /teapot/
+User-agent: DuckDuck*
+Disallow: /files/js/analytics.js
+Disallow: /files/js/metric.js
 User-agent: Google*
 Disallow: /files/js/metric.js
 User-agent: Yandex*
