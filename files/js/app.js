@@ -59,7 +59,7 @@ function sharePage() {
       text: `Check out Network Worms website`,
       url: document.querySelector('link[rel=canonical]').href
     })
-    .catch((er) => { console.log(`Share error | ${er}`); });
+    .catch((er) => { console.warn(`Share error | ${er}`); });
   }
 }
 function changeTheme() {
@@ -106,7 +106,7 @@ if ('serviceWorker' in navigator) {
     .then(() => navigator.serviceWorker.ready.then((worker) => {
       worker.sync.register('syncdata');
     }))
-    .catch((err) => console.log(`Service worker’s fail | ${err}`));
+    .catch((err) => console.warn(`Service worker’s fail | ${err}`));
 }
 window.addEventListener('beforeinstallprompt', function(e) {
   e.preventDefault();

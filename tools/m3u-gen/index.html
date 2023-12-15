@@ -62,13 +62,13 @@ redirect_from:
 	</section>
   <input type="file" id="input" multiple="true"><br>
 	<label for="prefixInput"><strong>Files&#8217; prefix (optional)</strong></label><br>
-	<input type="text" id="prefixInput" placeholder="Files&#8217; prefix"><br>
+	<input type="text" id="prefixInput" placeholder="Files&#8217; prefix" class="ym-disable-keys"><br>
 	<label for="listName"><strong>Playlist name (optional)</strong></label><br>
 	<input type="text" id="listName" placeholder="Playlist name"><br><br>
 	<label for="addNewOne">New playlist member</label><br>
 	<span><input type="text" id="addNewOne" placeholder="New entry"><button title="Add" id="realAdd" onclick="manuallyAdd()"></button></span><br>
 	<a id="dnld" href="#" download="playlist.m3u" title="playlist.m3u" hidden>Download</a>
-  <section id="playlist" data-size-type="bytes"></section>
+  <section id="playlist" data-size-type="bytes" class="ym-disable-keys"></section>
 </main>
 {%- include footer.html -%}
 <script defer src="/files/js/gen/m3u.js"></script>

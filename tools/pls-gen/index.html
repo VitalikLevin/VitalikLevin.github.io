@@ -72,12 +72,12 @@ redirect_from:
 	</section>
   <input type="file" id="fileInput" multiple="true" accept="audio/*"><br>
 	<label for="prefixInput"><strong>Files&#8217; prefix (optional)</strong></label><br>
-	<input type="text" id="prefixInput" placeholder="Files&#8217; prefix"><br>
+	<input type="text" id="prefixInput" placeholder="Files&#8217; prefix" class="ym-disable-keys"><br>
 	<label for="listName"><strong>Playlist name (optional)</strong></label><br>
 	<input type="text" id="listName" placeholder="Playlist name"><br><br>
 	<label for="addNewOne">New playlist member</label><br>
 	<span><input type="text" id="addNewOne" placeholder="New entry"><button title="Add" id="realAdd" onclick="manuallyAdd()"></button></span><br>
-	<details>
+	<details class="ym-disable-keys">
 		<summary>Advanced</summary>
 		<label for="addTitle">New member&#8217;s title (optional)</label><br>
 		<input type="text" id="addTitle" placeholder="Member&#8217;s title"><br>

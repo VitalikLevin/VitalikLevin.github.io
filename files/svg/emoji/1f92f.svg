@@ -1,0 +1,33 @@
+<svg version="1.1" width="128" height="128"
+  viewbox="0 0 128 128"
+  xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css"><![CDATA[
+      .bl { fill: rgb(18, 18, 18); }
+      .body { fill: rgb(249, 173, 129); }
+      #exp { stroke: rgb(201, 201, 201); stroke-width: 2; }
+      #vol { fill: rgb(243, 108, 36); }
+			.wh { fill: rgb(244, 244, 244); }
+    ]]></style>
+  </defs>
+  <title>Shocked Face With Exploding Head</title>
+  <rect width="112" height="60" x="8" y="44" class="body"/>
+  <g transform="rotate(345, 38, 40)">
+    <rect width="40" height="16" x="18" y="16" class="body"/>
+    <g class="wh" transform="rotate(45, 50, 24)">
+      <rect x="49" y="18" width="2" height="12"/>
+      <rect x="44" y="23" width="12" height="2"/>
+    </g>
+  </g>
+  <polygon points="71 12, 62 10, 69 16, 85 26, 95 26, 111 16, 118 10, 109 12, 92 10" class="wh" id="exp"/>
+  <polygon id="vol" points="85 28, 76 44, 104 44, 95 28"/>
+  <g class="wh">
+    <circle cx="76" cy="64" r="11"/>
+    <circle cx="104" cy="64" r="11"/>
+    <ellipse cx="90" cy="88" rx="10" ry="10"/>
+  </g>
+  <g class="bl">
+    <circle cx="80" cy="68" r="6"/>
+    <circle cx="100" cy="68" r="6"/>
+  </g>
+</svg>
