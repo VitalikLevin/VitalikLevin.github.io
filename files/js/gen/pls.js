@@ -114,21 +114,21 @@ function manuallyAdd() {
   }
 }
 function beforeGoingAFK() {
-  localStorage.setItem("pls_sort", sorting.value);
+  localStorage.setItem("sortMethod", sorting.value);
   localStorage.setItem("pls_props", props.value);
-  localStorage.setItem("pls_prefix", prefixInput.value);
-  localStorage.setItem("pls_name", nameInput.value);
+  localStorage.setItem("prefix", prefixInput.value);
+  localStorage.setItem("listName", nameInput.value);
 }
 function loadSavedData() {
-  let pls_sort = localStorage.getItem("pls_sort");
-  let pls_prefix = localStorage.getItem("pls_prefix");
-  let pls_name = localStorage.getItem("pls_name");
+  let sortMethod = localStorage.getItem("sortMethod");
+  let prefix = localStorage.getItem("prefix");
+  let listName = localStorage.getItem("listName");
   let pls_props = localStorage.getItem("pls_props");
-  if (pls_sort || pls_name || pls_prefix || pls_props) {
-    sorting.value = pls_sort;
+  if (sortMethod || listName || prefix || pls_props) {
+    sorting.value = sortMethod;
     props.value = pls_props;
-    nameInput.value = pls_name;
-    prefixInput.value = pls_prefix;
+    nameInput.value = listName;
+    prefixInput.value = prefix;
   }
 }
 function delFooter() {

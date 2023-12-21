@@ -65,18 +65,21 @@ function manuallyAdd() {
   }
 }
 function showResult() {
-  const theBlob = new Blob([fileContents], {type: "audio/mpegurl"});
+  var theBlob = new Blob([fileContents], {type: "audio/mpegurl"});
+  const isLatin = (force8.innerText == 1 || /[^\x00-\xff]+/g.test(fileContents));
   if (nameInput.value !== "") {
-    if (force8.innerText == 1) {
+    if (isLatin) {
       downloadLink.setAttribute("download", `${nameInput.value}.m3u8`);
       downloadLink.setAttribute("title", `${nameInput.value}.m3u8`);
+      theBlob = new Blob([fileContents], {type: "application/vnd.apple.mpegurl"});
     } else {
       downloadLink.setAttribute("download", `${nameInput.value}.m3u`);
       downloadLink.setAttribute("title", `${nameInput.value}.m3u`);
     }
-  } else if (force8.innerText == 1) {
+  } else if (isLatin) {
     downloadLink.setAttribute("download", "playlist.m3u8");
     downloadLink.setAttribute("title", "playlist.m3u8");
+    theBlob = new Blob([fileContents], {type: "application/vnd.apple.mpegurl"});
   }
   downloadLink.href = URL.createObjectURL(theBlob);
   if (downloadLink.hasAttribute("hidden")) { downloadLink.removeAttribute("hidden"); }
