@@ -66,7 +66,7 @@ function manuallyAdd() {
 }
 function showResult() {
   var theBlob = new Blob([fileContents], {type: "audio/mpegurl"});
-  const isLatin = (force8.innerText == 1 || /[^\x00-\xff]+/g.test(fileContents));
+  const isLatin = (force8.innerText == 1 || /[^\u0000-\u00ff]+/g.test(fileContents));
   if (nameInput.value !== "") {
     if (isLatin) {
       downloadLink.setAttribute("download", `${nameInput.value}.m3u8`);

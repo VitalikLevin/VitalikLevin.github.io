@@ -30,8 +30,8 @@
 		<meta property="og:locale:alternate" content="ru_RU">
 		<meta property="og:image" content="{{ site.url }}{{ page.mainpic | default: site.og_p }}">
 		<meta property="og:image:type" content="image/png">
-		<meta property="og:image:width" content="400">
-		<meta property="og:image:height" content="300">
+		<meta property="og:image:width" content="{{ page.mp-w | default: 400 }}">
+		<meta property="og:image:height" content="{{ page.mp-w | default: 300 }}">
 		<meta property="og:image:alt" content="{{ page.mp-desc | default: site.og_pa }}">
 		<meta name="yandex-verification" content="b24725ffa2e7d4a6">
 		<meta name="google-site-verification" content="yahAonXkmtS9ASTgJphU5M3HR9fHyvOG6pXX4kzQ2pw">
