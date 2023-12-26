@@ -13,5 +13,4 @@ jobs:
           python-version: "3.8"
       - name: Run the script
         run: |
-          cd "./.github/workflows"
-          python getsitemap.py
+          python "./.github/workflows/getsitemap.py"

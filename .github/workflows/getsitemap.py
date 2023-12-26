@@ -4,6 +4,10 @@ from time import sleep
 from urllib import request
 import xml.etree.ElementTree as ET
 start = datetime.datetime.now()
+def timecount(strt):
+    finish = datetime.datetime.now()
+    print(f"Finished | {finish}")
+    print(f"Time passed | {str(finish - strt)}")
 print(f"Started | {start}")
 reqOld = request.Request("https://vitaliklevin.github.io/sitemap.xml", method="GET")
 resOld = request.urlopen(reqOld)
@@ -19,6 +23,7 @@ if (dataSM != dataSMOld):
     root = ET.fromstring(dataSM)
 else:
     print("Sitemap wasn't modified")
+    timecount(start)
     quit()
 rawUrls = ""
 key = "68537cd552ad4fc992f52fd5685725b2"
@@ -40,6 +45,4 @@ req1Data = req1Data.encode()
 r1 = request.urlopen(req1, data=req1Data)
 res1 = request.urlopen(req1)
 print(res1.status, res1.reason)
-finish = datetime.datetime.now()
-print(f"Finished | {finish}")
-print(f"Time passed | {str(finish - start)}")
+timecount(start)
