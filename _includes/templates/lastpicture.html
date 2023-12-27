@@ -10,8 +10,8 @@
 </section>
 {%- else -%}
 <h3>Video of the <a href="/picofmonth/#{{ pic.time | slugify }}">current</a> month</h3>
-<section class="image" width="480" title="{{ pic.name }}">
-	<video autoplay loop muted>
+<section class="image" title="{{ pic.name }}">
+	<video autoplay loop muted width="480px">
 		<source src="{{ pic.src }}" type="video/mp4">
 	</video><br>
 	<span>{{ pic.desc }}</span>
