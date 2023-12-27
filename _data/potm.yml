@@ -1,3 +1,8 @@
+- video: true
+  time: December 2023
+  name: New Year Eve 2023
+  src: /files/video/newyear-23.mp4
+  desc: A worm, a New Year tree and a gift from the sky
 - time: October 2023
   name: Halloween 2023
   src: /files/images/halloween-23.webp

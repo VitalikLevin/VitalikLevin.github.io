@@ -1,7 +1,7 @@
 ---
 lang: en-US
-title: Picture of the Month
-excerpt: A gallery for Vitaliy Levin’s pictures
+title: Picture/video of the Month
+excerpt: A gallery for Vitaliy Levin’s pictures and videos
 permalink: /picofmonth/
 ---
 {%- include header.html -%}
@@ -17,16 +17,16 @@ permalink: /picofmonth/
 		<li itemprop="itemListElement" itemscope
 			itemtype="https://schema.org/ListItem">
 			<a itemprop="item" href="{{ site.url }}/picofmonth/">
-				<mark itemprop="name">Picture of the Month</mark>
+				<mark itemprop="name">Picture/video of the Month</mark>
 			</a>
 			<meta itemprop="position" content="2">
 		</li>
 	</ul>
 </section>
 <main>
-  <h2 class="start">Picture of the Month</h2>
+  <h2 class="start">Picture/video of the Month</h2>
 	<blockquote>The First Anniversary</blockquote>
-	<p>"Picture of the Month" is an event where you can see our new paintings.</p>
+	<p>"Picture/video of the Month" is an event where you can see our new "masterpieces".</p>
 	{%- for member in site.data.potm -%}
 	{%- assign cut_month = member.time | size | minus: 4 -%}
 	{%- assign pic_year = member.time | slice: -4, 4 -%}
@@ -36,6 +36,7 @@ permalink: /picofmonth/
 	<h3 id="{{ pic_year }}">{{ pic_year }}</h3>
 	{%- endif -%}
 	<h5 id="{{ member.time | slugify }}">{{ member.time | slice: 0, cut_month }}</h5>
+	{%- unless member.video == true -%}
   <section itemscope itemtype="https://schema.org/ImageObject" class="image">
 		<meta itemprop="name" content="{{ member.name }}">
     <meta itemprop="width" content="{{ member.width | default: 400 }} px">
@@ -49,6 +50,14 @@ permalink: /picofmonth/
 		<span itemprop="description">{{ member.desc }}</span>
 		<meta itemprop="license" content="{{ site.license }}">
 	</section>
+	{%- else -%}
+	<section class="image" title="{{ member.name }}">
+		<video autoplay loop muted>
+			<source src="{{ member.src }}" type="video/mp4">
+		</video><br>
+		<span itemprop="description">{{ member.desc }}</span>
+	</section>
+	{%- endunless -%}
 	{%- endfor -%}
 </main>
 {%- include footer.html -%}

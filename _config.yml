@@ -39,6 +39,10 @@ defaults:
     values:
       sw-include: false
   - scope:
+      path: "files/video"
+    values:
+      sw-include: false
+  - scope:
       path: "files/xml"
     values:
       sw-include: false
