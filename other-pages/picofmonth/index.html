@@ -52,7 +52,7 @@ permalink: /picofmonth/
 	</section>
 	{%- else -%}
 	<section class="image" title="{{ member.name }}">
-		<video autoplay loop muted width="280">
+		<video autoplay loop muted class="img{{ member.width | default: 800 }}">
 			<source src="{{ member.src }}" type="video/mp4">
 		</video><br>
 		<span itemprop="description">{{ member.desc }}</span>

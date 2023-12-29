@@ -1,28 +1,32 @@
 import datetime
+import logging
 import json
 from time import sleep
 from urllib import request
 import xml.etree.ElementTree as ET
 start = datetime.datetime.now()
+logFile = logging.FileHandler("indexnow.log")
+consoleOut = logging.StreamHandler()
+logging.basicConfig(handlers=(logFile, consoleOut), level=logging.DEBUG)
 def timecount(strt):
     finish = datetime.datetime.now()
-    print(f"Finished | {finish}")
-    print(f"Time passed | {str(finish - strt)}")
-print(f"Started | {start}")
+    logging.info(f"Finished | {finish}")
+    logging.info(f"Time passed | {str(finish - strt)}")
+logging.info(f"Started | {start}")
 reqOld = request.Request("https://vitaliklevin.github.io/sitemap.xml", method="GET")
 resOld = request.urlopen(reqOld)
-print(resOld.status, resOld.reason)
+logging.info(resOld.status, resOld.reason)
 dataSMOld = resOld.read()
 sleep(180)
 requ = request.Request("https://vitaliklevin.github.io/sitemap.xml", method="GET")
 resp = request.urlopen(requ)
-print(resp.status, resp.reason)
+logging.info(resp.status, resp.reason)
 root = ""
 dataSM = resp.read()
 if (dataSM != dataSMOld):
     root = ET.fromstring(dataSM)
 else:
-    print("Sitemap wasn't modified")
+    logging.warning("Sitemap wasn't modified")
     timecount(start)
     quit()
 rawUrls = ""
@@ -44,5 +48,5 @@ req1Data = json.dumps(req1Data)
 req1Data = req1Data.encode()
 r1 = request.urlopen(req1, data=req1Data)
 res1 = request.urlopen(req1)
-print(res1.status, res1.reason)
+logging.info(res1.status, res1.reason)
 timecount(start)

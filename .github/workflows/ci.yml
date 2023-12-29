@@ -14,3 +14,8 @@ jobs:
       - name: Run the script
         run: |
           python "./.github/workflows/getsitemap.py"
+      - name: Make log file downloadable
+        uses: actions/upload-artifact@v3
+        with:
+          name: getsitemap Log
+          path: indexnow.log
