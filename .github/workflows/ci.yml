@@ -19,3 +19,4 @@ jobs:
         with:
           name: getsitemap Log
           path: indexnow.log
+          retention-days: 3
