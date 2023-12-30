@@ -15,18 +15,18 @@ def timecount(strt):
 logging.info(f"Started | {start}")
 reqOld = request.Request("https://vitaliklevin.github.io/sitemap.xml", method="GET")
 resOld = request.urlopen(reqOld)
-logging.debug(f"{resOld.status} {resOld.reason}")
+logging.debug(f"Old - {resOld.status} {resOld.reason}")
 dataSMOld = resOld.read()
 sleep(180)
 requ = request.Request("https://vitaliklevin.github.io/sitemap.xml", method="GET")
 resp = request.urlopen(requ)
-logging.debug(f"{resp.status} {resp.reason}")
+logging.debug(f"Fresh - {resp.status} {resp.reason}")
 root = ""
 dataSM = resp.read()
 if (dataSM != dataSMOld):
     root = ET.fromstring(dataSM)
 else:
-    logging.warning("Sitemap wasn't modified")
+    logging.warning("Sitemap was not modified")
     timecount(start)
     quit()
 rawUrls = ""
@@ -48,5 +48,5 @@ req1Data = json.dumps(req1Data)
 req1Data = req1Data.encode()
 r1 = request.urlopen(req1, data=req1Data)
 res1 = request.urlopen(req1)
-logging.debug(f"{res1.status} {res1.reason}")
+logging.debug(f"yandex.com - {res1.status} {res1.reason}")
 timecount(start)

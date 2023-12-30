@@ -177,7 +177,7 @@ button#realAdd {
 	margin-bottom: -6px;
 }
 
-img[class^="img"], .prodlogo {
+img[class^="img"], video, .prodlogo {
 	max-width: 75vw;
 }
 

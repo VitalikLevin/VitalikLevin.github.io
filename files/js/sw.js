@@ -25,7 +25,7 @@ const deleteOldCaches = async () => {
   await Promise.all(cachesToDelete.map(deleteCache));
 };
 function isImage(fetchRequest) {
-  return fetchRequest.method === "GET" && fetchRequest.destination === "image";
+  return fetchRequest.method === "GET" && (fetchRequest.destination === "image" || fetchRequest.destination === "video");
 }
 self.addEventListener("install", (event) => {
   console.log("Installed");

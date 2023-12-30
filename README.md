@@ -24,7 +24,7 @@ README was eaten by `VitalikLevin`.
   - [Nature vs. Spirits](https://vitaliklevin.github.io/games/nves/)
     - [About Nature vs. Spirits](https://vitaliklevin.github.io/games/nves/about/)
     - [Nature vs. Spirits Downloads](https://vitaliklevin.github.io/games/nves/downloads/)
-- _[Picture of the Month](https://vitaliklevin.github.io/picofmonth/)_
+- _[Picture/video of the Month](https://vitaliklevin.github.io/picofmonth/)_
 - [Our tools](https://vitaliklevin.github.io/tools/)
   - [`m3u-gen`](https://vitaliklevin.github.io/tools/m3u-gen/)
   - [`pls-gen`](https://vitaliklevin.github.io/tools/pls-gen/)
