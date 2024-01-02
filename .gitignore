@@ -5,3 +5,4 @@
 desktop.ini
 # Local Test Cache Directory
 _site/
+*.log

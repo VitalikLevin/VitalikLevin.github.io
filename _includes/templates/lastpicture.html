@@ -1,6 +1,6 @@
 {%- assign pic = site.data.potm.first -%}
 {%- unless pic.video == true -%}
-<h3>Picture of the <a href="/picofmonth/#{{ pic.time | slugify }}">current</a> month</h3>
+<h3>Picture of the <a href="/picofmonth/#{{ pic.time | slugify }}">{{ include.word | default: "current" }}</a> month</h3>
 <section itemscope itemtype="https://schema.org/ImageObject" class="image">
 	<meta itemprop="name" content="{{ pic.name }}">
   <meta itemprop="width" content="{{ pic.width | default: 400 }} px">
@@ -9,7 +9,7 @@
 	<span itemprop="description">{{ pic.desc }}</span>
 </section>
 {%- else -%}
-<h3>Video of the <a href="/picofmonth/#{{ pic.time | slugify }}">current</a> month</h3>
+<h3>Video of the <a href="/picofmonth/#{{ pic.time | slugify }}">{{ include.word | default: "current" }}</a> month</h3>
 <section class="image" title="{{ pic.name }}">
 	<video autoplay loop muted playsinline>
 		<source src="{{ pic.src }}" type="video/mp4">

@@ -1,17 +1,17 @@
-import datetime
+from datetime import datetime
 import logging
 import json
 from time import sleep
 from urllib import request
 import xml.etree.ElementTree as ET
-start = datetime.datetime.now()
+start = datetime.utcnow()
 logFile = logging.FileHandler("indexnow.log")
 consoleOut = logging.StreamHandler()
 logging.basicConfig(handlers=(logFile, consoleOut), level=logging.DEBUG)
 def timecount(strt):
-    finish = datetime.datetime.now()
+    finish = datetime.utcnow()
     logging.info(f"Finished | {finish}")
-    logging.info(f"Time passed | {str(finish - strt)}")
+    logging.info(f"Time passed | {str(finish - strt)}\n===END===")
 logging.info(f"Started | {start}")
 reqOld = request.Request("https://vitaliklevin.github.io/sitemap.xml", method="GET")
 resOld = request.urlopen(reqOld)
