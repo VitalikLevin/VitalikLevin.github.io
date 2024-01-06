@@ -18,5 +18,4 @@ jobs:
         with:
           name: getsitemap Log
           path: indexnow.log
-          compression-level: 9
           retention-days: 3

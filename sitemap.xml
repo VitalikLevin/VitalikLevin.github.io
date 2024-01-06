@@ -7,7 +7,7 @@ layout: null
 	{%- unless page.layout != 'default' or page.layout != 'article' and page.url contains '.html' -%}
 	{%- unless page.url contains "/teapot" -%}
 	<url>
-		<loc>{{ page.url | absolute_url }}</loc>
+		<loc>{{- page.url | absolute_url -}}</loc>
 		<lastmod>{{ page.date | default: site.time | date: "%Y-%m-%d" }}</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.8</priority>
@@ -17,7 +17,7 @@ layout: null
 	{%- endfor -%}
 	{%- for post in site.posts -%}
 	<url>
-		<loc>{{ post.url | absolute_url }}</loc>
+		<loc>{{- post.url | absolute_url -}}</loc>
 		<lastmod>{{ post.date | default: site.time | date: "%Y-%m-%d" }}</lastmod>
 		<changefreq>yearly</changefreq>
 		<priority>0.5</priority>
