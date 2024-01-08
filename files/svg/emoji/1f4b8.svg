@@ -1,0 +1,22 @@
+<svg version="1.1" width="128" height="128"
+  viewbox="0 0 128 128"
+  xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css"><![CDATA[
+      * { fill: rgb(102, 187, 106); }
+      .darker { fill: rgb(32, 96, 34); }
+      .wing { fill: rgb(230, 230, 230); }
+    ]]></style>
+  </defs>
+  <title>Money with Wings</title>
+  <g transform="rotate(330, 64, 64)">
+    <polygon points="58 42, 78 42, 58 12, 38 12" class="wing"/>
+    <rect x="24" y="82" width="88" height="18" class="darker"/>
+    <rect x="24" y="39" width="88" height="44"/>
+    <polygon points="47 52, 50 52, 50 46, 65 46, 65 52, 89 52, 89 76, 47 76" class="darker"/>
+    <polygon points="74 64, 71 64, 71 58, 77 58, 77 61, 74 61"/>
+    <polygon points="83 64, 86 64, 86 58, 80 58, 80 61, 83 61"/>
+    <rect x="74" y="67" width="9" height="3"/>
+    <polygon points="58 86, 78 86, 58 116, 38 116" class="wing"/>
+  </g>
+</svg>
