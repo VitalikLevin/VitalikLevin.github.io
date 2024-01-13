@@ -5,38 +5,7 @@ excerpt: History of Steamy Fish Extension
 permalink: /exts/steamyfish/downloads/
 ---
 {%- include header.html -%}
-<section class="crumb">
-	<ul itemscope itemtype="https://schema.org/BreadcrumbList">
-		<li itemprop="itemListElement" itemscope
-			itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="{{ site.url }}/">
-				<span itemprop="name">Network Worms</span>
-			</a>
-			<meta itemprop="position" content="1">
-		</li>
-		<li itemprop="itemListElement" itemscope
-			itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="{{ site.url }}/exts/">
-				<span itemprop="name">Extensions</span>
-			</a>
-			<meta itemprop="position" content="2">
-		</li>
-		<li itemprop="itemListElement" itemscope
-			itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="{{ site.url }}/exts/steamyfish/">
-				<span itemprop="name">Steamy Fish</span>
-			</a>
-			<meta itemprop="position" content="3">
-		</li>
-    <li itemprop="itemListElement" itemscope
-			itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="{{ site.url }}/exts/steamyfish/downloads/">
-				<mark itemprop="name">Downloads</mark>
-			</a>
-			<meta itemprop="position" content="4">
-		</li>
-	</ul>
-</section>
+{%- include crumb.html urls="/exts/$/exts/steamyfish/$/exts/steamyfish/downloads/" titles="Extensions$$Steamy Fish$$Downloads" -%}
 <main>
   <h2 class="start">Steamy Fish Downloads</h2>
 	{%- for member in site.data.sft -%}

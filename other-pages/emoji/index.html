@@ -5,24 +5,7 @@ excerpt: A gallery for Vitaliy Levin’s stickers
 permalink: /emoji/
 ---
 {%- include header.html -%}
-<section class="crumb">
-	<ul itemscope itemtype="https://schema.org/BreadcrumbList">
-		<li itemprop="itemListElement" itemscope
-			itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="{{ site.url }}/">
-				<span itemprop="name">Network Worms</span>
-			</a>
-			<meta itemprop="position" content="1">
-		</li>
-		<li itemprop="itemListElement" itemscope
-			itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="{{ site.url }}/emoji/">
-				<mark itemprop="name">Emoji</mark>
-			</a>
-			<meta itemprop="position" content="2">
-		</li>
-	</ul>
-</section>
+{%- include crumb.html urls="/emoji/$" titles="Emoji$$" -%}
 <main>
   <h2 class="start">Emoji Pack</h2>
   <p>You can see all Wormfolder’s faces below.</p>

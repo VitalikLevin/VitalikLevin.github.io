@@ -1,0 +1,23 @@
+{%- assign titlarr = include.titles | split: "$$" -%}
+{%- assign urlarr = include.urls | split: "$" -%}
+<section class="crumb">
+	<ul itemscope itemtype="https://schema.org/BreadcrumbList">
+		<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+			<a itemprop="item" href="{{ site.url }}/"><span itemprop="name">Network Worms</span></a>
+			<meta itemprop="position" content="1">
+		</li>
+    {%- for member in urlarr -%}
+		<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+			<a itemprop="item" href="{{ site.url }}{{ member }}">
+      {%- if urlarr.last == member -%}
+          <mark itemprop="name">{{ titlarr[forloop.index0] }}</mark>
+      {%- else -%}
+          <span itemprop="name">{{ titlarr[forloop.index0] }}</span>
+      {%- endif -%}
+      </a>
+      {%- assign realpos = forloop.index -%}
+      <meta itemprop="position" content="{{ realpos | plus:1 }}">
+    </li>
+    {%- endfor -%}
+	</ul>
+</section>

@@ -1,29 +1,15 @@
 ---
-layout: article
+layout: b-default
 title: Blog
 excerpt: Main page of Network Worms’ Blog
 lang: en-US
 permalink: /blog/
 ---
-<div class="crumb">
-	<ul itemscope itemtype="https://schema.org/BreadcrumbList">
-		<li itemprop="itemListElement" itemscope
-				itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="{{ site.url }}/">
-				<span itemprop="name">Network Worms</span>
-			</a>
-			<meta itemprop="position" content="1">
-		</li>
-		<li itemprop="itemListElement" itemscope
-				itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="{{ site.url }}/blog/">
-				<mark itemprop="name">Blog</mark>
-			</a>
-			<meta itemprop="position" content="2">
-		</li>
-	</ul>
-</div>
-<p>In this page you can find all posts from our site.</p>
+{%- include header.html -%}
+{%- include crumb.html urls="/blog/$" titles="Blog$$" -%}
+<main>
+	<h2 class="start">Blog</h2>
+	<p>In this page you can find all posts from our site.</p>
 {%- for post in paginator.posts -%}
 	<section class="post">
 		<h4><a class="postLink" href="{{ post.url }}">{{ post.title }}</a></h4>
@@ -46,3 +32,5 @@ permalink: /blog/
 		{%- endif -%}
 	</ul>
 {%- endif -%}
+</main>
+{%- include footer.html -%}

@@ -5,24 +5,7 @@ excerpt: We are proud of our games.
 permalink: /games/
 ---
 {%- include header.html -%}
-<div class="crumb">
-	<ul itemscope itemtype="https://schema.org/BreadcrumbList">
-		<li itemprop="itemListElement" itemscope
-			itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="{{ site.url }}/">
-				<span itemprop="name">Network Worms</span>
-			</a>
-			<meta itemprop="position" content="1">
-		</li>
-		<li itemprop="itemListElement" itemscope
-			itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="{{ site.url }}/games/">
-				<mark itemprop="name">Games</mark>
-			</a>
-			<meta itemprop="position" content="2">
-		</li>
-	</ul>
-</div>
+{%- include crumb.html urls="/games/$" titles="Games$$" -%}
 <nav>
 	<h5>Games:</h5>
 	<a href="./bsa/" title="Bounce’s Adventure">

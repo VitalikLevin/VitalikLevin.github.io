@@ -13,27 +13,10 @@ permalink: /about/
 		"logo": "{{ site.url }}/files/icons/favicon.svg"
 	}
 </script>
-<section class="crumb">
-	<ul itemscope itemtype="https://schema.org/BreadcrumbList">
-		<li itemprop="itemListElement" itemscope
-			itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="{{ site.url }}/">
-				<span itemprop="name">Network Worms</span>
-			</a>
-			<meta itemprop="position" content="1">
-		</li>
-		<li itemprop="itemListElement" itemscope
-			itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="{{ site.url }}/about/">
-				<mark itemprop="name">About</mark>
-			</a>
-			<meta itemprop="position" content="2">
-		</li>
-	</ul>
-</section>
+{%- include crumb.html urls="/about/$" titles="About$$" -%}
 <main>
   <h2 class="start">About us</h2>
-  <p id="begining">This site has been working since <em title="2022-01-28">28th January, 2022</em>.</p>
+  <p id="whenitbegan">This site has been working since <em title="2022-01-28">28th January, 2022</em>.</p>
   <h3 id="people">Behind Network Worms</h3>
   <ul>
     <li><strong>Artist, hater of <code>JavaScript</code> libraries, web developer</strong> <a href="https://github.com/VitalikLevin" title="@VitalikLevin">Vitaliy Levin</a></li>

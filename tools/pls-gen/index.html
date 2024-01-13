@@ -7,31 +7,7 @@ redirect_from:
   - /pls-gen/
 ---
 {%- include header.html -%}
-<section class="crumb">
-	<ul itemscope itemtype="https://schema.org/BreadcrumbList">
-		<li itemprop="itemListElement" itemscope
-			itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="{{ site.url }}/">
-				<span itemprop="name">Network Worms</span>
-			</a>
-			<meta itemprop="position" content="1">
-		</li>
-		<li itemprop="itemListElement" itemscope
-			itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="{{ site.url }}/tools/">
-				<span itemprop="name">Tools</span>
-			</a>
-			<meta itemprop="position" content="2">
-		</li>
-		<li itemprop="itemListElement" itemscope
-			itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="{{ site.url }}/tools/pls-gen/">
-				<mark itemprop="name">.pls Generator</mark>
-			</a>
-			<meta itemprop="position" content="3">
-		</li>
-	</ul>
-</section>
+{%- include crumb.html urls="/tools/$/tools/pls-gen/" titles="Tools$$pls-gen" -%}
 <dialog id="help">
 	<h3><code>pls-gen</code> "Hot Keys"</h3>
 	<p><kbd>F1</kbd> <strong>Open/close this message</strong></p>

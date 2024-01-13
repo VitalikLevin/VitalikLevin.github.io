@@ -2,37 +2,18 @@
 layout: b-default
 ---
 {%- include header.html -%}
-<section class="crumb">
-	<ul itemscope itemtype="https://schema.org/BreadcrumbList">
-		<li itemprop="itemListElement" itemscope
-				itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="{{ site.url }}/">
-				<span itemprop="name">Network Worms</span>
-			</a>
-			<meta itemprop="position" content="1">
-		</li>
-		<li itemprop="itemListElement" itemscope
-				itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="{{ site.url }}/blog/">
-				<span itemprop="name">Blog</span>
-			</a>
-			<meta itemprop="position" content="2">
-		</li>
-		<li itemprop="itemListElement" itemscope
-				itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="{{ site.url }}{{ page.permalink }}">
-				<mark itemprop="name">{{ page.title }}</mark>
-			</a>
-			<meta itemprop="position" content="3">
-		</li>
-	</ul>
-</section>
+{%- capture crumbs -%}
+/blog/${{ page.permalink }}
+{%- endcapture -%}
+{%- capture texts -%}
+Blog$${{ page.title }}
+{%- endcapture -%}
+{%- include crumb.html urls=crumbs titles=texts -%}
 <main>
 	<section itemscope itemtype="https://schema.org/ImageObject" class="image">
 		<meta itemprop="name" content="{{ page.title }}">
 		<img class="img400" src="{{ page.mainpic }}" itemprop="contentUrl"><br>
-		<span itemprop="description">{{ page.mp-desc }}</span>
-		<span itemprop="copyrightNotice">{{ page.mp-auth | default: site.author }}</span>
+		<span itemprop="description">{{ page.mp-desc }}</span> | By <span itemprop="copyrightNotice">{{ page.mp-auth | default: site.author }}</span>
 		<meta itemprop="license" content="{{ page.mp-lice | default: site.license }}">
 	</section>
 	<h2 class="start">{{ page.title }}</h2>

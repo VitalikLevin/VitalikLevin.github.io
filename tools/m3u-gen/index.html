@@ -7,31 +7,7 @@ redirect_from:
   - /m3u-gen/
 ---
 {%- include header.html -%}
-<section class="crumb">
-	<ul itemscope itemtype="https://schema.org/BreadcrumbList">
-		<li itemprop="itemListElement" itemscope
-			itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="{{ site.url }}/">
-				<span itemprop="name">Network Worms</span>
-			</a>
-			<meta itemprop="position" content="1">
-		</li>
-		<li itemprop="itemListElement" itemscope
-			itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="{{ site.url }}/tools/">
-				<span itemprop="name">Tools</span>
-			</a>
-			<meta itemprop="position" content="2">
-		</li>
-		<li itemprop="itemListElement" itemscope
-			itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="{{ site.url }}/tools/m3u-gen/">
-				<mark itemprop="name">.m3u Generator</mark>
-			</a>
-			<meta itemprop="position" content="3">
-		</li>
-	</ul>
-</section>
+{%- include crumb.html urls="/tools/$/tools/m3u-gen/" titles="Tools$$m3u-gen" -%}
 <dialog id="help">
 	<h3><code>m3u-gen</code> "Hot Keys"</h3>
 	<p><kbd>F1</kbd> <strong>Open/close this message</strong></p>

@@ -65,13 +65,14 @@ function manuallyAdd() {
   }
 }
 function showResult() {
-  var theBlob = new Blob([fileContents], {type: "audio/mpegurl"});
-  const isLatin = (force8.innerText == 1 || /[^\u0000-\u00ff]+/g.test(fileContents));
+  const tempContent = fileContents.slice(0, fileContents.lastIndexOf("\n"));
+  var theBlob = new Blob([tempContent], {type: "audio/mpegurl"});
+  const isLatin = (force8.innerText == 1 || /[^\u0000-\u00ff]+/g.test(tempContent));
   if (nameInput.value !== "") {
     if (isLatin) {
       downloadLink.setAttribute("download", `${nameInput.value}.m3u8`);
       downloadLink.setAttribute("title", `${nameInput.value}.m3u8`);
-      theBlob = new Blob([fileContents], {type: "application/vnd.apple.mpegurl"});
+      theBlob = new Blob([tempContent], {type: "application/vnd.apple.mpegurl"});
     } else {
       downloadLink.setAttribute("download", `${nameInput.value}.m3u`);
       downloadLink.setAttribute("title", `${nameInput.value}.m3u`);
@@ -79,7 +80,7 @@ function showResult() {
   } else if (isLatin) {
     downloadLink.setAttribute("download", "playlist.m3u8");
     downloadLink.setAttribute("title", "playlist.m3u8");
-    theBlob = new Blob([fileContents], {type: "application/vnd.apple.mpegurl"});
+    theBlob = new Blob([tempContent], {type: "application/vnd.apple.mpegurl"});
   }
   downloadLink.href = URL.createObjectURL(theBlob);
   if (downloadLink.hasAttribute("hidden")) { downloadLink.removeAttribute("hidden"); }
