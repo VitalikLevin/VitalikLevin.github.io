@@ -1,18 +1,18 @@
 from datetime import datetime
 import logging
-import json
+from json import dumps
 from time import sleep
 from urllib import request
 import xml.etree.ElementTree as ET
 start = datetime.utcnow()
 logFile = logging.FileHandler("indexnow.log")
 consoleOut = logging.StreamHandler()
-logging.basicConfig(handlers=(logFile, consoleOut), level=logging.DEBUG)
+logging.basicConfig(handlers=(logFile, consoleOut), level=logging.DEBUG, format="#%(levelname)s %(asctime)s | %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
 def timecount(strt):
     finish = datetime.utcnow()
-    logging.info(f"Finished | {finish}")
-    logging.info(f"Time passed | {str(finish - strt)}\n===END===")
-logging.info(f"Started | {start}")
+    logging.info(f"Finished")
+    logging.info(f"Time passed - {str(finish - strt)}\n===END===")
+logging.info(f"Started")
 reqOld = request.Request("https://vitaliklevin.github.io/sitemap.xml", method="GET")
 resOld = request.urlopen(reqOld)
 logging.debug(f"Old - {resOld.status} {resOld.reason}")
@@ -44,7 +44,7 @@ req1Data = {
     "key": key,
     "urlList": urlList
 }
-req1Data = json.dumps(req1Data)
+req1Data = dumps(req1Data)
 req1Data = req1Data.encode()
 r1 = request.urlopen(req1, data=req1Data)
 res1 = request.urlopen(req1)
