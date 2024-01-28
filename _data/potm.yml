@@ -1,3 +1,9 @@
+- time: January 2024
+  name: Second Website’s Birthday
+  src: /files/images/birthday-24.webp
+  width: 800
+  height: 600
+  desc: A worm and cake with two candles
 - video: true
   time: December 2023
   name: New Year Eve 2023
