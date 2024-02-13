@@ -1,4 +1,4 @@
-name: IndexNow
+name: "IndexNow :feelsgood:"
 on:
   push:
     branches: [ "master" ]
@@ -7,10 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Set up Python 🐍
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.8"
+          python-version: "3.9"
       - name: Run the script
         run: python "./.github/workflows/getsitemap.py"
       - name: Make log file downloadable
