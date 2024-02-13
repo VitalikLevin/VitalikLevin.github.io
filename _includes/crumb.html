@@ -1,5 +1,6 @@
 {%- assign titlarr = include.titles | split: "$$" -%}
 {%- assign urlarr = include.urls | split: "$" -%}
+{%- capture alienCrumb -%}
 <section class="crumb">
 	<ul itemscope itemtype="https://schema.org/BreadcrumbList">
 		<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -21,3 +22,5 @@
     {%- endfor -%}
 	</ul>
 </section>
+{%- endcapture -%}
+{%- alienCrumb | strip_newlines -%}

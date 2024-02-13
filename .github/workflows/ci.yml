@@ -1,4 +1,4 @@
-name: "IndexNow :feelsgood:"
+name: "🔍 IndexNow"
 on:
   push:
     branches: [ "master" ]

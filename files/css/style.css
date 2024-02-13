@@ -44,7 +44,7 @@ button:hover, details > summary:hover, ::file-selector-button:hover, button + la
 	font-family: robotoslab, serif;
 }
 
-code, kbd, ::placeholder {
+code, kbd, button.bin, ::placeholder {
 	font-family: jbmono, monospace;
 }
 
