@@ -11,9 +11,9 @@
 		<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
 			<a itemprop="item" href="{{ site.url }}{{ member }}">
       {%- if urlarr.last == member -%}
-          <mark itemprop="name">{{ titlarr[forloop.index0] }}</mark>
+        <mark itemprop="name">{{ titlarr[forloop.index0] }}</mark>
       {%- else -%}
-          <span itemprop="name">{{ titlarr[forloop.index0] }}</span>
+        <span itemprop="name">{{ titlarr[forloop.index0] }}</span>
       {%- endif -%}
       </a>
       {%- assign realpos = forloop.index -%}
@@ -23,4 +23,4 @@
 	</ul>
 </section>
 {%- endcapture -%}
-{{- alienCrumb | strip_newlines -}}
+{{- alienCrumb | remove: "\t" | strip_newlines -}}
