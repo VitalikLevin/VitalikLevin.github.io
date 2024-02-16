@@ -4,7 +4,7 @@
 }
 
 header, header h2 a:any-link, #cooknote.show {
-	background-color: rgb(34, 34, 34);
+	background-color: rgb(22, 22, 29);
 	color: rgb(255, 255, 255);
 }
 
@@ -22,7 +22,7 @@ dialog {
 	color: rgb(225, 227, 230);
 }
 
-blockquote h3, button, select, ::file-selector-button, ::selection, #sleep {
+blockquote h3, button, select, .crumb p:last-child span a::after, ::file-selector-button, ::selection, #sleep {
 	color: rgb(244, 244, 244);
 }
 
@@ -42,7 +42,7 @@ kbd {
 	border: 1px solid rgb(244, 244, 244);
 }
 
-a:hover, .crumb ul li:last-child a::after {
+a:hover {
 	color: rgb(246, 170, 126);
 }
 

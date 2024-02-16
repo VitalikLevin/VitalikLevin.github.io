@@ -31,7 +31,7 @@
 dialog:modal {
   animation: 3s linear msgResize;
 }
-.crumb li:last-child a::after {
+.crumb p span:last-child a::after {
   animation: 5s linear curPage;
   animation-iteration-count: infinite;
 }

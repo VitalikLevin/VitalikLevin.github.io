@@ -8,7 +8,7 @@ strong, .start, button#realAdd {
 	font-weight: bold;
 }
 
-header h2, header h2 a, .crumb li:last-child a {
+header h2, header h2 a, .crumb p span:last-child a {
 	text-decoration: none;
 }
 
@@ -103,10 +103,6 @@ header h2, details > summary, dialog, label {
 	max-width: 80vw;
 }
 
-.crumb li:last-child a {
-  cursor: not-allowed;
-}
-
 input[type="text"], dialog {
 	min-width: 35vw;
 }
@@ -181,8 +177,12 @@ img[class^="img"], video, .prodlogo {
 	max-width: 75vw;
 }
 
-.crumb ul li:last-child a::after {
+.crumb p span:last-child a::after {
 	content: "\2190 You are here";
+}
+
+.crumb p:last-child span a {
+	cursor: not-allowed;
 }
 
 figure {
@@ -204,7 +204,7 @@ code {
 	input[type="text"] {
 		min-width: 55vw;
 	}
-	nav ul li, .crumb ul li, input, select {
+	nav ul li, input, select {
 		margin-bottom: 8px;
 	}
 }
