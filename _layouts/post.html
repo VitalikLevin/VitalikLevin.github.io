@@ -3,10 +3,10 @@ layout: b-default
 ---
 {%- include header.html -%}
 {%- capture crumbs -%}
-/blog/${{ page.permalink }}
+/blog/${{ page.permalink }}$
 {%- endcapture -%}
 {%- capture texts -%}
-Blog$${{ page.title }}
+Blog$${{ page.title }}$$
 {%- endcapture -%}
 {%- include crumb.html urls=crumbs titles=texts -%}
 <main>
