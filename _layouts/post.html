@@ -13,7 +13,11 @@ Blog$${{ page.title }}
 	<section itemscope itemtype="https://schema.org/ImageObject" class="image">
 		<meta itemprop="name" content="{{ page.title }}">
 		<img class="img{{ page.mp-w | default: 400 }}" src="{{ page.mainpic }}" itemprop="contentUrl"><br>
+		{%- if page.lang == "ru" -%}
+		<span itemprop="description">{{ page.mp-desc }}</span> | Создано <span itemprop="copyrightNotice">{{ page.mp-auth | default: site.author }}</span>
+		{%- else -%}
 		<span itemprop="description">{{ page.mp-desc }}</span> | By <span itemprop="copyrightNotice">{{ page.mp-auth | default: site.author }}</span>
+		{%- endif -%}
 		<meta itemprop="license" content="{{ page.mp-lice | default: site.license }}">
 	</section>
 	<h2 class="start">{{ page.title }}</h2>

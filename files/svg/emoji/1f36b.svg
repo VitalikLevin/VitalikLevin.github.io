@@ -2,7 +2,7 @@
   viewbox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style type="text/css"><![CDATA[
-      svg { transform: rotateZ(30deg); }
+      svg { transform: rotateZ(82deg); }
       #body { fill: rgb(143, 85, 42); }
       #brf { fill: rgb(62, 38, 28); }
       #brs { fill: none; stroke: rgb(62, 38, 28); stroke-width: 3; }
