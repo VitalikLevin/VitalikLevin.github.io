@@ -31,10 +31,6 @@ button:hover, details > summary:hover, ::file-selector-button:hover, button + la
 	cursor: help;
 }
 
-.crumb ul {
-  list-style-type: none;
-}
-
 .image {
 	margin-left: 5px;
 	margin-top: 5px;
@@ -181,7 +177,7 @@ img[class^="img"], video, .prodlogo {
 	content: "\2190 You are here";
 }
 
-.crumb p:last-child span a {
+.crumb p span:last-child a {
 	cursor: not-allowed;
 }
 

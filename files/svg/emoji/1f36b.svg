@@ -1,0 +1,35 @@
+<svg version="1.1" width="128" height="128"
+  viewbox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css"><![CDATA[
+      svg { transform: rotateZ(30deg); }
+      #body { fill: rgb(143, 85, 42); }
+      #brf { fill: rgb(62, 38, 28); }
+      #brs { fill: none; stroke: rgb(62, 38, 28); stroke-width: 3; }
+      #cover { fill: rgb(233, 10, 31); }
+      #wh { fill: rgb(244, 244, 244); }
+    ]]></style>
+    <clipPath id="cut">
+      <polygon points="24 121, 104 121, 104 60, 24 72"/>
+    </clipPath>
+    <clipPath id="mClip">
+      <rect x="82" y="26" width="14" height="22"/>
+    </clipPath>
+  </defs>
+  <title>Chocolate Bar</title>
+  <rect id="body" x="40" y="8" width="64" height="64"/>
+  <polygon id="cover" points="40 8, 104 8, 104 120, 40 120, 40 112, 24 112, 24 72, 40 72" clip-path="url(#cut)"/>
+  <g id="wh" transform="rotate(45, 32, 80)">
+		<rect x="31" y="74" width="2" height="12"/>
+		<rect x="26" y="79" width="12" height="2"/>
+	</g>
+  <g id="brs">
+    <circle cx="64" cy="52" r="11"/>
+    <circle cx="64" cy="24" r="11"/>
+  </g>
+  <g id="brf">
+    <circle cx="68" cy="48" r="6"/>
+    <circle cx="68" cy="28" r="6"/>
+    <ellipse cx="82" cy="38" rx="10" ry="10" clip-path="url(#mClip)"/>
+  </g>
+</svg>

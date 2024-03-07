@@ -3,16 +3,16 @@ layout: b-default
 ---
 {%- include header.html -%}
 {%- capture crumbs -%}
-/blog/${{ page.permalink }}$
+/blog/${{ page.permalink | default: page.url }}
 {%- endcapture -%}
 {%- capture texts -%}
-Blog$${{ page.title }}$$
+Blog$${{ page.title }}
 {%- endcapture -%}
 {%- include crumb.html urls=crumbs titles=texts -%}
 <main>
 	<section itemscope itemtype="https://schema.org/ImageObject" class="image">
 		<meta itemprop="name" content="{{ page.title }}">
-		<img class="img400" src="{{ page.mainpic }}" itemprop="contentUrl"><br>
+		<img class="img{{ page.mp-w | default: 400 }}" src="{{ page.mainpic }}" itemprop="contentUrl"><br>
 		<span itemprop="description">{{ page.mp-desc }}</span> | By <span itemprop="copyrightNotice">{{ page.mp-auth | default: site.author }}</span>
 		<meta itemprop="license" content="{{ page.mp-lice | default: site.license }}">
 	</section>
@@ -21,6 +21,6 @@ Blog$${{ page.title }}$$
 		<img src="/files/svg/1f4c6.svg" alt="&#128198;">
 		{{ page.date | date: "%d.%m.%Y" }}
 	</span>
-	{{ content }}
+	{{- content -}}
 </main>
 {%- include footer.html -%}
