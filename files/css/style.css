@@ -1,7 +1,7 @@
 @import url(fonts.css);
 @import url(code.css);
 :root, button, dialog, input, select, ::before, ::file-selector-button {
-	font-family: liberastika, sans-serif;
+	font-family: liberastika, sans-serif, wfnotdef;
 }
 
 strong, .start, button#realAdd {
