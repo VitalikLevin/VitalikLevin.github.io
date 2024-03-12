@@ -30,3 +30,13 @@ README was eaten by `VitalikLevin`.
   - [`pls-gen`](https://vitaliklevin.github.io/tools/pls-gen/)
 - [About site](https://vitaliklevin.github.io/about/)
 - ["I’m a Teapot" page](https://vitaliklevin.github.io/teapot/)
+
+## Local testing
+1. Clone repository
+2. Install `ruby` and `github-pages`
+3. Run the snippet below to start web server
+
+```
+bundle exec jekyll serve
+# Server URL: localhost:1337
+```
