@@ -5,13 +5,14 @@ permalink: /sw.js
 const C_VERSION = "{{ site.github.build_revision | truncate: 8, '0' }}";
 const CACHE = `fallback-v${C_VERSION}`;
 const FALL_IMG = "/files/svg/emoji/1f47b.svg";
+const FALL_VID = "/files/video/fallback.mp4";
 const FALL_URL = "/offline.html";
 const OFFLINE_ARR = [
   {%- for file in infiles -%}
   {%- unless file == infiles.last -%}
     "{{ file.path }}",
   {%- else -%}
-    "{{ file.path }}", FALL_URL
+    "{{ file.path }}", FALL_URL, FALL_VID
   {%- endunless -%}
   {%- endfor -%}
 ];
@@ -25,7 +26,10 @@ const deleteOldCaches = async () => {
   await Promise.all(cachesToDelete.map(deleteCache));
 };
 function isImage(fetchRequest) {
-  return fetchRequest.method === "GET" && (fetchRequest.destination === "image" || fetchRequest.destination === "video");
+  return fetchRequest.method === "GET" && fetchRequest.destination === "image";
+}
+function isVideo(fetchReq) {
+  return fetchReq.method === "GET" && fetchReq.destination === "video";
 }
 self.addEventListener("install", (event) => {
   console.log("Installed");
@@ -58,11 +62,14 @@ self.addEventListener("fetch", (event) => {
       return await fetch(request);
     } catch (err) {
       if (cachedResponse) { return cachedResponse; }
-      if (request.mode === "navigate") {
+      if(request.mode === "navigate") {
         return caches.match(FALL_URL);
       }
-      if (isImage(request)) {
+      if(isImage(request)) {
         return caches.match(FALL_IMG);
+      }
+      if(isVideo(request)) {
+        return caches.match(FALL_VID);
       }
       console.warn(`Fetch falied | ${err}`);
     }

@@ -31,7 +31,7 @@ function binButton() {
 function onLoadTheme() {
   let isDark = localStorage.getItem('isDark');
   if (!isDark) {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches || window.location.search.match(/isdark=1/i)) {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches || window.location.search.match(/isdark=(1|y)/i)) {
       darkMode.innerText = '1';
     } else {
       darkMode.innerText = '0';
@@ -66,10 +66,12 @@ function changeTheme() {
   if (darkMode.innerText != '1') {
     document.querySelector('link[href="/files/css/dark.css"]').setAttribute('href', '/files/css/light.css');
     document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f4f4f4');
+    document.querySelector('meta[name="color-scheme"]').setAttribute('content', 'dark light');
   } else {
     let temp = document.querySelector('link[href="/files/css/light.css"]');
     if (temp) { temp.setAttribute('href', '/files/css/dark.css'); }
     document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000000');
+    document.querySelector('meta[name="color-scheme"]').setAttribute('content', 'light dark');
   }
 }
 function getAdvice() {
