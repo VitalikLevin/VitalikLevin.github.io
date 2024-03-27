@@ -18,9 +18,9 @@ permalink: /emoji/
 	<span itemscope itemtype="https://schema.org/ImageObject" class="image">
 		<meta itemprop="name" content="{{ prep_str }}">
 	{%- if forloop.index > 7 -%}
-		<img src="{{ file.path }}" alt="{{ prep_str }}" title="{{ prep_str }}" loading="lazy">
+		<img src="{{ file.path }}" alt="{{ prep_str }}" title="{{ prep_str }}" loading="lazy" itemprop="contentUrl">
 	{%- else -%}
-		<img src="{{ file.path }}" alt="{{ prep_str }}" title="{{ prep_str }}">
+		<img src="{{ file.path }}" alt="{{ prep_str }}" title="{{ prep_str }}" itemprop="contentUrl">
 	{%- endif -%}
 		<meta itemprop="copyrightNotice" content="{{ site.author }}">
 		<meta itemprop="license" content="{{ site.license }}">
