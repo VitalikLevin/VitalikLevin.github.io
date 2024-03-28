@@ -1,6 +1,7 @@
 :root {
 	background-color: rgb(0, 0, 0);
 	color: rgb(244, 244, 244);
+	color-scheme: dark;
 }
 
 header, header h2 a:any-link, #cooknote.show {

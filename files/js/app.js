@@ -66,12 +66,10 @@ function changeTheme() {
   if (darkMode.innerText != '1') {
     document.querySelector('link[href="/files/css/dark.css"]').setAttribute('href', '/files/css/light.css');
     document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f4f4f4');
-    document.querySelector('meta[name="color-scheme"]').setAttribute('content', 'dark');
   } else {
     let temp = document.querySelector('link[href="/files/css/light.css"]');
     if (temp) { temp.setAttribute('href', '/files/css/dark.css'); }
     document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000000');
-    document.querySelector('meta[name="color-scheme"]').setAttribute('content', 'light');
   }
 }
 function getAdvice() {
