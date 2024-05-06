@@ -2,7 +2,7 @@
 	color-scheme: light;
 }
 
-:root, button, .crumb p:last-child span a::after {
+:root, button, .crumb p:last-child span a::after, .top a:any-link {
 	color: rgb(18, 18, 18);
 }
 

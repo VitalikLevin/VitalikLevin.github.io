@@ -8,7 +8,7 @@ strong, .start, button#realAdd {
 	font-weight: bold;
 }
 
-header h2, header h2 a, .crumb p span:last-child a {
+header h2, header h2 a, .crumb p span:last-child a, .top a {
 	text-decoration: none;
 }
 
@@ -22,7 +22,7 @@ button, ::file-selector-button, select {
 	border-width: 0.5px;
 }
 
-button:hover, details > summary:hover, ::file-selector-button:hover, button + label:hover, select:hover {
+button:hover, details > summary:hover, ::file-selector-button:hover, button + label:hover, select:hover, .top a:hover {
 	opacity: 0.7;
 	cursor: pointer;
 }
@@ -41,7 +41,7 @@ button:hover, details > summary:hover, ::file-selector-button:hover, button + la
 }
 
 code, kbd, button.bin, ::placeholder {
-	font-family: jbmono, monospace;
+	font-family: jbmono, monospace, wfnotdef;
 }
 
 .pubDat, #cooknote h3 {
@@ -52,7 +52,7 @@ code, kbd, button.bin, ::placeholder {
 	visibility: hidden;
 }
 
-header h2, details > summary, dialog, label {
+header h2, details > summary, dialog, label, .top {
 	user-select: none;
 	-moz-user-select: none;
 	-webkit-user-select: none;
@@ -192,13 +192,14 @@ code {
 @media screen and (orientation: portrait) {
 	.top {
 		position: fixed;
+		font-size: 50px;
 		right: 3px;
 		bottom: 10px;
 		z-index: 2;
 		visibility: visible;
 	}
 	input[type="text"] {
-		min-width: 55vw;
+		min-width: 65vw;
 	}
 	nav ul li, input, select {
 		margin-bottom: 8px;

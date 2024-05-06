@@ -23,7 +23,7 @@ dialog {
 	color: rgb(225, 227, 230);
 }
 
-blockquote h3, button, select, .crumb p:last-child span a::after, ::file-selector-button, ::selection, #sleep {
+blockquote h3, button, select, .crumb p:last-child span a::after, ::file-selector-button, ::selection, #sleep, .top a:any-link {
 	color: rgb(244, 244, 244);
 }
 
