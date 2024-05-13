@@ -48,7 +48,7 @@
 }
 @font-face {
 	font-family: "wfnotdef";
-	src: local(wf_notdef),
+	src: local(Wormfolder Notdef),
 		url("../fonts/wf_notdef.woff2") format("woff2");
 	font-weight: normal;
 	font-style: normal;

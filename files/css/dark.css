@@ -55,7 +55,11 @@ a:visited {
 	background-color: rgb(244, 60, 54);
 }
 
-::file-selector-button, button {
+button#realAdd {
+	color: rgb(139, 195, 74);
+}
+
+::file-selector-button, button, select {
 	border-color: rgb(244, 244, 244);
 }
 

@@ -4,7 +4,7 @@
 	font-family: liberastika, sans-serif, wfnotdef;
 }
 
-strong, .start, button#realAdd {
+strong, .start {
 	font-weight: bold;
 }
 
@@ -37,15 +37,23 @@ button:hover, details > summary:hover, ::file-selector-button:hover, button + la
 }
 
 .image span, .num, .pubDat, .robExample {
-	font-family: robotoslab, serif;
+	font-family: robotoslab, serif, wfnotdef;
 }
 
 code, kbd, button.bin, ::placeholder {
 	font-family: jbmono, monospace, wfnotdef;
 }
 
-.pubDat, #cooknote h3 {
+.pubDat {
 	font-size: 16px;
+}
+
+.pubDat .cal {
+	font-size: 24px;
+}
+
+.start {
+	margin-bottom: 10px;
 }
 
 .top {
@@ -58,7 +66,7 @@ header h2, details > summary, dialog, label, .top {
 	-webkit-user-select: none;
 }
 
-.pubDat img, #cooknote img {
+#cooknote img {
 	margin-right: 8px;
 	margin-left: 8px;
 }
@@ -89,7 +97,7 @@ header h2, details > summary, dialog, label, .top {
 	display: block;
 }
 
-.pubDat img, #cooknote img, button#realAdd, button.bin {
+#cooknote img, button#realAdd, button.bin {
 	aspect-ratio: 1 / 1;
 	height: 24px;
 	padding: 0;
@@ -152,10 +160,6 @@ dialog button {
 }
 
 button#realAdd {
-	background-image: url(../svg/2714.svg);
-	background-position: center;
-	background-size: cover;
-	position: absolute;
 	margin-left: 8px;
 }
 
@@ -165,7 +169,7 @@ button#realAdd {
 	margin-bottom: -4px;
 }
 
-.listLogo, .pubDat img, #cooknote img {
+.listLogo, #cooknote img {
 	margin-bottom: -6px;
 }
 

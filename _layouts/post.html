@@ -21,10 +21,7 @@ Blog$${{ page.title }}
 		<meta itemprop="license" content="{{ page.mp-lice | default: site.license }}">
 	</section>
 	<h2 class="start">{{ page.title }}</h2>
-	<span class="pubDat">
-		<img src="/files/svg/1f4c6.svg" alt="&#128198;">
-		{{ page.date | date: "%d.%m.%Y" }}
-	</span>
+	<span class="pubDat"><span class="cal">&#128198;</span> {{ page.date | date: "%d.%m.%Y" }}</span>
 	{{- content -}}
 </main>
 {%- include footer.html -%}

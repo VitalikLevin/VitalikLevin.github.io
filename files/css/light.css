@@ -41,6 +41,10 @@ kbd, #options {
 	color: rgb(18, 71, 122);
 }
 
+button#realAdd {
+	color: rgb(139, 195, 74);
+}
+
 a:visited {
 	color: rgb(249, 168, 37);
 }
