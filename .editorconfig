@@ -8,3 +8,5 @@ indent_size = 2
 [*.{css,html,js,json,svg,xml}]
 indent_style = tabs
 indent_size = 2
+[*.py]
+indent_size = 4

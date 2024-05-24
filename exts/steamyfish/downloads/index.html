@@ -9,8 +9,10 @@ permalink: /exts/steamyfish/downloads/
 <main>
   <h2 class="start">Steamy Fish Downloads</h2>
 	{%- for member in site.data.sft -%}
-	<h3 id="v{{ member.major | default: 0 }}.{{ member.minor }}.{{ member.patch | default: 0 }}">v{{ member.major | default: 0 }}.{{ member.minor }}.{{ member.patch | default: 0 }}</h3>
-	<p><a href="https://github.com/vitaliklevin/steamyfish-theme/blob/master/CHANGELOG.md#{{ member.major | default: 0 }}{{ member.minor }}{{ member.patch | default: 0 }}">Changelog Section</a> | <a href="https://marketplace.visualstudio.com/_apis/public/gallery/publishers/networkworms/vsextensions/steamyfish/{{ member.major | default: 0 }}.{{ member.minor }}.{{ member.patch | default: 0 }}/vspackage">VSIX file</a></p>
+	<h3 id="v{{ member.major | default: 0 }}.{{ member.minor }}.{{ member.patch | default: 0 }}">v{{ member.major | default: 0 }}.{{ member.minor }}.{{ member.patch | default: 0 }} - {{ member.date | date: "%Y-%m-%d" }}</h3>
+	<p>
+		<a href="https://github.com/vitaliklevin/steamyfish-theme/blob/master/CHANGELOG.md#{{ member.major | default: 0 }}{{ member.minor }}{{ member.patch | default: 0 }}">Changelog Section</a> | <a href="https://marketplace.visualstudio.com/_apis/public/gallery/publishers/networkworms/vsextensions/steamyfish/{{ member.major | default: 0 }}.{{ member.minor }}.{{ member.patch | default: 0 }}/vspackage">VSIX file</a>
+	</p>
 	{%- endfor -%}
 </main>
 {%- include footer.html -%}
