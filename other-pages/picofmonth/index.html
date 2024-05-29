@@ -20,7 +20,7 @@ permalink: /picofmonth/
 	{%- endif -%}
 	<h5 id="{{ member.time | slugify }}">{{ member.time | slice: 0, cut_month }}</h5>
 	{%- unless member.video == true -%}
-  <section itemscope itemtype="https://schema.org/ImageObject" class="image">
+  <figure itemscope itemtype="https://schema.org/ImageObject" class="image">
 		<meta itemprop="name" content="{{ member.name }}">
     <meta itemprop="width" content="{{ member.width | default: 400 }} px">
     <meta itemprop="height" content="{{ member.height | default: 300 }} px">
@@ -30,16 +30,16 @@ permalink: /picofmonth/
 		<img class="img{{ member.width | default: 400 }}" title="{{ member.name }}" alt="{{ member.desc }}" src="{{ member.src }}" itemprop="contentUrl"><br>
 		{%- endif -%}
 		<meta itemprop="copyrightNotice" content="{{ site.author }}">
-		<span itemprop="description">{{ member.desc }}</span>
+		<figcaption itemprop="description">{{ member.desc }}</figcaption>
 		<meta itemprop="license" content="{{ site.license }}">
-	</section>
+	</figure>
 	{%- else -%}
-	<section class="image" title="{{ member.name }}">
+	<figure class="image" title="{{ member.name }}">
 		<video autoplay loop muted playsinline>
 			<source src="{{ member.src }}" type="video/mp4">
 		</video><br>
-		<span itemprop="description">{{ member.desc }}</span>
-	</section>
+		<figcaption itemprop="description">{{ member.desc }}</figcaption>
+	</figure>
 	{%- endunless -%}
 	{%- endfor -%}
 </main>

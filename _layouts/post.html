@@ -10,16 +10,16 @@ Blog$${{ page.title }}
 {%- endcapture -%}
 {%- include crumb.html urls=crumbs titles=texts -%}
 <main>
-	<section itemscope itemtype="https://schema.org/ImageObject" class="image">
+	<figure itemscope itemtype="https://schema.org/ImageObject" class="image">
 		<meta itemprop="name" content="{{ page.title }}">
 		<img class="img{{ page.mp-w | default: 400 }}" src="{{ page.mainpic }}" itemprop="contentUrl"><br>
 		{%- if page.lang == "ru" -%}
-		<span itemprop="description">{{ page.mp-desc }}</span> | Создано <span itemprop="copyrightNotice">{{ page.mp-auth | default: site.author }}</span>
+		<span><figcaption itemprop="description">{{ page.mp-desc }}</figcaption> | Создано <span itemprop="copyrightNotice">{{ page.mp-auth | default: site.author }}</span></span>
 		{%- else -%}
-		<span itemprop="description">{{ page.mp-desc }}</span> | By <span itemprop="copyrightNotice">{{ page.mp-auth | default: site.author }}</span>
+		<span><figcaption itemprop="description">{{ page.mp-desc }}</figcaption> | By <span itemprop="copyrightNotice">{{ page.mp-auth | default: site.author }}</span></span>
 		{%- endif -%}
 		<meta itemprop="license" content="{{ page.mp-lice | default: site.license }}">
-	</section>
+	</figure>
 	<h2 class="start">{{ page.title }}</h2>
 	<span class="pubDat"><span class="cal">&#128198;</span> {{ page.date | date: "%d.%m.%Y" }}</span>
 	{{- content -}}

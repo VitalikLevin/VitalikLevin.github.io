@@ -1,0 +1,22 @@
+<svg version="1.1" width="128" height="128"
+  viewbox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css"><![CDATA[
+      .bl { fill: rgb(74, 66, 64); }
+      #body { fill: rgb(191, 179, 179); }
+      #nose { stroke: rgb(148, 133, 133); }
+      .wh { fill: rgb(148, 133, 133); }
+    ]]></style>
+  </defs>
+  <title>Moyai</title>
+  <polygon points="8 104, 8 40, 16 40, 16 24, 56 24, 56 40, 120 40, 120 104" id="body"/>
+  <g class="wh" transform="rotate(45, 48, 32)">
+		<rect x="47" y="26" width="2" height="12"/>
+		<rect x="42" y="31" width="12" height="2"/>
+	</g>
+  <g class="bl">
+    <polygon points="68 54, 112 54, 115 74, 65 74"/>
+    <polygon points="78 92, 108 92, 96 100, 90 100"/>
+  </g>
+  <polygon id="nose" class="wh" points="90 62, 100 90, 88 90"/>
+</svg>

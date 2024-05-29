@@ -1,19 +1,19 @@
 {%- assign pic = site.data.potm.first -%}
 {%- unless pic.video == true -%}
 <h3>Picture of the <a href="/picofmonth/#{{ pic.time | slugify }}">{{ include.word | default: "current" }}</a> month</h3>
-<section itemscope itemtype="https://schema.org/ImageObject" class="image">
+<figure itemscope itemtype="https://schema.org/ImageObject" class="image">
 	<meta itemprop="name" content="{{ pic.name }}">
   <meta itemprop="width" content="{{ pic.width | default: 400 }} px">
   <meta itemprop="height" content="{{ pic.height | default: 300 }} px">
 	<img class="img{{ pic.width | default: 400 }}" title="{{ pic.name }}" alt="{{ pic.desc }}" src="{{ pic.src }}" itemprop="contentUrl"><br>
-	<span itemprop="description">{{ pic.desc }}</span>
-</section>
+	<figcaption itemprop="description">{{ pic.desc }}</figcaption>
+</figure>
 {%- else -%}
 <h3>Video of the <a href="/picofmonth/#{{ pic.time | slugify }}">{{ include.word | default: "current" }}</a> month</h3>
-<section class="image" title="{{ pic.name }}">
+<figure class="image" title="{{ pic.name }}">
 	<video autoplay loop muted playsinline>
 		<source src="{{ pic.src }}" type="video/mp4">
 	</video><br>
-	<span>{{ pic.desc }}</span>
-</section>
+	<figcaption>{{ pic.desc }}</figcaption>
+</figure>
 {%- endunless -%}

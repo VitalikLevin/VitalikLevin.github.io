@@ -36,7 +36,7 @@ button:hover, details > summary:hover, ::file-selector-button:hover, button + la
 	margin-top: 5px;
 }
 
-.image span, .num, .pubDat, .robExample {
+.image span, .image figcaption, .num, .pubDat, .robExample {
 	font-family: robotoslab, serif, wfnotdef;
 }
 
@@ -108,7 +108,7 @@ input[type="text"], dialog {
 	min-width: 35vw;
 }
 
-[data-before] {
+[data-before], span figcaption {
 	display: inline;
 }
 
