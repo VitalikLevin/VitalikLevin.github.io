@@ -108,7 +108,7 @@ input[type="text"], dialog {
 	min-width: 35vw;
 }
 
-[data-before], span figcaption {
+[data-before] {
 	display: inline;
 }
 

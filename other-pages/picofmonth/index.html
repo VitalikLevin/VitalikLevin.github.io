@@ -30,8 +30,8 @@ permalink: /picofmonth/
 		<img class="img{{ member.width | default: 400 }}" title="{{ member.name }}" alt="{{ member.desc }}" src="{{ member.src }}" itemprop="contentUrl"><br>
 		{%- endif -%}
 		<meta itemprop="copyrightNotice" content="{{ site.author }}">
-		<figcaption itemprop="description">{{ member.desc }}</figcaption>
 		<meta itemprop="license" content="{{ site.license }}">
+		<figcaption itemprop="description">{{ member.desc }}</figcaption>
 	</figure>
 	{%- else -%}
 	<figure class="image" title="{{ member.name }}">

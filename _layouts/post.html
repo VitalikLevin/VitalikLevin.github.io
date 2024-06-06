@@ -14,9 +14,9 @@ Blog$${{ page.title }}
 		<meta itemprop="name" content="{{ page.title }}">
 		<img class="img{{ page.mp-w | default: 400 }}" src="{{ page.mainpic }}" itemprop="contentUrl"><br>
 		{%- if page.lang == "ru" -%}
-		<span><figcaption itemprop="description">{{ page.mp-desc }}</figcaption> | Создано <span itemprop="copyrightNotice">{{ page.mp-auth | default: site.author }}</span></span>
+		<figcaption><span itemprop="description">{{ page.mp-desc }}</span> | Создано <span itemprop="copyrightNotice">{{ page.mp-auth | default: site.author }}</span></figcaption>
 		{%- else -%}
-		<span><figcaption itemprop="description">{{ page.mp-desc }}</figcaption> | By <span itemprop="copyrightNotice">{{ page.mp-auth | default: site.author }}</span></span>
+		<figcaption><span itemprop="description">{{ page.mp-desc }}</span> | By <span itemprop="copyrightNotice">{{ page.mp-auth | default: site.author }}</span></figcaption>
 		{%- endif -%}
 		<meta itemprop="license" content="{{ page.mp-lice | default: site.license }}">
 	</figure>
