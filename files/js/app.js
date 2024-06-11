@@ -1,22 +1,7 @@
-const cachedT = document.title;
-const now = new Date();
 const darkMode = document.getElementById('darkMode');
-const promoApp = document.getElementById('promoPWA');
-function checkCookies() {
-  let cookieDate = localStorage.getItem('cookieDate');
-  let cooknote = document.querySelector('#cooknote');
-  let cookieBtn = cooknote.querySelector('.cookagree');
-  if (!cookieDate || (+cookieDate + 31536000000) < now) {
-    cooknote.classList.add('show');
-  }
-  cookieBtn.addEventListener('click', function() {
-    localStorage.setItem('cookieDate', now);
-    cooknote.classList.remove('show');
-  });
-}
 function compareNum(a, b) { return a - b; }
 function binButton() {
-  var binArr = document.querySelectorAll('.bin');
+  var binArr = document.querySelectorAll('button.bin');
   for (let a = 0; a < binArr.length; a++) {
     const button = binArr[a];
     button.onclick = function() {
@@ -26,6 +11,18 @@ function binButton() {
         button.innerText = '0';
       }
     }
+  }
+}
+function changeTheme() {
+  if (darkMode.innerText != '1') {
+    document.querySelector('link[href="/files/css/dark.css"]').setAttribute('href', '/files/css/light.css');
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f4f4f4');
+    localStorage.setItem('isDark', 1);
+  } else {
+    let temp = document.querySelector('link[href="/files/css/light.css"]');
+    if (temp) { temp.setAttribute('href', '/files/css/dark.css'); }
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000000');
+    localStorage.setItem('isDark', darkMode.innerText);
   }
 }
 function onLoadTheme() {
@@ -41,97 +38,14 @@ function onLoadTheme() {
   }
   changeTheme();
 }
-function ifUserHasGone() {
-  const cachedT = document.title;
-  document.addEventListener('visibilitychange', function() {
-    if (document.visibilityState == 'hidden') {
-      document.title = ':( NW410 Gone from tab';
-      localStorage.setItem('isDark', darkMode.innerText);
-    } else {
-      document.title = cachedT;
-    }
-  });
-}
-function sharePage() {
-  if ('share' in window.navigator) {
-    navigator.share({
-      title: cachedT,
-      text: `Check out Network Worms website`,
-      url: document.querySelector('link[rel=canonical]').href
-    })
-    .catch((er) => { console.warn(`Share error | ${er}`); });
-  }
-}
-function changeTheme() {
-  if (darkMode.innerText != '1') {
-    document.querySelector('link[href="/files/css/dark.css"]').setAttribute('href', '/files/css/light.css');
-    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f4f4f4');
-  } else {
-    let temp = document.querySelector('link[href="/files/css/light.css"]');
-    if (temp) { temp.setAttribute('href', '/files/css/dark.css'); }
-    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000000');
-  }
-}
-function getAdvice() {
-  fetch(`/files/texts/advice-${document.querySelector('html').lang.toLowerCase()}.txt`)
-    .then(function(resp) {
-      return resp.text();
-    })
-    .then(function(text) {
-      let i = 0;
-      let array = text.split('\n');
-      let cachedI = localStorage.getItem('i');
-      if (cachedI != null && cachedI >= i) {
-        i = cachedI;
-        if (i / array.length >= 1) {
-          i = 0;
-        }
-      }
-      if (now.getHours() > 22 || now.getHours() < 6) {
-        document.getElementById('sleep').innerHTML = `${array[i]}<br>`;
-        i++;
-        localStorage.setItem('i', i);
-      }
-    });
-}
-checkCookies();
 binButton();
 onLoadTheme();
-getAdvice();
-ifUserHasGone();
 darkMode.addEventListener('click', changeTheme);
-document.getElementById('share').addEventListener('click', sharePage);
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js', { scope: '/' })
-    .then(() => navigator.serviceWorker.ready.then((worker) => {
-      worker.sync.register('syncdata');
-    }))
-    .catch((err) => console.warn(`Service worker’s fail | ${err}`));
+if (document.querySelector('meta[property="og:title"]') != null) {
+  var realapp = document.createElement('script');
+  realapp.onload = function () {
+    console.info("The rest of `app.js` was loaded");
+  }
+  realapp.src = "/files/js/realapp.js";
+  document.body.appendChild(realapp);
 }
-window.addEventListener('beforeinstallprompt', function(e) {
-  e.preventDefault();
-  var deferredPrompt = e;
-  var lastClose = localStorage.getItem('promoClose');
-  if (!lastClose || (+lastClose + 3888000) > now) {
-    promoApp.hidden = false;
-  }
-  document.getElementById('instPwa').onclick = () => {
-    promoApp.hidden = true;
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice
-    .then((choiceResult) => {
-      if (choiceResult.outcome === 'accepted') {
-        console.log('User accepted');
-      } else {
-        console.log('User dismissed');
-        localStorage.setItem('promoClose', now);
-      }
-      deferredPrompt = null;
-    });
-  }
-  document.getElementById('insClose').onclick = () => {
-    promoApp.hidden = true;
-    localStorage.setItem('promoClose', now);
-    deferredPrompt = null;
-  }
-});

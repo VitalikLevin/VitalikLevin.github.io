@@ -32,6 +32,12 @@ permalink: /offline.html
         <li>an offline game, for example </li>
       </ul>
     </main>
+    <footer>
+      <p>
+        &#169;Vitaliy Levin, <span class="num">{{ site.time | date: "%Y" }}</span>.<br>
+        <button class="bin" id="darkMode">0</button><label for="darkMode"> Dark theme</label>
+      </p>
+    </footer>
     <script>
       var c = document.createElement("code");
       const ua = navigator.userAgent;
@@ -50,5 +56,6 @@ permalink: /offline.html
         document.querySelector("ul li:nth-child(5)").setAttribute("style", "text-decoration: line-through");
       }
     </script>
+    <script defer src="/files/js/app.js"></script>
   </body>
 </html>

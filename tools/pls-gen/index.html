@@ -9,12 +9,14 @@ redirect_from:
 {%- include header.html -%}
 {%- include crumb.html urls="/tools/$/tools/pls-gen/" titles="Tools$$pls-gen" -%}
 <dialog id="help">
-	<h3><code>pls-gen</code> "Hot Keys"</h3>
-	<p><kbd>F1</kbd> <strong>Open/close this message</strong></p>
-	<p><kbd>Ctrl</kbd>+<kbd>0-6</kbd> <strong>Choose sorting method</strong></p>
-	<p><kbd>Ctrl</kbd>+<kbd>O</kbd> <strong>Select files</strong></p>
-	<p><kbd>Ctrl</kbd>+<kbd>S</kbd> <strong>Save playlist</strong></p>
-	<button id="hClose">Close</button>
+	<div class="dialtext">
+		<h3><code>pls-gen</code> "Hot Keys"</h3>
+		<p><kbd>F1</kbd> <strong>Open/close this message</strong></p>
+		<p><kbd>Ctrl</kbd>+<kbd>0-6</kbd> <strong>Choose sorting method</strong></p>
+		<p><kbd>Ctrl</kbd>+<kbd>O</kbd> <strong>Select files</strong></p>
+		<p><kbd>Ctrl</kbd>+<kbd>S</kbd> <strong>Save playlist</strong></p>
+		<button id="hClose">Close</button>
+	</div>
 </dialog>
 <dialog id="wDuration">
 	<p>Unsupported track duration was set.</p>
@@ -61,7 +63,7 @@ redirect_from:
 		<input type="number" id="addSeconds" placeholder="1min = 60s" min="-1">
 	</details>
 	<a id="dnld" href="#" download="playlist.pls" title="playlist.pls" hidden>Download</a>
-  <section id="playlist" data-size-type="bytes"></section>
+  <section id="playlist" data-size-type="bytes" class="ym-disable-keys"></section>
 </main>
 {%- include footer.html -%}
 <script defer src="/files/js/gen/pls.js"></script>

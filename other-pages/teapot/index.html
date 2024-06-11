@@ -37,14 +37,19 @@ layout: null
 			<p>
 				A client-side error which users get when they want to get a coffee cup from the teapot server.
 			</p>
-			<img class="img400" src="/files/images/im-a-teapot.png" alt="A worm found coffee seeds instead of tea">
+			<figure>
+				<img class="img400" src="/files/images/im-a-teapot.png" alt="A worm found coffee seeds instead of tea">
+				<figcaption>A worm found coffee seeds instead of tea</figcaption>
+			</figure>
 		</main>
 		<footer>
 			<p>
 				&#169;Vitaliy Levin, <span class="num">2022 - {{ site.time | date: "%Y" }}</span>. All rights reserved.<br>
+				<button class="bin" id="darkMode">0</button><label for="darkMode"> Dark theme</label><br>
 				Content is available under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution Share Alike 4.0 International</a>.
 			</p>
 		</footer>
 		<script src="/files/js/error.js"></script>
+		<script defer src="/files/js/app.js"></script>
 	</body>
 </html>

@@ -35,14 +35,19 @@ permalink: /404.html
 			<blockquote>HTTP Status: 404 Not Found</blockquote>
 			<h3>Summary</h3>
 			<p>A client-side error which users get when they want to find a page that does not exist.</p>
-			<img class="img400" src="/files/images/not-found.png" alt="A pixel worm tries to find the content">
+			<figure>
+				<img class="img400" src="/files/images/not-found.png" alt="A sad worm tries to find the content">
+				<figcaption>A sad worm tries to find the content</figcaption>
+			</figure>
 		</main>
 		<footer>
 			<p>
 				&#169;Vitaliy Levin, <span class="num">2022 - {{ site.time | date: "%Y" }}</span>. All rights reserved.<br>
+				<button class="bin" id="darkMode">0</button><label for="darkMode"> Dark theme</label><br>
 				Content is available under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution Share Alike 4.0 International</a>.
 			</p>
 		</footer>
 		<script src="/files/js/error.js"></script>
+		<script defer src="/files/js/app.js"></script>
 	</body>
 </html>

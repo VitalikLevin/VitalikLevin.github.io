@@ -2,6 +2,7 @@
 @import url(code.css);
 :root, button, dialog, input, select, ::before, ::file-selector-button {
 	font-family: liberastika, sans-serif, wfnotdef;
+	font-synthesis: none;
 }
 
 strong, .start {
@@ -14,6 +15,7 @@ header h2, header h2 a, .crumb p span:last-child a, .top a {
 
 blockquote, .postLink:hover, #playlist {
 	margin: 0;
+	margin-bottom: 16px;
 	padding-left: 10px;
 }
 
@@ -36,7 +38,7 @@ button:hover, details > summary:hover, ::file-selector-button:hover, button + la
 	margin-top: 5px;
 }
 
-.image span, .image figcaption, .num, .pubDat, .robExample {
+.image span, figcaption, .num, .pubDat, .robExample {
 	font-family: robotoslab, serif, wfnotdef;
 }
 

@@ -2,8 +2,8 @@
   from {
     height: 1vh;
   }
-  80% {
-    height: 10vh;
+  84% {
+    height: 12vh;
   }
   to {
     height: fit-content;
@@ -29,7 +29,7 @@
   }
 }
 dialog:modal {
-  animation: 3s linear msgResize;
+  animation: 2700ms linear msgResize;
 }
 .crumb p span:last-child a::after {
   animation: 5s linear curPage;
