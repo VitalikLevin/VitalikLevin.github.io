@@ -14,7 +14,7 @@ permalink: /blog/
 	<section class="post">
 		<h4><a class="postLink" href="{{ post.url }}">{{ post.title }}</a></h4>
 		<p>{{ post.excerpt }}</p>
-		<span class="pubDat" title="{{ post.date | date: '%Y-%m-%d' }}"><span class="cal">&#128198;</span> {{ post.date | date: "%d.%m.%Y" }}</span>
+		<span class="pubDat" title="{{ post.date | date_to_xmlschema }}"><span class="cal">&#128198;</span> {{ post.date | date: "%d.%m.%Y" }}</span>
 	</section>
 {%- endfor -%}
 {%- if paginator.total_pages > 1 -%}

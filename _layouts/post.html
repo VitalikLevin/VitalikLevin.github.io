@@ -13,15 +13,15 @@ Blog$${{ page.title }}
 	<figure itemscope itemtype="https://schema.org/ImageObject" class="image">
 		<meta itemprop="name" content="{{ page.title }}">
 		<img class="img{{ page.mp-w | default: 400 }}" src="{{ page.mainpic }}" itemprop="contentUrl"><br>
+		<meta itemprop="license" content="{{ page.mp-lice | default: site.license }}">
 		{%- if page.lang == "ru" -%}
 		<figcaption><span itemprop="description">{{ page.mp-desc }}</span> | Создано <span itemprop="copyrightNotice">{{ page.mp-auth | default: site.author }}</span></figcaption>
 		{%- else -%}
 		<figcaption><span itemprop="description">{{ page.mp-desc }}</span> | By <span itemprop="copyrightNotice">{{ page.mp-auth | default: site.author }}</span></figcaption>
 		{%- endif -%}
-		<meta itemprop="license" content="{{ page.mp-lice | default: site.license }}">
 	</figure>
 	<h2 class="start">{{ page.title }}</h2>
-	<span class="pubDat" title="{{ post.date | date: '%Y-%m-%d' }}"><span class="cal">&#128198;</span> {{ page.date | date: "%d.%m.%Y" }}</span>
+	<span class="pubDat" title="{{ post.date | date_to_xmlschema }}"><span class="cal">&#128198;</span> {{ page.date | date: "%d.%m.%Y" }}</span>
 	{{- content -}}
 </main>
 {%- include footer.html -%}
