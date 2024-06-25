@@ -38,11 +38,11 @@ function handleFiles() {
   }
   const fileList = rawFileList;
   const numFiles = fileList.length;
-  for (var i = 0; i < numFiles; i++) {
+  for (let i = 0; i < numFiles; i++) {
     const file = fileList[i];
     const rawDate = new Date(file.lastModified);
     const trackDate = dtFormat.format(rawDate);
-    var trackName = file.name;
+    const trackName = file.name;
     const trackSize = file.size;
     if (prefixInput.value !== null) { trackName = prefixInput.value + file.name; }
     if (sorting.value == 3 || sorting.value == 4) {
@@ -130,7 +130,7 @@ document.addEventListener("keydown", (e) => {
     e.preventDefault();
     sorting.value = e.key;
   }
-  if (e.key.toLowerCase() == "c" && e.altKey) {
+  if (e.key.toLowerCase() == "k" && e.ctrlKey && e.key.toLowerCase() == "m") {
     e.preventDefault();
     force8.click();
   }

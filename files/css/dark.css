@@ -1,6 +1,6 @@
 :root {
 	background-color: rgb(0, 0, 0);
-	color: rgb(244, 244, 244);
+	color: rgb(245, 245, 245);
 	color-scheme: dark;
 }
 
@@ -23,12 +23,8 @@ dialog {
 	color: rgb(225, 227, 230);
 }
 
-blockquote h3, button, select, .crumb p:last-child span a::after, ::file-selector-button, ::selection, #sleep, .top a:any-link {
-	color: rgb(244, 244, 244);
-}
-
-.warn {
-	border-left: 3px solid rgb(249, 168, 37);
+blockquote h3, button, select, ::file-selector-button, ::selection, #sleep, .top a:any-link {
+	color: rgb(245, 245, 245);
 }
 
 .start, a {
@@ -40,11 +36,11 @@ mark, ::selection {
 }
 
 kbd {
-	border: 1px solid rgb(244, 244, 244);
+	border: 1px solid rgb(245, 245, 245);
 }
 
 a:hover {
-	color: rgb(246, 170, 126);
+	color: rgb(249, 173, 129);
 }
 
 a:visited {
@@ -76,7 +72,7 @@ mark::selection {
 }
 
 .fillWh {
-	fill: rgb(244, 244, 244);
+	fill: rgb(245, 245, 245);
 }
 
 .strBl {
@@ -84,5 +80,5 @@ mark::selection {
 }
 
 .strWh {
-	stroke: rgb(244, 244, 244);
+	stroke: rgb(245, 245, 245);
 }

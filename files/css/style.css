@@ -9,7 +9,7 @@ strong, .start {
 	font-weight: bold;
 }
 
-header h2, header h2 a, .crumb p span:last-child a, .top a {
+header h2, header h2 a, .top a {
 	text-decoration: none;
 }
 
@@ -174,14 +174,6 @@ button#realAdd {
 
 img[class^="img"], video, .prodlogo {
 	max-width: 75vw;
-}
-
-.crumb p span:last-child a::after {
-	content: "\2190 You are here";
-}
-
-.crumb p span:last-child a {
-	cursor: not-allowed;
 }
 
 figure {

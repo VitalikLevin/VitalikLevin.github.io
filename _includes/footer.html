@@ -21,7 +21,7 @@
 </section>
 <footer id="footer">
 	<p>
-		&#169;Vitaliy Levin, <span class="num" title="{{ site.time | date: '%Y-%m-%d' }}">{{ site.time | date: "%Y" }}</span>. All rights reserved.<br>
+		&#169;Vitaliy Levin, <span class="num" title="{{ site.time | date_to_xmlschema }}">{{ site.time | date: "%Y" }}</span>. All rights reserved.<br>
 		<mark id="sleep"></mark>
 		{%- if page.lang == 'ru' -%}
 		<button class="bin" id="darkMode">1</button><label for="darkMode"> Тёмная тема</label><br>

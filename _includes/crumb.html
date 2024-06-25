@@ -9,13 +9,14 @@
     </span>
     {%- for member in urlarr -%}
 		<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-			<a itemprop="item" href="{{ site.url }}{{ member }}">
       {%- if urlarr.last == member -%}
-        <mark itemprop="name">{{ titlarr[forloop.index0] }}</mark>
+      <meta itemprop="item" href="{{ site.url }}{{ member }}">
+      <mark itemprop="name">{{ titlarr[forloop.index0] }}</mark>
       {%- else -%}
+      <a itemprop="item" href="{{ site.url }}{{ member }}"></a>
         <span itemprop="name">{{ titlarr[forloop.index0] }}</span>
-      {%- endif -%}
       </a>
+      {%- endif -%}
       {%- assign realpos = forloop.index -%}
       <meta itemprop="position" content="{{ realpos | plus:1 }}">
       {%- if urlarr.last != member -%}
