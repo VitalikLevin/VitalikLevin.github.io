@@ -38,5 +38,5 @@ README was eaten by `VitalikLevin`.
 
 ```
 bundle exec jekyll serve
-# Server URL: localhost:1337
+# Server URL: localhost:808
 ```

@@ -1,8 +1,7 @@
 var audioFile = "/files/audio/huh.wav";
-const audioPlay = async url => {
-  var random = (Math.random() * 10 / 10).toFixed(1);
+async function playSound(url, volume=Math.random()) {
   const context = new AudioContext();
-  var gainNode = context.createGain();
+  let gainNode = context.createGain();
   const source = context.createBufferSource();
   const audioBuffer = await fetch(url)
     .then(res => res.arrayBuffer())
@@ -10,15 +9,15 @@ const audioPlay = async url => {
   source.buffer = audioBuffer;
   source.connect(gainNode);
   gainNode.connect(context.destination);
-  gainNode.gain.setValueAtTime(random, context.currentTime);
+  gainNode.gain.setValueAtTime(volume, context.currentTime);
   source.start();
-};
+}
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelector("#logo").onclick = () => audioPlay(audioFile);
+  document.querySelector("#logo").onclick = () => playSound(audioFile);
   window.onkeydown = (e) => {
     if ((e.key == "F5") || (e.key.toLowerCase() == "r" && e.ctrlKey) || e.shiftKey) {
       e.preventDefault();
-      audioPlay(audioFile);
+      playSound(audioFile);
     }
   };
 });

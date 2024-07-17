@@ -9,7 +9,7 @@ markdown: kramdown
 repository: VitalikLevin/VitalikLevin.github.io
 theme: null
 url: https://vitaliklevin.github.io
-port: 1337
+port: 808
 license: https://creativecommons.org/licenses/by-sa/4.0/
 og_p: /files/images/spaceworm.png
 og_pa: A pink worm in space
@@ -27,7 +27,7 @@ defaults:
       sw-include: true
       layout: null
   - scope:
-      path: "files/audio"
+      path: "files/audio/*.wav"
     values:
       sw-include: false
   - scope:

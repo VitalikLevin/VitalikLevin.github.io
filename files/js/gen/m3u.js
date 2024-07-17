@@ -42,7 +42,7 @@ function handleFiles() {
     const file = fileList[i];
     const rawDate = new Date(file.lastModified);
     const trackDate = dtFormat.format(rawDate);
-    const trackName = file.name;
+    let trackName = file.name;
     const trackSize = file.size;
     if (prefixInput.value !== null) { trackName = prefixInput.value + file.name; }
     if (sorting.value == 3 || sorting.value == 4) {

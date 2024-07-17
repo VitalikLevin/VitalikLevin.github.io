@@ -1,5 +1,5 @@
 <!--noindex-->
-<section id="cooknote">
+<div id="cooknote">
 	<p>
 		<img src="/files/svg/1f36a.svg" alt="&#127850;">
 	{%- if page.lang == 'ru' -%}
@@ -9,8 +9,8 @@
 	{%- endif -%}
 	</p>
 	<button class="cookagree">OK</button>
-</section>
-<section id="promoPWA" hidden>
+</div>
+<div id="promoPWA" hidden>
 	{%- if page.lang == 'ru' -%}
 	<span>После установки ускорится загрузка страниц этого сайта.</span>
 	<span><button id="instPwa">Установить</button> | <button id="insClose">&#x274c;</button></span>
@@ -18,7 +18,7 @@
 	<span>After installation you can read our website pages without Internet connection.</span>
 	<span><button id="instPwa">Install</button> | <button id="insClose">Hide</button></span>
 	{%- endif -%}
-</section>
+</div>
 <footer id="footer">
 	<p>
 		&#169;Vitaliy Levin, <span class="num" title="{{ site.time | date_to_xmlschema }}">{{ site.time | date: "%Y" }}</span>. All rights reserved.<br>

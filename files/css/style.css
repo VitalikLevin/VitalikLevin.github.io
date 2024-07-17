@@ -3,6 +3,7 @@
 :root, button, dialog, input, select, ::before, ::file-selector-button {
 	font-family: liberastika, sans-serif, wfnotdef;
 	font-synthesis: none;
+  -webkit-text-size-adjust: 100%;
 }
 
 strong, .start {
@@ -179,6 +180,11 @@ img[class^="img"], video, .prodlogo {
 figure {
 	margin: 4px 4px;
 	max-width: 85vw;
+}
+
+canvas.noSize {
+	width: 85vw;
+	height: 400px;
 }
 
 code {

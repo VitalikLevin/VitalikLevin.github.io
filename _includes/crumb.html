@@ -1,7 +1,7 @@
 {%- assign titlarr = include.titles | split: "$$" -%}
 {%- assign urlarr = include.urls | split: "$" -%}
 {%- capture alienCrumb -%}
-<section class="crumb">
+<div class="crumb">
   <p itemscope itemtype="https://schema.org/BreadcrumbList">
     <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
       <a itemprop="item" href="{{ site.url }}/"><span itemprop="name">Network Worms</span></a>
@@ -13,7 +13,7 @@
       <meta itemprop="item" href="{{ site.url }}{{ member }}">
       <mark itemprop="name">{{ titlarr[forloop.index0] }}</mark>
       {%- else -%}
-      <a itemprop="item" href="{{ site.url }}{{ member }}"></a>
+      <a itemprop="item" href="{{ site.url }}{{ member }}">
         <span itemprop="name">{{ titlarr[forloop.index0] }}</span>
       </a>
       {%- endif -%}
@@ -25,6 +25,6 @@
     </span>
     {%- endfor -%}
   </p>
-</section>
+</div>
 {%- endcapture -%}
 {{- alienCrumb | remove: "\t" | strip_newlines -}}
