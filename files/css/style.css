@@ -205,4 +205,7 @@ code {
 	nav ul li, input, select {
 		margin-bottom: 8px;
 	}
+	canvas {
+		max-width: 87vw;
+	}
 }
