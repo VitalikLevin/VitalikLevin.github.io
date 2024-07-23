@@ -21,12 +21,23 @@ permalink: /offline.html
   <body>
     <header><h2>You are <img src="/files/svg/emoji/1f47e.svg" alt="o" id="logo">ffline</h2></header>
     <main>
-      <blockquote>Network Status: -106 Offline</blockquote>
+      <blockquote>Network Status: <span id="score">-106</span> Offline</blockquote>
       <button id="reload">Reload</button><br><br>
-      <canvas id="game" class="noSize"></canvas>
+      <div id="game">
+        <canvas id="misc" class="noSize"></canvas>
+        <canvas id="action" class="noSize"></canvas>
+        <canvas id="back" class="noSize"></canvas>
+      </div>
+      <div id="wasd">
+        <button data-key="w">&#x1f845;</button><br>
+        <button data-key="a">&#x1f844;</button>
+        <button data-key="s">&#x1f847;</button>
+        <button data-key="d">&#x1f846;</button>
+        <button data-key="Pause">&#x23ef;</button>
+      </div>
       <h3>You should try:</h3>
       <ul>
-        <li><em>Pressing</em> <kbd>Alt</kbd>+ <kbd>&#x1f844;</kbd> &#160;/ <kbd>Back Button</kbd> or <kbd>Alt</kbd>+ <kbd>&#x1f846;</kbd></li>
+        <li><em>Pressing</em> <kbd>Alt</kbd>+ <kbd>&#x1f844;</kbd> &#160;/ <kbd title="GoBack">Back</kbd> button or <kbd>Alt</kbd>+ <kbd>&#x1f846;</kbd></li>
         <li>Turning off airplane mode</li>
         <li>Checking the signal in your area</li>
         <li>Reloading your device/modem/router</li>
@@ -39,217 +50,12 @@ permalink: /offline.html
       </p>
     </footer>
     <script>
-      let canvas = document.getElementById("game");
-      var context = canvas.getContext("2d");
-      let ongoingTouches = [];
-      let grid = 16;
-      let gridWidth = Math.trunc(canvas.width / grid);
-      let gridHeight = Math.trunc(canvas.height / grid);
-      let gameOver = false;
-      let isPaused = false;
-      let walls = [];
-      let applesEaten = 0;
-      let bestLunch = localStorage.getItem("bestLunch");
-      var frameCount = 0;
-      var snake = {
-        x: 160, y: 160,
-        dx: grid, dy: 0,
-        cells: [],
-        maxCells: 4
-      };
-      var apple = {
-        x: 128, y: 128
-      };
-      async function playSound(url, volume=1) {
-        const context = new AudioContext();
-        let gainNode = context.createGain();
-        const source = context.createBufferSource();
-        const audioBuffer = await fetch(url)
-          .then(res => res.arrayBuffer())
-          .then(ArrayBuffer => context.decodeAudioData(ArrayBuffer));
-        source.buffer = audioBuffer;
-        source.connect(gainNode);
-        gainNode.connect(context.destination);
-        gainNode.gain.setValueAtTime(volume, context.currentTime);
-        source.start();
+      let theGame = document.createElement('script');
+      theGame.onload = function () {
+        console.info("The game script was loaded");
       }
-      function addWall(gridX, gridY) {
-        walls.push({x: gridX * grid, y: gridY * grid});
-      }
-      // Touchscreen support
-      let touchstartX = 0;
-      let touchstartY = 0;
-      let touchendX = 0;
-      let touchendY = 0;
-      function checkDirection() {
-        if (touchendX < touchstartX) {
-          document.dispatchEvent(new KeyboardEvent("keydown", {"key": "A"}));
-        }
-        if (touchendX > touchstartX) {
-          document.dispatchEvent(new KeyboardEvent("keydown", {"key": "D"}));
-        }
-        if (touchendY < touchstartY) {
-          document.dispatchEvent(new KeyboardEvent("keydown", {"key": "W"}));
-        }
-        if (touchendY > touchstartY) {
-          document.dispatchEvent(new KeyboardEvent("keydown", {"key": "S"}));
-        }
-      }
-      canvas.addEventListener("touchstart", function(ev) {
-        touchstartX = ev.changedTouches[0].screenX;
-        touchstartY = ev.changedTouches[0].screenY;
-      });
-      canvas.addEventListener("touchend", function (evt) {
-        touchendX = evt.changedTouches[0].screenX;
-        touchendY = evt.changedTouches[0].screenY;
-        checkDirection();
-      });
-      // End of it
-      function intro() {
-        canvas.width = gridWidth * grid * 2;
-        canvas.height = gridHeight * grid * 2;
-        canvas.classList.remove("noSize");
-        gridWidth = Math.trunc(canvas.width / grid);
-        gridHeight = Math.trunc(canvas.height / grid);
-        for (let w = 0; w < gridHeight; w++) {
-          addWall(0, w);
-        }
-        for (let wa = 1; wa < gridWidth; wa++) {
-          addWall(wa, 0);
-        }
-        for (let wal = 1; wal < gridHeight; wal++) {
-          addWall(gridWidth - 1, wal);
-        }
-        for (let wall = 1; wall < gridWidth - 1; wall++) {
-          addWall(wall, gridHeight - 1);
-        }
-        context.clearRect(0, 0, canvas.width, canvas.height);
-        context.fillStyle = "#fdd835";
-        context.font = `${grid*3}px jbmono`;
-        context.textAlign = "center";
-        context.textBaseline = "middle";
-        context.textRendering = "optimizeLegibility";
-        context.fillText("CLICK TO PLAY", canvas.width / 2, canvas.height / 2);
-        if (bestLunch > 0) {
-          context.font = `20px jbmono`;
-          context.fillText(`HI-SCORE ${bestLunch}`, canvas.width - 80, 25);
-        }
-        return;
-      }
-      function getRandomInt(min, max) {
-        return Math.floor(Math.random() * (max - min)) + min;
-      }
-      function loop() {
-        requestAnimationFrame(loop);
-        if (++frameCount < 5) {
-          return;
-        }
-        frameCount = 0;
-        if (gameOver == true) {
-          if (applesEaten > bestLunch) {
-            localStorage.setItem("bestLunch", applesEaten);
-          }
-          context.fillStyle = "#fdd835";
-          context.font = `${grid*3}px jbmono`;
-          context.fillText("GAME OVER ;(", canvas.width / 2, canvas.height / 2);
-          return;
-        }
-        if (isPaused == true) {
-          context.fillStyle = "#fdd835";
-          context.font = `${grid*3}px jbmono`;
-          context.fillText("PAUSED", canvas.width / 2, canvas.height / 2);
-          return;
-        }
-        gameOver = false;
-        context.clearRect(0, 0, canvas.width, canvas.height);
-        context.fillStyle = "#376a01";
-        context.fillRect(0, 0, canvas.width, canvas.height);
-        snake.x += snake.dx;
-        snake.y += snake.dy;
-        snake.cells.unshift({ x: snake.x, y: snake.y });
-        if (snake.cells.length > snake.maxCells) {
-          snake.cells.pop();
-        }
-        context.fillStyle = "#111d11";
-        context.fillRect(apple.x + 6, apple.y - 1, 2, 2);
-        context.fillStyle = "red";
-        context.fillRect(apple.x, apple.y + 1, grid - 1, grid - 2);
-        context.fillStyle = "#111d11";
-        for (let wl = 0; wl < walls.length; wl++) {
-          const justWall = walls[wl];
-          context.fillRect(justWall.x + 1, justWall.y + 1, 6, 6);
-          context.fillRect(justWall.x + 1, justWall.y + 8, 6, 6);
-          context.fillRect(justWall.x + 8, justWall.y + 1, 6, 6);
-          context.fillRect(justWall.x + 8, justWall.y + 8, 6, 6);
-        }
-        snake.cells.forEach(function (cell, index) {
-          context.fillRect(cell.x, cell.y, grid - 1, grid - 1);
-          if (cell.x === apple.x && cell.y === apple.y) {
-            snake.maxCells++;
-            playSound("/files/audio/snake-bite.ogg");
-            apple.x = getRandomInt(1, gridWidth - 1) * grid;
-            apple.y = getRandomInt(1, gridHeight - 1) * grid;
-            applesEaten += 1;
-          }
-          for (var i = index + 1; i < snake.cells.length; i++) {
-            for (let W = 0; W < walls.length; W++) {
-              if (cell.x === walls[W].x && cell.y === walls[W].y) {
-                playSound("/files/audio/got-in-wall.ogg");
-                gameOver = true;
-              }
-            }
-            if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
-              gameOver = true;
-            }
-          }
-        });
-        context.fillStyle = "#376a01";
-        if (snake.dx != 0) {
-          if (snake.dy > 0) {
-            context.fillRect(snake.x + 9, snake.y + 2, 4, 4);
-            context.fillRect(snake.x + 9, snake.y + 9, 4, 4);
-          } else {
-            context.fillRect(snake.x + 9, snake.y + 2, 4, 4);
-            context.fillRect(snake.x + 9, snake.y + 9, 4, 4);
-          }
-        } else {
-          context.fillRect(snake.x + 2, snake.y + 9, 4, 4);
-          context.fillRect(snake.x + 9, snake.y + 9, 4, 4);
-        }
-        context.fillStyle = "#fdd835";
-        context.font = "20px jbmono";
-        context.fillText(applesEaten, canvas.width - 16, 16);
-      }
-      document.addEventListener("keydown", function(e) {
-        if ((e.which === 37 || e.key.toLowerCase() == "a") && snake.dx === 0) {
-          snake.dx = -grid;
-          snake.dy = 0;
-        }
-        else if ((e.which === 38 || e.key.toLowerCase() == "w") && snake.dy === 0) {
-          snake.dy = -grid;
-          snake.dx = 0;
-        }
-        else if ((e.which === 39 || e.key.toLowerCase() == "d") && snake.dx === 0) {
-          snake.dx = grid;
-          snake.dy = 0;
-        }
-        else if ((e.which === 40 || e.key.toLowerCase() == "s") && snake.dy === 0) {
-          snake.dy = grid;
-          snake.dx = 0;
-        }
-        if (e.key == "Pause" || e.key == "Escape") {
-          if (isPaused) {
-            isPaused = false;
-          } else {
-            isPaused = true;
-          }
-        }
-      });
-      canvas.addEventListener("click", function() {
-        requestAnimationFrame(loop);
-        document.removeEventListener("click", canvas);
-      });
-      requestAnimationFrame(intro);
+      theGame.src = "/files/js/modules/snake.js";
+      document.body.appendChild(theGame);
       document.getElementById("reload").onclick = function() { window.location.reload(); }
     </script>
     <script defer src="/files/js/app.js"></script>

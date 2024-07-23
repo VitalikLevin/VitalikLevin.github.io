@@ -56,7 +56,7 @@ code, kbd, button.bin, ::placeholder {
 	font-size: 24px;
 }
 
-.top {
+.top, #wasd {
 	visibility: hidden;
 }
 
@@ -74,7 +74,7 @@ header h2, details > summary, dialog, label, .top {
 #cooknote {
 	position: fixed;
 	display: none;
-	z-index: 3;
+	z-index: 4;
 	left: 0;
 	right: 0;
 	bottom: 0;
@@ -182,9 +182,22 @@ figure {
 	max-width: 85vw;
 }
 
-canvas.noSize {
-	width: 85vw;
-	height: 400px;
+canvas.noSize, #game {
+	width: 75vw;
+	height: 50vh;
+	position: relative;
+}
+
+canvas {
+	position: absolute;
+}
+
+#action {
+	z-index: 1;
+}
+
+#misc {
+	z-index: 2;
 }
 
 code {
@@ -196,7 +209,7 @@ code {
 		font-size: 50px;
 		right: 3px;
 		bottom: 10px;
-		z-index: 2;
+		z-index: 3;
 		visibility: visible;
 	}
 	input[type="text"] {
@@ -205,7 +218,20 @@ code {
 	nav ul li, input, select {
 		margin-bottom: 8px;
 	}
-	canvas {
-		max-width: 87vw;
+	canvas.noSize {
+		width: 85svw;
+	}
+	#wasd {
+		visibility: visible;
+		margin-top: 5px;
+	}
+	#wasd button {
+		width: 15vw;
+		font-size: 13vw;
+		aspect-ratio: 1 / 1;
+		margin-bottom: 5px;
+	}
+	button[data-key="w"], button[data-key="Pause"] {
+		margin-left: 16vw;
 	}
 }

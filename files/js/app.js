@@ -46,6 +46,6 @@ if (document.querySelector('meta[property="og:title"]') != null) {
   realapp.onload = function () {
     console.info("The rest of `app.js` was loaded");
   }
-  realapp.src = "/files/js/realapp.js";
+  realapp.src = "/files/js/modules/realapp.js";
   document.body.appendChild(realapp);
 }
