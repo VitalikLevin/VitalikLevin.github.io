@@ -1,9 +1,10 @@
 const collator = new Intl.Collator("kn", { sensitivity: "base" });
 const dtFormat = new Intl.DateTimeFormat(undefined, { year: "numeric", month: "2-digit", day: "numeric", hour: "2-digit", minute: "2-digit", second: "numeric", hour12: false });
 const downloadLink = document.getElementById("dnld");
-var fileContents = "";
+var listItems = [];
 const force8 = document.getElementById("force8");
 const help = document.getElementById("help");
+const isExt = document.getElementById("isExt");
 const manuallyInput = document.getElementById("addNewOne");
 const nameInput = document.getElementById("listName");
 const inputElement = document.getElementById("input");
@@ -37,35 +38,82 @@ function handleFiles() {
     });
   }
   const fileList = rawFileList;
-  const numFiles = fileList.length;
-  for (let i = 0; i < numFiles; i++) {
+  for (let i = 0; i < fileList.length; i++) {
     const file = fileList[i];
-    const rawDate = new Date(file.lastModified);
-    const trackDate = dtFormat.format(rawDate);
-    let trackName = file.name;
-    const trackSize = file.size;
-    if (prefixInput.value !== null) { trackName = prefixInput.value + file.name; }
-    if (sorting.value == 3 || sorting.value == 4) {
-      playlist.innerHTML += `${trackDate} &#8212;&#160;`;
-    }
-    if (sorting.value == 5 || sorting.value == 6) {
-      playlist.innerHTML += `${trackSize} ${playlist.getAttribute("data-size-type")} &#8212;&#160;`;
-    }
-    fileContents += `${trackName}\n`;
-    playlist.innerText += `${trackName}\n`;
+    listItems.push({name: file.name, prefix: prefixInput.value, suffix: "", date: new Date(file.lastModified), size: file.size});
   }
   showResult();
 }
 function manuallyAdd() {
   if (manuallyInput.value !== null && manuallyInput.value !== "") {
-    fileContents += `${manuallyInput.value}\n`;
-    playlist.innerText += `${manuallyInput.value}\n`;
+    listItems.push({name: manuallyInput.value, prefix: "", suffix: "", date: 0, size: 0});
     showResult();
     manuallyInput.value = null;
   }
 }
+function createBtn(itsName, text, itsParent, itsClass=itsName.toLowerCase()) {
+  let theBtn = document.createElement("button");
+  theBtn.classList.add(itsClass);
+  theBtn.title = itsName;
+  theBtn.textContent = text;
+  itsParent.appendChild(theBtn);
+}
+function showItems() {
+  playlist.innerText = "";
+  for (let fi = 0; fi < listItems.length; fi++) {
+    const trackN = listItems[fi];
+    let m3uItem = document.createElement("p");
+    m3uItem.classList.add("listItem");
+    m3uItem.textContent = `${trackN.prefix}${trackN.name}${trackN.suffix}`;
+    playlist.appendChild(m3uItem);
+    if (fi > 0) {
+      createBtn("Up", "\ud83e\udc45", m3uItem);
+    }
+    createBtn("Delete", "\ud83d\uddd1", m3uItem, "del");
+    if (fi < listItems.length - 1) {
+      createBtn("Down", "\ud83e\udc47", m3uItem);
+    }
+  }
+  for (let dels = 0; dels < document.querySelectorAll("button.del").length; dels++) {
+    const elem = document.querySelectorAll("button.del")[dels];
+    elem.onclick = function () {
+      listItems.splice(dels, 1);
+      showResult();
+    }
+  }
+  for (let downs = 0; downs < document.querySelectorAll("button.down").length; downs++) {
+    const elD = document.querySelectorAll("button.down")[downs];
+    elD.onclick = function () {
+      let tempItem = listItems[downs];
+      listItems[downs] = listItems[downs + 1];
+      listItems[downs + 1] = tempItem;
+      showResult();
+    }
+  }
+  for (let ups = 0; ups < document.querySelectorAll("button.up").length; ups++) {
+    const elU = document.querySelectorAll("button.up")[ups];
+    elU.onclick = function () {
+      let tempItem = listItems[ups + 1];
+      listItems[ups + 1] = listItems[ups];
+      listItems[ups] = tempItem;
+      showResult();
+    }
+  }
+}
 function showResult() {
-  const tempContent = fileContents.slice(0, fileContents.lastIndexOf("\n"));
+  showItems();
+  var tempContent = "";
+  if (isExt.innerText == 1) {
+    tempContent = "#EXTM3U\n"
+  }
+  for (let fil = 0; fil < listItems.length; fil++) {
+    const track = listItems[fil];
+    if (isExt.innerText == 1) {
+      tempContent += `#EXTINF:-1,${track.name.slice(0, track.name.lastIndexOf("."))}\n`;
+    }
+    tempContent += `${track.prefix}${track.name}${track.suffix}\n`;
+  }
+  tempContent = tempContent.slice(0, tempContent.lastIndexOf("\n"));
   var theBlob = new Blob([tempContent], {type: "audio/mpegurl"});
   const isLatin = (force8.innerText == 1 || /[^\u0000-\u00ff]+/g.test(tempContent));
   if (nameInput.value !== "") {
@@ -95,14 +143,21 @@ function beforeGoingAFK() {
   } else {
     localStorage.setItem("force8", 0);
   }
+  if (isExt.innerText == 1) {
+    localStorage.setItem("extendM3U", 1);
+  } else {
+    localStorage.setItem("extendM3U", 0);
+  }
 }
 function loadSavedData() {
+  let cacheExtend = localStorage.getItem("extendM3U");
   let cacheForce8 = localStorage.getItem("force8");
   let listName = localStorage.getItem("listName");
   let prefix = localStorage.getItem("prefix");
   let sortMethod = localStorage.getItem("sortMethod");
-  if (cacheForce8 || listName || prefix || sortMethod) {
+  if (cacheForce8 || cacheExtend || listName || prefix || sortMethod) {
     force8.innerText = cacheForce8;
+    isExt.innerText = cacheExtend;
     nameInput.value = listName;
     prefixInput.value = prefix;
     sorting.value = sortMethod;

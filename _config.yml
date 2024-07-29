@@ -60,7 +60,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - LICENSE.txt
-  - README.md
+  - README.*
 whitelist:
   - jekyll-redirect-from
 redirect_from:
