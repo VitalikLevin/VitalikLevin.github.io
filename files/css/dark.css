@@ -47,7 +47,7 @@ a:visited {
 	color: rgb(249, 168, 37);
 }
 
-#wDuration {
+#wDuration, #wFile {
 	background-color: rgb(244, 60, 54);
 }
 

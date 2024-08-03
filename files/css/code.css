@@ -4,6 +4,11 @@
   overflow-x: scroll;
 }
 .highlight pre { user-select: all; }
+td.gutter pre { user-select: none; }
+td.gutter {
+  border-right: 1px solid rgb(244, 244, 244);
+  padding-right: 5px;
+}
 .m { color: rgb(54, 119, 169); }
 .n { color: rgb(208, 208, 208); }
 .na { color: rgb(187, 187, 187); }

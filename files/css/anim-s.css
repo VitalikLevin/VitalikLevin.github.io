@@ -20,6 +20,6 @@
 dialog:modal {
   animation: 2700ms linear msgResize;
 }
-#cooknote.show, #wDuration {
+#cooknote.show, #wDuration, #wFile {
   animation: 4s run;
 }

@@ -8,10 +8,12 @@ const isExt = document.getElementById("isExt");
 const manuallyInput = document.getElementById("addNewOne");
 const nameInput = document.getElementById("listName");
 const inputElement = document.getElementById("input");
+const importer = document.getElementById("importM3U")
 const prefixInput = document.getElementById("prefixInput");
 const playlist = document.getElementById("playlist");
 const sorting = document.getElementById("sorting");
 inputElement.addEventListener("change", handleFiles, true);
+importer.addEventListener("change", importList, false);
 function handleFiles() {
   document.body.style.cursor = "wait";
   const rawFileList = [...this.files];
@@ -40,13 +42,46 @@ function handleFiles() {
   const fileList = rawFileList;
   for (let i = 0; i < fileList.length; i++) {
     const file = fileList[i];
-    listItems.push({name: file.name, prefix: prefixInput.value, suffix: "", date: new Date(file.lastModified), size: file.size});
+    listItems.push({name: file.name, prefix: prefixInput.value, suffix: "", date: new Date(file.lastModified), size: file.size, extinf: ""});
   }
   showResult();
 }
+function importList() {
+  var thePlaylist = [...this.files].at(0);
+  const reader = new FileReader();
+  reader.addEventListener("load", function() {
+    if (validFileType(thePlaylist) == false) {
+      return;
+    }
+    const readRes = reader.result.replaceAll("\r\n", "\n");
+    for (let strN = 0; strN < readRes.split("\n").length; strN++) {
+      let extendInf = "";
+      if (readRes.split("\n")[0] == "#EXTM3U" && /^(#EXTINF:)+/gi.test(readRes.split("\n")[strN - 1]) == true) {
+        extendInf = readRes.split("\n")[strN - 1].replace("#EXTINF:", "");
+      }
+      const tempStr = readRes.split("\n")[strN];
+      if (tempStr != "#EXTM3U" && /^(#EXTINF:)+/gi.test(tempStr) == false) {
+        listItems.push({name: tempStr, prefix: "", suffix: "", date: 0, size: 0, extinf: extendInf});
+      }
+    }
+    showResult();
+  }, false);
+  reader.readAsText(thePlaylist);
+}
+function validFileType(theFile) {
+  const fileTypes = ["audio/mpegurl", "application/vnd.apple.mpegurl", "audio/x-mpegurl", ""];
+  for (let w = 0; w < fileTypes.length; w++) {
+    if (theFile.type === fileTypes[w]) {
+      document.getElementById("wClose").click();
+      return true;
+    }
+  }
+  document.getElementById("wFile").show();
+  return false;
+}
 function manuallyAdd() {
   if (manuallyInput.value !== null && manuallyInput.value !== "") {
-    listItems.push({name: manuallyInput.value, prefix: "", suffix: "", date: 0, size: 0});
+    listItems.push({name: manuallyInput.value, prefix: "", suffix: "", date: 0, size: 0, extinf: ""});
     showResult();
     manuallyInput.value = null;
   }
@@ -104,12 +139,16 @@ function showResult() {
   showItems();
   var tempContent = "";
   if (isExt.innerText == 1) {
-    tempContent = "#EXTM3U\n"
+    tempContent = "#EXTM3U\n";
   }
   for (let fil = 0; fil < listItems.length; fil++) {
     const track = listItems[fil];
     if (isExt.innerText == 1) {
-      tempContent += `#EXTINF:-1,${track.name.slice(0, track.name.lastIndexOf("."))}\n`;
+      if (track.extinf != "") {
+        tempContent += `#EXTINF:${track.extinf}\n`;
+      } else {
+        tempContent += `#EXTINF:-1,${track.name.slice(track.name.lastIndexOf("/"), track.name.lastIndexOf("."))}\n`;
+      }
     }
     tempContent += `${track.prefix}${track.name}${track.suffix}\n`;
   }
@@ -175,19 +214,18 @@ document.getElementById("hClose").onclick = function() {
   help.close();
   document.querySelector("body").classList.remove("lockScroll");
 }
+document.getElementById("wClose").onclick = function() {
+  document.querySelector("#wFile").close();
+}
 document.addEventListener("visibilitychange", beforeGoingAFK);
 document.addEventListener("keydown", (e) => {
   if (e.key.toLowerCase() == "o" && e.ctrlKey) {
     e.preventDefault();
-    inputElement.click();
+    importer.click();
   }
   if (e.key > -1 && e.key < 7 && e.ctrlKey) {
     e.preventDefault();
     sorting.value = e.key;
-  }
-  if (e.key.toLowerCase() == "k" && e.ctrlKey && e.key.toLowerCase() == "m") {
-    e.preventDefault();
-    force8.click();
   }
   if (e.key.toLowerCase() == "s" && e.ctrlKey) {
     e.preventDefault();

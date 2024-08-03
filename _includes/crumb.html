@@ -13,9 +13,7 @@
       <meta itemprop="item" href="{{ site.url }}{{ member }}">
       <mark itemprop="name">{{ titlarr[forloop.index0] }}</mark>
       {%- else -%}
-      <a itemprop="item" href="{{ site.url }}{{ member }}">
-        <span itemprop="name">{{ titlarr[forloop.index0] }}</span>
-      </a>
+      <a itemprop="item" href="{{ site.url }}{{ member }}"><span itemprop="name">{{ titlarr[forloop.index0] }}</span></a>
       {%- endif -%}
       {%- assign realpos = forloop.index -%}
       <meta itemprop="position" content="{{ realpos | plus:1 }}">

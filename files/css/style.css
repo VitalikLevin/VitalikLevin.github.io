@@ -43,7 +43,7 @@ button:hover, details > summary:hover, ::file-selector-button:hover, button + la
 	font-family: robotoslab, serif, wfnotdef;
 }
 
-code, kbd, button.bin, ::placeholder {
+code, kbd, pre, button.bin, ::placeholder {
 	font-family: jbmono, monospace, wfnotdef;
 }
 
@@ -52,7 +52,7 @@ code, kbd, button.bin, ::placeholder {
 	margin-top: -10px;
 }
 
-.pubDat .cal {
+.pubDat .cal, h4 .keyboard {
 	font-size: 24px;
 }
 
@@ -136,7 +136,7 @@ dialog button {
 	float: right;
 }
 
-#wDuration {
+#wDuration, #wFile {
 	position: fixed;
 	top: 1vh;
 	left: 0vw;
@@ -181,9 +181,13 @@ img[class^="img"], video, .prodlogo {
 	max-width: 75vw;
 }
 
-figure {
+figure, pre {
 	margin: 4px 4px;
 	max-width: 85vw;
+}
+
+table {
+	border-collapse: collapse;
 }
 
 canvas.noSize, #game {
@@ -205,7 +209,7 @@ canvas {
 }
 
 code {
-	word-break: break-word;
+	word-break: break-all;
 }
 @media screen and (orientation: portrait) {
 	.top {

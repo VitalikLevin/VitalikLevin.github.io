@@ -13,14 +13,20 @@ redirect_from:
 		<h3><code>m3u-gen</code> "Hot Keys"</h3>
 		<p><kbd>F1</kbd> <strong>Open/close this message</strong></p>
 		<p><kbd>Ctrl</kbd>+<kbd>0-6</kbd> <strong>Choose sorting method</strong></p>
-		<p><kbd>Ctrl</kbd>+<kbd>K</kbd>+<kbd>M</kbd> <strong>Force using <code>m3u8</code> extension</strong></p>
-		<p><kbd>Ctrl</kbd>+<kbd>O</kbd> <strong>Select files</strong></p>
+		<p><kbd>Ctrl</kbd>+<kbd>O</kbd> <strong>Open playlist file</strong></p>
 		<p><kbd>Ctrl</kbd>+<kbd>S</kbd> <strong>Save playlist</strong></p>
 		<button id="hClose">Close</button>
 	</div>
 </dialog>
+<dialog id="wFile">
+	<p>The imported file&#8217;s extension is neither <code>M3U</code> nor <code>M3U8</code>.</p>
+	<button id="wClose">OK</button>
+</dialog>
 <main>
   <h2 class="start"><code>.m3u</code> Playlist Generator</h2>
+	<blockquote>
+		<p>The First Anniversary Update</p>
+	</blockquote>
 	<p>Select files and write files&#8217; prefix (if you need it) to get your playlist file.</p>
 	<button id="hOpen">Show hotkeys</button>
 	<section id="options">
@@ -40,14 +46,15 @@ redirect_from:
 		<button id="isExt" class="bin">0</button><label for="isExt"> Extended <code>M3U</code></label><br>
 	</section>
   <input type="file" id="input" multiple="true"><br>
+	<label for="importM3U">&#x2b71; <strong>Import playlist</strong></label> | <input type="file" id="importM3U" accept=".m3u, .m3u8"><br><br>
 	<label for="prefixInput"><strong>Files&#8217; prefix (optional)</strong></label><br>
 	<input type="text" id="prefixInput" placeholder="Files&#8217; prefix" class="ym-disable-keys"><br>
 	<label for="listName"><strong>Playlist name (optional)</strong></label><br>
 	<input type="text" id="listName" placeholder="Playlist name"><br><br>
 	<label for="addNewOne">New playlist member</label><br>
 	<span><input type="text" id="addNewOne" placeholder="New entry"><button title="Add" id="realAdd" onclick="manuallyAdd()">&#x2714;</button></span><br>
-	<a id="dnld" href="#" download="playlist.m3u" title="playlist.m3u" hidden>Download</a>
-  <div id="playlist" data-size-type="bytes" class="ym-disable-keys"></div>
+	<a id="dnld" href="#" download="playlist.m3u" title="playlist.m3u" hidden>&#x2b73; Download</a>
+  <div id="playlist" class="ym-disable-keys"></div>
 </main>
 {%- include footer.html -%}
 <script defer src="/files/js/gen/m3u.js"></script>
