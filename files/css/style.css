@@ -97,13 +97,13 @@ header h2, details > summary, dialog, label, .top {
 	display: block;
 }
 
-#cooknote img, button#realAdd, button.del, button.down, button.up, button.bin {
+#cooknote img, button#realAdd, button.del, button.down, button.edit, button.up, button.bin {
 	aspect-ratio: 1 / 1;
 	height: 24px;
 	padding: 0;
 }
 
-#cooknote p, #promoPWA span {
+#cooknote p, #promoPWA span, #wFile p {
 	max-width: 80vw;
 }
 
@@ -159,8 +159,9 @@ dialog button {
 	overflow-y: hidden;
 }
 
-button#realAdd, button.del, button.down, button.up {
+button#realAdd, button.del, button.down, button.edit, button.up {
 	margin-left: 8px;
+	font-size: 16px;
 }
 
 .listItem, #options {

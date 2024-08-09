@@ -20,6 +20,9 @@
 dialog:modal {
   animation: 2700ms linear msgResize;
 }
+#eItem:modal {
+  animation: none;
+}
 #cooknote.show, #wDuration, #wFile {
   animation: 4s run;
 }

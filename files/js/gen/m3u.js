@@ -1,5 +1,4 @@
 const collator = new Intl.Collator("kn", { sensitivity: "base" });
-const dtFormat = new Intl.DateTimeFormat(undefined, { year: "numeric", month: "2-digit", day: "numeric", hour: "2-digit", minute: "2-digit", second: "numeric", hour12: false });
 const downloadLink = document.getElementById("dnld");
 var listItems = [];
 const force8 = document.getElementById("force8");
@@ -8,7 +7,8 @@ const isExt = document.getElementById("isExt");
 const manuallyInput = document.getElementById("addNewOne");
 const nameInput = document.getElementById("listName");
 const inputElement = document.getElementById("input");
-const importer = document.getElementById("importM3U")
+const importer = document.getElementById("importM3U");
+const editDial = document.getElementById("eItem");
 const prefixInput = document.getElementById("prefixInput");
 const playlist = document.getElementById("playlist");
 const sorting = document.getElementById("sorting");
@@ -47,6 +47,7 @@ function handleFiles() {
   showResult();
 }
 function importList() {
+  document.body.style.cursor = "wait";
   var thePlaylist = [...this.files].at(0);
   const reader = new FileReader();
   reader.addEventListener("load", function() {
@@ -79,6 +80,12 @@ function validFileType(theFile) {
   document.getElementById("wFile").show();
   return false;
 }
+function editorClose() {
+  listItems[editDial.getAttribute("data-item-n")].extinf = `-1,${document.getElementById("changeName").value}`;
+  editDial.close();
+  showResult();
+  document.querySelector("body").classList.remove("lockScroll");
+}
 function manuallyAdd() {
   if (manuallyInput.value !== null && manuallyInput.value !== "") {
     listItems.push({name: manuallyInput.value, prefix: "", suffix: "", date: 0, size: 0, extinf: ""});
@@ -105,6 +112,7 @@ function showItems() {
       createBtn("Up", "\ud83e\udc45", m3uItem);
     }
     createBtn("Delete", "\ud83d\uddd1", m3uItem, "del");
+    createBtn("Edit", "\ud83d\udd89", m3uItem, "edit");
     if (fi < listItems.length - 1) {
       createBtn("Down", "\ud83e\udc47", m3uItem);
     }
@@ -114,6 +122,25 @@ function showItems() {
     elem.onclick = function () {
       listItems.splice(dels, 1);
       showResult();
+    }
+  }
+  for (let edits = 0; edits < document.querySelectorAll("button.edit").length; edits++) {
+    const elE = document.querySelectorAll("button.edit")[edits];
+    elE.onclick = function () {
+      let startAt = Math.max(listItems[edits].name.lastIndexOf("/"), listItems[edits].name.lastIndexOf("\\"));
+      let endAt = listItems[edits].name.lastIndexOf(".");
+      editDial.setAttribute("data-item-n", edits);
+      if (listItems[edits].extinf != "") {
+        document.getElementById("changeName").value = `${listItems[edits].extinf.slice(listItems[edits].extinf.indexOf(",") + 1)}`;
+      } else {
+        if (endAt <= 0) {
+          document.getElementById("changeName").value = `${listItems[edits].name.slice(startAt + 1)}`;
+        } else {
+          document.getElementById("changeName").value = `${listItems[edits].name.slice(startAt + 1, endAt)}`;
+        }
+      }
+      document.querySelector("body").classList.add("lockScroll");
+      editDial.showModal();
     }
   }
   for (let downs = 0; downs < document.querySelectorAll("button.down").length; downs++) {
@@ -137,6 +164,10 @@ function showItems() {
 }
 function showResult() {
   showItems();
+  if (listItems.length == 0) {
+    downloadLink.setAttribute("hidden", "");
+    return;
+  }
   var tempContent = "";
   if (isExt.innerText == 1) {
     tempContent = "#EXTM3U\n";
@@ -147,7 +178,8 @@ function showResult() {
       if (track.extinf != "") {
         tempContent += `#EXTINF:${track.extinf}\n`;
       } else {
-        tempContent += `#EXTINF:-1,${track.name.slice(track.name.lastIndexOf("/"), track.name.lastIndexOf("."))}\n`;
+        let startChar = Math.max(track.name.lastIndexOf("/"), track.name.lastIndexOf("\\"));
+        tempContent += `#EXTINF:-1,${track.name.slice(startChar + 1, track.name.lastIndexOf("."))}\n`;
       }
     }
     tempContent += `${track.prefix}${track.name}${track.suffix}\n`;
@@ -206,6 +238,10 @@ document.addEventListener("DOMContentLoaded", loadSavedData());
 manuallyInput.addEventListener("keydown", (e) => {
   if (e.key == "Enter") { manuallyAdd(); }
 });
+document.getElementById("changeName").addEventListener("keydown", function(ev) {
+  if (ev.key == "Enter") { editorClose(); }
+});
+document.getElementById("eClose").onclick = editorClose();
 document.getElementById("hOpen").onclick = function() {
   help.showModal();
   document.querySelector("body").classList.add("lockScroll");

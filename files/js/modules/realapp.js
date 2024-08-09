@@ -34,10 +34,10 @@ function betterDialog() {
   }
 }
 function ifUserHasGone() {
-  const cachedT = document.title;
   document.addEventListener('visibilitychange', function() {
     if (document.visibilityState == 'hidden') {
-      document.title = ':( NW410 Gone from tab';
+      const goneArr = [':(', ':|', ';('];
+      document.title = `${goneArr[Math.floor(Math.random() * goneArr.length)]} NW410 Gone from tab`;
     } else {
       document.title = cachedT;
     }

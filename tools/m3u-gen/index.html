@@ -22,6 +22,16 @@ redirect_from:
 	<p>The imported file&#8217;s extension is neither <code>M3U</code> nor <code>M3U8</code>.</p>
 	<button id="wClose">OK</button>
 </dialog>
+<dialog id="eItem" data-item-n="0">
+	<div class="dialtext">
+		<h3>Edit item information</h3>
+		<p>
+			<label for="changeName">Track name:</label><br>
+			<input id="changeName" type="text">
+		</p>
+		<button id="eClose">OK</button>
+	</div>
+</dialog>
 <main>
   <h2 class="start"><code>.m3u</code> Playlist Generator</h2>
 	<blockquote>
@@ -46,7 +56,7 @@ redirect_from:
 		<button id="isExt" class="bin">0</button><label for="isExt"> Extended <code>M3U</code></label><br>
 	</section>
   <input type="file" id="input" multiple="true"><br>
-	<label for="importM3U">&#x2b71; <strong>Import playlist</strong></label> | <input type="file" id="importM3U" accept=".m3u, .m3u8"><br><br>
+	<label for="importM3U">&#x2b71; <strong>Import playlist</strong></label> <input type="file" id="importM3U" accept=".m3u, .m3u8"><br><br>
 	<label for="prefixInput"><strong>Files&#8217; prefix (optional)</strong></label><br>
 	<input type="text" id="prefixInput" placeholder="Files&#8217; prefix" class="ym-disable-keys"><br>
 	<label for="listName"><strong>Playlist name (optional)</strong></label><br>
