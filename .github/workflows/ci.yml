@@ -1,7 +1,7 @@
 name: "🔍 IndexNow"
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
 jobs:
   first-job:
     runs-on: ubuntu-latest
@@ -11,10 +11,10 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.9"
-      - name: Run the script
+      - name: Run the script ⌨
         run: python "./.github/workflows/getsitemap.py"
       - name: Make log file downloadable 🌍
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: getsitemap Log
           path: indexnow.log
