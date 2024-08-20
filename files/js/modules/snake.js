@@ -264,7 +264,7 @@ function shareRes() {
     cameraX = (canvas.width - canvas.height) - grid;
   }
   if (canvas.height > canvas.width) {
-    cameraX = 0 - ((canvas.height - canvas.width) / 2);
+    cameraX = 0 - ((canvas.height - canvas.width) / 2) - grid;
   }
   const justACanvas = document.createElement("canvas");
   justACanvas.width = canvas.height + grid * 2;
@@ -281,7 +281,7 @@ function shareRes() {
   itsCtx.textBaseline = "middle";
   itsCtx.textAlign = "center";
   itsCtx.font = `${grid - 2}px jbmono,wfnotdef`;
-  itsCtx.fillText(`\ud83d\uddc0 Snake-${curName} UTC+0`, justACanvas.width / 2, grid / 2);
+  itsCtx.fillText(`\ud83d\uddc0 Snake-${curName} GMT`, justACanvas.width / 2, grid / 2);
   itsCtx.font = `${grid*2}px jbmono,wfnotdef`;
   itsCtx.fillText(`\ud83c\udf74${applesEaten}  \u231b${Math.floor(timeSinceStart / 60000)}m${Math.floor(timeSinceStart / 1000)}s`, justACanvas.width / 2, justACanvas.height - grid * 2);
   let itsLink = document.createElement("a");
