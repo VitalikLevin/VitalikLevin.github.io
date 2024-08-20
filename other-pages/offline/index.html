@@ -19,7 +19,9 @@ permalink: /offline.html
     <link rel="yandex-tableau-widget" href="/tableau.json">
   </head>
   <body>
-    <header><h2>You are <img src="/files/svg/emoji/1f47e.svg" alt="o" id="logo">ffline</h2></header>
+    <header>
+      <span>You are <img src="/files/svg/emoji/1f47e.svg" alt="o" id="logo">ffline <button id="share" title="Share results" hidden>{%- include svg/share.svg -%}</button></span>
+    </header>
     <main>
       <blockquote>Network Status: <span id="score">-106</span> Offline</blockquote>
       <button id="reload">Reload</button><br><br>

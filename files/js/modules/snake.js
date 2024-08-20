@@ -1,13 +1,14 @@
 let canvas = document.getElementById("action");
 let canMisc = document.getElementById("misc");
 let canBack = document.getElementById("back");
+const shareBtn = document.getElementById("share");
 var context = canvas.getContext("2d");
 var ctxM = canMisc.getContext("2d");
 let ctxB = canBack.getContext("2d", {alpha: false});
 let grid = 16;
 let gridWidth = Math.ceil(canvas.width / grid);
 let gridHeight = Math.ceil(canvas.height / grid);
-const appleColors = ["#f10000", "#ffd100", "#00be00"]
+const appleColors = ["#f10000", "#ffd100", "#00be00", "#283593"];
 let gameOver = false;
 let isPaused = false;
 let justEating = false;
@@ -16,8 +17,6 @@ let applesEaten = 0;
 var timeSinceStart = 0;
 var lastFrameDate = 0;
 var gameSlower = 1;
-let bestLunch = localStorage.getItem("bestLunch");
-let longestLunch = localStorage.getItem("longestLunch");
 var snake = {
   x: 128, y: 160,
   dx: grid, dy: 0,
@@ -43,6 +42,8 @@ function addWall(gridX, gridY) {
   walls.push({x: gridX * grid, y: gridY * grid});
 }
 function intro() {
+  let bestLunch = localStorage.getItem("bestLunch");
+  let longestLunch = localStorage.getItem("longestLunch");
   canvas.width = canvas.getBoundingClientRect().width - (canvas.getBoundingClientRect().width % grid);
   canvas.height = canvas.getBoundingClientRect().height - (canvas.getBoundingClientRect().height % grid);
   canvas.classList.remove("noSize");
@@ -84,12 +85,12 @@ function intro() {
     ctxM.fillText(`HI-SCORE ${bestLunch}`, canvas.width - grid * 5, grid * 2);
   }
   if (longestLunch > 0) {
-    ctxM.fillText(`TIME ${Math.round(longestLunch / 60)}"${longestLunch % 60}'`, grid * 5, grid * 2);
+    ctxM.fillText(`TIME ${Math.round(longestLunch / 60)}m ${longestLunch % 60}s`, grid * 5, grid * 2);
   }
   return;
 }
 function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 function loop() {
   requestAnimationFrame(loop);
@@ -100,10 +101,11 @@ function loop() {
   timeSinceStart += deltaTime;
   lastFrameDate = Date.now();
   if (gameOver == true) {
-    if (applesEaten > bestLunch) {
+    if (shareBtn.hasAttribute("hidden")) { shareBtn.removeAttribute("hidden"); }
+    if (applesEaten > localStorage.getItem("bestLunch")) {
       localStorage.setItem("bestLunch", applesEaten);
     }
-    if (Math.floor(timeSinceStart / 1000) > longestLunch) {
+    if (Math.floor(timeSinceStart / 1000) > localStorage.getItem("longestLunch")) {
       timeSinceStart -= deltaTime;
       localStorage.setItem("longestLunch", `${Math.floor(timeSinceStart / 1000)}`);
     }
@@ -140,8 +142,8 @@ function loop() {
       snake.maxCells++;
       playSound("/files/audio/snake-bite.ogg");
       apple.colorId = getRandomInt(0, appleColors.length - 1);
-      apple.x = getRandomInt(1, gridWidth - 1) * grid;
-      apple.y = getRandomInt(1, gridHeight - 1) * grid;
+      apple.x = getRandomInt(1, gridWidth - 2) * grid;
+      apple.y = getRandomInt(1, gridHeight - 2) * grid;
       applesEaten += 1;
       justEating = true;
     }
@@ -203,6 +205,7 @@ function playAgain() {
   applesEaten = 0;
   timeSinceStart = 0;
   requestAnimationFrame(loop);
+  shareBtn.setAttribute("hidden", "");
   canMisc.removeEventListener("click", playAgain, false);
 }
 document.addEventListener("keydown", function(e) {
@@ -240,6 +243,7 @@ canMisc.addEventListener("click", function firstTry() {
   requestAnimationFrame(loop);
   canMisc.removeEventListener("click", firstTry, false);
 }, false);
+shareBtn.addEventListener("click", shareRes);
 function macroPad() {
   let btns = document.querySelectorAll("button[data-key]");
   for (let a = 0; a < btns.length; a++) {
@@ -248,5 +252,40 @@ function macroPad() {
       document.dispatchEvent(new KeyboardEvent("keydown", {"key": btn.getAttribute("data-key")}));
     }
   }
+}
+function shareRes() {
+  let curDate = new Date().toISOString();
+  let curName = curDate.slice(0, curDate.lastIndexOf(".")).replace("T", " ");
+  let cameraX = 0 - grid;
+  if (snake.x >= canvas.height) {
+    cameraX = snake.x - grid * 2;
+  }
+  if (snake.x + canvas.height >= canvas.width) {
+    cameraX = (canvas.width - canvas.height) - grid;
+  }
+  const justACanvas = document.createElement("canvas");
+  justACanvas.width = canvas.height + grid * 2;
+  justACanvas.height = canvas.height + grid * 5;
+  let itsCtx = justACanvas.getContext("2d");
+  itsCtx.drawImage(canBack, 0 - cameraX, grid);
+  itsCtx.drawImage(canvas, 0 - cameraX, grid);
+  itsCtx.fillStyle = "#eeeeee";
+  itsCtx.fillRect(0, 0, justACanvas.width, grid);
+  itsCtx.fillRect(0, grid, grid, justACanvas.height);
+  itsCtx.fillRect(0, justACanvas.height - grid * 4, justACanvas.width, grid * 4);
+  itsCtx.fillRect(justACanvas.width - grid, grid, grid, justACanvas.height);
+  itsCtx.fillStyle = "#283593";
+  itsCtx.textBaseline = "middle";
+  itsCtx.textAlign = "center";
+  itsCtx.font = `${grid - 2}px jbmono,wfnotdef`;
+  itsCtx.fillText(`\ud83d\uddc0 Snake-${curName} UTC+0`, justACanvas.width / 2, grid / 2);
+  itsCtx.font = `${grid*2}px jbmono,wfnotdef`;
+  itsCtx.fillText(`\ud83c\udf74${applesEaten}  \u231b${Math.floor(timeSinceStart / 60000)}m${Math.floor(timeSinceStart / 1000)}s`, justACanvas.width / 2, justACanvas.height - grid * 2);
+  let itsLink = document.createElement("a");
+  itsLink.download = `snake-${curName.replace(" ", "-").replace(":", "_")}-utc0.png`;
+  itsLink.href = justACanvas.toDataURL("image/png");
+  itsLink.style.display = "none";
+  document.body.appendChild(itsLink);
+  itsLink.click();
 }
 requestAnimationFrame(intro);

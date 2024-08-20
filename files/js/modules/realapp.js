@@ -50,7 +50,10 @@ function sharePage() {
       text: `Check out Network Worms website`,
       url: document.querySelector('link[rel=canonical]').href
     })
-    .catch((er) => { console.warn(`Share error | ${er}`); });
+    .catch((er) => {console.warn(`Sharing error | ${er}`); });
+  } else if ('clipboard' in window.navigator) {
+    navigator.clipboard.writeText(`${cachedT} — ${document.querySelector('link[rel=canonical]').href}`)
+      .then(function() { console.info('Thank you for sharing my page :)'); });
   }
 }
 function getAdvice() {

@@ -6,10 +6,10 @@
 	color: rgb(18, 18, 18);
 }
 
-header h2, header h2 a:any-link {
+header span, header span a:any-link {
 	background-color: rgb(237, 101, 0);
 	text-shadow: 0px 1px 0px rgb(18, 18, 18);
-	color: rgb(255, 255, 255);
+	color: rgb(238, 238, 238);
 }
 
 h3, a:hover {
@@ -22,7 +22,7 @@ h3, a:hover {
 
 #cooknote.show {
 	border-top: 2px solid rgb(244, 60, 54);
-	background-color: rgb(244, 244, 244);
+	background-color: rgb(238, 238, 238);
 }
 
 blockquote, #playlist {
@@ -71,7 +71,7 @@ mark::selection {
 }
 
 .strBl {
-	stroke: rgb(244, 244, 244);
+	stroke: rgb(238, 238, 238);
 }
 
 .strWh {

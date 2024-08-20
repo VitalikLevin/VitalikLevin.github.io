@@ -1,5 +1,5 @@
 <header>
-	<h2>
+	<span>
 		{%- unless page.url contains '/emoji/' -%}
 		<a href="/">Network Worms</a>
 		<a href="/emoji/"><img src="{{ site.status }}" alt=";)" id="logo" fetchpriority="low"></a>
@@ -7,5 +7,5 @@
 		<a href="/">Network W<img src="{{ site.status }}" alt=";)" id="logo" fetchpriority="low">rms</a>
 		{%- endunless -%}
 		<button id="share" title="Share">{%- include svg/share.svg -%}</button>
-	</h2>
+	</span>
 </header>

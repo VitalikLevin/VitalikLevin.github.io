@@ -9,7 +9,7 @@ layout: b-default
 Blog$${{ page.title }}
 {%- endcapture -%}
 {%- include crumb.html urls=crumbs titles=texts -%}
-<main>
+<article>
 	<figure itemscope itemtype="https://schema.org/ImageObject" class="image">
 		<meta itemprop="name" content="{{ page.title }}">
 		<img class="img{{ page.mp-w | default: 400 }}" src="{{ page.mainpic }}" itemprop="contentUrl"><br>
@@ -23,5 +23,5 @@ Blog$${{ page.title }}
 	<h2 class="start">{{ page.title }}</h2>
 	<span class="pubDat" title="{{ post.date | date_to_xmlschema }}"><span class="cal">&#128198;</span> {{ page.date | date: "%d.%m.%Y" }}</span>
 	{{- content -}}
-</main>
+</article>
 {%- include footer.html -%}

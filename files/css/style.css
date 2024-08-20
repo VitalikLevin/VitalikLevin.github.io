@@ -4,13 +4,29 @@
 	font-family: liberastika, sans-serif, wfnotdef;
 	font-synthesis: none;
   -webkit-text-size-adjust: 100%;
+	line-height: 1.4;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 1;
+	width: calc(100% - 16px);
+	font-size: 1.5rem;
+	font-weight: 700;
+	padding: 8px 8px;
+}
+
+header + main, header + nav, header + .crumb {
+	margin-top: 56px;
 }
 
 strong, .start {
 	font-weight: bold;
 }
 
-header h2, header h2 a, .top a {
+header span, header span a, .top a {
 	text-decoration: none;
 }
 
@@ -83,7 +99,7 @@ header h2, details > summary, dialog, label, .top {
 .cookagree, #wClose {
 	padding: 0;
 	position: fixed;
-	left: calc(98vw - 48px);
+	left: calc(98vw - 56px);
 	aspect-ratio: 1 / 1;
 	min-width: 48px;
 }
@@ -109,6 +125,10 @@ header h2, details > summary, dialog, label, .top {
 
 input[type="text"], dialog {
 	min-width: 35vw;
+}
+
+input:focus, select:focus {
+	outline-offset: 0;
 }
 
 [data-before] {
@@ -151,7 +171,7 @@ dialog button {
 
 #share {
 	position: absolute;
-	right: 5dvw;
+	right: 24px;
 	border: none;
 }
 
@@ -211,6 +231,10 @@ canvas {
 
 code {
 	word-break: break-all;
+}
+
+p {
+	max-width: 80ch;
 }
 @media screen and (orientation: portrait) {
 	.top {

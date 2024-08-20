@@ -1,15 +1,15 @@
 :root {
 	background-color: rgb(0, 0, 0);
-	color: rgb(245, 245, 245);
+	color: rgb(238, 238, 238);
 	color-scheme: dark;
 }
 
-header, header h2 a:any-link, #cooknote.show {
+header, header span a:any-link, #cooknote.show {
 	background-color: rgb(22, 22, 29);
-	color: rgb(255, 255, 255);
+	color: rgb(238, 238, 238);
 }
 
-footer, h3, main, nav, select option {
+article, footer, h3, main, nav, select option {
 	background-color: rgb(55, 55, 55);
 }
 
@@ -24,7 +24,7 @@ dialog {
 }
 
 blockquote h3, button, select, ::file-selector-button, ::selection, #sleep, .top a:any-link {
-	color: rgb(245, 245, 245);
+	color: rgb(238, 238, 238);
 }
 
 .start, a {
@@ -36,7 +36,7 @@ mark, ::selection {
 }
 
 kbd {
-	border: 1px solid rgb(245, 245, 245);
+	border: 1px solid rgb(238, 238, 238);
 }
 
 a:hover {
@@ -56,7 +56,7 @@ button#realAdd {
 }
 
 ::file-selector-button, button, select {
-	border-color: rgb(244, 244, 244);
+	border-color: rgb(238, 238, 238);
 }
 
 ::backdrop, [contenteditable]::selection {
@@ -72,7 +72,7 @@ mark::selection {
 }
 
 .fillWh {
-	fill: rgb(245, 245, 245);
+	fill: rgb(238, 238, 238);
 }
 
 .strBl {
@@ -80,5 +80,5 @@ mark::selection {
 }
 
 .strWh {
-	stroke: rgb(245, 245, 245);
+	stroke: rgb(238, 238, 238);
 }

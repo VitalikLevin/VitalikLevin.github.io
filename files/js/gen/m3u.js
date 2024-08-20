@@ -241,7 +241,7 @@ manuallyInput.addEventListener("keydown", (e) => {
 document.getElementById("changeName").addEventListener("keydown", function(ev) {
   if (ev.key == "Enter") { editorClose(); }
 });
-document.getElementById("eClose").onclick = editorClose();
+document.getElementById("eClose").onclick = editorClose;
 document.getElementById("hOpen").onclick = function() {
   help.showModal();
   document.querySelector("body").classList.add("lockScroll");
