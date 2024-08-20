@@ -263,6 +263,9 @@ function shareRes() {
   if (snake.x + canvas.height >= canvas.width) {
     cameraX = (canvas.width - canvas.height) - grid;
   }
+  if (canvas.height > canvas.width) {
+    cameraX = 0 - ((canvas.height - canvas.width) / 2);
+  }
   const justACanvas = document.createElement("canvas");
   justACanvas.width = canvas.height + grid * 2;
   justACanvas.height = canvas.height + grid * 5;
