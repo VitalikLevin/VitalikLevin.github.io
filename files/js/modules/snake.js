@@ -285,7 +285,7 @@ function shareRes() {
   itsCtx.font = `${grid*2}px jbmono,wfnotdef`;
   itsCtx.fillText(`\ud83c\udf74${applesEaten}  \u231b${Math.floor(timeSinceStart / 60000)}m${Math.floor(timeSinceStart / 1000)}s`, justACanvas.width / 2, justACanvas.height - grid * 2);
   let itsLink = document.createElement("a");
-  itsLink.download = `snake-${curName.replace(" ", "-").replace(":", "_")}-utc0.png`;
+  itsLink.download = `snake-${curName.replace(" ", "-").replace(":", "_")}-gmt.png`;
   itsLink.href = justACanvas.toDataURL("image/png");
   itsLink.style.display = "none";
   document.body.appendChild(itsLink);

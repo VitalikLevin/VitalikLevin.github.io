@@ -5,6 +5,7 @@ excerpt: Read more about Network Worms
 permalink: /about/
 ---
 {%- include header.html -%}
+{%- include crumb.html urls="/about/$" titles="About$$" -%}
 <script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
@@ -13,7 +14,6 @@ permalink: /about/
 		"logo": "{{ site.url }}/files/icons/favicon.svg"
 	}
 </script>
-{%- include crumb.html urls="/about/$" titles="About$$" -%}
 <main>
   <h2 class="start">About us</h2>
   <p id="whenitbegan">This site has been hosted by <a href="https://github.com">GitHub</a> since <em title="2022-01-28">28th January, 2022</em>.</p>

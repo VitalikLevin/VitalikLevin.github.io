@@ -4,8 +4,15 @@
 	color-scheme: dark;
 }
 
-header, header span a:any-link, #cooknote.show {
+header {
+	background-color: rgba(22, 22, 29, 0.7);
+}
+
+#cooknote.show {
 	background-color: rgb(22, 22, 29);
+}
+
+header, header span a:any-link, #cooknote.show {
 	color: rgb(238, 238, 238);
 }
 
