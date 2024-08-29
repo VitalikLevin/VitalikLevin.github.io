@@ -46,6 +46,10 @@ kbd {
 	border: 1px solid rgb(238, 238, 238);
 }
 
+input[type="range"] {
+	accent-color: rgb(249, 168, 37);
+}
+
 a:hover {
 	color: rgb(249, 173, 129);
 }

@@ -49,3 +49,11 @@ if (document.querySelector('meta[property="og:title"]') != null) {
   realapp.src = "/files/js/modules/realapp.js";
   document.body.appendChild(realapp);
 }
+if (document.querySelector('#siteSound') != null) {
+  let soundScript = document.createElement('script');
+  soundScript.onload = function () {
+    console.info("The `sound.js` was loaded");
+  }
+  soundScript.src = "/files/js/modules/sound.js";
+  document.body.appendChild(soundScript);
+}

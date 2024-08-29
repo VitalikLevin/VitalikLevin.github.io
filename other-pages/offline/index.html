@@ -48,11 +48,13 @@ permalink: /offline.html
     <footer>
       <p>
         &#169;Vitaliy Levin, <span class="num">{{ site.time | date: "%Y" }}</span>.<br>
-        <button class="bin" id="darkMode">0</button><label for="darkMode"> Dark theme</label>
+        <button class="bin" id="darkMode">0</button><label for="darkMode"> Dark theme</label><br>
+        <label for="siteSound">&#x1f508; <strong>Sounds</strong> (<span id="soundVol">100%</span>)</label><br>
+        <input id="siteSound" type="range" min="0" max="1" step="0.1">
       </p>
     </footer>
     <script>
-      let theGame = document.createElement('script');
+      let theGame = document.createElement("script");
       theGame.onload = function () {
         console.info("The game script was loaded");
       }

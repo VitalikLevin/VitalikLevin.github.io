@@ -25,7 +25,10 @@ var snake = {
 var apple = {
   x: 192, y: 160, colorId: 0
 };
-async function playSound(url, volume=1) {
+async function playSound(url, volume=localStorage.getItem("siteVol")) {
+  if (volume == 0) {
+    return;
+  }
   const audioCtx = new AudioContext();
   let gainNode = audioCtx.createGain();
   const source = audioCtx.createBufferSource();
@@ -254,7 +257,7 @@ function macroPad() {
   }
 }
 function shareRes() {
-  let curDate = new Date().toISOString();
+  let curDate = new Date(lastFrameDate).toISOString();
   let curName = curDate.slice(0, curDate.lastIndexOf(".")).replace("T", " ");
   let cameraX = 0 - grid;
   if (snake.x >= canvas.height) {
@@ -283,12 +286,13 @@ function shareRes() {
   itsCtx.font = `${grid - 2}px jbmono,wfnotdef`;
   itsCtx.fillText(`\ud83d\uddc0 Snake-${curName} GMT`, justACanvas.width / 2, grid / 2);
   itsCtx.font = `${grid*2}px jbmono,wfnotdef`;
-  itsCtx.fillText(`\ud83c\udf74${applesEaten}  \u231b${Math.floor(timeSinceStart / 60000)}m${Math.floor(timeSinceStart / 1000)}s`, justACanvas.width / 2, justACanvas.height - grid * 2);
-  let itsLink = document.createElement("a");
-  itsLink.download = `snake-${curName.replace(" ", "-").replace(":", "_")}-gmt.png`;
-  itsLink.href = justACanvas.toDataURL("image/png");
-  itsLink.style.display = "none";
-  document.body.appendChild(itsLink);
-  itsLink.click();
+  itsCtx.fillText(`\ud83c\udf74${applesEaten}  \u231b${Math.floor(timeSinceStart / 60000)}m${Math.floor((timeSinceStart % 60000) / 1000)}s`, justACanvas.width / 2, justACanvas.height - grid * 2);
+  justACanvas.toBlob(function(imgBlob) {
+    let itsLink = document.createElement("a");
+    itsLink.href = URL.createObjectURL(imgBlob);
+    console.info(itsLink.href);
+    itsLink.download = `snake-${curName.replace(" ", "-").replace(":", "_")}-gmt.png`;
+    itsLink.click();
+  }, "image/png");
 }
 requestAnimationFrame(intro);

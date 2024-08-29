@@ -124,7 +124,7 @@ header span, details > summary, dialog, label, #cooknote, .top {
 	max-width: 80vw;
 }
 
-input[type="text"], dialog {
+input[type="text"], input[type="range"], dialog {
 	min-width: 35vw;
 }
 
