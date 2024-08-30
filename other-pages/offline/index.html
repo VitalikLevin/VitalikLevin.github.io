@@ -22,6 +22,14 @@ permalink: /offline.html
     <header>
       <span>You are <img src="/files/svg/emoji/1f47e.svg" alt="o" id="logo">ffline <button id="share" title="Share results" hidden>{%- include svg/share.svg -%}</button></span>
     </header>
+    <dialog id="preRes">
+      <div class="dialtext">
+        <h3>Preview</h3>
+        <p><img src="/files/svg/1f4e1.svg"></p>
+        <button id="savePic">&#x2b73; Download</button>
+        <button id="clipPic">&#x1f5ae; Copy</button>
+      </div>
+    </dialog>
     <main>
       <blockquote>Network Status: <span id="score">-106</span> Offline</blockquote>
       <button id="reload">Reload</button><br><br>
@@ -47,7 +55,7 @@ permalink: /offline.html
     </main>
     <footer>
       <p>
-        &#169;Vitaliy Levin, <span class="num">{{ site.time | date: "%Y" }}</span>.<br>
+        &#169;Vitaliy Levin, <span class="num" title="{{ site.time | date_to_xmlschema }}">{{ site.time | date: "%Y" }}</span>.<br>
         <button class="bin" id="darkMode">0</button><label for="darkMode"> Dark theme</label><br>
         <label for="siteSound">&#x1f508; <strong>Sounds</strong> (<span id="soundVol">100%</span>)</label><br>
         <input id="siteSound" type="range" min="0" max="1" step="0.1">

@@ -104,12 +104,12 @@ function loop() {
   timeSinceStart += deltaTime;
   lastFrameDate = Date.now();
   if (gameOver == true) {
+    timeSinceStart -= deltaTime;
     if (shareBtn.hasAttribute("hidden")) { shareBtn.removeAttribute("hidden"); }
     if (applesEaten > localStorage.getItem("bestLunch")) {
       localStorage.setItem("bestLunch", applesEaten);
     }
     if (Math.floor(timeSinceStart / 1000) > localStorage.getItem("longestLunch")) {
-      timeSinceStart -= deltaTime;
       localStorage.setItem("longestLunch", `${Math.floor(timeSinceStart / 1000)}`);
     }
     ctxM.clearRect(0, 0, canvas.width, canvas.height);
@@ -158,6 +158,7 @@ function loop() {
         }
       }
       if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+        playSound("/files/audio/got-in-self.ogg");
         gameOver = true;
       }
     }
@@ -260,21 +261,33 @@ function shareRes() {
   let curDate = new Date(lastFrameDate).toISOString();
   let curName = curDate.slice(0, curDate.lastIndexOf(".")).replace("T", " ");
   let cameraX = 0 - grid;
-  if (snake.x >= canvas.height) {
-    cameraX = snake.x - grid * 2;
-  }
-  if (snake.x + canvas.height >= canvas.width) {
-    cameraX = (canvas.width - canvas.height) - grid;
-  }
-  if (canvas.height > canvas.width) {
-    cameraX = 0 - ((canvas.height - canvas.width) / 2) - grid;
-  }
+  let cameraY = grid;
   const justACanvas = document.createElement("canvas");
-  justACanvas.width = canvas.height + grid * 2;
-  justACanvas.height = canvas.height + grid * 5;
+  if (canvas.height - grid * 2 > canvas.width) {
+    if (snake.y >= canvas.width) {
+      cameraY = 0 - (snake.y - grid * 2);
+    }
+    if (snake.y >= canvas.height - canvas.width) {
+      cameraY = 0 - (canvas.height - canvas.width - grid);
+    }
+    justACanvas.width = canvas.width + grid * 2;
+    justACanvas.height = canvas.width + grid * 5;
+  } else {
+    if (snake.x >= canvas.height) {
+      cameraX = snake.x - grid * 2;
+    }
+    if (snake.x + canvas.height >= canvas.width) {
+      cameraX = (canvas.width - canvas.height) - grid;
+    }
+    if (canvas.height > canvas.width) {
+      cameraX = 0 - ((canvas.height - canvas.width) / 2) - grid;
+    }
+    justACanvas.width = canvas.height + grid * 2;
+    justACanvas.height = canvas.height + grid * 5;
+  }
   let itsCtx = justACanvas.getContext("2d");
-  itsCtx.drawImage(canBack, 0 - cameraX, grid);
-  itsCtx.drawImage(canvas, 0 - cameraX, grid);
+  itsCtx.drawImage(canBack, 0 - cameraX, cameraY);
+  itsCtx.drawImage(canvas, 0 - cameraX, cameraY);
   itsCtx.fillStyle = "#eeeeee";
   itsCtx.fillRect(0, 0, justACanvas.width, grid);
   itsCtx.fillRect(0, grid, grid, justACanvas.height);
@@ -284,15 +297,29 @@ function shareRes() {
   itsCtx.textBaseline = "middle";
   itsCtx.textAlign = "center";
   itsCtx.font = `${grid - 2}px jbmono,wfnotdef`;
-  itsCtx.fillText(`\ud83d\uddc0 Snake-${curName} GMT`, justACanvas.width / 2, grid / 2);
+  itsCtx.fillText(`\ud83d\uddc0 Snake-${curName} UTC+0`, justACanvas.width / 2, grid / 2);
   itsCtx.font = `${grid*2}px jbmono,wfnotdef`;
   itsCtx.fillText(`\ud83c\udf74${applesEaten}  \u231b${Math.floor(timeSinceStart / 60000)}m${Math.floor((timeSinceStart % 60000) / 1000)}s`, justACanvas.width / 2, justACanvas.height - grid * 2);
   justACanvas.toBlob(function(imgBlob) {
+    let itsImg = document.querySelector(".dialtext p img");
     let itsLink = document.createElement("a");
     itsLink.href = URL.createObjectURL(imgBlob);
-    console.info(itsLink.href);
-    itsLink.download = `snake-${curName.replace(" ", "-").replace(":", "_")}-gmt.png`;
-    itsLink.click();
+    itsImg.src = itsLink.href;
+    document.getElementById("savePic").addEventListener("click", function() {
+      itsLink.download = `snake-${curName.replace(" ", "-").replaceAll(":", "∶")}-utc0.png`;
+      itsLink.click();
+    });
+    document.getElementById("clipPic").addEventListener("click", async function() {
+      try {
+        await navigator.clipboard.write([new ClipboardItem({[imgBlob.type]: imgBlob})]);
+      } catch (err) {
+        console.warn(`Sharing error | ${err}`);
+        if (!document.getElementById("clipPic").hasAttribute("disabled")) {
+          document.getElementById("clipPic").setAttribute("disabled", "");
+        }
+      }
+    });
+    document.getElementById("preRes").showModal();
   }, "image/png");
 }
 requestAnimationFrame(intro);

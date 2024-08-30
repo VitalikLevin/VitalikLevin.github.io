@@ -38,8 +38,29 @@ function onLoadTheme() {
   }
   changeTheme();
 }
+function betterDialog() {
+  var dialArr = document.querySelectorAll('dialog');
+  for (let d = 0; d < dialArr.length; d++) {
+    const dialog = dialArr[d];
+    dialog.addEventListener('click', function(evt){
+      if (evt.target.tagName !== 'DIALOG') { return; }
+      const rect = evt.target.getBoundingClientRect();
+      const clickedInDialog = (
+        rect.top <= evt.clientY &&
+        evt.clientY <= rect.top + rect.height &&
+        rect.left <= evt.clientX &&
+        evt.clientX <= rect.left + rect.width
+      );
+      if (clickedInDialog === false) {
+        dialog.close();
+        document.querySelector('body').classList.remove('lockScroll');
+      }
+    });
+  }
+}
 binButton();
 onLoadTheme();
+betterDialog();
 darkMode.addEventListener('click', changeTheme);
 if (document.querySelector('meta[property="og:title"]') != null) {
   let realapp = document.createElement('script');

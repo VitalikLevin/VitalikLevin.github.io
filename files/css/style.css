@@ -1,9 +1,13 @@
 @import url(fonts.css);
 @import url(code.css);
+* {
+	box-sizing: border-box;
+}
 :root, button, dialog, input, select, ::before, ::file-selector-button {
 	font-family: liberastika, sans-serif, wfnotdef;
 	font-synthesis: none;
   -webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
 	line-height: 1.4;
 }
 
@@ -12,7 +16,7 @@ header {
 	top: 0;
 	right: 0;
 	z-index: 3;
-	width: calc(100% - 16px);
+	width: 100%;
 	font-size: 1.5rem;
 	font-weight: 700;
 	padding: 8px 8px;
@@ -83,7 +87,7 @@ header span, details > summary, dialog, label, #cooknote, .top {
 	-webkit-user-select: none;
 }
 
-#cooknote img {
+dialog button:nth-of-type(even), #cooknote img {
 	margin-right: 8px;
 	margin-left: 8px;
 }
@@ -110,7 +114,7 @@ header span, details > summary, dialog, label, #cooknote, .top {
 	right: 2vw;
 }
 
-#cooknote.show {
+#cooknote.show, dialog img {
 	display: block;
 }
 
@@ -192,10 +196,9 @@ button#realAdd, button.del, button.down, button.edit, button.up {
 #logo {
 	width: 30px;
 	aspect-ratio: 1 / 1;
-	margin-bottom: -4px;
 }
 
-.listLogo, #cooknote img {
+.listLogo, #cooknote img, #logo {
 	margin-bottom: -6px;
 }
 
@@ -218,6 +221,10 @@ canvas.noSize, #game {
 	position: relative;
 }
 
+#game {
+	margin-bottom: -2.5rem;
+}
+
 canvas {
 	position: absolute;
 }
@@ -236,6 +243,14 @@ code {
 
 p {
 	max-width: 80ch;
+}
+
+dialog img {
+	margin: auto;
+}
+
+button:disabled {
+	opacity: 0.5;
 }
 @media screen and (orientation: portrait) {
 	body {
@@ -257,6 +272,9 @@ p {
 	}
 	canvas.noSize {
 		width: 85svw;
+	}
+	#game {
+		margin-bottom: auto;
 	}
 	#wasd {
 		visibility: visible;

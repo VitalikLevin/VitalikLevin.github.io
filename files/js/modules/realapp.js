@@ -13,26 +13,6 @@ function checkCookies() {
     cooknote.classList.remove('show');
   });
 }
-function betterDialog() {
-  var dialArr = document.querySelectorAll('dialog');
-  for (let d = 0; d < dialArr.length; d++) {
-    const dialog = dialArr[d];
-    dialog.addEventListener('click', function(evt){
-      if (evt.target.tagName !== 'DIALOG') { return; }
-      const rect = evt.target.getBoundingClientRect();
-      const clickedInDialog = (
-        rect.top <= evt.clientY &&
-        evt.clientY <= rect.top + rect.height &&
-        rect.left <= evt.clientX &&
-        evt.clientX <= rect.left + rect.width
-      );
-      if (clickedInDialog === false) {
-        dialog.close();
-        document.querySelector('body').classList.remove('lockScroll');
-      }
-    });
-  }
-}
 function ifUserHasGone() {
   document.addEventListener('visibilitychange', function() {
     if (document.visibilityState == 'hidden') {
@@ -79,7 +59,6 @@ function getAdvice() {
     });
 }
 checkCookies();
-betterDialog();
 getAdvice();
 ifUserHasGone();
 document.getElementById('share').addEventListener('click', sharePage);

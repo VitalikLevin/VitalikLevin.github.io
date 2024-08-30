@@ -36,7 +36,7 @@ kbd, #options {
 	border: 1px solid rgb(18, 18, 18);
 }
 
-.start, a {
+.start, a, blockquote h3 {
 	color: rgb(18, 71, 122);
 }
 

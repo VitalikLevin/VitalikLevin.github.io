@@ -44,7 +44,7 @@ layout: null
 		</main>
 		<footer>
 			<p>
-				&#169;Vitaliy Levin, <span class="num">2022 - {{ site.time | date: "%Y" }}</span>. All rights reserved.<br>
+				&#169;Vitaliy Levin, <span class="num"><span title="2022-01-28">2022</span> - <span title="{{ site.time | date_to_xmlschema }}">{{ site.time | date: "%Y" }}</span></span>. All rights reserved.<br>
 				<button class="bin" id="darkMode">0</button><label for="darkMode"> Dark theme</label><br>
 				Content is available under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution Share Alike 4.0 International</a>.
 			</p>
