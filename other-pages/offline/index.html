@@ -22,14 +22,6 @@ permalink: /offline.html
     <header>
       <span>You are <img src="/files/svg/emoji/1f47e.svg" alt="o" id="logo">ffline <button id="share" title="Share results" hidden>{%- include svg/share.svg -%}</button></span>
     </header>
-    <dialog id="preRes">
-      <div class="dialtext">
-        <h3>Preview</h3>
-        <p><img src="/files/svg/1f4e1.svg"></p>
-        <button id="savePic">&#x2b73; Download</button>
-        <button id="clipPic">&#x1f5ae; Copy</button>
-      </div>
-    </dialog>
     <main>
       <blockquote>Network Status: <span id="score">-106</span> Offline</blockquote>
       <button id="reload">Reload</button><br><br>
@@ -53,6 +45,13 @@ permalink: /offline.html
         <li>Reloading your device/modem/router</li>
       </ul>
     </main>
+    <dialog id="preRes">
+      <div class="dialtext">
+        <h3>Preview</h3>
+        <p><img src="/files/svg/1f4e1.svg"></p>
+        <button id="savePic">&#x2b73; Download</button>
+      </div>
+    </dialog>
     <footer>
       <p>
         &#169;Vitaliy Levin, <span class="num" title="{{ site.time | date_to_xmlschema }}">{{ site.time | date: "%Y" }}</span>.<br>

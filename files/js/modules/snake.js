@@ -309,16 +309,6 @@ function shareRes() {
       itsLink.download = `snake-${curName.replace(" ", "-").replaceAll(":", "∶")}-utc0.png`;
       itsLink.click();
     });
-    document.getElementById("clipPic").addEventListener("click", async function() {
-      try {
-        await navigator.clipboard.write([new ClipboardItem({[imgBlob.type]: imgBlob})]);
-      } catch (err) {
-        console.warn(`Sharing error | ${err}`);
-        if (!document.getElementById("clipPic").hasAttribute("disabled")) {
-          document.getElementById("clipPic").setAttribute("disabled", "");
-        }
-      }
-    });
     document.getElementById("preRes").showModal();
   }, "image/png");
 }
