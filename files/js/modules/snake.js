@@ -12,6 +12,7 @@ const appleColors = ["#f10000", "#ffd100", "#00be00", "#283593"];
 let gameOver = false;
 let isPaused = false;
 let justEating = false;
+let isHiScore = false;
 let walls = [];
 let applesEaten = 0;
 var timeSinceStart = 0;
@@ -83,7 +84,7 @@ function intro() {
   ctxM.textBaseline = "middle";
   ctxM.textRendering = "optimizeLegibility";
   ctxM.fillText("CLICK TO PLAY", canvas.width / 2, canvas.height / 2);
-  ctxM.font = `20px jbmono`;
+  ctxM.font = `${grid + 4}px jbmono,wfnotdef`;
   if (bestLunch > 0) {
     ctxM.fillText(`HI-SCORE ${bestLunch}`, canvas.width - grid * 5, grid * 2);
   }
@@ -108,12 +109,18 @@ function loop() {
     if (shareBtn.hasAttribute("hidden")) { shareBtn.removeAttribute("hidden"); }
     if (applesEaten > localStorage.getItem("bestLunch")) {
       localStorage.setItem("bestLunch", applesEaten);
+      isHiScore = true;
     }
     if (Math.floor(timeSinceStart / 1000) > localStorage.getItem("longestLunch")) {
       localStorage.setItem("longestLunch", `${Math.floor(timeSinceStart / 1000)}`);
+      isHiScore = true;
     }
     ctxM.clearRect(0, 0, canvas.width, canvas.height);
     ctxM.fillStyle = "#fdd835";
+    if (isHiScore == true) {
+      ctxM.font = `${grid*1.5}px wfnotdef`;
+      ctxM.fillText("\ud83c\udfc6", canvas.width - grid * 2, grid * 2);
+    }
     ctxM.font = `${grid*2.5}px jbmono`;
     ctxM.fillText("GAME OVER ;(", canvas.width / 2, canvas.height / 2);
     ctxM.font = `italic ${grid*1.5}px jbmono`;
@@ -151,18 +158,18 @@ function loop() {
       justEating = true;
     }
     for (var i = index + 1; i < snake.cells.length; i++) {
-      for (let W = 0; W < walls.length; W++) {
-        if (cell.x === walls[W].x && cell.y === walls[W].y) {
-          playSound("/files/audio/got-in-wall.ogg");
-          gameOver = true;
-        }
-      }
       if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
         playSound("/files/audio/got-in-self.ogg");
         gameOver = true;
       }
     }
   });
+  for (let W = 0; W < walls.length; W++) {
+    if (snake.x === walls[W].x && snake.y === walls[W].y) {
+      playSound("/files/audio/got-in-wall.ogg");
+      gameOver = true;
+    }
+  }
   context.fillStyle = "#376a01";
   if (snake.dx != 0) {
     if (snake.dy > 0) {
@@ -179,7 +186,7 @@ function loop() {
   if (justEating) {
     ctxM.clearRect(canvas.width - grid * 4, grid + 1, grid * 3, grid * 3);
     ctxM.fillStyle = "#fdd835";
-    ctxM.font = "20px jbmono";
+    ctxM.font = `${grid + 4}px jbmono`;
     ctxM.fillText(applesEaten, canvas.width - grid * 2, grid * 2);
   }
   document.getElementById("score").innerText = `${Math.floor(timeSinceStart / 1000)}`;
@@ -200,6 +207,7 @@ function playAgain() {
   ctxM.clearRect(0, 0, canvas.width, canvas.height);
   gameOver = false;
   justEating = false;
+  isHiScore = false;
   snake.dx = grid;
   snake.dy = 0;
   snake.x = grid * 6;
@@ -285,7 +293,7 @@ function shareRes() {
     justACanvas.width = canvas.height + grid * 2;
     justACanvas.height = canvas.height + grid * 5;
   }
-  let itsCtx = justACanvas.getContext("2d");
+  let itsCtx = justACanvas.getContext("2d", {alpha: false});
   itsCtx.drawImage(canBack, 0 - cameraX, cameraY);
   itsCtx.drawImage(canvas, 0 - cameraX, cameraY);
   itsCtx.fillStyle = "#eeeeee";
@@ -305,10 +313,10 @@ function shareRes() {
     let itsLink = document.createElement("a");
     itsLink.href = URL.createObjectURL(imgBlob);
     itsImg.src = itsLink.href;
-    document.getElementById("savePic").addEventListener("click", function() {
+    document.getElementById("savePic").onclick = function() {
       itsLink.download = `snake-${curName.replace(" ", "-").replaceAll(":", "∶")}-utc0.png`;
       itsLink.click();
-    });
+    }
     document.getElementById("preRes").showModal();
   }, "image/png");
 }
