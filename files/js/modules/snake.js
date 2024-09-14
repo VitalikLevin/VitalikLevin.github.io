@@ -12,11 +12,12 @@ const appleColors = ["#f10000", "#ffd100", "#00be00", "#283593"];
 let gameOver = false;
 let isPaused = false;
 let justEating = false;
-let isHiScore = false;
+let isHiScore = 0;
 let walls = [];
 let applesEaten = 0;
 var timeSinceStart = 0;
 var lastFrameDate = 0;
+var gameOverDate = 0;
 var gameSlower = 1;
 var snake = {
   x: 128, y: 160,
@@ -107,19 +108,20 @@ function loop() {
   if (gameOver == true) {
     timeSinceStart -= deltaTime;
     if (shareBtn.hasAttribute("hidden")) { shareBtn.removeAttribute("hidden"); }
+    if (gameOverDate == 0) { gameOverDate = lastFrameDate; }
     if (applesEaten > localStorage.getItem("bestLunch")) {
       localStorage.setItem("bestLunch", applesEaten);
-      isHiScore = true;
+      isHiScore += 1;
     }
     if (Math.floor(timeSinceStart / 1000) > localStorage.getItem("longestLunch")) {
       localStorage.setItem("longestLunch", `${Math.floor(timeSinceStart / 1000)}`);
-      isHiScore = true;
+      isHiScore += 1;
     }
     ctxM.clearRect(0, 0, canvas.width, canvas.height);
     ctxM.fillStyle = "#fdd835";
-    if (isHiScore == true) {
+    if (isHiScore > 0 && isHiScore < 3) {
       ctxM.font = `${grid*1.5}px wfnotdef`;
-      ctxM.fillText("\ud83c\udfc6", canvas.width - grid * 2, grid * 2);
+      ctxM.fillText("\ud83c\udfc6".repeat(isHiScore), canvas.width - grid * 2, grid * 2);
     }
     ctxM.font = `${grid*2.5}px jbmono`;
     ctxM.fillText("GAME OVER ;(", canvas.width / 2, canvas.height / 2);
@@ -128,7 +130,7 @@ function loop() {
     canMisc.addEventListener("click", playAgain, false);
     return;
   }
-  if (isPaused == true) {
+  if (isPaused == true || deltaTime > 1000) {
     timeSinceStart -= deltaTime;
     return;
   }
@@ -207,7 +209,7 @@ function playAgain() {
   ctxM.clearRect(0, 0, canvas.width, canvas.height);
   gameOver = false;
   justEating = false;
-  isHiScore = false;
+  isHiScore = 0;
   snake.dx = grid;
   snake.dy = 0;
   snake.x = grid * 6;
@@ -216,11 +218,13 @@ function playAgain() {
   snake.maxCells = 4;
   applesEaten = 0;
   timeSinceStart = 0;
+  gameOverDate = 0;
   requestAnimationFrame(loop);
   shareBtn.setAttribute("hidden", "");
   canMisc.removeEventListener("click", playAgain, false);
 }
 document.addEventListener("keydown", function(e) {
+  if (gameOver == true) { return; }
   if ((e.key == "ArrowLeft" || e.key.toLowerCase() == "a") && snake.dx === 0) {
     snake.dx = -grid;
     snake.dy = 0;
@@ -266,7 +270,8 @@ function macroPad() {
   }
 }
 function shareRes() {
-  let curDate = new Date(lastFrameDate).toISOString();
+  let curDate = new Date(gameOverDate).toISOString();
+  if (gameOverDate == 0) { curDate = new Date(lastFrameDate).toISOString(); }
   let curName = curDate.slice(0, curDate.lastIndexOf(".")).replace("T", " ");
   let cameraX = 0 - grid;
   let cameraY = grid;
@@ -294,6 +299,8 @@ function shareRes() {
     justACanvas.height = canvas.height + grid * 5;
   }
   let itsCtx = justACanvas.getContext("2d", {alpha: false});
+  itsCtx.fillStyle = "#376a01";
+  itsCtx.fillRect(0, 0, justACanvas.width, justACanvas.height);
   itsCtx.drawImage(canBack, 0 - cameraX, cameraY);
   itsCtx.drawImage(canvas, 0 - cameraX, cameraY);
   itsCtx.fillStyle = "#eeeeee";
@@ -318,6 +325,7 @@ function shareRes() {
       itsLink.click();
     }
     document.getElementById("preRes").showModal();
+    document.querySelector("body").classList.add("lockScroll");
   }, "image/png");
 }
 requestAnimationFrame(intro);

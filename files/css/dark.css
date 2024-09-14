@@ -70,12 +70,12 @@ button#realAdd {
 	border-color: rgb(238, 238, 238);
 }
 
-::backdrop, [contenteditable]::selection {
-	background-color: rgba(0, 0, 0, 0.6);
+mark::selection, mark *::selection {
+	background-color: rgba(100, 181, 246, 0.8);
 }
 
-mark::selection {
-	background-color: rgba(100, 181, 246, 0.8);
+::backdrop, [contenteditable]::selection {
+	background-color: rgba(0, 0, 0, 0.6);
 }
 
 #promoPWA {

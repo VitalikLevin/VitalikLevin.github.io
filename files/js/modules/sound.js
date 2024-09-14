@@ -9,7 +9,7 @@ function onLoadSound() {
   changeVolume();
 }
 function changeVolume() {
-  document.getElementById("soundVol").textContent = `${siteSound.value * 100}%`;
+  document.getElementById("soundVol").textContent = `${Math.trunc(siteSound.value * 100)}%`;
   localStorage.setItem("siteVol", siteSound.value);
 }
 onLoadSound();
