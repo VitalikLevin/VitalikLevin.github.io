@@ -23,15 +23,23 @@
 	<p>
 		&#169;Vitaliy Levin, <span class="num" title="{{ site.time | date_to_xmlschema }}">{{ site.time | date: "%Y" }}</span>. All rights reserved.<br>
 		<mark id="sleep"></mark>
-		{%- if page.lang == 'ru' -%}
+{%- if page.lang == 'ru' -%}
 		<button class="bin" id="darkMode">1</button><label for="darkMode"> Тёмная тема</label><br>
+	{%- if include.adjustVol == 'true' -%}
+		<label for="siteSound">&#x1f508; <strong>Громкость</strong> (<span id="soundVol">100%</span>)</label><br>
+    <input id="siteSound" type="range" min="0" max="1" step="0.05"><br>
+	{%- endif -%}
 		Содержимое доступно по лицензии <a href="{{ site.license }}" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a>.<br>
 		<a href="/about/">О сайте</a>
-		{%- else -%}
+{%- else -%}
 		<button class="bin" id="darkMode">1</button><label for="darkMode"> Dark theme</label><br>
+	{%- if include.adjustVol == 'true' -%}
+		<label for="siteSound">&#x1f508; <strong>Sounds</strong> (<span id="soundVol">100%</span>)</label><br>
+    <input id="siteSound" type="range" min="0" max="1" step="0.05"><br>
+	{%- endif -%}
 		Content is available under <a href="{{ site.license }}" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a>.<br>
 		<a href="/about/">About us</a>
-		{%- endif -%}
+{%- endif -%}
 	</p>
 	<div class="imgs">
 		<img src="/files/svg/by-sa.svg" alt="" width="120px" height="42px" loading="lazy">

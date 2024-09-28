@@ -174,7 +174,7 @@ dialog button {
 	right: 6vw;
 }
 
-#share {
+header button {
 	position: absolute;
 	right: 24px;
 	border: none;
@@ -250,7 +250,8 @@ dialog img {
 }
 
 button:disabled {
-	opacity: 0.5;
+	opacity: 0.6;
+	transform: rotateZ(-5deg);
 }
 @media screen and (orientation: portrait) {
 	body {

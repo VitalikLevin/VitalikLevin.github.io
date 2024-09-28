@@ -17,10 +17,13 @@
     transform: translateX(0);
   }
 }
+button {
+  transition: linear 450ms transform;
+}
 dialog:modal {
   animation: 2700ms linear msgResize;
 }
-#eItem:modal, #preRes:modal {
+#chooseShare:modal, #eItem:modal, #preRes:modal {
   animation: none;
 }
 #cooknote.show, #wDuration, #wFile {

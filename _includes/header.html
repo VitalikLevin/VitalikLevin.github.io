@@ -1,11 +1,15 @@
 <header>
 	<span>
-		{%- unless page.url contains '/emoji/' -%}
+{%- unless page.url contains '/games/snake/' -%}
 		<a href="/">Network Worms</a>
-		<a href="/emoji/"><img src="{{ site.status }}" alt=";)" id="logo" fetchpriority="low"></a>
+		<a href="/games/snake/"><img src="{{ site.status }}" alt=";)" id="logo" fetchpriority="low"></a>
 		{%- else -%}
 		<a href="/">Network W<img src="{{ site.status }}" alt="o" id="logo" fetchpriority="low">rms</a>
-		{%- endunless -%}
+{%- endunless -%}
+{%- if include.shareDial == 'true' -%}
+		<button id="shareD" title="Share">{%- include svg/share.svg -%}</button>
+{%- else -%}
 		<button id="share" title="Share">{%- include svg/share.svg -%}</button>
+{%- endif -%}
 	</span>
 </header>

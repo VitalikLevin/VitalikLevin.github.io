@@ -69,6 +69,12 @@ if ('serviceWorker' in navigator) {
     }))
     .catch((err) => console.warn(`Service worker’s fail | ${err}`));
 }
+if (document.getElementById('shareD') != null) {
+  document.getElementById('shareD').onclick = function() {
+    document.getElementById('chooseShare').showModal();
+    document.querySelector("body").classList.add("lockScroll");
+  }
+}
 window.addEventListener('beforeinstallprompt', function(e) {
   e.preventDefault();
   var deferredPrompt = e;

@@ -53,6 +53,7 @@ function betterDialog() {
       );
       if (clickedInDialog === false) {
         dialog.close();
+        if (document.querySelector("dialog:modal") != null) { return; }
         document.querySelector('body').classList.remove('lockScroll');
       }
     });

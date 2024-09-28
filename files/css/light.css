@@ -32,7 +32,7 @@ blockquote, #playlist {
 	border-left: 3px solid rgb(100, 181, 246);
 }
 
-kbd, dialog img, #options {
+kbd, dialog h3, dialog img, #options {
 	border: 1px solid rgb(18, 18, 18);
 }
 

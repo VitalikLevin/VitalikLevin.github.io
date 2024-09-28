@@ -1,5 +1,5 @@
 I recommend you to sleep.
-Press <kbd>Alt</kbd>+<kbd>F4</kbd> on your computer’s desktop screen to turn it off.
 Type <code>theme<span class="pi">:</span> <span class="no">null</span></code> in <code>jekyllSiteDir/_config.yml</code> to delete <em>mysterious</em> `<code>/assets/css/style.css</code>` file.
 Write <code>npm view <span class="nc" contenteditable>pkg-name</span> version</code> to get package’s version.
 Don’t use easy-to-guess passwords such as <code>1234</code>, <code>admin</code> or <code>qwerty</code>.
+The shebang <code>#!/usr/bin/env bash</code> is better than <code>#!/bin/bash</code>.

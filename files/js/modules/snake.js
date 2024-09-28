@@ -1,7 +1,7 @@
 let canvas = document.getElementById("action");
 let canMisc = document.getElementById("misc");
 let canBack = document.getElementById("back");
-const shareBtn = document.getElementById("share");
+const shareBtn = document.getElementById("shareI");
 var context = canvas.getContext("2d");
 var ctxM = canMisc.getContext("2d");
 let ctxB = canBack.getContext("2d", {alpha: false});
@@ -107,7 +107,7 @@ function loop() {
   lastFrameDate = Date.now();
   if (gameOver == true) {
     timeSinceStart -= deltaTime;
-    if (shareBtn.hasAttribute("hidden")) { shareBtn.removeAttribute("hidden"); }
+    if (shareBtn.hasAttribute("disabled")) { shareBtn.removeAttribute("disabled"); }
     if (gameOverDate == 0) { gameOverDate = lastFrameDate; }
     if (applesEaten > localStorage.getItem("bestLunch")) {
       localStorage.setItem("bestLunch", applesEaten);
@@ -220,7 +220,7 @@ function playAgain() {
   timeSinceStart = 0;
   gameOverDate = 0;
   requestAnimationFrame(loop);
-  shareBtn.setAttribute("hidden", "");
+  shareBtn.setAttribute("disabled", "");
   canMisc.removeEventListener("click", playAgain, false);
 }
 document.addEventListener("keydown", function(e) {

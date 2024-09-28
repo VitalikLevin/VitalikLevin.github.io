@@ -1,0 +1,50 @@
+---
+lang: en-US
+title: Snake
+excerpt: This is our first game for Web.
+permalink: /games/snake/
+---
+{%- include header.html shareDial="true" -%}
+{%- include crumb.html urls="/games/$/games/snake/" titles="Games$$Snake" -%}
+<dialog id="preRes">
+  <div class="dialtext">
+    <h3>Preview</h3>
+    <p><img src="/files/svg/1f4e1.svg" alt="" class="img128"></p>
+    <button id="savePic">&#x2b73; Download</button>
+  </div>
+</dialog>
+<dialog id="chooseShare">
+  <div class="dialtext">
+    <h3>What do you need to share?</h3>
+    <button id="share">This page</button>
+    <button id="shareI">Results in Snake game</button>
+  </div>
+</dialog>
+<main>
+	<h2 class="start">Snake</h2>
+  <div id="game">
+    <canvas id="misc" class="noSize"></canvas>
+    <canvas id="action" class="noSize"></canvas>
+    <canvas id="back" class="noSize"></canvas>
+  </div>
+  <div id="wasd">
+    <button data-key="w">&#x1f845;</button><br>
+    <button data-key="a">&#x1f844;</button>
+    <button data-key="s">&#x1f847;</button>
+    <button data-key="d">&#x1f846;</button>
+    <button data-key="Pause">&#x23ef;</button>
+  </div>
+	<h3>About the product</h3>
+	<p>Type: <strong>Game</strong></p>
+  <p>Time having lunch: <strong><span id="score">0</span> seconds</strong></p>
+	<p>Description: <strong>Eat fruit not yourself.</strong></p>
+</main>
+<script>
+  let theGame = document.createElement("script");
+  theGame.onload = function () {
+    console.info("The game script was loaded");
+  }
+  theGame.src = "/files/js/modules/snake.js";
+  document.body.appendChild(theGame);
+</script>
+{%- include footer.html adjustVol="true" -%}
