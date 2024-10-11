@@ -3,9 +3,9 @@
 	<p>
 		<img src="/files/svg/1f36a.svg" alt="&#127850;">
 	{%- if page.lang == 'ru' -%}
-		Мы используем <code title="...для аналитики">cookies</code>. Чтобы их отключить, зайдите в настройки браузера.
+		Мы используем <code data-tooltip="для аналитики">cookies</code>. Чтобы их отключить, зайдите в настройки браузера.
 	{%- else -%}
-		We use <code title="...for analytics">cookies</code>. But you can turn these things off in the settings of the browser.
+		We use <code data-tooltip="for analytics">cookies</code>. But you can turn these things off in the settings of the browser.
 	{%- endif -%}
 	</p>
 	<button class="cookagree">OK</button>
@@ -21,7 +21,7 @@
 </div>
 <footer id="footer">
 	<p>
-		&#169;Vitaliy Levin, <span class="num" title="{{ site.time | date_to_xmlschema }}">{{ site.time | date: "%Y" }}</span>. All rights reserved.<br>
+		&#169;Vitaliy Levin, <span class="num" data-tooltip="{{ site.time | date_to_xmlschema }}">{{ site.time | date: "%Y" }}</span>. All rights reserved.<br>
 		<mark id="sleep"></mark>
 {%- if page.lang == 'ru' -%}
 		<button class="bin" id="darkMode">1</button><label for="darkMode"> Тёмная тема</label><br>
@@ -38,7 +38,11 @@
     <input id="siteSound" type="range" min="0" max="1" step="0.05"><br>
 	{%- endif -%}
 		Content is available under <a href="{{ site.license }}" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a>.<br>
+	{%- if page.url == '/about/' -%}
+		<mark>About us</mark>
+	{%- else -%}
 		<a href="/about/">About us</a>
+	{%- endif -%}
 {%- endif -%}
 	</p>
 	<div class="imgs">

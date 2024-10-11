@@ -2,7 +2,7 @@
 	color-scheme: light;
 }
 
-:root, button, .top a:any-link {
+:root, button, .top a:any-link, [data-tooltip]::after {
 	color: rgb(18, 18, 18);
 }
 
@@ -32,7 +32,7 @@ blockquote, #playlist {
 	border-left: 3px solid rgb(100, 181, 246);
 }
 
-kbd, dialog h3, dialog img, #options {
+kbd, dialog h3, dialog img, #options, [data-tooltip]::after {
 	border: 1px solid rgb(18, 18, 18);
 }
 
@@ -71,6 +71,10 @@ input[type="range"] {
 
 #promoPWA {
 	background-color: rgb(18, 71, 122);
+}
+
+[data-tooltip]::after {
+	background-color: rgba(196, 196, 196, 0.8);
 }
 
 .fillWh {

@@ -15,12 +15,14 @@ function checkCookies() {
 }
 function ifUserHasGone() {
   document.addEventListener('visibilitychange', function() {
-    if (document.visibilityState == 'hidden') {
-      const goneArr = [':(', ':|', ';('];
-      document.title = `${goneArr[Math.floor(Math.random() * goneArr.length)]} NW410 Gone from tab`;
-    } else {
-      document.title = cachedT;
-    }
+    window.setInterval(function() {
+      if (document.visibilityState == 'hidden') {
+        const goneArr = [':(', ':|', ';('];
+        document.title = `${goneArr[Math.floor(Math.random() * goneArr.length)]} NW410 Gone from tab`;
+      } else {
+        document.title = cachedT;
+      }
+    }, 3000);
   });
 }
 function sharePage() {

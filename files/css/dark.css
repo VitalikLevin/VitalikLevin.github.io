@@ -4,7 +4,7 @@
 	color-scheme: dark;
 }
 
-header {
+header, [data-tooltip]::after {
 	background-color: rgba(22, 22, 29, 0.7);
 }
 
@@ -12,7 +12,7 @@ header {
 	background-color: rgb(22, 22, 29);
 }
 
-header, header span a:any-link, #cooknote.show {
+header, header span a:any-link, #cooknote.show, [data-tooltip]::after {
 	color: rgb(238, 238, 238);
 }
 
@@ -42,7 +42,7 @@ mark, ::selection {
 	background-color: rgb(249, 168, 37);
 }
 
-kbd {
+kbd, [data-tooltip]::after {
 	border: 1px solid rgb(238, 238, 238);
 }
 

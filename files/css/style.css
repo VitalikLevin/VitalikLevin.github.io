@@ -3,7 +3,7 @@
 * {
 	box-sizing: border-box;
 }
-:root, button, dialog, input, select, ::before, ::file-selector-button {
+:root, button, dialog, input, select, ::before, ::file-selector-button, [data-tooltip]::after {
 	font-family: liberastika, sans-serif, wfnotdef;
 	font-synthesis: none;
   -webkit-text-size-adjust: 100%;
@@ -87,7 +87,7 @@ header span, details > summary, dialog, label, #cooknote, .top {
 	-webkit-user-select: none;
 }
 
-dialog button:nth-of-type(even), #cooknote img {
+#cooknote img {
 	margin-right: 8px;
 	margin-left: 8px;
 }
@@ -144,6 +144,26 @@ input:focus, select:focus {
 	content: attr(data-before);
 }
 
+[data-tooltip] {
+	position: relative;
+}
+
+[data-tooltip]::after {
+	content: attr(data-tooltip);
+  position: absolute;
+	left: 95%;
+	top: 20%;
+  padding: 0.4rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+	max-width: 50ch;
+}
+
+[data-tooltip]:hover::after {
+	opacity: 1;
+}
+
 dialog {
 	border: none;
 }
@@ -158,7 +178,8 @@ dialog p, dialog h3, #options h3 {
 }
 
 dialog button {
-	float: right;
+	display: block;
+	margin: 8px auto;
 }
 
 #wDuration, #wFile {

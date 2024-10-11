@@ -29,3 +29,6 @@ dialog:modal {
 #cooknote.show, #wDuration, #wFile {
   animation: 4s run;
 }
+[data-tooltip]::after {
+  transition: opacity 0.4s;
+}

@@ -21,7 +21,7 @@ Blog$${{ page.title }}
 		{%- endif -%}
 	</figure>
 	<h2 class="start">{{ page.title }}</h2>
-	<span class="pubDat" title="{{ post.date | date_to_xmlschema }}"><span class="cal">&#128198;</span> {{ page.date | date: "%d.%m.%Y" }}</span>
+	<span class="pubDat" data-tooltip="{{ page.date | date_to_xmlschema }}"><span class="cal">&#128198;</span> {{ page.date | date: "%d.%m.%Y" }}</span>
 	{{- content -}}
 </article>
 {%- include footer.html -%}
