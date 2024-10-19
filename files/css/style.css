@@ -11,6 +11,10 @@
 	line-height: 1.4;
 }
 
+:root {
+	overflow-x: hidden;
+}
+
 header {
 	position: fixed;
 	top: 0;
@@ -106,7 +110,7 @@ header span, details > summary, dialog, label, #cooknote, .top {
 	position: fixed;
 	left: calc(98vw - 56px);
 	aspect-ratio: 1 / 1;
-	min-width: 48px;
+	width: 48px;
 }
 
 .cookagree {
@@ -114,7 +118,7 @@ header span, details > summary, dialog, label, #cooknote, .top {
 	right: 2vw;
 }
 
-#cooknote.show, dialog img {
+#cooknote.show, #copyright, dialog img {
 	display: block;
 }
 
@@ -151,16 +155,14 @@ input:focus, select:focus {
 [data-tooltip]::after {
 	content: attr(data-tooltip);
   position: absolute;
-	left: 95%;
-	top: 20%;
-  padding: 0.4rem;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-	max-width: 50ch;
 }
 
 [data-tooltip]:hover::after {
+	top: 20%;
+  padding: 0.25rem;
 	opacity: 1;
 }
 
@@ -172,7 +174,7 @@ dialog h3, dialog button {
 	text-align: center;
 }
 
-dialog p, dialog h3, #options h3 {
+dialog p, dialog h3, #options h3, #copyright + p {
 	margin-top: 0;
 	margin-bottom: 5px;
 }

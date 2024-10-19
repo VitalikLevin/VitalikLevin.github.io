@@ -50,6 +50,10 @@ defaults:
       path: "favicon.ico"
     values:
       sw-include: true
+  - scope:
+      path: "index.html"
+    values:
+      sw-include: true
 plugins:
   - jekyll-feed
   - jekyll-paginate

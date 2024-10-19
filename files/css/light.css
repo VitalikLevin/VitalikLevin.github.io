@@ -6,7 +6,7 @@
 	color: rgb(18, 18, 18);
 }
 
-header {
+header, #copyright {
 	background-color: rgba(237, 101, 0, 0.7);
 }
 
