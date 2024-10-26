@@ -142,11 +142,11 @@ document.addEventListener("DOMContentLoaded", loadSavedData);
 document.addEventListener("visibilitychange", beforeGoingAFK);
 document.getElementById("hOpen").onclick = function() {
   help.showModal();
-  document.querySelector("body").classList.add("lockScroll");
+  document.querySelector("html").classList.add("lockScroll");
 }
 document.getElementById("hClose").onclick = function() {
   help.close();
-  document.querySelector("body").classList.remove("lockScroll");
+  document.querySelector("html").classList.remove("lockScroll");
 }
 document.getElementById("wClose").onclick = function() {
   document.querySelector("#wDuration").close();

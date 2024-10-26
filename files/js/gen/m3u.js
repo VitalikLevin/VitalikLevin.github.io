@@ -84,7 +84,7 @@ function editorClose() {
   listItems[editDial.getAttribute("data-item-n")].extinf = `-1,${document.getElementById("changeName").value}`;
   editDial.close();
   showResult();
-  document.querySelector("body").classList.remove("lockScroll");
+  document.querySelector("html").classList.remove("lockScroll");
 }
 function manuallyAdd() {
   if (manuallyInput.value !== null && manuallyInput.value !== "") {
@@ -139,7 +139,7 @@ function showItems() {
           document.getElementById("changeName").value = `${listItems[edits].name.slice(startAt + 1, endAt)}`;
         }
       }
-      document.querySelector("body").classList.add("lockScroll");
+      document.querySelector("html").classList.add("lockScroll");
       editDial.showModal();
     }
   }
@@ -244,11 +244,11 @@ document.getElementById("changeName").addEventListener("keydown", function(ev) {
 document.getElementById("eClose").onclick = editorClose;
 document.getElementById("hOpen").onclick = function() {
   help.showModal();
-  document.querySelector("body").classList.add("lockScroll");
+  document.querySelector("html").classList.add("lockScroll");
 }
 document.getElementById("hClose").onclick = function() {
   help.close();
-  document.querySelector("body").classList.remove("lockScroll");
+  document.querySelector("html").classList.remove("lockScroll");
 }
 document.getElementById("wClose").onclick = function() {
   document.querySelector("#wFile").close();

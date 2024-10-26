@@ -276,6 +276,10 @@ button:disabled {
 	opacity: 0.6;
 	transform: rotateZ(-5deg);
 }
+
+main > .post:last-child, main > figure:last-child {
+	margin-bottom: 1rem;
+}
 @media screen and (orientation: portrait) {
 	body {
 		margin: 8px;

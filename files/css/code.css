@@ -1,7 +1,7 @@
 .highlight {
   background-color: rgb(39, 39, 39);
   color: rgb(244, 244, 244);
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 .highlight pre { user-select: all; }
 td.gutter pre { user-select: none; }

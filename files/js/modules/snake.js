@@ -8,7 +8,7 @@ let ctxB = canBack.getContext("2d", {alpha: false});
 let grid = 16;
 let gridWidth = Math.ceil(canvas.width / grid);
 let gridHeight = Math.ceil(canvas.height / grid);
-const appleColors = ["#f10000", "#ffd100", "#00be00", "#283593"];
+const appleColors = ["#f10000", "#ffd100", "#00be00", "#283593", "#f7630c"];
 let gameOver = false;
 let isPaused = false;
 let justEating = false;
@@ -25,7 +25,7 @@ var snake = {
   cells: [], maxCells: 4
 };
 var apple = {
-  x: 192, y: 160, colorId: 0
+  x: 192, y: 160, colorId: 4
 };
 async function playSound(url, volume=localStorage.getItem("siteVol")) {
   if (volume == 0) {
@@ -143,10 +143,7 @@ function loop() {
   if (snake.cells.length > snake.maxCells) {
     snake.cells.pop();
   }
-  context.fillStyle = "#111d11";
-  context.fillRect(apple.x + 6, apple.y - 1, 2, 2);
-  context.fillStyle = appleColors[apple.colorId];
-  context.fillRect(apple.x, apple.y + 1, grid - 1, grid - 2);
+  drawApple();
   context.fillStyle = "#111d11";
   snake.cells.forEach(function (cell, index) {
     context.fillRect(cell.x, cell.y, grid - 1, grid - 1);
@@ -192,6 +189,23 @@ function loop() {
     ctxM.fillText(applesEaten, canvas.width - grid * 2, grid * 2);
   }
   document.getElementById("score").innerText = `${Math.floor(timeSinceStart / 1000)}`;
+}
+function drawApple() {
+  if (apple.colorId == 4) {
+    context.strokeStyle = "#111d11";
+    context.strokeRect(apple.x + 6, apple.y - 1, 2, 2);
+  } else {
+    context.fillStyle = "#111d11";
+    context.fillRect(apple.x + 6, apple.y - 1, 2, 2);
+  }
+  context.fillStyle = appleColors[apple.colorId];
+  context.fillRect(apple.x, apple.y + 1, grid - 1, grid - 2);
+  if (apple.colorId == 4) {
+    context.fillStyle = "#ff9800";
+    for (let lI = 0; lI < 2; lI++) {
+      context.fillRect(apple.x + 2 + 8 * lI, apple.y + 1, 2, grid - 2);
+    }
+  }
 }
 function drawWall() {
   ctxB.fillStyle = "#111d11";
@@ -325,7 +339,7 @@ function shareRes() {
       itsLink.click();
     }
     document.getElementById("preRes").showModal();
-    document.querySelector("body").classList.add("lockScroll");
+    document.querySelector("html").classList.add("lockScroll");
   }, "image/png");
 }
 requestAnimationFrame(intro);

@@ -74,7 +74,7 @@ if ('serviceWorker' in navigator) {
 if (document.getElementById('shareD') != null) {
   document.getElementById('shareD').onclick = function() {
     document.getElementById('chooseShare').showModal();
-    document.querySelector("body").classList.add("lockScroll");
+    document.querySelector("html").classList.add("lockScroll");
   }
 }
 window.addEventListener('beforeinstallprompt', function(e) {
