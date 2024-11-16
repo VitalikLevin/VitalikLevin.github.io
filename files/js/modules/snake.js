@@ -25,7 +25,7 @@ var snake = {
   cells: [], maxCells: 4
 };
 var apple = {
-  x: 192, y: 160, colorId: 4
+  x: 192, y: 160, colorId: 0
 };
 async function playSound(url, volume=localStorage.getItem("siteVol")) {
   if (volume == 0) {
@@ -117,9 +117,10 @@ function loop() {
       localStorage.setItem("longestLunch", `${Math.floor(timeSinceStart / 1000)}`);
       isHiScore += 1;
     }
-    ctxM.clearRect(0, 0, canvas.width, canvas.height);
+    ctxM.clearRect(0, grid * 3, canvas.width, canvas.height - grid * 3);
     ctxM.fillStyle = "#fdd835";
     if (isHiScore > 0 && isHiScore < 3) {
+      ctxM.clearRect(canvas.width - grid * 4, grid + 1, grid * 3, grid * 3);
       ctxM.font = `${grid*1.5}px wfnotdef`;
       ctxM.fillText("\ud83c\udfc6".repeat(isHiScore), canvas.width - grid * 2, grid * 2);
     }
@@ -275,6 +276,8 @@ canMisc.addEventListener("click", function firstTry() {
 }, false);
 shareBtn.addEventListener("click", shareRes);
 function macroPad() {
+  let virtualBoard = document.getElementById("wasd");
+  virtualBoard.classList.add("show");
   let btns = document.querySelectorAll("button[data-key]");
   for (let a = 0; a < btns.length; a++) {
     const btn = btns[a];

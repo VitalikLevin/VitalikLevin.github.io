@@ -81,11 +81,11 @@ code, kbd, pre, button.bin, ::placeholder {
 	font-size: 24px;
 }
 
-.top, #wasd {
+.top {
 	visibility: hidden;
 }
 
-header span, details > summary, dialog, label, #cooknote, .top {
+header span, details > summary, dialog, label, #cooknote, #wasd, .top {
 	user-select: none;
 	-moz-user-select: none;
 	-webkit-user-select: none;
@@ -118,7 +118,7 @@ header span, details > summary, dialog, label, #cooknote, .top {
 	right: 2vw;
 }
 
-#cooknote.show, #copyright, dialog img {
+#cooknote.show, #copyright, #wasd.show, dialog img {
 	display: block;
 }
 
@@ -174,7 +174,7 @@ dialog h3, dialog button {
 	text-align: center;
 }
 
-dialog p, dialog h3, #options h3, #copyright + p {
+dialog p, dialog h3, #options h3, #copyright + * {
 	margin-top: 0;
 	margin-bottom: 5px;
 }
@@ -244,8 +244,19 @@ canvas.noSize, #game {
 	position: relative;
 }
 
-#game {
+#game + #wasd[class=""] {
 	margin-bottom: -2.5rem;
+}
+
+#game + #wasd.show {
+	margin-top: 5px;
+	position: relative;
+	z-index: 4;
+	float: right;
+}
+
+#wasd.show + * {
+	margin-top: 200px;
 }
 
 canvas {
@@ -280,6 +291,21 @@ button:disabled {
 main > .post:last-child, main > figure:last-child {
 	margin-bottom: 1rem;
 }
+
+#wasd {
+	display: none;
+}
+
+#wasd.show button {
+	width: 15vh;
+	font-size: 11vh;
+	aspect-ratio: 1 / 1;
+	margin-bottom: 5px;
+}
+
+button[data-key="w"], button[data-key="Pause"] {
+	margin-left: 16vh;
+}
 @media screen and (orientation: portrait) {
 	body {
 		margin: 8px;
@@ -301,18 +327,18 @@ main > .post:last-child, main > figure:last-child {
 	canvas.noSize {
 		width: 85svw;
 	}
-	#game {
-		margin-bottom: auto;
-	}
-	#wasd {
-		visibility: visible;
+	#game + #wasd.show {
 		margin-top: 5px;
+		float: none;
+		position: static;
 	}
-	#wasd button {
+	#wasd.show button {
 		width: 15vw;
 		font-size: 11vw;
 		aspect-ratio: 1 / 1;
-		margin-bottom: 5px;
+	}
+	#wasd.show + * {
+		margin-top: 1rem;
 	}
 	button[data-key="w"], button[data-key="Pause"] {
 		margin-left: 16vw;
