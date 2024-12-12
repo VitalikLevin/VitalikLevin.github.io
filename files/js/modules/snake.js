@@ -2,6 +2,7 @@ let canvas = document.getElementById("action");
 let canMisc = document.getElementById("misc");
 let canBack = document.getElementById("back");
 const shareBtn = document.getElementById("shareI");
+var audioContext;
 var context = canvas.getContext("2d");
 var ctxM = canMisc.getContext("2d");
 let ctxB = canBack.getContext("2d", {alpha: false});
@@ -27,11 +28,10 @@ var snake = {
 var apple = {
   x: 192, y: 160, colorId: 0
 };
-async function playSound(url, volume=localStorage.getItem("siteVol")) {
+async function playSound(url, volume=localStorage.getItem("siteVol"), audioCtx=audioContext) {
   if (volume == 0) {
     return;
   }
-  const audioCtx = new AudioContext();
   let gainNode = audioCtx.createGain();
   const source = audioCtx.createBufferSource();
   const audioBuffer = await fetch(url)
@@ -272,6 +272,7 @@ canMisc.addEventListener("click", function firstTry() {
   requestAnimationFrame(drawWall);
   lastFrameDate = Date.now();
   requestAnimationFrame(loop);
+  audioContext = new AudioContext();
   canMisc.removeEventListener("click", firstTry, false);
 }, false);
 shareBtn.addEventListener("click", shareRes);

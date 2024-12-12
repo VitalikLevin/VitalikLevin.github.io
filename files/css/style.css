@@ -77,7 +77,7 @@ code, kbd, pre, button.bin, ::placeholder {
 	margin-top: -10px;
 }
 
-.pubDat .cal, h4 .keyboard {
+.pubDat .cal, h4 .keyboard, .human {
 	font-size: 24px;
 }
 
@@ -138,6 +138,10 @@ input[type="text"], input[type="range"], dialog {
 
 input:focus, select:focus {
 	outline-offset: 0;
+}
+
+blockquote h3::before {
+	content: "\1F589  ";
 }
 
 [data-before] {

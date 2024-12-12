@@ -61,7 +61,7 @@ function importList() {
         extendInf = readRes.split("\n")[strN - 1].replace("#EXTINF:", "");
       }
       const tempStr = readRes.split("\n")[strN];
-      if (tempStr != "#EXTM3U" && /^(#EXTINF:)+/gi.test(tempStr) == false) {
+      if (tempStr != "#EXTM3U" && /^(#EXTINF:)+/gi.test(tempStr) == false && tempStr == "") {
         listItems.push({name: tempStr, prefix: "", suffix: "", date: 0, size: 0, extinf: extendInf});
       }
     }
@@ -84,7 +84,6 @@ function editorClose() {
   listItems[editDial.getAttribute("data-item-n")].extinf = `-1,${document.getElementById("changeName").value}`;
   editDial.close();
   showResult();
-  document.querySelector("html").classList.remove("lockScroll");
 }
 function manuallyAdd() {
   if (manuallyInput.value !== null && manuallyInput.value !== "") {
@@ -186,9 +185,9 @@ function showResult() {
   }
   tempContent = tempContent.slice(0, tempContent.lastIndexOf("\n"));
   var theBlob = new Blob([tempContent], {type: "audio/mpegurl"});
-  const isLatin = (force8.innerText == 1 || /[^\u0000-\u00ff]+/g.test(tempContent));
+  const notLatin = (force8.innerText == 1 || /[^\u0000-\u00ff]+/g.test(tempContent));
   if (nameInput.value !== "") {
-    if (isLatin) {
+    if (notLatin) {
       downloadLink.setAttribute("download", `${nameInput.value}.m3u8`);
       downloadLink.setAttribute("title", `${nameInput.value}.m3u8`);
       theBlob = new Blob([tempContent], {type: "application/vnd.apple.mpegurl"});
@@ -196,7 +195,7 @@ function showResult() {
       downloadLink.setAttribute("download", `${nameInput.value}.m3u`);
       downloadLink.setAttribute("title", `${nameInput.value}.m3u`);
     }
-  } else if (isLatin) {
+  } else if (notLatin) {
     downloadLink.setAttribute("download", "playlist.m3u8");
     downloadLink.setAttribute("title", "playlist.m3u8");
     theBlob = new Blob([tempContent], {type: "application/vnd.apple.mpegurl"});
@@ -248,7 +247,6 @@ document.getElementById("hOpen").onclick = function() {
 }
 document.getElementById("hClose").onclick = function() {
   help.close();
-  document.querySelector("html").classList.remove("lockScroll");
 }
 document.getElementById("wClose").onclick = function() {
   document.querySelector("#wFile").close();

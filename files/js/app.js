@@ -42,7 +42,7 @@ function betterDialog() {
   var dialArr = document.querySelectorAll('dialog');
   for (let d = 0; d < dialArr.length; d++) {
     const dialog = dialArr[d];
-    dialog.addEventListener('click', function(evt){
+    dialog.addEventListener('click', function(evt) {
       if (evt.target.tagName !== 'DIALOG') { return; }
       const rect = evt.target.getBoundingClientRect();
       const clickedInDialog = (
@@ -53,9 +53,11 @@ function betterDialog() {
       );
       if (clickedInDialog === false) {
         dialog.close();
-        if (document.querySelector("dialog:modal") != null) { return; }
-        document.querySelector('html').classList.remove('lockScroll');
       }
+    });
+    dialog.addEventListener('close', function() {
+      if (document.querySelector("dialog:modal") != null) { return; }
+      document.querySelector('html').classList.remove('lockScroll');
     });
   }
 }
@@ -73,7 +75,7 @@ if (document.querySelector('meta[property="og:title"]') != null) {
 }
 if (document.querySelector('#siteSound') != null) {
   let soundScript = document.createElement('script');
-  soundScript.onload = function () {
+  soundScript.onload = function() {
     console.info("The `sound.js` was loaded");
   }
   soundScript.src = "/files/js/modules/sound.js";

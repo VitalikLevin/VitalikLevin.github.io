@@ -146,7 +146,6 @@ document.getElementById("hOpen").onclick = function() {
 }
 document.getElementById("hClose").onclick = function() {
   help.close();
-  document.querySelector("html").classList.remove("lockScroll");
 }
 document.getElementById("wClose").onclick = function() {
   document.querySelector("#wDuration").close();
