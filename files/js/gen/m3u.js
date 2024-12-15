@@ -61,7 +61,7 @@ function importList() {
         extendInf = readRes.split("\n")[strN - 1].replace("#EXTINF:", "");
       }
       const tempStr = readRes.split("\n")[strN];
-      if (tempStr != "#EXTM3U" && /^(#EXTINF:)+/gi.test(tempStr) == false && tempStr == "") {
+      if (tempStr != "#EXTM3U" && /^(#EXTINF:)+/gi.test(tempStr) == false && tempStr != "") {
         listItems.push({name: tempStr, prefix: "", suffix: "", date: 0, size: 0, extinf: extendInf});
       }
     }
