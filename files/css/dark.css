@@ -52,10 +52,12 @@ input[type="range"] {
 
 a:hover {
 	color: rgb(249, 173, 129);
+	text-decoration-color: rgb(249, 173, 129);
 }
 
 a:visited {
 	color: rgb(249, 168, 37);
+	text-decoration-color: rgb(249, 168, 37);
 }
 
 #wDuration, #wFile {

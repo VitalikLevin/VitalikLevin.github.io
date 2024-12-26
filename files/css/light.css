@@ -44,8 +44,13 @@ button#realAdd {
 	color: rgb(139, 195, 74);
 }
 
+a:hover {
+	text-decoration-color: rgb(249, 168, 37);
+}
+
 a:visited {
 	color: rgb(249, 168, 37);
+	text-decoration-color: rgb(249, 168, 37);
 }
 
 mark, ::selection {
