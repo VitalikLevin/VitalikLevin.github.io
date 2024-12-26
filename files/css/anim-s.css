@@ -18,7 +18,7 @@
   }
 }
 a {
-  transition: text-decoration 0.4s;
+  transition: text-decoration-style 200ms;
 }
 button {
   transition: linear 450ms transform;
