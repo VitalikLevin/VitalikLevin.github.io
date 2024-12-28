@@ -76,6 +76,7 @@ if (document.getElementById('shareD') != null) {
     document.getElementById('chooseShare').showModal();
     document.querySelector("html").classList.add("lockScroll");
   }
+  document.getElementById("sClose").addEventListener("click", function() { document.getElementById('shareD').close(); });
 }
 window.addEventListener('beforeinstallprompt', function(e) {
   e.preventDefault();

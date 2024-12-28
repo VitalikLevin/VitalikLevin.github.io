@@ -1,4 +1,9 @@
 - video: true
+  time: December 2024
+  name: New Year Eve 2024
+  src: /files/video/newyear-24.mp4
+  desc: A worm, a leaflet and a paint can
+- video: true
   time: October 2024
   name: Halloween 2024
   src: /files/video/halloween-24.mp4

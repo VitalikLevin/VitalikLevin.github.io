@@ -43,6 +43,10 @@ a:hover {
 	text-decoration-style: dashed;
 }
 
+a::selection {
+	text-decoration-thickness: 2.5px;
+}
+
 blockquote, .postLink:hover, #playlist {
 	margin: 0;
 	margin-bottom: 16px;
