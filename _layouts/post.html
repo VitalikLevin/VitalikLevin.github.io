@@ -12,12 +12,12 @@ Blog$${{ page.title }}
 <article>
 	<figure itemscope itemtype="https://schema.org/ImageObject" class="image">
 		<meta itemprop="name" content="{{ page.title }}">
-		<img class="img{{ page.mp-w | default: 400 }}" src="{{ page.mainpic }}" itemprop="contentUrl"><br>
-		<meta itemprop="license" content="{{ page.mp-lice | default: site.license }}">
+		<img class="img{{ page.image.width | default: 400 }}" src="{{ page.image.path }}" itemprop="contentUrl"><br>
+		<meta itemprop="license" content="{{ page.image.license | default: site.license }}">
 		{%- if page.lang == "ru" -%}
-		<figcaption><span itemprop="description">{{ page.mp-desc }}</span> | Создано <span class="human">&#128100;</span><span itemprop="copyrightNotice">{{ page.mp-auth | default: site.author }}</span></figcaption>
+		<figcaption><span itemprop="description">{{ page.image.desc }}</span> | Создано <span class="human">&#128100;</span><span itemprop="copyrightNotice">{{ page.image.auth | default: site.author }}</span></figcaption>
 		{%- else -%}
-		<figcaption><span itemprop="description">{{ page.mp-desc }}</span> | By <span class="human">&#128100;</span><span itemprop="copyrightNotice">{{ page.mp-auth | default: site.author }}</span></figcaption>
+		<figcaption><span itemprop="description">{{ page.image.desc }}</span> | By <span class="human">&#128100;</span><span itemprop="copyrightNotice">{{ page.image.auth | default: site.author }}</span></figcaption>
 		{%- endif -%}
 	</figure>
 	<h2 class="start">{{ page.title }}</h2>

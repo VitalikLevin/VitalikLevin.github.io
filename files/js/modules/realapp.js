@@ -74,9 +74,9 @@ if ('serviceWorker' in navigator) {
 if (document.getElementById('shareD') != null) {
   document.getElementById('shareD').onclick = function() {
     document.getElementById('chooseShare').showModal();
-    document.querySelector("html").classList.add("lockScroll");
+    document.querySelector('html').classList.add('lockScroll');
   }
-  document.getElementById("sClose").addEventListener("click", function() { document.getElementById('shareD').close(); });
+  document.getElementById('sClose').addEventListener('click', function() { document.getElementById('chooseShare').close(); });
 }
 window.addEventListener('beforeinstallprompt', function(e) {
   e.preventDefault();

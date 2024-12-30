@@ -2,8 +2,9 @@
 layout: post
 title: The First Post
 excerpt: The original description had a mistake.
-mainpic: /files/images/first-post.png
-mp-desc: A debugging worm
+image:
+  path: /files/images/first-post.png
+  desc: A debugging worm
 date: 2022-04-08 23:00:00 +0300
 lang: en-US
 tag: en

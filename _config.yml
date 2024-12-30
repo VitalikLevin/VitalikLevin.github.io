@@ -69,3 +69,6 @@ whitelist:
   - jekyll-redirect-from
 redirect_from:
   json: false
+feed:
+  icon: files/icons/favicon192.png
+  posts_limit: 20

@@ -17,9 +17,6 @@
     transform: translateX(0);
   }
 }
-a {
-  transition: text-decoration-style 200ms;
-}
 button {
   transition: linear 450ms transform;
 }

@@ -111,7 +111,7 @@ function showItems() {
       createBtn("Up", "\ud83e\udc45", m3uItem);
     }
     createBtn("Delete", "\ud83d\uddd1", m3uItem, "del");
-    createBtn("Edit", "\ud83d\udd89", m3uItem, "edit");
+    createBtn("Edit...", "\ud83d\udd89", m3uItem, "edit");
     if (fi < listItems.length - 1) {
       createBtn("Down", "\ud83e\udc47", m3uItem);
     }

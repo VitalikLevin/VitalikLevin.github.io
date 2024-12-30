@@ -44,7 +44,7 @@ a:hover {
 }
 
 a::selection {
-	text-decoration-thickness: 2.5px;
+	text-decoration-thickness: 3px;
 }
 
 blockquote, .postLink:hover, #playlist {

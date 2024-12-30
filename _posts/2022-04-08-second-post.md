@@ -2,8 +2,9 @@
 layout: post
 title: Проверка работы блога
 excerpt: Сьешь этих булочек.
-mainpic: /files/images/first-post.png
-mp-desc: Червь занимается отладкой.
+image:
+  path: /files/images/first-post.png
+  desc: Червь занимается отладкой.
 date: 2022-04-08 23:30:00 +0300
 lang: ru
 tag: ru
