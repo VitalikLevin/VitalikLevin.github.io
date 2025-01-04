@@ -105,3 +105,11 @@ window.addEventListener('beforeinstallprompt', function(e) {
     deferredPrompt = null;
   }
 });
+if (document.querySelector('figure > video') != null) {
+  let vidScript = document.createElement('script');
+  vidScript.onload = function() {
+    console.info("The `video.js` was loaded");
+  }
+  vidScript.src = "/files/js/modules/video.js";
+  document.body.appendChild(vidScript);
+}

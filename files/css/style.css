@@ -15,6 +15,10 @@
 	overflow-x: hidden;
 }
 
+:-webkit-full-screen {
+	background-color: transparent;
+}
+
 header {
 	position: fixed;
 	top: 0;
@@ -44,7 +48,7 @@ a:hover {
 }
 
 a::selection {
-	text-decoration-thickness: 3px;
+	text-decoration-thickness: 3.5px;
 }
 
 blockquote, .postLink:hover, #playlist {
@@ -182,7 +186,7 @@ dialog {
 	border: none;
 }
 
-dialog h3, dialog button {
+dialog h3, dialog button, .controls button {
 	text-align: center;
 }
 
@@ -237,8 +241,29 @@ button#realAdd, button.del, button.down, button.edit, button.up {
 	margin-bottom: -6px;
 }
 
-img[class^="img"], video, .prodlogo {
+img[class^="img"], video, video + .controls, .prodlogo {
 	max-width: 75vw;
+}
+
+[data-state="visible"] {
+	display: block;
+}
+
+.controls button {
+	margin: 0 10%;
+	width: 40px;
+	aspect-ratio: 1;
+	padding: 0;
+	font-size: 20px;
+}
+
+.controls *:first-child {
+	margin-left: 0;
+}
+
+.controls .fs {
+	float: right;
+	margin-right: 25vw;
 }
 
 figure, pre {
@@ -304,7 +329,7 @@ main > .post:last-child, main > figure:last-child {
 	margin-bottom: 1rem;
 }
 
-#wasd {
+#wasd, [data-state="hidden"] {
 	display: none;
 }
 

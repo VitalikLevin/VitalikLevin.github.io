@@ -35,9 +35,13 @@ permalink: /picofmonth/
 	</figure>
 	{%- else -%}
 	<figure class="image" title="{{ member.name }}">
-		<video autoplay loop muted playsinline>
+		<video autoplay controls loop muted playsinline>
 			<source src="{{ member.src }}" type="video/mp4">
 		</video><br>
+		<div class="controls" data-state="hidden">
+			<button class="play" data-state="play" title="Play/pause">&#x23ef;</button>
+			<button class="fs" title="Go fullscreen">&#x26f6;</button>
+		</div>
 		<figcaption itemprop="description">{{ member.desc }}</figcaption>
 	</figure>
 	{%- endunless -%}
