@@ -130,7 +130,7 @@ header span, details > summary, dialog, label, #cooknote, #wasd, .top {
 	right: 2vw;
 }
 
-#cooknote.show, #copyright, #wasd.show, dialog img {
+#cooknote.show, #copyright, #wasd.show, dialog img, [data-state="visible"] {
 	display: block;
 }
 
@@ -172,6 +172,7 @@ blockquote h3::before {
 	content: attr(data-tooltip);
   position: absolute;
   white-space: nowrap;
+	word-break: break-word;
   opacity: 0;
   pointer-events: none;
 }
@@ -245,10 +246,6 @@ img[class^="img"], video, video + .controls, .prodlogo {
 	max-width: 75vw;
 }
 
-[data-state="visible"] {
-	display: block;
-}
-
 .controls button {
 	margin: 0 10%;
 	width: 40px;
@@ -259,11 +256,6 @@ img[class^="img"], video, video + .controls, .prodlogo {
 
 .controls *:first-child {
 	margin-left: 0;
-}
-
-.controls .fs {
-	float: right;
-	margin-right: 25vw;
 }
 
 figure, pre {
@@ -351,7 +343,7 @@ button[data-key="w"], button[data-key="Pause"] {
 		position: fixed;
 		font-size: 50px;
 		right: 3px;
-		bottom: 10px;
+		bottom: 3vh;
 		z-index: 3;
 		visibility: visible;
 	}
