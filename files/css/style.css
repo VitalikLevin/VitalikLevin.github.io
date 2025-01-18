@@ -306,6 +306,9 @@ code {
 
 p {
 	max-width: 80ch;
+	-moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 dialog img {
