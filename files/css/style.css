@@ -9,14 +9,11 @@
   -webkit-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
 	line-height: 1.4;
+	margin: 8px;
 }
 
 :root {
 	overflow-x: hidden;
-}
-
-:-webkit-full-screen {
-	background-color: transparent;
 }
 
 header {
@@ -57,12 +54,12 @@ blockquote, .postLink:hover, #playlist {
 	padding-left: 10px;
 }
 
-button, button[type="submit"], ::file-selector-button, select {
+button, ::file-selector-button, input[type="submit"], select {
 	background-color: transparent;
 	border-width: 0.5px;
 }
 
-button[type="submit"] {
+input[type="submit"] {
 	border-width: 1px;
 }
 
@@ -251,7 +248,7 @@ img[class^="img"], video, video + .controls, .prodlogo {
 }
 
 .controls button {
-	margin: 0 10%;
+	margin: 0 30px;
 	width: 40px;
 	aspect-ratio: 1;
 	padding: 0;
@@ -343,9 +340,6 @@ button[data-key="w"], button[data-key="Pause"] {
 	margin-left: 16vh;
 }
 @media screen and (orientation: portrait) {
-	body {
-		margin: 8px;
-	}
 	.top {
 		position: fixed;
 		font-size: 50px;

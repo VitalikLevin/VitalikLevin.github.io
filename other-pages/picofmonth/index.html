@@ -18,7 +18,7 @@ permalink: /picofmonth/
 	{%- if year != pic_year and member == prev_pics.first -%}
 	<h3 id="{{ pic_year }}">{{ pic_year }}</h3>
 	{%- endif -%}
-	<h5 id="{{ member.time | slugify }}">{{ member.time | slice: 0, cut_month }}</h5>
+	<h4 id="{{ member.time | slugify }}">{{ member.time | slice: 0, cut_month }}</h4>
 	{%- unless member.video == true -%}
   <figure itemscope itemtype="https://schema.org/ImageObject" class="image">
 		<meta itemprop="name" content="{{ member.name }}">
