@@ -62,7 +62,7 @@ mark, ::selection {
 	color: rgb(0, 0, 0);
 }
 
-::file-selector-button, button {
+::file-selector-button, button, input[type="submit"] {
 	border-color: rgb(18, 18, 18);
 }
 

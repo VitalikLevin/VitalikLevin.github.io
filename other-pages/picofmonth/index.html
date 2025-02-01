@@ -9,7 +9,9 @@ permalink: /picofmonth/
 <main>
   <h2 class="start">Picture/video of the Month</h2>
 	<blockquote>The Second Anniversary</blockquote>
-	<p>"Picture/video of the Month" is an event where you can see our new "masterpieces".</p>
+	<p>
+		&#8220;Picture/video of the Month&#8221; is an event where you can see Vitaliy Levin’s new &#8220;masterpieces&#8221;.
+	</p>
 	{%- for member in site.data.potm -%}
 	{%- assign cut_month = member.time | size | minus: 4 -%}
 	{%- assign pic_year = member.time | slice: -4, 4 -%}

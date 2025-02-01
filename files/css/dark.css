@@ -30,7 +30,7 @@ dialog {
 	color: rgb(225, 227, 230);
 }
 
-blockquote h3, button, select, ::file-selector-button, ::selection, #sleep, .top a:any-link {
+blockquote h3, button, input[type="submit"], select, ::file-selector-button, ::selection, #sleep, .top a:any-link {
 	color: rgb(238, 238, 238);
 }
 
@@ -68,7 +68,7 @@ button#realAdd {
 	color: rgb(139, 195, 74);
 }
 
-::file-selector-button, button, select {
+::file-selector-button, button, input[type="submit"], select {
 	border-color: rgb(238, 238, 238);
 }
 

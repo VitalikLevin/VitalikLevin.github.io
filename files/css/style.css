@@ -9,7 +9,6 @@
   -webkit-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
 	line-height: 1.4;
-	margin: 8px;
 }
 
 :root {
@@ -340,6 +339,9 @@ button[data-key="w"], button[data-key="Pause"] {
 	margin-left: 16vh;
 }
 @media screen and (orientation: portrait) {
+	body {
+		margin: 8px;
+	}
 	.top {
 		position: fixed;
 		font-size: 50px;
