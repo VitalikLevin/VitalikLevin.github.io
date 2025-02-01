@@ -57,9 +57,13 @@ blockquote, .postLink:hover, #playlist {
 	padding-left: 10px;
 }
 
-button, ::file-selector-button, select {
+button, button[type="submit"], ::file-selector-button, select {
 	background-color: transparent;
 	border-width: 0.5px;
+}
+
+button[type="submit"] {
+	border-width: 1px;
 }
 
 button:hover, details > summary:hover, ::file-selector-button:hover, button + label:hover, select:hover, .top a:hover {
