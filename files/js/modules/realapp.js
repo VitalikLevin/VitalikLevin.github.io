@@ -1,6 +1,7 @@
 const cachedT = document.title;
 const now = new Date();
 const promoApp = document.getElementById('promoPWA');
+let showArrow = document.getElementById('showTopArrow');
 function checkCookies() {
   let cookieDate = localStorage.getItem('cookieDate');
   let cooknote = document.querySelector('#cooknote');
@@ -24,6 +25,23 @@ function ifUserHasGone() {
       }
     }, 3000);
   });
+}
+function changeArrowVisibility() {
+  if (Number(showArrow.innerText) != 1) {
+    document.querySelector('.imgs .top').classList.remove('show');
+  } else {
+    document.querySelector('.imgs .top').classList.add('show');
+  }
+  localStorage.setItem('showTop', showArrow.innerText);
+}
+function onloadShowArrow() {
+  let isArrowVisible = localStorage.getItem('showTop');
+  if (isArrowVisible == '' || isArrowVisible == undefined) {
+    localStorage.setItem('showTop', '0');
+  } else {
+    showArrow.innerText = isArrowVisible;
+  }
+  changeArrowVisibility();
 }
 function sharePage() {
   if ('share' in window.navigator) {
@@ -63,7 +81,9 @@ function getAdvice() {
 checkCookies();
 getAdvice();
 ifUserHasGone();
+onloadShowArrow();
 document.getElementById('share').addEventListener('click', sharePage);
+showArrow.addEventListener('click', changeArrowVisibility);
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js', { scope: '/' })
     .then(() => navigator.serviceWorker.ready.then((worker) => {
