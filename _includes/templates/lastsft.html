@@ -1,6 +1,6 @@
 {%- assign sft = site.data.sft -%}
 <section>
-  <h3>Download the <em>latest</em> version of Steamy Fish extension</h3>
+  <h3>Download the <em data-tooltip="v{{ sft.first.major | default: 0 }}.{{ sft.first.minor }}.{{ sft.first.patch | default: 0 }}">latest</em> version of Steamy Fish extension</h3>
   &#x2b73; <a href="https://marketplace.visualstudio.com/_apis/public/gallery/publishers/networkworms/vsextensions/steamyfish/{{ sft.first.major | default: 0 }}.{{ sft.first.minor }}.{{ sft.first.patch | default: 0 }}/vspackage">VSIX file</a>
   <h4><span class="keyboard">&#x1f5ae;</span> Keyboard men’s way</h4>
 {%- highlight shell -%}

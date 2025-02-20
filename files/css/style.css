@@ -1,340 +1,352 @@
 @import url(fonts.css);
 @import url(code.css);
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 :root, button, dialog, input, select, ::before, ::file-selector-button, [data-tooltip]::after {
-	font-family: liberastika, sans-serif, wfnotdef;
-	font-synthesis: none;
+  font-family: liberastika, sans-serif, wfnotdef;
+  font-synthesis: none;
   -webkit-text-size-adjust: 100%;
-	-webkit-font-smoothing: antialiased;
-	line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.4;
 }
 
 :root {
-	overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 header {
-	position: fixed;
-	top: 0;
-	right: 0;
-	z-index: 3;
-	width: 100%;
-	font-size: 1.5rem;
-	font-weight: 700;
-	padding: 8px 8px;
-	backdrop-filter: blur(2.5px);
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 8px 8px;
+  backdrop-filter: blur(2.5px);
 }
 
 header + main, header + nav, header + .crumb {
-	margin-top: 56px;
+  margin-top: 56px;
 }
 
 strong, .start {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 header span, header span a, .top a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 a:hover {
-	text-decoration-style: dashed;
+  text-decoration-style: dashed;
 }
 
 a::selection {
-	text-decoration-thickness: 3.5px;
+  text-decoration-thickness: 3.5px;
 }
 
 blockquote, .postLink:hover, #playlist {
-	margin: 0;
-	margin-bottom: 16px;
-	padding-left: 10px;
+  margin: 0;
+  margin-bottom: 16px;
+  padding-left: 10px;
 }
 
 button, ::file-selector-button, input[type="submit"], select {
-	background-color: transparent;
-	border-width: 0.5px;
+  background-color: transparent;
+  border-width: 0.5px;
 }
 
 input[type="submit"] {
-	border-width: 1px;
+  border-width: 1px;
 }
 
 button:hover, details > summary:hover, ::file-selector-button:hover, button + label:hover, header span a:hover, input[type="submit"]:hover, select:hover, .top a:hover {
-	opacity: 0.7;
-	cursor: pointer;
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 #hOpen {
-	cursor: help;
+  cursor: help;
 }
 
 .image {
-	margin-left: 5px;
-	margin-top: 5px;
+  margin-left: 5px;
+  margin-top: 5px;
 }
 
 .image span, figcaption, .num, .pubDat, .robExample {
-	font-family: robotoslab, serif, wfnotdef;
+  font-family: robotoslab, serif, wfnotdef;
 }
 
 code, kbd, pre, button.bin, ::placeholder {
-	font-family: jbmono, monospace, wfnotdef;
+  font-family: jbmono, "Roboto Mono", monospace, wfnotdef;
 }
 
 .pubDat {
-	font-size: 16px;
-	margin-top: -10px;
+  font-size: 16px;
+  margin-top: -10px;
 }
 
 .pubDat .cal, h4 .keyboard, .human {
-	font-size: 24px;
+  font-size: 24px;
 }
 
 .top {
-	visibility: hidden;
+  visibility: hidden;
 }
 
 header span, details > summary, dialog, label, #cooknote, #wasd, .top {
-	user-select: none;
-	-moz-user-select: none;
-	-webkit-user-select: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
 }
 
 #cooknote img {
-	margin-right: 8px;
-	margin-left: 8px;
+  margin-right: 8px;
+  margin-left: 8px;
 }
 
 #cooknote {
-	position: fixed;
-	display: none;
-	z-index: 4;
-	left: 0;
-	right: 0;
-	bottom: 0;
+  position: fixed;
+  display: none;
+  z-index: 4;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .cookagree, #wClose {
-	padding: 0;
-	position: fixed;
-	left: calc(98vw - 70px);
-	aspect-ratio: 1 / 1;
-	width: 48px;
+  padding: 0;
+  position: fixed;
+  left: calc(98vw - 70px);
+  aspect-ratio: 1 / 1;
+  width: 48px;
 }
 
 .cookagree {
-	bottom: 1dvh;
-	right: 2vw;
+  bottom: 1dvh;
+  right: 2vw;
 }
 
 #cooknote.show, #copyright, #wasd.show, dialog img, [data-state="visible"] {
-	display: block;
+  display: block;
 }
 
 #cooknote img, button#realAdd, button.del, button.down, button.edit, button.up, button.bin {
-	aspect-ratio: 1 / 1;
-	height: 24px;
-	padding: 0;
-	margin-top: 2px;
+  aspect-ratio: 1 / 1;
+  height: 24px;
+  padding: 0;
+  margin-top: 2px;
 }
 
 #cooknote p, #promoPWA span, #wFile p {
-	max-width: 80vw;
-	margin-left: 8px;
+  max-width: 80vw;
+  margin-left: 8px;
 }
 
 input[type="text"], input[type="range"], dialog {
-	min-width: 35vw;
+  min-width: 35vw;
 }
 
 input:focus, select:focus {
-	outline-offset: 0;
+  outline-offset: 0;
 }
 
 blockquote h3::before {
-	content: "\1F589  ";
+  content: "\1F589  ";
 }
 
 [data-before] {
-	display: inline;
+  display: inline;
 }
 
 [data-before]::before {
-	content: attr(data-before);
+  content: attr(data-before);
 }
 
 [data-tooltip] {
-	position: relative;
+  position: relative;
 }
 
 [data-tooltip]::after {
-	content: attr(data-tooltip);
+  content: attr(data-tooltip);
   position: absolute;
   white-space: nowrap;
-	word-break: break-word;
+  word-break: break-word;
   opacity: 0;
   pointer-events: none;
-	font-style: normal;
-	font-weight: normal;
+  font-style: normal;
+  font-weight: normal;
 }
 
 [data-tooltip]:hover::after {
-	top: 20%;
+  top: 20%;
   padding: 0.25rem;
-	opacity: 1;
+  opacity: 1;
 }
 
 dialog {
-	border: none;
+  border: none;
 }
 
 dialog h3, dialog button, .controls button {
-	text-align: center;
+  text-align: center;
 }
 
 dialog p, dialog h3, #options h3, #copyright + * {
-	margin-top: 0;
-	margin-bottom: 5px;
+  margin-top: 0;
+  margin-bottom: 5px;
 }
 
 dialog button {
-	display: block;
-	margin: 8px auto;
+  display: block;
+  margin: 8px auto;
 }
 
 #wDuration, #wFile {
-	position: fixed;
-	top: 1vh;
-	left: 0vw;
-	width: 95dvw;
-	z-index: 4;
+  position: fixed;
+  top: 1vh;
+  left: 0vw;
+  width: 95dvw;
+  z-index: 4;
 }
 
 #wClose {
-	top: 1.1vh;
-	right: 8vw;
+  top: 1.1vh;
+  right: 8vw;
 }
 
 header button {
-	position: absolute;
-	right: 24px;
-	border: none;
+  position: absolute;
+  right: 24px;
+  border: none;
 }
 
 .lockScroll {
-	overflow-y: hidden;
+  overflow-y: hidden;
 }
 
 button#realAdd, button.del, button.down, button.edit, button.up {
-	margin-left: 8px;
-	font-size: 16px;
+  margin-left: 8px;
+  font-size: 16px;
 }
 
 .listItem, #options {
-	margin: 8px 0;
+  margin: 8px 0;
 }
 
 #logo {
-	width: 30px;
-	aspect-ratio: 1 / 1;
+  width: 30px;
+  aspect-ratio: 1 / 1;
 }
 
 .listLogo, #cooknote img, #logo {
-	margin-bottom: -6px;
+  margin-bottom: -6px;
 }
 
-img[class^="img"], video, video + .controls, .prodlogo {
-	max-width: 75vw;
+img[class^="img"], video, .prodlogo {
+  max-width: 75vw;
+}
+
+video + .controls {
+  margin-bottom: 0;
+}
+
+.controls {
+  width: 100%;
 }
 
 .controls button {
-	margin: 0 30px;
-	width: 40px;
-	aspect-ratio: 1;
-	padding: 0;
-	font-size: 20px;
+  margin: 0 30px;
+  width: 40px;
+  aspect-ratio: 1;
+  padding: 0;
+  font-size: 20px;
+  border-color: transparent;
 }
 
 .controls *:first-child {
-	margin-left: 0;
+  margin-left: 0;
+}
+
+.controls :last-child {
+  margin-right: 0;
+  float: right;
 }
 
 figure, pre {
-	margin: 4px 4px;
-	max-width: 85vw;
+  margin: 4px 4px;
+}
+
+pre {
+  max-width: 85vw;
+}
+
+figure {
+  max-width: max-content;
 }
 
 table {
-	border-collapse: collapse;
+  border-collapse: collapse;
 }
 
 canvas.noSize, #game {
-	width: 75vw;
-	height: 50vh;
-	position: relative;
+  width: 75vw;
+  height: 50vh;
+  position: relative;
 }
 
 #game + #wasd[class=""] {
-	margin-bottom: -2.5rem;
+  margin-bottom: -2.5rem;
 }
 
 #game + #wasd.show {
-	margin-top: 5px;
-	position: relative;
-	z-index: 4;
-	float: right;
+  margin-top: 5px;
+  position: relative;
+  z-index: 4;
+  float: right;
 }
 
 #wasd.show + * {
-	margin-top: 200px;
+  margin-top: 200px;
 }
 
 canvas {
-	position: absolute;
+  position: absolute;
 }
 
 #action {
-	z-index: 1;
+  z-index: 1;
 }
 
 #misc {
-	z-index: 2;
+  z-index: 2;
 }
 
 code {
-	word-break: break-word;
+  word-break: break-word;
 }
 
 p {
-	max-width: 80ch;
-	-moz-hyphens: auto;
+  max-width: 80ch;
+  -moz-hyphens: auto;
   -webkit-hyphens: auto;
   hyphens: auto;
 }
 
 dialog img {
-	margin: auto;
+  margin: auto;
 }
 
 button:disabled {
-	opacity: 0.6;
-	transform: rotateZ(-5deg);
+  opacity: 0.6;
+  transform: rotateZ(-5deg);
 }
 
 main > .post:last-child, main > figure:last-child {
-	margin-bottom: 1rem;
-}
-
-.top.show {
-	position: fixed;
-	font-size: 50px;
-	right: 3px;
-	bottom: 3vh;
-	z-index: 3;
-	visibility: visible;
+  margin-bottom: 1rem;
 }
 
 #wasd, [data-state="hidden"] {
@@ -342,42 +354,52 @@ main > .post:last-child, main > figure:last-child {
 }
 
 #wasd.show button {
-	width: 15vh;
-	font-size: 11vh;
-	aspect-ratio: 1 / 1;
-	margin-bottom: 5px;
+  width: 15vh;
+  font-size: 11vh;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 5px;
 }
 
 button[data-key="w"], button[data-key="Pause"] {
-	margin-left: 16vh;
+  margin-left: 16vh;
+}
+@media screen {
+  .top.show {
+    position: fixed;
+    font-size: 50px;
+    right: 3px;
+    bottom: 3vh;
+    z-index: 3;
+    visibility: visible;
+  }
 }
 @media screen and (orientation: portrait) {
-	body {
-		margin: 8px;
-	}
-	input[type="text"] {
-		min-width: 65vw;
-	}
-	nav ul li, input, select {
-		margin-bottom: 8px;
-	}
-	canvas.noSize {
-		width: 85svw;
-	}
-	#game + #wasd.show {
-		margin-top: 5px;
-		float: none;
-		position: static;
-	}
-	#wasd.show button {
-		width: 15vw;
-		font-size: 11vw;
-		aspect-ratio: 1 / 1;
-	}
-	#wasd.show + * {
-		margin-top: 1rem;
-	}
-	button[data-key="w"], button[data-key="Pause"] {
-		margin-left: 16vw;
-	}
+  body {
+    margin: 8px;
+  }
+  input[type="text"] {
+    min-width: 65vw;
+  }
+  nav ul li, input, select {
+    margin-bottom: 8px;
+  }
+  canvas.noSize {
+    width: 85svw;
+  }
+  #game + #wasd.show {
+    margin-top: 5px;
+    float: none;
+    position: static;
+  }
+  #wasd.show button {
+    width: 15vw;
+    font-size: 11vw;
+    aspect-ratio: 1 / 1;
+  }
+  #wasd.show + * {
+    margin-top: 1rem;
+  }
+  button[data-key="w"], button[data-key="Pause"] {
+    margin-left: 16vw;
+  }
 }

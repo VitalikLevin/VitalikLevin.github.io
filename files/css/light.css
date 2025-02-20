@@ -86,6 +86,14 @@ input[type="range"] {
 	background-color: rgba(196, 196, 196, 0.8);
 }
 
+.controls {
+	background-color: rgb(41, 41, 41);
+}
+
+.controls button {
+	color: rgb(238, 238, 238);
+}
+
 .fillWh {
 	fill: rgb(18, 18, 18);
 }

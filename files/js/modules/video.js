@@ -7,6 +7,7 @@ function betterVideo() {
     const vidElem = videoArr[v];
     let vidControls = vidElem.nextElementSibling.nextElementSibling;
     const vidPlay = vidControls.firstElementChild;
+    const vidDown = vidPlay.nextElementSibling;
     const vidGoFull = vidControls.lastElementChild;
     vidControls.setAttribute("data-state", "visible");
     vidPlay.onclick = function() {
@@ -20,21 +21,49 @@ function betterVideo() {
         vidElem.pause();
       }
     }
+    vidDown.onclick = function() {
+      let vidLink = document.createElement("a");
+      let vidSrc = vidElem.firstElementChild.getAttribute("src");
+      vidLink.href = vidSrc;
+      vidLink.download = vidSrc.slice(vidLink.href.lastIndexOf("/"), vidSrc.length);
+      vidLink.click();
+      vidLink.remove();
+    }
     if (!document?.fullscreenEnabled) {
-      vidGoFull.style.display = "none";
+      vidGoFull.setAttribute("data-state", "hidden");
     } else {
       vidGoFull.onclick = function() {
+        const vidTitle = vidElem.getAttribute("title");
         if (document.fullscreenElement !== null) {
           setFullscreenData(false, vidElem);
+          vidElem.setAttribute("title", vidTitle);
           document.exitFullscreen();
         } else {
           vidElem.requestFullscreen();
+          vidElem.removeAttribute("title");
           setFullscreenData(true, vidElem);
         }
       }
       document.addEventListener("fullscreenchange", function() {
         setFullscreenData(!!document.fullscreenElement, vidElem);
       });
+    }
+    vidElem.parentElement.addEventListener("keydown", function(ev) {
+      if (ev.key.toLowerCase() == "p" || ev.key == " ") {
+        ev.preventDefault();
+        vidPlay.click();
+      }
+      if (ev.key.toLowerCase() == "f" && vidGoFull.getAttribute("data-state") != "hidden") {
+        vidGoFull.click();
+      }
+      if (ev.ctrlKey && ev.key.toLowerCase() == "s") {
+        ev.preventDefault();
+        vidDown.click();
+      }
+    });
+    vidElem.onclick = function(evt) {
+      evt.preventDefault();
+      vidPlay.click();
     }
     vidElem.controls = false;
   }
