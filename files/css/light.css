@@ -82,6 +82,14 @@ input[type="range"] {
 	background-color: rgb(18, 71, 122);
 }
 
+details {
+	border: 2px solid rgb(18, 71, 122);
+}
+
+details[open] summary {
+	border-bottom: 1px solid rgb(18, 71, 122);
+}
+
 [data-tooltip]::after {
 	background-color: rgba(196, 196, 196, 0.8);
 }

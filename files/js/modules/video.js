@@ -12,14 +12,18 @@ function betterVideo() {
     vidControls.setAttribute("data-state", "visible");
     vidPlay.onclick = function() {
       if (vidElem.paused || vidElem.ended) {
-        vidPlay.setAttribute("data-state", "play");
-        vidPlay.textContent = "\u23f8";
         vidElem.play();
       } else {
-        vidPlay.setAttribute("data-state", "pause");
-        vidPlay.textContent = "\u25b6";
         vidElem.pause();
       }
+    }
+    vidElem.onplay = function() {
+      vidPlay.setAttribute("data-state", "play");
+      vidPlay.textContent = "\u23f8";
+    }
+    vidElem.onpause = function() {
+      vidPlay.setAttribute("data-state", "pause");
+      vidPlay.textContent = "\u25b6";
     }
     vidDown.onclick = function() {
       let vidLink = document.createElement("a");
@@ -33,14 +37,11 @@ function betterVideo() {
       vidGoFull.setAttribute("data-state", "hidden");
     } else {
       vidGoFull.onclick = function() {
-        const vidTitle = vidElem.getAttribute("title");
         if (document.fullscreenElement !== null) {
           setFullscreenData(false, vidElem);
-          vidElem.setAttribute("title", vidTitle);
           document.exitFullscreen();
         } else {
           vidElem.requestFullscreen();
-          vidElem.removeAttribute("title");
           setFullscreenData(true, vidElem);
         }
       }
@@ -71,5 +72,13 @@ function betterVideo() {
 function setFullscreenData(state, vidElement) {
   vidElement.setAttribute("data-fullscreen", !!state);
   vidElement.controls = !!state;
+  if (!!state == false) {
+    vidElement.parentElement.setAttribute("title", vidElement.getAttribute("data-real-title"));
+  } else {
+    if (vidElement.getAttribute("data-real-title") == null) {
+      vidElement.setAttribute("data-real-title", vidElement.parentElement.getAttribute("title"));
+    }
+    vidElement.parentElement.removeAttribute("title");
+  }
 }
 betterVideo();

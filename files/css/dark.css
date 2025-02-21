@@ -84,6 +84,14 @@ mark::selection, mark *::selection {
 	background-color: rgb(88, 116, 146);
 }
 
+details {
+	border: 2px solid rgb(88, 116, 146);
+}
+
+details[open] summary {
+	border-bottom: 1px solid rgb(88, 116, 146);
+}
+
 .fillWh {
 	fill: rgb(238, 238, 238);
 }
