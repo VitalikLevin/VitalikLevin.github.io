@@ -5,7 +5,7 @@ function betterVideo() {
   if (supportsVideo != true) { return; }
   for (let v = 0; v < videoArr.length; v++) {
     const vidElem = videoArr[v];
-    let vidControls = vidElem.nextElementSibling.nextElementSibling;
+    let vidControls = vidElem.nextElementSibling;
     const vidPlay = vidControls.firstElementChild;
     const vidDown = vidPlay.nextElementSibling;
     const vidGoFull = vidControls.lastElementChild;
