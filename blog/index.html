@@ -18,19 +18,19 @@ permalink: /blog/
 	</section>
 {%- endfor -%}
 {%- if paginator.total_pages > 1 -%}
-	<ul>
+	<p>
 		{%- if paginator.previous_page -%}
-			<li><a href="{{ paginator.previous_page_path }}">Back</a></li>
+			<span><a href="{{ paginator.previous_page_path }}">Back</a></span> |
 		{%- else -%}
-			<li>Back</li>
+			<span>Back</span> |
 		{%- endif -%}
-			<li>Page {{ paginator.page }} / {{ paginator.total_pages }}</li>
+			<span>Page {{ paginator.page }} / {{ paginator.total_pages }}</span> |
 		{%- if paginator.next_page -%}
-			<li><a href="{{ paginator.next_page_path }}">Next</a></li>
+			<span><a href="{{ paginator.next_page_path }}">Next</a></span>
 		{%- else -%}
-			<li class="next">Next</li>
+			<span class="next">Next</span>
 		{%- endif -%}
-	</ul>
+	</p>
 {%- endif -%}
 </main>
 {%- include footer.html -%}

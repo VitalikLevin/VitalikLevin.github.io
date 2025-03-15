@@ -7,9 +7,17 @@
 		<a href="/">Network W<img src="{{ site.status }}" alt="o" id="logo" fetchpriority="low">rms</a>
 {%- endunless -%}
 {%- if include.shareDial == 'true' -%}
+	{%- if page.lang == 'ru' -%}
+		<button id="shareD" title="Поделиться...">{%- include svg/share.svg -%}</button>
+	{%- else -%}
 		<button id="shareD" title="Share...">{%- include svg/share.svg -%}</button>
+	{%- endif -%}
 {%- else -%}
+	{%- if page.lang == 'ru' -%}
+		<button id="share" title="Поделиться">{%- include svg/share.svg -%}</button>
+	{%- else -%}
 		<button id="share" title="Share">{%- include svg/share.svg -%}</button>
+	{%- endif -%}
 {%- endif -%}
 	</span>
 </header>

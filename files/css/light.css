@@ -70,6 +70,11 @@ mark::selection, mark *::selection {
 	background-color: rgba(100, 181, 246, 0.8);
 }
 
+/* Bug fix for Firefox 115 */
+:root::target-text {
+	background-color: rgba(100, 181, 246, 0.8);
+}
+
 ::backdrop, [contenteditable]::selection {
 	background-color: rgba(18, 18, 18, 0.6);
 }

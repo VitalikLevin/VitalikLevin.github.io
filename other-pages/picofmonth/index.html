@@ -37,7 +37,11 @@ permalink: /picofmonth/
 	</figure>
 	{%- else -%}
 	<figure class="image" title="{{ member.name }}">
+		{%- if forloop.index > 3 -%}
+		<video controls loop muted playsinline>
+		{%- else -%}
 		<video autoplay controls loop muted playsinline>
+		{%- endif -%}
 			<source src="{{ member.src }}" type="video/mp4">
 		</video>
 		<div class="controls" data-state="hidden">

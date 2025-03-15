@@ -4,7 +4,7 @@
 
 README was eaten by `VitalikLevin`.
 
-- [The License](/LICENSE.txt)
+- [The license text](/LICENSE.txt)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="files/images/spaceworm-dark.png">
@@ -34,10 +34,11 @@ README was eaten by `VitalikLevin`.
 
 ## Local testing
 1. Clone repository
-2. Install `ruby` and `github-pages`
-3. Run the snippet below to start web server
+2. Install `ruby` for your platform
+3. Install gems `bundler` and `github-pages`
+4. Run the snippet below to start web server
 
 ```
 bundle exec jekyll serve
-# Server URL: localhost:808
+# Server URL: localhost:2804
 ```
