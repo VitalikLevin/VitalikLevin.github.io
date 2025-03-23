@@ -1,14 +1,3 @@
-@keyframes msgResize {
-  from {
-    height: 1vh;
-  }
-  84% {
-    height: 12vh;
-  }
-  to {
-    height: fit-content;
-  }
-}
 @keyframes run {
   from {
     transform: translateX(-104vw);
@@ -19,12 +8,6 @@
 }
 button {
   transition: linear 450ms transform;
-}
-dialog:modal {
-  animation: 2700ms linear msgResize;
-}
-#chooseShare:modal, #eItem:modal, #preRes:modal {
-  animation: none;
 }
 #cooknote.show, #wDuration, #wFile {
   animation: 4s run;

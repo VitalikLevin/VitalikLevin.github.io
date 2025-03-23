@@ -1,6 +1,6 @@
 "use strict";
-function betterVideo() {
-  let videoArr = document.querySelectorAll("figure > video");
+function betterMedia() {
+  let videoArr = document.querySelectorAll("figure > video").concat(document.querySelectorAll("figure > audio"));
   const supportsVideo = !!videoArr[0].canPlayType("video/mp4");
   if (supportsVideo != true) { return; }
   for (let v = 0; v < videoArr.length; v++) {
@@ -33,7 +33,7 @@ function betterVideo() {
       vidLink.click();
       vidLink.remove();
     }
-    if (!document?.fullscreenEnabled) {
+    if (!document?.fullscreenEnabled || vidElem.tagName.toLowerCase() == "audio") {
       vidGoFull.setAttribute("data-state", "hidden");
     } else {
       vidGoFull.onclick = function() {
@@ -81,4 +81,4 @@ function setFullscreenData(state, vidElement) {
     vidElement.parentElement.removeAttribute("title");
   }
 }
-betterVideo();
+betterMedia();

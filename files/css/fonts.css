@@ -1,5 +1,5 @@
 @font-face {
-	font-family: "liberastika";
+	font-family: "Liberastika";
 	src: local(Liberastika Regualar),
 		url("../fonts/liberastika_regular.woff2") format("woff2");
 	font-weight: normal;
@@ -7,7 +7,7 @@
 	font-display: swap;
 }
 @font-face {
-	font-family: "robotoslab";
+	font-family: "Roboto Slab";
 	src: local(Roboto Slab),
 		url("../fonts/robotoslab.woff2") format("woff2");
 	font-weight: normal;
@@ -15,7 +15,7 @@
 	font-display: swap;
 }
 @font-face {
-	font-family: "liberastika";
+	font-family: "Liberastika";
 	src: local(Liberastika Bold),
 		url("../fonts/liberastika_bold.woff2") format("woff2");
 	font-weight: bold;
@@ -23,7 +23,7 @@
 	font-display: swap;
 }
 @font-face {
-	font-family: "liberastika";
+	font-family: "Liberastika";
 	src: local(Liberastika Italic),
 		url("../fonts/liberastika_italic.woff2") format("woff2");
 	font-weight: normal;
@@ -31,7 +31,7 @@
 	font-display: swap;
 }
 @font-face {
-	font-family: "jbmono";
+	font-family: "JetBrains Mono";
 	src: local(JetBrains Mono Regular),
 		url("../fonts/jbmono_regular.woff2") format("woff2");
 	font-weight: normal;
@@ -39,7 +39,7 @@
 	font-display: swap;
 }
 @font-face {
-	font-family: "liberastika";
+	font-family: "Liberastika";
 	src: local(Liberastika Bold Italic),
 		url("../fonts/liberastika_bolditalic.woff2") format("woff2");
 	font-weight: bold;
@@ -55,7 +55,7 @@
 	font-display: swap;
 }
 @font-face {
-	font-family: "jbmono";
+	font-family: "JetBrains Mono";
 	src: local(JetBrains Mono Bold),
 		url("../fonts/jbmono_bold.woff2") format("woff2");
 	font-weight: bold;
@@ -63,7 +63,7 @@
 	font-display: swap;
 }
 @font-face {
-	font-family: "jbmono";
+	font-family: "JetBrains Mono";
 	src: local(JetBrains Mono Italic),
 		url("../fonts/jbmono_italic.woff2") format("woff2");
 	font-weight: normal;
@@ -71,7 +71,7 @@
 	font-display: swap;
 }
 @font-face {
-	font-family: "jbmono";
+	font-family: "JetBrains Mono";
 	src: local(JetBrains Mono Bold Italic),
 		url("../fonts/jbmono_bolditalic.woff2") format("woff2");
 	font-weight: bold;
