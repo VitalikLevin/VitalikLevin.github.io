@@ -1,6 +1,10 @@
 "use strict";
 function betterMedia() {
-  let videoArr = document.querySelectorAll("figure > video").concat(document.querySelectorAll("figure > audio"));
+  let videoArr = document.querySelectorAll("figure > video");
+  let audioArr = Array.from(document.querySelectorAll("figure > audio"));
+  if (audioArr != []) {
+    videoArr = Array.from(videoArr).concat(audioArr);
+  }
   const supportsVideo = !!videoArr[0].canPlayType("video/mp4");
   if (supportsVideo != true) { return; }
   for (let v = 0; v < videoArr.length; v++) {

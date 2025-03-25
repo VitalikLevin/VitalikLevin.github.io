@@ -39,10 +39,6 @@ a:hover {
   text-decoration-style: dashed;
 }
 
-a::selection {
-  text-decoration-thickness: 3.5px;
-}
-
 blockquote, .postLink:hover, #playlist {
   margin: 0;
   margin-bottom: 16px;
@@ -255,7 +251,7 @@ figcaption, img[class^="img"], video, .prodlogo {
 }
 
 video + .controls {
-  margin-bottom: 0;
+  margin-top: 4px;
 }
 
 .controls {

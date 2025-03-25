@@ -34,7 +34,7 @@ blockquote h3, button, input[type="submit"], select, ::file-selector-button, ::s
 	color: rgb(238, 238, 238);
 }
 
-.start, article > h2, main > h2, a {
+.start, article > h2:first-child, main > h2:first-child, a {
 	color: rgb(100, 181, 246);
 }
 

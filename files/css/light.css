@@ -40,7 +40,7 @@ kbd, dialog h3, dialog img, #options, [data-tooltip]::after {
 	border: 1px solid rgb(18, 18, 18);
 }
 
-a, article > h2, blockquote h3, main > h2, .start {
+a, article > h2:first-child, blockquote h3, main > h2:first-child, .start {
 	color: rgb(18, 71, 122);
 }
 

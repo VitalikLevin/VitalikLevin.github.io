@@ -3,16 +3,23 @@ let canMisc = document.getElementById("misc");
 let canBack = document.getElementById("back");
 const shareBtn = document.getElementById("shareI");
 var audioContext;
+let gameSounds = [
+  {path: "/files/audio/got-in-self.ogg", audioBuffer: null},
+  {path: "/files/audio/got-in-wall.ogg", audioBuffer: null},
+  {path: "/files/audio/snake-bite.ogg", audioBuffer: null}
+];
 var context = canvas.getContext("2d");
 var ctxM = canMisc.getContext("2d");
 let ctxB = canBack.getContext("2d", {alpha: false});
 let grid = 16;
+const fontString = "'JetBrains Mono', 'Roboto Mono', monospace";
 let gridWidth = Math.ceil(canvas.width / grid);
 let gridHeight = Math.ceil(canvas.height / grid);
 const appleColors = ["#f10000", "#ffd100", "#00be00", "#283593", "#f7630c"];
 let gameOver = false;
 let isPaused = false;
 let justEating = false;
+let waitsForClick = true;
 let isHiScore = 0;
 let walls = [];
 let applesEaten = 0;
@@ -28,15 +35,20 @@ var snake = {
 var apple = {
   x: 192, y: 160, colorId: 0
 };
-async function playSound(url, volume=localStorage.getItem("siteVol"), audioCtx=audioContext) {
-  if (volume == 0) {
-    return;
-  }
+async function playSound(url, volume=localStorage.getItem("siteVol"), audioCtx=audioContext, soundsArr=gameSounds) {
+  if (volume == 0) { return; }
+  let soundObj = soundsArr[soundsArr.findIndex((s) => s.path == url)];
   let gainNode = audioCtx.createGain();
   const source = audioCtx.createBufferSource();
-  const audioBuffer = await fetch(url)
-    .then(res => res.arrayBuffer())
-    .then(ArrayBuffer => audioCtx.decodeAudioData(ArrayBuffer));
+  let audioBuffer;
+  if (soundObj.audioBuffer == null) {
+    audioBuffer = await fetch(url)
+      .then(res => res.arrayBuffer())
+      .then(ArrayBuffer => audioCtx.decodeAudioData(ArrayBuffer));
+    soundObj.audioBuffer = audioBuffer;
+  } else {
+    audioBuffer = soundObj.audioBuffer;
+  }
   source.buffer = audioBuffer;
   source.connect(gainNode);
   gainNode.connect(audioCtx.destination);
@@ -80,12 +92,12 @@ function intro() {
   }
   ctxM.clearRect(0, 0, canvas.width, canvas.height);
   ctxM.fillStyle = "#fdd835";
-  ctxM.font = `${grid*2}px jbmono`;
+  ctxM.font = `${grid*2}px ${fontString}`;
   ctxM.textAlign = "center";
   ctxM.textBaseline = "middle";
   ctxM.textRendering = "optimizeLegibility";
   ctxM.fillText("CLICK TO PLAY", canvas.width / 2, canvas.height / 2);
-  ctxM.font = `${grid + 4}px jbmono,wfnotdef`;
+  ctxM.font = `${grid + 4}px ${fontString},wfnotdef`;
   if (bestLunch > 0) {
     ctxM.fillText(`HI-SCORE ${bestLunch}`, canvas.width - grid * 5, grid * 2);
   }
@@ -124,11 +136,12 @@ function loop() {
       ctxM.font = `${grid*1.5}px wfnotdef`;
       ctxM.fillText("\ud83c\udfc6".repeat(isHiScore), canvas.width - grid * 2, grid * 2);
     }
-    ctxM.font = `${grid*2.5}px jbmono`;
+    ctxM.font = `${grid*2.5}px ${fontString}`;
     ctxM.fillText("GAME OVER ;(", canvas.width / 2, canvas.height / 2);
-    ctxM.font = `italic ${grid*1.5}px jbmono`;
+    ctxM.font = `italic ${grid*1.5}px ${fontString}`;
     ctxM.fillText("CLICK TO RESTART", canvas.width / 2, canvas.height / 2 + grid * 4);
     canMisc.addEventListener("click", playAgain, false);
+    waitsForClick = true;
     return;
   }
   if (isPaused == true || deltaTime > 1000) {
@@ -186,7 +199,7 @@ function loop() {
   if (justEating) {
     ctxM.clearRect(canvas.width - grid * 4, grid + 1, grid * 3, grid * 3);
     ctxM.fillStyle = "#fdd835";
-    ctxM.font = `${grid + 4}px jbmono`;
+    ctxM.font = `${grid + 4}px ${fontString}`;
     ctxM.fillText(applesEaten, canvas.width - grid * 2, grid * 2);
   }
   document.getElementById("score").innerText = `${Math.floor(timeSinceStart / 1000)}`;
@@ -219,6 +232,12 @@ function drawWall() {
   }
   return;
 }
+function unpauseGame() {
+  isPaused = false;
+  ctxM.clearRect(canvas.width / 2 - grid * 3, canvas.height / 2 - grid * 3, grid * 6, grid * 6);
+  canMisc.removeEventListener("click", unpauseGame, false);
+  waitsForClick = false;
+}
 function playAgain() {
   context.clearRect(0, 0, canvas.width, canvas.height);
   ctxM.clearRect(0, 0, canvas.width, canvas.height);
@@ -236,6 +255,7 @@ function playAgain() {
   gameOverDate = 0;
   requestAnimationFrame(loop);
   shareBtn.setAttribute("disabled", "");
+  waitsForClick = false;
   canMisc.removeEventListener("click", playAgain, false);
 }
 document.addEventListener("keydown", function(e) {
@@ -258,10 +278,13 @@ document.addEventListener("keydown", function(e) {
   }
   if (e.key == "Pause" && timeSinceStart > 0 && gameOver == false) {
     if (isPaused) {
-      isPaused = false;
-      ctxM.clearRect(canvas.width / 2 - grid * 3, canvas.height / 2 - grid * 3, grid * 6, grid * 6);
+      unpauseGame();
     } else {
       isPaused = true;
+      if (waitsForClick != true) {
+        canMisc.addEventListener("click", unpauseGame, false);
+        waitsForClick = true;
+      }
       ctxM.font = `${grid*2.5}px wfnotdef`;
       ctxM.fillText("\u23f8", canvas.width / 2, canvas.height / 2);
     }
@@ -273,6 +296,7 @@ canMisc.addEventListener("click", function firstTry() {
   lastFrameDate = Date.now();
   requestAnimationFrame(loop);
   audioContext = new AudioContext();
+  waitsForClick = false;
   canMisc.removeEventListener("click", firstTry, false);
 }, false);
 shareBtn.addEventListener("click", shareRes);
@@ -290,6 +314,7 @@ function macroPad() {
 function shareRes() {
   let curDate = new Date(gameOverDate).toISOString();
   if (gameOverDate == 0) { curDate = new Date(lastFrameDate).toISOString(); }
+  if (gameOver != true) { document.dispatchEvent(new KeyboardEvent("keydown", {"key": "Pause"})); }
   let curName = curDate.slice(0, curDate.lastIndexOf(".")).replace("T", " ");
   let cameraX = 0 - grid;
   let cameraY = grid;
@@ -329,9 +354,9 @@ function shareRes() {
   itsCtx.fillStyle = "#283593";
   itsCtx.textBaseline = "middle";
   itsCtx.textAlign = "center";
-  itsCtx.font = `${grid - 2}px jbmono,wfnotdef`;
+  itsCtx.font = `${grid - 2}px ${fontString},wfnotdef`;
   itsCtx.fillText(`\ud83d\uddc0 Snake-${curName} UTC+0`, justACanvas.width / 2, grid / 2);
-  itsCtx.font = `${grid*2}px jbmono,wfnotdef`;
+  itsCtx.font = `${grid*2}px ${fontString},wfnotdef`;
   itsCtx.fillText(`\ud83c\udf74${applesEaten}  \u231b${Math.floor(timeSinceStart / 60000)}m${Math.floor((timeSinceStart % 60000) / 1000)}s`, justACanvas.width / 2, justACanvas.height - grid * 2);
   justACanvas.toBlob(function(imgBlob) {
     let itsImg = document.querySelector(".dialtext p img");
