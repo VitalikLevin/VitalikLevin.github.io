@@ -36,11 +36,11 @@ permalink: /picofmonth/
 		<figcaption itemprop="description">{{ member.desc }}</figcaption>
 	</figure>
 	{%- else -%}
-	<figure class="image" title="{{ member.name }}">
+	<figure class="image">
 		{%- if forloop.index > 3 -%}
 		<video controls loop muted playsinline>
 		{%- else -%}
-		<video autoplay controls loop muted playsinline>
+		<video autoplay controls loop muted playsinline title="{{ member.name }}">
 		{%- endif -%}
 			<source src="{{ member.src }}" type="video/mp4">
 		</video>

@@ -79,12 +79,17 @@ mark::selection, mark *::selection {
 	background-color: rgba(18, 18, 18, 0.6);
 }
 
-input[type="range"] {
+input[type="range"], .controls progress {
 	accent-color: rgb(249, 168, 37);
 }
 
 #promoPWA {
 	background-color: rgb(18, 71, 122);
+}
+
+#promoPWA * {
+	color: rgb(238, 238, 238);
+	border-color: currentColor;
 }
 
 details {

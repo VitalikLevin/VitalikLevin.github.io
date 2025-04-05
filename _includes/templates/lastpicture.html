@@ -10,13 +10,13 @@
 </figure>
 {%- else -%}
 <h3>Video of the <a href="/picofmonth/#{{ pic.time | slugify }}">{{ include.word | default: "current" }}</a> month</h3>
-<figure class="image" title="{{ pic.name }}">
-	<video autoplay controls loop muted playsinline>
+<figure class="image">
+	<video autoplay controls loop muted playsinline title="{{ pic.name }}">
 		<source src="{{ pic.src }}" type="video/mp4">
 	</video>
 	<div class="controls" data-state="hidden">
 		<button class="play" data-state="play" title="Play/pause">&#x23ef;</button>
-		<button class="download" title="Download">&#x2b73;</button>
+		<button class="dl" title="Download">&#x2b73;</button>
 		<button class="fs" title="Go fullscreen">&#x26f6;</button>
 	</div>
 	<figcaption>{{ pic.desc }}</figcaption>

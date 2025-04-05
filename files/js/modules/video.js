@@ -9,10 +9,11 @@ function betterMedia() {
   if (supportsVideo != true) { return; }
   for (let v = 0; v < videoArr.length; v++) {
     const vidElem = videoArr[v];
-    let vidControls = vidElem.nextElementSibling;
-    const vidPlay = vidControls.firstElementChild;
-    const vidDown = vidPlay.nextElementSibling;
-    const vidGoFull = vidControls.lastElementChild;
+    let vidControls = vidElem.parentElement.querySelector(".controls");
+    const vidPlay = vidControls.querySelector(".play");
+    const vidDown = vidControls.querySelector(".dl");
+    const vidSeekbar = vidControls.querySelector("progress");
+    const vidGoFull = vidControls.querySelector(".fs");
     vidControls.setAttribute("data-state", "visible");
     vidPlay.onclick = function() {
       if (vidElem.paused || vidElem.ended) {
@@ -20,6 +21,16 @@ function betterMedia() {
       } else {
         vidElem.pause();
       }
+    }
+    if (vidSeekbar != null) {
+      vidSeekbar.onclick = function(e) {
+        let thePos = (e.pageX  - (this.offsetLeft + this.offsetParent.offsetLeft)) / this.offsetWidth;
+				vidElem.currentTime = Math.trunc(thePos * vidElem.duration * 100) / 100;
+      }
+      vidElem.addEventListener("timeupdate", function() {
+        if (!vidSeekbar.getAttribute("max")) { vidSeekbar.setAttribute("max", vidElem.duration); }
+        vidSeekbar.value = Math.trunc(vidElem.currentTime * 100) / 100;
+      });
     }
     vidElem.onplay = function() {
       vidPlay.setAttribute("data-state", "play");
@@ -77,12 +88,12 @@ function setFullscreenData(state, vidElement) {
   vidElement.setAttribute("data-fullscreen", !!state);
   vidElement.controls = !!state;
   if (!!state == false) {
-    vidElement.parentElement.setAttribute("title", vidElement.getAttribute("data-real-title"));
+    vidElement.setAttribute("title", vidElement.getAttribute("data-real-title"));
   } else {
     if (vidElement.getAttribute("data-real-title") == null) {
-      vidElement.setAttribute("data-real-title", vidElement.parentElement.getAttribute("title"));
+      vidElement.setAttribute("data-real-title", vidElement.getAttribute("title"));
     }
-    vidElement.parentElement.removeAttribute("title");
+    vidElement.removeAttribute("title");
   }
 }
 betterMedia();

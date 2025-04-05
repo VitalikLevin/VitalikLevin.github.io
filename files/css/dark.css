@@ -46,7 +46,7 @@ kbd, [data-tooltip]::after {
 	border: 1px solid rgb(238, 238, 238);
 }
 
-input[type="range"] {
+input[type="range"], .controls progress {
 	accent-color: rgb(249, 168, 37);
 }
 
