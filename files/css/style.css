@@ -296,7 +296,7 @@ table {
   border-collapse: collapse;
 }
 
-table, table th, table tr {
+table, table th, table tr, tr td {
   border: 1px solid currentColor;
 }
 table th {
