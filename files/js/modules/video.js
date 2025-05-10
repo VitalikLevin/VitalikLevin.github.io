@@ -12,6 +12,7 @@ function betterMedia() {
     let vidControls = vidElem.parentElement.querySelector(".controls");
     const vidPlay = vidControls.querySelector(".play");
     const vidDown = vidControls.querySelector(".dl");
+    const vidMute = vidControls.querySelector(".mute");
     const vidSeekbar = vidControls.querySelector("progress");
     const vidGoFull = vidControls.querySelector(".fs");
     vidControls.setAttribute("data-state", "visible");
@@ -30,6 +31,15 @@ function betterMedia() {
       vidElem.addEventListener("timeupdate", function() {
         if (!vidSeekbar.getAttribute("max")) { vidSeekbar.setAttribute("max", vidElem.duration); }
         vidSeekbar.value = Math.trunc(vidElem.currentTime * 100) / 100;
+      });
+    }
+    if (vidMute != null) {
+      vidMute.onclick = function() {
+        vidElem.muted = !vidElem.muted;
+        updateMuteBtn(vidElem.muted, vidMute);
+      }
+      vidElem.addEventListener("volumechange", function() {
+        updateMuteBtn(vidElem.muted, vidMute);
       });
     }
     vidElem.onplay = function() {
@@ -76,6 +86,9 @@ function betterMedia() {
         ev.preventDefault();
         vidDown.click();
       }
+      if (ev.key.toLowerCase() == "m" && vidMute != null) {
+        vidMute.click();
+      }
     });
     vidElem.onclick = function(evt) {
       evt.preventDefault();
@@ -94,6 +107,13 @@ function setFullscreenData(state, vidElement) {
       vidElement.setAttribute("data-real-title", vidElement.getAttribute("title"));
     }
     vidElement.removeAttribute("title");
+  }
+}
+function updateMuteBtn(isMuted, muteBtn) {
+  if (isMuted) {
+    muteBtn.textContent = "\uD83D\uDD07";
+  } else {
+    muteBtn.textContent = "\uD83D\uDD08";
   }
 }
 betterMedia();

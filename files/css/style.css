@@ -246,7 +246,7 @@ details summary {
   margin-bottom: -6px;
 }
 
-figcaption, img[class^="img"], video, .prodlogo {
+figcaption, img[class^="img"], video:not(:fullscreen), .prodlogo {
   max-width: 75vw;
 }
 
@@ -259,24 +259,27 @@ video + .controls {
 }
 
 .controls button {
-  margin: 0 10px;
-  width: 40px;
+  margin: 0 8px;
+  width: 36px;
   aspect-ratio: 1;
   padding: 0;
   font-size: 20px;
-  border-color: transparent;
+  border: none; 
 }
 
 .controls progress {
-  width: calc(100% - 180px);
+  width: calc(100% - 200px);
 }
 
 .controls .play {
   margin-left: 0;
 }
 
-.controls .fs {
+.controls .mute, .controls .fs {
   margin-right: 0;
+}
+
+.controls .fs {
   float: right;
 }
 

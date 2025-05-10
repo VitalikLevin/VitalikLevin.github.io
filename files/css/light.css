@@ -79,6 +79,10 @@ mark::selection, mark *::selection {
 	background-color: rgba(18, 18, 18, 0.6);
 }
 
+video::backdrop {
+	background-color: rgb(0, 0, 0);
+}
+
 input[type="range"], .controls progress {
 	accent-color: rgb(249, 168, 37);
 }
