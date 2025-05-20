@@ -13,7 +13,7 @@ port: 2804
 license: https://creativecommons.org/licenses/by-sa/4.0/
 og_p: /files/images/spaceworm.png
 og_pa: A pink worm in space
-status: /files/icons/favicon.svg
+status: "/files/svg/emoji/1f9d1-200d-1f393.svg"
 launch_time: "2022-01-28T07:54:37Z"
 steamyfish: https://marketplace.visualstudio.com/items?itemName=networkworms.steamyfish
 defaults:
@@ -27,10 +27,6 @@ defaults:
     values:
       sw-include: true
       layout: null
-  - scope:
-      path: "files/audio/*.wav"
-    values:
-      sw-include: false
   - scope:
       path: "files/fonts/*f"
     values:
