@@ -1,129 +1,137 @@
 :root {
-	color-scheme: light;
+  color-scheme: light;
 }
 
 :root, button, .top a:any-link, [data-tooltip]::after {
-	color: rgb(18, 18, 18);
+  color: rgb(18, 18, 18);
 }
 
 #copyright {
-	background-color: rgb(242, 147, 76);
+  background-color: rgb(242, 147, 76);
 }
 
 header {
-	background-color: rgba(200, 80, 0, 0.7);
+  background-color: rgba(200, 80, 0, 0.7);
 }
 
 header, header span a:any-link {
-	text-shadow: 0px 1px 0px rgb(18, 18, 18);
-	color: rgb(244, 244, 244);
+  text-shadow: 0px 1px 0px rgb(18, 18, 18);
+  color: rgb(244, 244, 244);
 }
 
 h3, a:hover {
-	color: rgb(176, 67, 0);
+  color: rgb(176, 67, 0);
 }
 
 #wDuration, #wFile {
-	background-color: rgb(244, 60, 54);
+  background-color: rgb(244, 60, 54);
 }
 
 #cooknote.show {
-	border-top: 2px solid rgb(244, 60, 54);
-	background-color: rgb(238, 238, 238);
+  border-top: 2px solid rgb(244, 60, 54);
+  background-color: rgb(238, 238, 238);
 }
 
 blockquote, #playlist {
-	border-left: 3px solid rgb(100, 181, 246);
+  border-left: 3px solid rgb(100, 181, 246);
 }
 
 kbd, dialog h3, dialog img, #options, [data-tooltip]::after {
-	border: 1px solid rgb(18, 18, 18);
+  border: 1px solid rgb(18, 18, 18);
 }
 
 a, article > h2:first-child, blockquote h3, main > h2:first-child, .start {
-	color: rgb(18, 71, 122);
+  color: rgb(18, 71, 122);
+}
+
+blockquote.warn {
+  border-left: 3px solid rgb(249, 168, 37);
+}
+
+blockquote.warn h3 {
+  color: rgb(249, 168, 37);
 }
 
 button#realAdd {
-	color: rgb(139, 195, 74);
+  color: rgb(139, 195, 74);
 }
 
 a:hover {
-	text-decoration-color: rgb(176, 67, 0);
+  text-decoration-color: rgb(176, 67, 0);
 }
 
 a:visited {
-	color: rgb(249, 168, 37);
-	text-decoration-color: rgb(249, 168, 37);
+  color: rgb(249, 168, 37);
+  text-decoration-color: rgb(249, 168, 37);
 }
 
 mark, ::selection {
-	background-color: rgb(249, 168, 37);
-	color: rgb(0, 0, 0);
+  background-color: rgb(249, 168, 37);
+  color: rgb(0, 0, 0);
 }
 
 ::file-selector-button, button, input[type="submit"] {
-	border-color: rgb(18, 18, 18);
+  border-color: rgb(18, 18, 18);
 }
 
 mark::selection, mark *::selection {
-	background-color: rgba(100, 181, 246, 0.8);
+  background-color: rgba(100, 181, 246, 0.8);
 }
 
 /* Bug fix for Firefox 115 */
 :root::target-text {
-	background-color: rgba(100, 181, 246, 0.8);
+  background-color: rgba(100, 181, 246, 0.8);
 }
 
 ::backdrop, [contenteditable]::selection {
-	background-color: rgba(18, 18, 18, 0.6);
+  background-color: rgba(18, 18, 18, 0.6);
 }
 
 video::backdrop {
-	background-color: rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0);
 }
 
 input[type="range"], .controls progress {
-	accent-color: rgb(249, 168, 37);
+  accent-color: rgb(249, 168, 37);
 }
 
 #promoPWA {
-	background-color: rgb(18, 71, 122);
+  background-color: rgb(18, 71, 122);
 }
 
 #promoPWA * {
-	color: rgb(238, 238, 238);
-	border-color: currentColor;
+  color: rgb(238, 238, 238);
+  border-color: currentColor;
 }
 
 details {
-	border: 2px solid rgb(18, 71, 122);
+  border: 2px solid rgb(18, 71, 122);
 }
 
 details[open] summary {
-	border-bottom: 1px solid rgb(18, 71, 122);
+  border-bottom: 1px solid rgb(18, 71, 122);
 }
 
 [data-tooltip]::after {
-	background-color: rgba(196, 196, 196, 0.8);
+  background-color: rgba(196, 196, 196, 0.8);
 }
 
 .controls {
-	background-color: rgb(41, 41, 41);
+  background-color: rgb(41, 41, 41);
 }
 
 .controls button {
-	color: rgb(238, 238, 238);
+  color: rgb(238, 238, 238);
 }
 
 .fillWh {
-	fill: rgb(18, 18, 18);
+  fill: rgb(18, 18, 18);
 }
 
 .strBl {
-	stroke: rgb(238, 238, 238);
+  stroke: rgb(238, 238, 238);
 }
 
 .strWh {
-	stroke: rgb(18, 18, 18);
+  stroke: rgb(18, 18, 18);
 }

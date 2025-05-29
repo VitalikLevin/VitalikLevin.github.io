@@ -25,12 +25,16 @@ blockquote, #playlist {
 	border-left: 3px solid rgb(100, 181, 246);
 }
 
+blockquote.warn {
+	border-left: 3px solid rgb(249, 168, 37);
+}
+
 dialog, .controls {
 	background-color: rgb(41, 41, 41);
 	color: rgb(225, 227, 230);
 }
 
-blockquote h3, button, input[type="submit"], select, ::file-selector-button, ::selection, #sleep, .top a:any-link {
+blockquote h3, button, input[type="submit"], select, ::file-selector-button, ::selection, .top a:any-link {
 	color: rgb(238, 238, 238);
 }
 
@@ -40,6 +44,10 @@ blockquote h3, button, input[type="submit"], select, ::file-selector-button, ::s
 
 mark, ::selection {
 	background-color: rgb(249, 168, 37);
+}
+
+mark {
+	color: rgb(18, 18, 18);
 }
 
 kbd, [data-tooltip]::after {

@@ -61,7 +61,7 @@ function addWall(gridX, gridY) {
 function intro() {
   let bestLunch = localStorage.getItem("bestLunch");
   let longestLunch = localStorage.getItem("longestLunch");
-  canvas.width = canvas.getBoundingClientRect().width - (canvas.getBoundingClientRect().width % grid);
+  canvas.width = Math.min(canvas.getBoundingClientRect().width - (canvas.getBoundingClientRect().width % grid), 768);
   canvas.height = canvas.getBoundingClientRect().height - (canvas.getBoundingClientRect().height % grid);
   canvas.classList.remove("noSize");
   canMisc.width = canvas.width;

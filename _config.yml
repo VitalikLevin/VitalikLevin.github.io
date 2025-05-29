@@ -11,6 +11,7 @@ theme: null
 url: https://vitaliklevin.github.io
 port: 2804
 license: https://creativecommons.org/licenses/by-sa/4.0/
+license_ru: https://creativecommons.org/licenses/by-sa/4.0/deed.ru
 og_p: /files/images/spaceworm.png
 og_pa: A pink worm in space
 status: "/files/svg/emoji/1f9d1-200d-1f393.svg"
@@ -52,7 +53,6 @@ defaults:
     values:
       sw-include: true
 plugins:
-  - jekyll-feed
   - jekyll-paginate
   - jekyll-redirect-from
 paginate: 10
@@ -66,6 +66,3 @@ whitelist:
   - jekyll-redirect-from
 redirect_from:
   json: false
-feed:
-  icon: files/icons/favicon192.png
-  posts_limit: 20

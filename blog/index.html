@@ -10,6 +10,10 @@ permalink: /blog/
 <main>
 	<h2 class="start">Blog</h2>
 	<p>In this page you can find all posts from our site.</p>
+	<blockquote class="warn">
+		<h3>Warning</h3>
+		<p><strong>NW Blog</strong> will be closed soon because creator of the website finds writing articles too boring.</p>
+	</blockquote>
 {%- for post in paginator.posts -%}
 	<section class="post">
 		<h4><a class="postLink" href="{{ post.url }}">{{ post.title }}</a></h4>
@@ -17,20 +21,5 @@ permalink: /blog/
 		<span class="pubDat" data-tooltip="{{ post.date | date_to_xmlschema }}"><span class="cal">&#128198;</span> {{ post.date | date: "%d.%m.%Y" }}</span>
 	</section>
 {%- endfor -%}
-{%- if paginator.total_pages > 1 -%}
-	<p>
-		{%- if paginator.previous_page -%}
-			<span><a href="{{ paginator.previous_page_path }}">Back</a></span> |
-		{%- else -%}
-			<span>Back</span> |
-		{%- endif -%}
-			<span>Page {{ paginator.page }} / {{ paginator.total_pages }}</span> |
-		{%- if paginator.next_page -%}
-			<span><a href="{{ paginator.next_page_path }}">Next</a></span>
-		{%- else -%}
-			<span class="next">Next</span>
-		{%- endif -%}
-	</p>
-{%- endif -%}
 </main>
 {%- include footer.html -%}

@@ -150,6 +150,10 @@ blockquote h3::before {
   content: "\1F589  ";
 }
 
+blockquote.warn h3::before {
+  content: "\26A0  ";
+}
+
 [data-before] {
   display: inline;
 }
@@ -366,7 +370,7 @@ main > .post:last-child, main > figure:last-child {
 }
 
 #wasd, [data-state="hidden"] {
-	display: none;
+  display: none;
 }
 
 #wasd.show button {
