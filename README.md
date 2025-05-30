@@ -14,7 +14,6 @@ README was eaten by `VitalikLevin`.
 
 ## Links
 - [Main page](https://vitaliklevin.github.io/)
-- [Our blog](https://vitaliklevin.github.io/blog/)
 - [Our emoji pack](https://vitaliklevin.github.io/emoji/)
 - [Our extensions](https://vitaliklevin.github.io/exts/)
   - [Steamy Fish](https://vitaliklevin.github.io/exts/steamyfish/)

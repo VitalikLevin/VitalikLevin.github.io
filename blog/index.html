@@ -1,25 +1,33 @@
 ---
 layout: b-default
 title: Homepage
-excerpt: Main page of Network Worms’ Blog
+excerpt: This was the main page of Network Worms’ Blog.
 lang: en-US
 permalink: /blog/
+redirect_from:
+  - /2022/04/08/first-post/
+  - /2022/04/08/second-post/
+  - /2023/01/01/new-year/
 ---
 {%- include header.html -%}
 {%- include crumb.html urls="/blog/$" titles="Blog$$" -%}
 <main>
 	<h2 class="start">Blog</h2>
-	<p>In this page you can find all posts from our site.</p>
 	<blockquote class="warn">
 		<h3>Warning</h3>
-		<p><strong>NW Blog</strong> will be closed soon because creator of the website finds writing articles too boring.</p>
+		<p><strong>NW Blog</strong> is closed because creator of the website finds writing articles too boring. He apologizes for potential link rot.</p>
 	</blockquote>
-{%- for post in paginator.posts -%}
-	<section class="post">
-		<h4><a class="postLink" href="{{ post.url }}">{{ post.title }}</a></h4>
-		<p>{{ post.excerpt }}</p>
-		<span class="pubDat" data-tooltip="{{ post.date | date_to_xmlschema }}"><span class="cal">&#128198;</span> {{ post.date | date: "%d.%m.%Y" }}</span>
-	</section>
-{%- endfor -%}
+	<h3 id="wasitremoved">Is there any way to access the Blog?</h3>
+	<p>
+		Yes, you can read <a href="https://github.com/VitalikLevin/VitalikLevin.github.io/tree/ae8bf91ff1d0088204c0a6b3897ab2bc5bbee9d0/_posts">posts&#8217; source code</a> or copy the website files to your computer via <code>Git</code>, using the snippet below.
+{%- highlight shell -%}
+git clone https://github.com/VitalikLevin/VitalikLevin.github.io.git
+git reset --hard ae8bf91
+
+# In Git>=2.49 this can be done instead
+git clone —-depth=1 --revision=ae8bf91ff1d0088204c0a6b3897ab2bc5bbee9d0 https://github.com/VitalikLevin/VitalikLevin.github.io.git
+{%- endhighlight -%}
+    <br>Afterwards, you should follow the instructions in <a href="https://github.com/VitalikLevin/VitalikLevin.github.io/blob/ae8bf91ff1d0088204c0a6b3897ab2bc5bbee9d0/README.md#local-testing">the README file</a>.
+	</p>
 </main>
 {%- include footer.html -%}
