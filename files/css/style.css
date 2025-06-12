@@ -3,7 +3,7 @@
 * {
   box-sizing: border-box;
 }
-:root, button, dialog, input, select, ::before, ::file-selector-button, [data-tooltip]::after {
+:root, button, dialog, input, select, text, ::before, ::file-selector-button, [data-tooltip]::after {
   font-family: "Liberation Sans", sans-serif, wfnotdef, "Noto Emoji";
   font-synthesis: none;
   -webkit-text-size-adjust: 100%;
@@ -72,7 +72,7 @@ button:hover, details > summary:hover, ::file-selector-button:hover, button + la
   font-family: "Roboto Slab", serif, wfnotdef;
 }
 
-code, kbd, pre, button.bin, ::placeholder {
+code, kbd, pre, .codeText, button.bin, ::placeholder {
   font-family: "JetBrains Mono", "Roboto Mono", monospace, wfnotdef;
 }
 
@@ -89,7 +89,7 @@ code, kbd, pre, button.bin, ::placeholder {
   visibility: hidden;
 }
 
-header span, details > summary, dialog, img, label, #cooknote, #wasd, .crumb, .top {
+header span, details > summary, dialog, img, label, text, #cooknote, #wasd, .crumb, .top {
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -134,7 +134,7 @@ header span, details > summary, dialog, img, label, #cooknote, #wasd, .crumb, .t
 }
 
 #cooknote p, #promoPWA span, #wFile p {
-  max-width: 80vw;
+  max-width: 78vw;
   margin-left: 8px;
 }
 
@@ -187,8 +187,12 @@ dialog {
   border: none;
 }
 
-dialog h3, dialog button, .controls button {
+dialog h3, dialog button, .controls button, .sText {
   text-align: center;
+}
+
+.sText {
+  font-size: 12px;
 }
 
 dialog p, dialog h3, #options h3, #copyright + * {
@@ -252,6 +256,11 @@ details summary {
 
 figcaption, img[class^="img"], video:not(:fullscreen), .prodlogo {
   max-width: 75vw;
+}
+
+#humanPic {
+  max-width: 250px;
+  margin-top: -2rem;
 }
 
 video + .controls {

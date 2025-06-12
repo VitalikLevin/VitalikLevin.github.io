@@ -5,7 +5,7 @@
 	<meta itemprop="name" content="{{ pic.name }}">
   <meta itemprop="width" content="{{ pic.width | default: 400 }} px">
   <meta itemprop="height" content="{{ pic.height | default: 300 }} px">
-	<img class="img{{ pic.width | default: 400 }}" title="{{ pic.name }}" alt="{{ pic.desc }}" src="{{ pic.src }}" itemprop="contentUrl"><br>
+	<img class="img{{ pic.width | default: 400 }}" title="{{ pic.name }}" alt="" src="{{ pic.src }}" itemprop="contentUrl"><br>
 	<figcaption itemprop="description">{{ pic.desc }}</figcaption>
 </figure>
 {%- else -%}

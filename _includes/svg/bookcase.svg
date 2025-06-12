@@ -1,0 +1,15 @@
+<svg version="1.1" viewbox="0 0 300 125" width="300" height="125"
+  style="margin-top: -8px" xmlns="http://www.w3.org/2000/svg">
+  <a href="https://social.vivaldi.net/@zaka09mute">
+    <rect x="2" y="3" width="28" height="120" class="strWh" fill="rgb(72, 106, 227)"/>
+    <text x="2" y="95" class="sText" fill="rgb(238, 238, 238)" style="font-weight: bold" transform="rotate(270, 2, 77)">Mastodon</text>
+  </a>
+	<a href="https://last.fm/user/zaka09mute">
+    <rect x="34" y="63" width="120" height="28" class="strWh" fill="rgb(238, 238, 238)"/>
+    <text x="44" y="81" class="sText" fill="rgb(197, 6, 7)" style="font-weight: bold">last.fm</text>
+  </a>
+  <a href="https://github.com/VitalikLevin">
+    <rect x="34" y="95" width="120" height="28" fill="rgb(18, 18, 18)"/>
+    <text x="44" y="113" class="sText codeText" fill="rgb(238, 238, 238)">GitHub</text>
+  </a>
+</svg>

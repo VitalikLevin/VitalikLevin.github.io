@@ -124,6 +124,10 @@ details[open] summary {
   color: rgb(238, 238, 238);
 }
 
+.fillBl {
+  fill: rgb(238, 238, 238);
+}
+
 .fillWh {
   fill: rgb(18, 18, 18);
 }

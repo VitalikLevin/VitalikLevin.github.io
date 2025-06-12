@@ -29,6 +29,7 @@ README was eaten by `VitalikLevin`.
   - [`m3u-gen`](https://vitaliklevin.github.io/tools/m3u-gen/)
   - [`pls-gen`](https://vitaliklevin.github.io/tools/pls-gen/)
 - [About site](https://vitaliklevin.github.io/about/)
+  - [About VitalikLevin](https://vitaliklevin.github.io/about/vitaliklevin/)
 - ["I’m a Teapot" page](https://vitaliklevin.github.io/teapot/)
 
 ## Local testing
