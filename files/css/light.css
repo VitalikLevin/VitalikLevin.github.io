@@ -132,10 +132,14 @@ details[open] summary {
   fill: rgb(18, 18, 18);
 }
 
+.strWh, svg a:hover {
+  stroke: rgb(18, 18, 18);
+}
+
 .strBl {
   stroke: rgb(238, 238, 238);
 }
 
-.strWh {
-  stroke: rgb(18, 18, 18);
+svg a:focus-visible {
+	outline-color: rgb(18, 18, 18);
 }

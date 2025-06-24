@@ -39,6 +39,18 @@ a:hover {
   text-decoration-style: dashed;
 }
 
+svg a:hover {
+  stroke-dasharray: 4px;
+  stroke-width: 2px;
+}
+svg a:focus-visible {
+  outline-width: 2px;
+  outline-style: dashed;
+}
+svg a:hover text {
+  stroke: none;
+}
+
 blockquote, .postLink:hover, #playlist {
   margin: 0;
   margin-bottom: 16px;
