@@ -49,6 +49,13 @@ function handleFiles() {
 function importList() {
   document.body.style.cursor = "wait";
   var thePlaylist = [...this.files].at(0);
+  if (thePlaylist.size < 1) {
+    console.error("m3u-gen cannot parse empty playlists. Please reload page and try another file.");
+    return;
+  }
+  if (nameInput.value == null || nameInput.value == "") {
+    nameInput.value = thePlaylist.name.slice(0, thePlaylist.name.lastIndexOf("."));
+  }
   const reader = new FileReader();
   reader.addEventListener("load", function() {
     if (validFileType(thePlaylist) == false) {

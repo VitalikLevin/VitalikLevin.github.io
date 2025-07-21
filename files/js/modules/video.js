@@ -12,6 +12,8 @@ function betterMedia() {
     let vidControls = vidElem.parentElement.querySelector(".controls");
     const vidPlay = vidControls.querySelector(".play");
     const vidDown = vidControls.querySelector(".dl");
+    const vidMore = vidControls.querySelector(".more");
+    const vidEtcPanel = vidControls.querySelector(".mcontrols");
     const vidMute = vidControls.querySelector(".mute");
     const vidSeekbar = vidControls.querySelector("progress");
     const vidGoFull = vidControls.querySelector(".fs");
@@ -42,6 +44,15 @@ function betterMedia() {
         updateMuteBtn(vidElem.muted, vidMute);
       });
     }
+    if (vidMore != null && vidEtcPanel != null) {
+      vidMore.onclick = function() {
+        if (vidEtcPanel.getAttribute("data-state") == "hidden") {
+          vidEtcPanel.setAttribute("data-state", "visible");
+        } else {
+          vidEtcPanel.setAttribute("data-state", "hidden");
+        }
+      }
+    }
     vidElem.onplay = function() {
       vidPlay.setAttribute("data-state", "play");
       vidPlay.textContent = "\u23f8";
@@ -54,7 +65,7 @@ function betterMedia() {
       let vidLink = document.createElement("a");
       let vidSrc = vidElem.firstElementChild.getAttribute("src");
       vidLink.href = vidSrc;
-      vidLink.download = vidSrc.slice(vidLink.href.lastIndexOf("/"), vidSrc.length);
+      vidLink.download = vidSrc.slice(vidLink.href.lastIndexOf("/"), Math.min(vidSrc.length, vidLink.href.indexOf("?")));
       vidLink.click();
       vidLink.remove();
     }

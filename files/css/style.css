@@ -81,11 +81,11 @@ button:hover, details > summary:hover, ::file-selector-button:hover, button + la
 }
 
 .image span, figcaption, .num, .pubDat, .robExample {
-  font-family: "Roboto Slab", serif, wfnotdef;
+  font-family: "Roboto Slab", serif, wfnotdef, "Noto Emoji";
 }
 
 code, kbd, pre, .codeText, button.bin, ::placeholder {
-  font-family: "JetBrains Mono", "Roboto Mono", monospace, wfnotdef;
+  font-family: "JetBrains Mono", "Roboto Mono", monospace, wfnotdef, "Noto Emoji";
 }
 
 .pubDat {
@@ -279,7 +279,7 @@ video + .controls {
   margin-top: 4px;
 }
 
-.controls {
+.controls, .mcontrols {
   width: 100%;
 }
 
@@ -296,7 +296,7 @@ video + .controls {
   width: calc(100% - 200px);
 }
 
-.controls .play {
+.controls .play, .mcontrols :first-child {
   margin-left: 0;
 }
 
