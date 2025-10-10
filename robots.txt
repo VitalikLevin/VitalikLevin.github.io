@@ -6,19 +6,6 @@ Host: vitaliklevin.github.io
 User-agent: *
 Disallow: /?*
 Disallow: /404.html
-Disallow: /feed.xml
 Disallow: /offline.html
 Disallow: /teapot/
-
-User-agent: bingbot
-User-agent: DuckDuckBot
-Disallow: /files/js/analytics.js
-Disallow: /files/js/metric.js
-
-User-agent: Google*
-User-agent: *-Google
-Disallow: /files/js/metric.js
-
-User-agent: Yandex
-Disallow: /files/js/analytics.js
 Sitemap: https://vitaliklevin.github.io/sitemap.xml

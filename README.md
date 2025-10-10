@@ -30,7 +30,6 @@ README was eaten by `VitalikLevin`.
   - [`pls-gen`](https://vitaliklevin.github.io/tools/pls-gen/)
 - [About site](https://vitaliklevin.github.io/about/)
   - [About VitalikLevin](https://vitaliklevin.github.io/about/vitaliklevin/)
-- ["I’m a Teapot" page](https://vitaliklevin.github.io/teapot/)
 
 ## Local testing
 1. Clone repository

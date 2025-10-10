@@ -16,6 +16,9 @@ const fontString = "'JetBrains Mono', 'Roboto Mono', monospace";
 let gridWidth = Math.ceil(canvas.width / grid);
 let gridHeight = Math.ceil(canvas.height / grid);
 const appleColors = ["#f10000", "#ffd100", "#00be00", "#283593", "#f7630c"];
+const bgColors = ["#376a01", "#dddddd"];
+const uiColors = ["#fdd835", "#d64900"];
+let curBgId = 1;
 let gameOver = false;
 let isPaused = false;
 let justEating = false;
@@ -61,6 +64,7 @@ function addWall(gridX, gridY) {
 function intro() {
   let bestLunch = localStorage.getItem("bestLunch");
   let longestLunch = localStorage.getItem("longestLunch");
+  curBgId = getRandomInt(0, bgColors.length - 1);
   canvas.width = Math.min(canvas.getBoundingClientRect().width - (canvas.getBoundingClientRect().width % grid), 768);
   canvas.height = canvas.getBoundingClientRect().height - (canvas.getBoundingClientRect().height % grid);
   canvas.classList.remove("noSize");
@@ -70,7 +74,7 @@ function intro() {
   canBack.width = canvas.width;
   canBack.height = canvas.height;
   canBack.classList.remove("noSize");
-  ctxB.fillStyle = "#376a01";
+  ctxB.fillStyle = bgColors[curBgId];
   ctxB.fillRect(0, 0, canvas.width, canvas.height);
   gridWidth = Math.trunc(canvas.width / grid);
   gridHeight = Math.trunc(canvas.height / grid);
@@ -91,7 +95,7 @@ function intro() {
     addWall(wall, gridHeight - 1);
   }
   ctxM.clearRect(0, 0, canvas.width, canvas.height);
-  ctxM.fillStyle = "#fdd835";
+  ctxM.fillStyle = uiColors[curBgId];
   ctxM.font = `${grid*2}px ${fontString}`;
   ctxM.textAlign = "center";
   ctxM.textBaseline = "middle";
@@ -130,7 +134,7 @@ function loop() {
       isHiScore += 1;
     }
     ctxM.clearRect(0, grid * 3, canvas.width, canvas.height - grid * 3);
-    ctxM.fillStyle = "#fdd835";
+    ctxM.fillStyle = uiColors[curBgId];
     if (isHiScore > 0 && isHiScore < 3) {
       ctxM.clearRect(canvas.width - grid * 4, grid + 1, grid * 3, grid * 3);
       ctxM.font = `${grid*1.5}px wfnotdef`;
@@ -198,7 +202,7 @@ function loop() {
   }
   if (justEating) {
     ctxM.clearRect(canvas.width - grid * 4, grid + 1, grid * 3, grid * 3);
-    ctxM.fillStyle = "#fdd835";
+    ctxM.fillStyle = uiColors[curBgId];
     ctxM.font = `${grid + 4}px ${fontString}`;
     ctxM.fillText(applesEaten, canvas.width - grid * 2, grid * 2);
   }
@@ -342,7 +346,7 @@ function shareRes() {
     justACanvas.height = canvas.height + grid * 5;
   }
   let itsCtx = justACanvas.getContext("2d", {alpha: false});
-  itsCtx.fillStyle = "#376a01";
+  itsCtx.fillStyle = bgColors[curBgId];
   itsCtx.fillRect(0, 0, justACanvas.width, justACanvas.height);
   itsCtx.drawImage(canBack, 0 - cameraX, cameraY);
   itsCtx.drawImage(canvas, 0 - cameraX, cameraY);
