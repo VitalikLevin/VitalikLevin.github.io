@@ -5,14 +5,12 @@ layout: null
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 	{%- for page in site.html_pages -%}
 	{%- unless page.layout != 'default' or page.layout != 'b-default' and page.url contains '.html' -%}
-	{%- unless page.url contains "/teapot" -%}
 	<url>
 		<loc>{{- page.url | absolute_url -}}</loc>
 		<lastmod>{{ page.date | default: site.time | date: "%Y-%m-%d" }}</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.8</priority>
 	</url>
-	{%- endunless -%}
 	{%- endunless -%}
 	{%- endfor -%}
 </urlset>
