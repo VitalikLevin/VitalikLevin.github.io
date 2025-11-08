@@ -381,7 +381,7 @@ dialog img {
   margin: auto;
 }
 
-button:disabled {
+*:disabled {
   opacity: 0.6;
   transform: rotateZ(-5deg);
 }
