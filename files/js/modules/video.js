@@ -53,14 +53,14 @@ function betterMedia() {
         }
       }
     }
-    vidElem.onplay = function() {
+    vidElem.addEventListener("play", function() {
       vidPlay.setAttribute("data-state", "play");
       vidPlay.textContent = "\u23f8";
-    }
-    vidElem.onpause = function() {
+    });
+    vidElem.addEventListener("pause", function() {
       vidPlay.setAttribute("data-state", "pause");
       vidPlay.textContent = "\u25b6";
-    }
+    });
     vidDown.onclick = function() {
       let vidLink = document.createElement("a");
       let vidSrc = vidElem.firstElementChild.getAttribute("src");
