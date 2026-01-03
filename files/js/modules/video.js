@@ -29,10 +29,12 @@ function betterMedia() {
       vidSeekbar.onclick = function(e) {
         let thePos = (e.pageX  - (this.offsetLeft + this.offsetParent.offsetLeft)) / this.offsetWidth;
 				vidElem.currentTime = Math.trunc(thePos * vidElem.duration * 100) / 100;
+        updatePositionState(vidElem);
       }
       vidElem.addEventListener("timeupdate", function() {
         if (!vidSeekbar.getAttribute("max")) { vidSeekbar.setAttribute("max", vidElem.duration); }
         vidSeekbar.value = Math.trunc(vidElem.currentTime * 100) / 100;
+        updatePositionState(vidElem);
       });
     }
     if (vidMute != null) {
@@ -56,16 +58,28 @@ function betterMedia() {
     vidElem.addEventListener("play", function() {
       vidPlay.setAttribute("data-state", "play");
       vidPlay.textContent = "\u23f8";
+      if ("mediaSession" in navigator) {
+        navigator.mediaSession.playbackState = "playing";
+        if (vidSeekbar != null) {
+          navigator.mediaSession.metadata = new MediaMetadata({
+            title: "Test title",
+            artist: "Vitaliy Levin"
+          });
+        }
+      }
     });
     vidElem.addEventListener("pause", function() {
       vidPlay.setAttribute("data-state", "pause");
       vidPlay.textContent = "\u25b6";
+      if ("mediaSession" in navigator) {
+        navigator.mediaSession.playbackState = "paused";
+      }
     });
     vidDown.onclick = function() {
       let vidLink = document.createElement("a");
       let vidSrc = vidElem.firstElementChild.getAttribute("src");
       vidLink.href = vidSrc;
-      vidLink.download = vidSrc.slice(vidLink.href.lastIndexOf("/"), Math.min(vidSrc.length, vidLink.href.indexOf("?")));
+      vidLink.download = vidSrc.slice(vidSrc.lastIndexOf("/"), Math.min(vidSrc.length, vidSrc.indexOf("?")));
       vidLink.click();
       vidLink.remove();
     }
@@ -125,6 +139,19 @@ function updateMuteBtn(isMuted, muteBtn) {
     muteBtn.textContent = "\uD83D\uDD07";
   } else {
     muteBtn.textContent = "\uD83D\uDD08";
+  }
+}
+function updatePositionState(vidEl) {
+  let vidDuration = vidEl.duration;
+  if (vidEl.duration <= 0) {
+    vidDuration = Infinity;
+  }
+  if ("mediaSession" in navigator) {
+    navigator.mediaSession.setPositionState({
+      duration: vidDuration,
+      playbackRate: vidEl.playbackRate,
+      position: vidEl.currentTime
+    });
   }
 }
 betterMedia();

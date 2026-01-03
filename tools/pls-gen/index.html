@@ -52,15 +52,15 @@ redirect_from:
 	</section>
   <input type="file" id="fileInput" multiple="true" accept="audio/*, .ogg, .oga, .opus, .webm"><br>
 	<label for="prefixInput"><strong>Files&#8217; prefix (optional)</strong></label><br>
-	<input type="text" id="prefixInput" placeholder="Files&#8217; prefix" class="ym-disable-keys"><br>
+	<input type="text" id="prefixInput" placeholder="Files&#8217; prefix" autocomplete="off" class="ym-disable-keys"><br>
 	<label for="listName"><strong>Playlist name (optional)</strong></label><br>
-	<input type="text" id="listName" placeholder="Playlist name"><br><br>
+	<input type="text" id="listName" placeholder="Playlist name" autocomplete="off"><br><br>
 	<label for="addNewOne">New playlist member</label><br>
-	<span><input type="text" id="addNewOne" placeholder="New entry"><button title="Add" id="realAdd" onclick="manuallyAdd()">&#x2714;</button></span><br>
+	<span><input type="text" id="addNewOne" placeholder="New entry" autocomplete="off"><button title="Add" id="realAdd" onclick="manuallyAdd()">&#x2714;</button></span><br>
 	<details class="ym-disable-keys">
 		<summary>Advanced</summary>
 		<label for="addTitle">New member&#8217;s title (optional)</label><br>
-		<input type="text" id="addTitle" placeholder="Member&#8217;s title"><br>
+		<input type="text" id="addTitle" placeholder="Member&#8217;s title" autocomplete="off"><br>
 		<label for="addSeconds">Duration of new member in seconds (optional)</label><br>
 		<input type="number" id="addSeconds" placeholder="1min = 60s" min="-1">
 	</details>

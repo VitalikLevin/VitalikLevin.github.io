@@ -46,8 +46,9 @@ svg a:hover {
 svg a:focus-visible {
   outline-width: 2px;
   outline-style: dashed;
+  border-radius: 0;
 }
-svg a:hover text {
+svg a:hover text, svg a:focus-visible {
   stroke: none;
 }
 
@@ -383,6 +384,8 @@ dialog img {
 
 *:disabled {
   opacity: 0.6;
+}
+button:disabled, input[type="submit"]:disabled {
   transform: rotateZ(-5deg);
 }
 
