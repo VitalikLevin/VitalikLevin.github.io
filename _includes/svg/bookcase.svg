@@ -4,7 +4,7 @@
 		<rect x="2" y="3" width="28" height="120" class="strWh" fill="rgb(72, 106, 227)"/>
 		<text x="2" y="95" class="sText" fill="rgb(238, 238, 238)" style="font-weight: bold" transform="rotate(270, 2, 77)">Mastodon</text>
 	</a>
-	<a href="https://my.play/Vi2804" title="Google Play Games" tabindex="-1">
+	<a href="https://my.play/Vi2804" title="Google Play Games">
 		<rect x="42" y="3" width="40" height="120" class="strWh" fill="rgb(24, 128, 52)"/>
 		<text x="32" y="100" class="sText" fill="rgb(238, 238, 238)" style="font-weight: bold" transform="rotate(270, 42, 77)">Play Games</text>
 	</a>

@@ -60,11 +60,14 @@ function betterMedia() {
       vidPlay.textContent = "\u23f8";
       if ("mediaSession" in navigator) {
         navigator.mediaSession.playbackState = "playing";
+        let vidMdata = vidElem.getAttribute("data-about-video");
+        if (vidMdata == null) {
+          vidMdata = { title: "Test title", artist: "Vitaliy Levin" };
+        } else {
+          vidMdata = JSON.parse(vidMdata);
+        }
         if (vidSeekbar != null) {
-          navigator.mediaSession.metadata = new MediaMetadata({
-            title: "Test title",
-            artist: "Vitaliy Levin"
-          });
+          navigator.mediaSession.metadata = new MediaMetadata(vidMdata);
         }
       }
     });
@@ -79,7 +82,7 @@ function betterMedia() {
       let vidLink = document.createElement("a");
       let vidSrc = vidElem.firstElementChild.getAttribute("src");
       vidLink.href = vidSrc;
-      vidLink.download = vidSrc.slice(vidSrc.lastIndexOf("/"), Math.min(vidSrc.length, vidSrc.indexOf("?")));
+      vidLink.download = vidSrc.slice(vidSrc.lastIndexOf("/") + 1, Math.min(vidSrc.length, vidSrc.indexOf("?")));
       vidLink.click();
       vidLink.remove();
     }
@@ -118,6 +121,16 @@ function betterMedia() {
     vidElem.onclick = function(evt) {
       evt.preventDefault();
       vidPlay.click();
+    }
+    if ("mediaSession" in navigator && vidSeekbar != null) {
+      navigator.mediaSession.setActionHandler("seekbackward", function() {
+        vidElem.currentTime = Math.max(0, Math.trunc(vidElem.currentTime * 100) / 100 - 5);
+        updatePositionState(vidElem);
+      });
+      navigator.mediaSession.setActionHandler("seekforward", function() {
+        vidElem.currentTime = Math.min(vidElem.duration, Math.trunc(vidElem.currentTime * 100) / 100 + 5);
+        updatePositionState(vidElem);
+      });
     }
     vidElem.controls = false;
   }
