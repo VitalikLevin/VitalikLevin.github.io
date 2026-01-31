@@ -1,6 +1,7 @@
 User-agent: archive.org_bot
 User-agent: ia_archiver
 Disallow: /?*
+Crawl-delay: 8
 Host: vitaliklevin.github.io
 
 User-agent: *

@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 :root, button, dialog, input, select, text, ::before, ::file-selector-button, [data-tooltip]::after {
-  font-family: "Liberation Sans", sans-serif, wfnotdef, "Noto Emoji";
+  font-family: "Liberation Sans", sans-serif, wfnotdef, "SerenityOS Emoji", "Noto Emoji";
   font-synthesis: none;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -82,11 +82,11 @@ button:hover, details > summary:hover, ::file-selector-button:hover, button + la
 }
 
 .image span, figcaption, .num, .pubDat, .robExample {
-  font-family: "Roboto Slab", serif, wfnotdef, "Noto Emoji";
+  font-family: "Roboto Slab", serif, wfnotdef, "SerenityOS Emoji", "Noto Emoji";
 }
 
 code, kbd, pre, .codeText, button.bin, ::placeholder {
-  font-family: "JetBrains Mono", "Roboto Mono", monospace, wfnotdef, "Noto Emoji";
+  font-family: "JetBrains Mono", "Roboto Mono", monospace, wfnotdef, "SerenityOS Emoji", "Noto Emoji";
 }
 
 .pubDat {
