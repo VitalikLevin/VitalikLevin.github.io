@@ -45,9 +45,6 @@
 	</head>
 	<body>
 		{{- content -}}
-		{%- if jekyll.environment == 'production' -%}
-		{%- include tracking.html -%}
-		{%- endif -%}
 		<script defer src="/files/js/app.js"></script>
 	</body>
 </html>
