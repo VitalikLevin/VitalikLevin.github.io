@@ -1,17 +1,17 @@
 @keyframes run {
-  from {
-    transform: translateX(-104vw);
-  }
-  to {
-    transform: translateX(0);
-  }
+	from {
+		transform: translateX(-104vw);
+	}
+	to {
+		transform: translateX(0);
+	}
 }
 button {
-  transition: linear 450ms transform;
+	transition: linear 450ms transform;
 }
-#cooknote.show, #wDuration, #wFile {
-  animation: 4s run;
+#wDuration, #wFile {
+	animation: 4s run;
 }
 [data-tooltip]::after {
-  transition: opacity 0.4s;
+	transition: opacity 0.4s;
 }

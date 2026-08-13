@@ -3,8 +3,8 @@
 <h3>Picture of the <a href="/picofmonth/#{{ pic.time | slugify }}">{{ include.word | default: "current" }}</a> month</h3>
 <figure itemscope itemtype="https://schema.org/ImageObject" class="image">
 	<meta itemprop="name" content="{{ pic.name }}">
-  <meta itemprop="width" content="{{ pic.width | default: 400 }} px">
-  <meta itemprop="height" content="{{ pic.height | default: 300 }} px">
+	<meta itemprop="width" content="{{ pic.width | default: 400 }} px">
+	<meta itemprop="height" content="{{ pic.height | default: 300 }} px">
 	<img class="img{{ pic.width | default: 400 }}" title="{{ pic.name }}" alt="" src="{{ pic.src }}" itemprop="contentUrl"><br>
 	<figcaption itemprop="description">{{ pic.desc }}</figcaption>
 </figure>

@@ -1,15 +1,4 @@
 <!--noindex-->
-<div id="cooknote">
-	<p>
-		<img src="/files/svg/1f36a.svg" alt="&#127850;">
-	{%- if page.lang == 'ru' -%}
-		Мы больше не используем <code data-tooltip="для аналитики">cookies</code>.
-	{%- else -%}
-		We stopped using <code data-tooltip="for analytics">cookies</code>.
-	{%- endif -%}
-	</p>
-	<button class="cookagree">OK</button>
-</div>
 <div id="promoPWA" hidden>
 	{%- if page.lang == 'ru' -%}
 	<span>После установки ускорится загрузка страниц этого сайта.</span>
@@ -28,7 +17,7 @@
 		<button class="bin" id="showTopArrow">0</button><label for="showTopArrow"> Показать стрелку</label><br>
 	{%- if include.adjustVol == 'true' -%}
 		<label for="siteSound">&#x1f508; <strong>Громкость</strong> (<span id="soundVol">100%</span>)</label><br>
-    <input id="siteSound" type="range" min="0" max="1" step="0.05"><br>
+		<input id="siteSound" type="range" min="0" max="1" step="0.05"><br>
 	{%- endif -%}
 		Содержимое доступно по лицензии <a href="{{ site.license_ru }}" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a>.<br>
 		<a href="/about/">О сайте</a>
@@ -37,7 +26,7 @@
 		<button class="bin" id="showTopArrow">0</button><label for="showTopArrow"> Show top arrow</label><br>
 	{%- if include.adjustVol == 'true' -%}
 		<label for="siteSound">&#x1f508; <strong>Sounds</strong> (<span id="soundVol">100%</span>)</label><br>
-    <input id="siteSound" type="range" min="0" max="1" step="0.05"><br>
+		<input id="siteSound" type="range" min="0" max="1" step="0.05"><br>
 	{%- endif -%}
 		Content is available under the <a href="{{ site.license }}" target="_blank">Creative Commons Attribution Share Alike 4.0 International license</a>.<br>
 	{%- if page.url == '/about/' -%}

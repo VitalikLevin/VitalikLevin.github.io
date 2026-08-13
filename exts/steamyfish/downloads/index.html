@@ -7,7 +7,7 @@ permalink: /exts/steamyfish/downloads/
 {%- include header.html -%}
 {%- include crumb.html urls="/exts/$/exts/steamyfish/$/exts/steamyfish/downloads/" titles="Extensions$$Steamy Fish$$Downloads" -%}
 <main>
-  <h2 class="start">Steamy Fish Downloads</h2>
+	<h2 class="start">Steamy Fish Downloads</h2>
 	{%- for member in site.data.sft -%}
 	<h3 id="v{{ member.major | default: 0 }}.{{ member.minor }}.{{ member.patch | default: 0 }}">v{{ member.major | default: 0 }}.{{ member.minor }}.{{ member.patch | default: 0 }} - {{ member.date | date: "%Y-%m-%d" }}</h3>
 	<p>

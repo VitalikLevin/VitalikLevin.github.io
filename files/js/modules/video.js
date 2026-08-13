@@ -1,170 +1,170 @@
 "use strict";
 function betterMedia() {
-  let videoArr = document.querySelectorAll("figure > video");
-  let audioArr = Array.from(document.querySelectorAll("figure > audio"));
-  if (audioArr != []) {
-    videoArr = Array.from(videoArr).concat(audioArr);
-  }
-  const supportsVideo = !!videoArr[0].canPlayType("video/mp4");
-  if (supportsVideo != true) { return; }
-  for (let v = 0; v < videoArr.length; v++) {
-    const vidElem = videoArr[v];
-    let vidControls = vidElem.parentElement.querySelector(".controls");
-    const vidPlay = vidControls.querySelector(".play");
-    const vidDown = vidControls.querySelector(".dl");
-    const vidMore = vidControls.querySelector(".more");
-    const vidEtcPanel = vidControls.querySelector(".mcontrols");
-    const vidMute = vidControls.querySelector(".mute");
-    const vidSeekbar = vidControls.querySelector("progress");
-    const vidGoFull = vidControls.querySelector(".fs");
-    vidControls.setAttribute("data-state", "visible");
-    vidPlay.onclick = function() {
-      if (vidElem.paused || vidElem.ended) {
-        vidElem.play();
-      } else {
-        vidElem.pause();
-      }
-    }
-    if (vidSeekbar != null) {
-      vidSeekbar.onclick = function(e) {
-        let thePos = (e.pageX  - (this.offsetLeft + this.offsetParent.offsetLeft)) / this.offsetWidth;
+	let videoArr = document.querySelectorAll("figure > video");
+	let audioArr = Array.from(document.querySelectorAll("figure > audio"));
+	if (audioArr != []) {
+		videoArr = Array.from(videoArr).concat(audioArr);
+	}
+	const supportsVideo = !!videoArr[0].canPlayType("video/mp4");
+	if (supportsVideo != true) { return; }
+	for (let v = 0; v < videoArr.length; v++) {
+		const vidElem = videoArr[v];
+		let vidControls = vidElem.parentElement.querySelector(".controls");
+		const vidPlay = vidControls.querySelector(".play");
+		const vidDown = vidControls.querySelector(".dl");
+		const vidMore = vidControls.querySelector(".more");
+		const vidEtcPanel = vidControls.querySelector(".mcontrols");
+		const vidMute = vidControls.querySelector(".mute");
+		const vidSeekbar = vidControls.querySelector("progress");
+		const vidGoFull = vidControls.querySelector(".fs");
+		vidControls.setAttribute("data-state", "visible");
+		vidPlay.onclick = function() {
+			if (vidElem.paused || vidElem.ended) {
+				vidElem.play();
+			} else {
+				vidElem.pause();
+			}
+		}
+		if (vidSeekbar != null) {
+			vidSeekbar.onclick = function(e) {
+				let thePos = (e.pageX  - (this.offsetLeft + this.offsetParent.offsetLeft)) / this.offsetWidth;
 				vidElem.currentTime = Math.trunc(thePos * vidElem.duration * 100) / 100;
-        updatePositionState(vidElem);
-      }
-      vidElem.addEventListener("timeupdate", function() {
-        if (!vidSeekbar.getAttribute("max")) { vidSeekbar.setAttribute("max", vidElem.duration); }
-        vidSeekbar.value = Math.trunc(vidElem.currentTime * 100) / 100;
-        updatePositionState(vidElem);
-      });
-    }
-    if (vidMute != null) {
-      vidMute.onclick = function() {
-        vidElem.muted = !vidElem.muted;
-        updateMuteBtn(vidElem.muted, vidMute);
-      }
-      vidElem.addEventListener("volumechange", function() {
-        updateMuteBtn(vidElem.muted, vidMute);
-      });
-    }
-    if (vidMore != null && vidEtcPanel != null) {
-      vidMore.onclick = function() {
-        if (vidEtcPanel.getAttribute("data-state") == "hidden") {
-          vidEtcPanel.setAttribute("data-state", "visible");
-        } else {
-          vidEtcPanel.setAttribute("data-state", "hidden");
-        }
-      }
-    }
-    vidElem.addEventListener("play", function() {
-      vidPlay.setAttribute("data-state", "play");
-      vidPlay.textContent = "\u23f8";
-      if ("mediaSession" in navigator) {
-        navigator.mediaSession.playbackState = "playing";
-        let vidMdata = vidElem.getAttribute("data-about-video");
-        if (vidMdata == null) {
-          vidMdata = { title: "Test title", artist: "Vitaliy Levin" };
-        } else {
-          vidMdata = JSON.parse(vidMdata);
-        }
-        if (vidSeekbar != null) {
-          navigator.mediaSession.metadata = new MediaMetadata(vidMdata);
-        }
-      }
-    });
-    vidElem.addEventListener("pause", function() {
-      vidPlay.setAttribute("data-state", "pause");
-      vidPlay.textContent = "\u25b6";
-      if ("mediaSession" in navigator) {
-        navigator.mediaSession.playbackState = "paused";
-      }
-    });
-    vidDown.onclick = function() {
-      let vidLink = document.createElement("a");
-      let vidSrc = vidElem.firstElementChild.getAttribute("src");
-      vidLink.href = vidSrc;
-      vidLink.download = vidSrc.slice(vidSrc.lastIndexOf("/") + 1, Math.min(vidSrc.length, vidSrc.indexOf("?")));
-      vidLink.click();
-      vidLink.remove();
-    }
-    if (!document?.fullscreenEnabled || vidElem.tagName.toLowerCase() == "audio") {
-      vidGoFull.setAttribute("data-state", "hidden");
-    } else {
-      vidGoFull.onclick = function() {
-        if (document.fullscreenElement !== null) {
-          setFullscreenData(false, vidElem);
-          document.exitFullscreen();
-        } else {
-          vidElem.requestFullscreen();
-          setFullscreenData(true, vidElem);
-        }
-      }
-      document.addEventListener("fullscreenchange", function() {
-        setFullscreenData(!!document.fullscreenElement, vidElem);
-      });
-    }
-    vidElem.parentElement.addEventListener("keydown", function(ev) {
-      if (ev.key.toLowerCase() == "p" || ev.key == " ") {
-        ev.preventDefault();
-        vidPlay.click();
-      }
-      if (ev.key.toLowerCase() == "f" && vidGoFull.getAttribute("data-state") != "hidden") {
-        vidGoFull.click();
-      }
-      if (ev.ctrlKey && ev.key.toLowerCase() == "s") {
-        ev.preventDefault();
-        vidDown.click();
-      }
-      if (ev.key.toLowerCase() == "m" && vidMute != null) {
-        vidMute.click();
-      }
-    });
-    vidElem.onclick = function(evt) {
-      evt.preventDefault();
-      vidPlay.click();
-    }
-    if ("mediaSession" in navigator && vidSeekbar != null) {
-      navigator.mediaSession.setActionHandler("seekbackward", function() {
-        vidElem.currentTime = Math.max(0, Math.trunc(vidElem.currentTime * 100) / 100 - 5);
-        updatePositionState(vidElem);
-      });
-      navigator.mediaSession.setActionHandler("seekforward", function() {
-        vidElem.currentTime = Math.min(vidElem.duration, Math.trunc(vidElem.currentTime * 100) / 100 + 5);
-        updatePositionState(vidElem);
-      });
-    }
-    vidElem.controls = false;
-  }
+				updatePositionState(vidElem);
+			}
+			vidElem.addEventListener("timeupdate", function() {
+				if (!vidSeekbar.getAttribute("max")) { vidSeekbar.setAttribute("max", vidElem.duration); }
+				vidSeekbar.value = Math.trunc(vidElem.currentTime * 100) / 100;
+				updatePositionState(vidElem);
+			});
+		}
+		if (vidMute != null) {
+			vidMute.onclick = function() {
+				vidElem.muted = !vidElem.muted;
+				updateMuteBtn(vidElem.muted, vidMute);
+			}
+			vidElem.addEventListener("volumechange", function() {
+				updateMuteBtn(vidElem.muted, vidMute);
+			});
+		}
+		if (vidMore != null && vidEtcPanel != null) {
+			vidMore.onclick = function() {
+				if (vidEtcPanel.getAttribute("data-state") == "hidden") {
+					vidEtcPanel.setAttribute("data-state", "visible");
+				} else {
+					vidEtcPanel.setAttribute("data-state", "hidden");
+				}
+			}
+		}
+		vidElem.addEventListener("play", function() {
+			vidPlay.setAttribute("data-state", "play");
+			vidPlay.textContent = "\u23f8";
+			if ("mediaSession" in navigator) {
+				navigator.mediaSession.playbackState = "playing";
+				let vidMdata = vidElem.getAttribute("data-about-video");
+				if (vidMdata == null) {
+					vidMdata = { title: "Test title", artist: "Vitaliy Levin" };
+				} else {
+					vidMdata = JSON.parse(vidMdata);
+				}
+				if (vidSeekbar != null) {
+					navigator.mediaSession.metadata = new MediaMetadata(vidMdata);
+				}
+			}
+		});
+		vidElem.addEventListener("pause", function() {
+			vidPlay.setAttribute("data-state", "pause");
+			vidPlay.textContent = "\u25b6";
+			if ("mediaSession" in navigator) {
+				navigator.mediaSession.playbackState = "paused";
+			}
+		});
+		vidDown.onclick = function() {
+			let vidLink = document.createElement("a");
+			let vidSrc = vidElem.firstElementChild.getAttribute("src");
+			vidLink.href = vidSrc;
+			vidLink.download = vidSrc.slice(vidSrc.lastIndexOf("/") + 1, Math.min(vidSrc.length, vidSrc.indexOf("?")));
+			vidLink.click();
+			vidLink.remove();
+		}
+		if (!document?.fullscreenEnabled || vidElem.tagName.toLowerCase() == "audio") {
+			vidGoFull.setAttribute("data-state", "hidden");
+		} else {
+			vidGoFull.onclick = function() {
+				if (document.fullscreenElement !== null) {
+					setFullscreenData(false, vidElem);
+					document.exitFullscreen();
+				} else {
+					vidElem.requestFullscreen();
+					setFullscreenData(true, vidElem);
+				}
+			}
+			document.addEventListener("fullscreenchange", function() {
+				setFullscreenData(!!document.fullscreenElement, vidElem);
+			});
+		}
+		vidElem.parentElement.addEventListener("keydown", function(ev) {
+			if (ev.key.toLowerCase() == "p" || ev.key == " ") {
+				ev.preventDefault();
+				vidPlay.click();
+			}
+			if (ev.key.toLowerCase() == "f" && vidGoFull.getAttribute("data-state") != "hidden") {
+				vidGoFull.click();
+			}
+			if (ev.ctrlKey && ev.key.toLowerCase() == "s") {
+				ev.preventDefault();
+				vidDown.click();
+			}
+			if (ev.key.toLowerCase() == "m" && vidMute != null) {
+				vidMute.click();
+			}
+		});
+		vidElem.onclick = function(evt) {
+			evt.preventDefault();
+			vidPlay.click();
+		}
+		if ("mediaSession" in navigator && vidSeekbar != null) {
+			navigator.mediaSession.setActionHandler("seekbackward", function() {
+				vidElem.currentTime = Math.max(0, Math.trunc(vidElem.currentTime * 100) / 100 - 5);
+				updatePositionState(vidElem);
+			});
+			navigator.mediaSession.setActionHandler("seekforward", function() {
+				vidElem.currentTime = Math.min(vidElem.duration, Math.trunc(vidElem.currentTime * 100) / 100 + 5);
+				updatePositionState(vidElem);
+			});
+		}
+		vidElem.controls = false;
+	}
 }
 function setFullscreenData(state, vidElement) {
-  vidElement.setAttribute("data-fullscreen", !!state);
-  vidElement.controls = !!state;
-  if (!!state == false) {
-    vidElement.setAttribute("title", vidElement.getAttribute("data-real-title"));
-  } else {
-    if (vidElement.getAttribute("data-real-title") == null) {
-      vidElement.setAttribute("data-real-title", vidElement.getAttribute("title"));
-    }
-    vidElement.removeAttribute("title");
-  }
+	vidElement.setAttribute("data-fullscreen", !!state);
+	vidElement.controls = !!state;
+	if (!!state == false) {
+		vidElement.setAttribute("title", vidElement.getAttribute("data-real-title"));
+	} else {
+		if (vidElement.getAttribute("data-real-title") == null) {
+			vidElement.setAttribute("data-real-title", vidElement.getAttribute("title"));
+		}
+		vidElement.removeAttribute("title");
+	}
 }
 function updateMuteBtn(isMuted, muteBtn) {
-  if (isMuted) {
-    muteBtn.textContent = "\uD83D\uDD07";
-  } else {
-    muteBtn.textContent = "\uD83D\uDD08";
-  }
+	if (isMuted) {
+		muteBtn.textContent = "\uD83D\uDD07";
+	} else {
+		muteBtn.textContent = "\uD83D\uDD08";
+	}
 }
 function updatePositionState(vidEl) {
-  let vidDuration = vidEl.duration;
-  if (vidEl.duration <= 0) {
-    vidDuration = Infinity;
-  }
-  if ("mediaSession" in navigator) {
-    navigator.mediaSession.setPositionState({
-      duration: vidDuration,
-      playbackRate: vidEl.playbackRate,
-      position: vidEl.currentTime
-    });
-  }
+	let vidDuration = vidEl.duration;
+	if (vidEl.duration <= 0) {
+		vidDuration = Infinity;
+	}
+	if ("mediaSession" in navigator) {
+		navigator.mediaSession.setPositionState({
+			duration: vidDuration,
+			playbackRate: vidEl.playbackRate,
+			position: vidEl.currentTime
+		});
+	}
 }
 betterMedia();

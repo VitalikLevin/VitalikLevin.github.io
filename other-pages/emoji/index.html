@@ -7,10 +7,10 @@ permalink: /emoji/
 {%- include header.html -%}
 {%- include crumb.html urls="/emoji/$" titles="Emoji$$" -%}
 <main>
-  <h2 class="start">Emoji Pack</h2>
-  <p>You can see all Wormfolder’s faces below.</p>
-  {%- assign svg = site.static_files | where_exp: "file", "file.path contains 'files/svg/emoji'" -%}
-  {%- for file in svg -%}
+	<h2 class="start">Emoji Pack</h2>
+	<p>You can see all Wormfolder’s faces below.</p>
+	{%- assign svg = site.static_files | where_exp: "file", "file.path contains 'files/svg/emoji'" -%}
+	{%- for file in svg -%}
 	{%- assign u_arr = file.basename | split: '-' -%}
 	{%- capture prep_str -%}
 	{%- for member in u_arr -%}&#x{{ member }};{%- endfor -%}

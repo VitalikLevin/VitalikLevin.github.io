@@ -2,27 +2,27 @@
 {%- assign urlarr = include.urls | split: "$" -%}
 {%- capture alienCrumb -%}
 <div class="crumb">
-  <p itemscope itemtype="https://schema.org/BreadcrumbList">
-    <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-      <a itemprop="item" href="{{ site.url }}/"><span itemprop="name">Network Worms</span></a>
-			<meta itemprop="position" content="1"> &#62;
-    </span>
-    {%- for member in urlarr -%}
+	<p itemscope itemtype="https://schema.org/BreadcrumbList">
 		<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-      {%- if urlarr.last == member -%}
-      <meta itemprop="item" href="{{ site.url }}{{ member }}">
-      <mark itemprop="name">{{ titlarr[forloop.index0] }}</mark>
-      {%- else -%}
-      <a itemprop="item" href="{{ site.url }}{{ member }}"><span itemprop="name">{{ titlarr[forloop.index0] }}</span></a>
-      {%- endif -%}
-      {%- assign realpos = forloop.index -%}
-      <meta itemprop="position" content="{{ realpos | plus:1 }}">
-      {%- if urlarr.last != member -%}
-      &#160;&#62;&#160;
-      {%- endif -%}
-    </span>
-    {%- endfor -%}
-  </p>
+			<a itemprop="item" href="{{ site.url }}/"><span itemprop="name">Network Worms</span></a>
+			<meta itemprop="position" content="1"> &#62;
+		</span>
+		{%- for member in urlarr -%}
+		<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+			{%- if urlarr.last == member -%}
+			<meta itemprop="item" href="{{ site.url }}{{ member }}">
+			<mark itemprop="name">{{ titlarr[forloop.index0] }}</mark>
+			{%- else -%}
+			<a itemprop="item" href="{{ site.url }}{{ member }}"><span itemprop="name">{{ titlarr[forloop.index0] }}</span></a>
+			{%- endif -%}
+			{%- assign realpos = forloop.index -%}
+			<meta itemprop="position" content="{{ realpos | plus:1 }}">
+			{%- if urlarr.last != member -%}
+			&#160;&#62;&#160;
+			{%- endif -%}
+		</span>
+		{%- endfor -%}
+	</p>
 </div>
 {%- endcapture -%}
 {{- alienCrumb | remove: "\t" | strip_newlines -}}

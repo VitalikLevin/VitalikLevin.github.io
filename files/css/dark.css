@@ -8,15 +8,15 @@ header, [data-tooltip]::after {
 	background-color: rgba(22, 22, 29, 0.7);
 }
 
-#cooknote.show, .controls {
+.controls {
 	background-color: rgb(22, 22, 29);
 }
 
-header, header span a:any-link, #cooknote.show, [data-tooltip]::after {
+header, header span a:any-link, [data-tooltip]::after {
 	color: rgb(238, 238, 238);
 }
 
-article, footer, h3, main, nav, select option {
+article, footer, main, nav, select option {
 	background-color: rgb(55, 55, 55);
 }
 

@@ -1,449 +1,430 @@
 @import url(fonts.css);
 @import url(code.css);
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 :root, button, dialog, input, select, text, ::before, ::file-selector-button, [data-tooltip]::after {
-  font-family: "Liberation Sans", sans-serif, wfnotdef, "SerenityOS Emoji", "Noto Emoji";
-  font-synthesis: none;
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-  line-height: 1.4;
+	font-family: "Liberation Sans", sans-serif, wfnotdef, "SerenityOS Emoji", "Noto Emoji";
+	font-synthesis: none;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	line-height: 1.4;
 }
 
 :root {
-  overflow-x: hidden;
+	overflow-x: hidden;
 }
 
 header {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 3;
-  width: 100%;
-  font-size: 1.5rem;
-  font-weight: 700;
-  padding: 8px 8px;
-  backdrop-filter: blur(2.5px);
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 3;
+	width: 100%;
+	font-size: 1.5rem;
+	font-weight: 700;
+	padding: 8px 8px;
+	backdrop-filter: blur(2.5px);
 }
 
 header + main, header + nav, header + .crumb {
-  margin-top: 56px;
+	margin-top: 56px;
 }
 
 header span, header span a, .top a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 a:hover {
-  text-decoration-style: dashed;
+	text-decoration-style: dashed;
 }
 
 svg a:hover {
-  stroke-dasharray: 4px;
-  stroke-width: 2px;
+	stroke-dasharray: 4px;
+	stroke-width: 2px;
 }
 svg a:focus-visible {
-  outline-width: 2px;
-  outline-style: dashed;
-  border-radius: 0;
+	outline-width: 2px;
+	outline-style: dashed;
+	border-radius: 0;
 }
 svg a:hover text, svg a:focus-visible {
-  stroke: none;
+	stroke: none;
 }
 
 blockquote, .postLink:hover, #playlist {
-  margin: 0;
-  margin-bottom: 16px;
-  padding-left: 10px;
+	margin: 0;
+	margin-bottom: 16px;
+	padding-left: 10px;
 }
 
 button, ::file-selector-button, input[type="submit"], select {
-  background-color: transparent;
-  border-width: 0.5px;
+	background-color: transparent;
+	border-width: 0.5px;
 }
 
 input[type="submit"] {
-  border-width: 1px;
+	border-width: 1px;
 }
 
 button:hover, details > summary:hover, ::file-selector-button:hover, button + label:hover, header span a:hover, input[type="submit"]:hover, select:hover, .controls progress:hover, .top a:hover {
-  opacity: 0.7;
-  cursor: pointer;
+	opacity: 0.7;
+	cursor: pointer;
 }
 
 #hOpen {
-  cursor: help;
+	cursor: help;
 }
 
 .image {
-  margin-left: 5px;
-  margin-top: 5px;
+	margin-left: 5px;
+	margin-top: 5px;
 }
 
 .image span, figcaption, .num, .pubDat, .robExample {
-  font-family: "Roboto Slab", serif, wfnotdef, "SerenityOS Emoji", "Noto Emoji";
+	font-family: "Roboto Slab", serif, wfnotdef, "SerenityOS Emoji", "Noto Emoji";
 }
 
 code, kbd, pre, .codeText, button.bin, ::placeholder {
-  font-family: "JetBrains Mono", "Roboto Mono", monospace, wfnotdef, "SerenityOS Emoji", "Noto Emoji";
+	font-family: "JetBrains Mono", "Roboto Mono", monospace, wfnotdef, "SerenityOS Emoji", "Noto Emoji";
 }
 
 .pubDat {
-  font-size: 16px;
-  margin-top: -10px;
+	font-size: 16px;
+	margin-top: -10px;
 }
 
 .pubDat .cal, h4 .keyboard, .human {
-  font-size: 24px;
+	font-size: 24px;
 }
 
 .top {
-  visibility: hidden;
+	visibility: hidden;
 }
 
-header span, details > summary, dialog, img, label, text, #cooknote, #wasd, .crumb, .top {
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-}
-
-#cooknote img {
-  margin-right: 8px;
-  margin-left: 8px;
-}
-
-#cooknote {
-  position: fixed;
-  display: none;
-  z-index: 4;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.cookagree, #wClose {
-  padding: 0;
-  position: fixed;
-  left: calc(98vw - 70px);
-  aspect-ratio: 1 / 1;
-  width: 48px;
-}
-
-.cookagree {
-  bottom: 1dvh;
-  right: 2vw;
-}
-
-#cooknote.show, #copyright, #wasd.show, dialog img, [data-state="visible"] {
-  display: block;
-}
-
-#cooknote img, button#realAdd, button.del, button.down, button.edit, button.up, button.bin {
-  aspect-ratio: 1 / 1;
-  height: 24px;
-  padding: 0;
-  margin-top: 2px;
-}
-
-#cooknote p, #promoPWA span, #wFile p {
-  max-width: 78vw;
-  margin-left: 8px;
-}
-
-input[type="text"], input[type="range"], dialog {
-  min-width: 35vw;
-}
-
-input:focus, select:focus, *:focus-visible {
-  outline-offset: 0;
-}
-
-blockquote h3::before {
-  content: "\1F589  ";
-}
-
-blockquote.warn h3::before {
-  content: "\26A0  ";
-}
-
-[data-before] {
-  display: inline;
-}
-
-[data-before]::before {
-  content: attr(data-before);
-}
-
-[data-tooltip] {
-  position: relative;
-}
-
-[data-tooltip]::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  white-space: nowrap;
-  word-break: break-word;
-  opacity: 0;
-  pointer-events: none;
-  font-style: normal;
-  font-weight: normal;
-}
-
-[data-tooltip]:hover::after {
-  top: 20%;
-  padding: 0.25rem;
-  opacity: 1;
-}
-
-dialog {
-  border: none;
-}
-
-dialog h3, dialog button, .controls button, .sText {
-  text-align: center;
-}
-
-.sText {
-  font-size: 12px;
-}
-
-dialog p, dialog h3, #options h3, #copyright + * {
-  margin-top: 0;
-  margin-bottom: 5px;
-}
-
-dialog button {
-  display: block;
-  margin: 8px auto;
-}
-
-#wDuration, #wFile {
-  position: fixed;
-  top: 1vh;
-  left: 0vw;
-  width: 95dvw;
-  z-index: 4;
+header span, details > summary, dialog, img, label, text, #wasd, .crumb, .top {
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
 }
 
 #wClose {
-  top: 1.1vh;
-  right: 8vw;
+	padding: 0;
+	position: fixed;
+	left: calc(98vw - 70px);
+	aspect-ratio: 1 / 1;
+	width: 48px;
+}
+
+#copyright, #wasd.show, dialog img, [data-state="visible"] {
+	display: block;
+}
+
+button#realAdd, button.del, button.down, button.edit, button.up, button.bin {
+	aspect-ratio: 1 / 1;
+	height: 24px;
+	padding: 0;
+	margin-top: 2px;
+}
+
+#promoPWA span, #wFile p {
+	max-width: 78vw;
+	margin-left: 8px;
+}
+
+input[type="text"], input[type="range"], dialog {
+	min-width: 35vw;
+}
+
+input:focus, select:focus, *:focus-visible {
+	outline-offset: 0;
+}
+
+blockquote h3::before {
+	content: "\1F589  ";
+}
+
+blockquote.warn h3::before {
+	content: "\26A0  ";
+}
+
+[data-before] {
+	display: inline;
+}
+
+[data-before]::before {
+	content: attr(data-before);
+}
+
+[data-tooltip] {
+	position: relative;
+}
+
+[data-tooltip]::after {
+	content: attr(data-tooltip);
+	position: absolute;
+	white-space: nowrap;
+	word-break: break-word;
+	opacity: 0;
+	pointer-events: none;
+	font-style: normal;
+	font-weight: normal;
+}
+
+[data-tooltip]:hover::after {
+	top: 20%;
+	padding: 0.25rem;
+	opacity: 1;
+}
+
+dialog {
+	border: none;
+}
+
+dialog h3, dialog button, .controls button, .sText {
+	text-align: center;
+}
+
+.sText {
+	font-size: 12px;
+}
+
+dialog p, dialog h3, #options h3, #copyright + * {
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+
+dialog button {
+	display: block;
+	margin: 8px auto;
+}
+
+#wDuration, #wFile {
+	position: fixed;
+	top: 1vh;
+	left: 0vw;
+	width: 95dvw;
+	z-index: 4;
+}
+
+#wClose {
+	top: 1.1vh;
+	right: 8vw;
 }
 
 header button {
-  position: absolute;
-  right: 24px;
-  border: none;
+	position: absolute;
+	right: 24px;
+	border: none;
 }
 
 .lockScroll {
-  overflow-y: hidden;
+	overflow-y: hidden;
 }
 
 button#realAdd, button.del, button.down, button.edit, button.up {
-  margin-left: 8px;
-  font-size: 16px;
+	margin-left: 8px;
+	font-size: 16px;
 }
 
 details, .listItem, #options {
-  margin: 8px 0;
+	margin: 8px 0;
 }
 
 details *, details[open] summary {
-  margin-left: 4px;
+	margin-left: 4px;
 }
 
 details summary {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 #logo {
-  width: 30px;
-  aspect-ratio: 1 / 1;
+	width: 30px;
+	aspect-ratio: 1 / 1;
 }
 
-.listLogo, #cooknote img, #logo {
-  margin-bottom: -6px;
+.listLogo, #logo {
+	margin-bottom: -6px;
 }
 
 figcaption, img[class^="img"], video:not(:fullscreen), .prodlogo {
-  max-width: 75vw;
+	max-width: 75vw;
 }
 
 #humanPic {
-  max-width: 250px;
-  margin-top: -2rem;
+	max-width: 250px;
+	margin-top: -2rem;
 }
 
 video + .controls {
-  margin-top: 4px;
+	margin-top: 4px;
 }
 
 .controls, .mcontrols {
-  width: 100%;
+	width: 100%;
 }
 
 .controls button {
-  margin: 0 8px;
-  width: 36px;
-  aspect-ratio: 1;
-  padding: 0;
-  font-size: 20px;
-  border: none; 
+	margin: 0 8px;
+	width: 36px;
+	aspect-ratio: 1;
+	padding: 0;
+	font-size: 20px;
+	border: none; 
 }
 
 .controls progress {
-  width: calc(100% - 200px);
+	width: calc(100% - 200px);
 }
 
 .controls .play, .mcontrols :first-child {
-  margin-left: 0;
+	margin-left: 0;
 }
 
 .controls .mute, .controls .fs {
-  margin-right: 0;
+	margin-right: 0;
 }
 
 .controls .fs {
-  float: right;
+	float: right;
 }
 
 figure, pre {
-  margin: 4px 4px;
+	margin: 4px 4px;
 }
 
 details, pre {
-  max-width: 85vw;
+	max-width: 85vw;
 }
 
 figure {
-  max-width: max-content;
+	max-width: max-content;
 }
 
 table {
-  border-collapse: collapse;
+	border-collapse: collapse;
 }
 
 table, table th, table tr, tr td {
-  border: 1px solid currentColor;
+	border: 1px solid currentColor;
 }
 table th {
-  padding: 0.1rem 0.25rem;
+	padding: 0.1rem 0.25rem;
 }
 
 canvas.noSize, #game {
-  width: 75vw;
-  height: 50vh;
-  position: relative;
+	width: 75vw;
+	height: 50vh;
+	position: relative;
 }
 
 #game + #wasd[class=""] {
-  margin-bottom: -2.5rem;
+	margin-bottom: -2.5rem;
 }
 
 #game + #wasd.show {
-  margin-top: 5px;
-  position: relative;
-  z-index: 4;
-  float: right;
+	margin-top: 5px;
+	position: relative;
+	z-index: 4;
+	float: right;
 }
 
 #wasd.show + * {
-  margin-top: 200px;
+	margin-top: 200px;
 }
 
 canvas {
-  position: absolute;
+	position: absolute;
 }
 
 #action {
-  z-index: 1;
+	z-index: 1;
 }
 
 #misc {
-  z-index: 2;
+	z-index: 2;
 }
 
 code {
-  word-break: break-word;
+	word-break: break-word;
 }
 
 p {
-  max-width: 80ch;
+	max-width: 80ch;
 }
 
 figcaption, p {
-  -webkit-hyphens: auto;
-  hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
 }
 
 dialog img {
-  margin: auto;
+	margin: auto;
 }
 
 *:disabled {
-  opacity: 0.6;
+	opacity: 0.6;
 }
 button:disabled, input[type="submit"]:disabled {
-  transform: rotateZ(-5deg);
+	transform: rotateZ(-5deg);
 }
 
 main > .post:last-child, main > figure:last-child {
-  margin-bottom: 1rem;
+	margin-bottom: 1rem;
 }
 
 #wasd, [data-state="hidden"] {
-  display: none;
+	display: none;
 }
 
 #wasd.show button {
-  width: 15vh;
-  font-size: 11vh;
-  aspect-ratio: 1 / 1;
-  margin-bottom: 5px;
+	width: 15vh;
+	font-size: 11vh;
+	aspect-ratio: 1 / 1;
+	margin-bottom: 5px;
 }
 
 button[data-key="w"], button[data-key="Pause"] {
-  margin-left: 16vh;
+	margin-left: 16vh;
 }
 @media screen {
-  .top.show {
-    position: fixed;
-    font-size: 50px;
-    right: 3px;
-    bottom: 3vh;
-    z-index: 3;
-    visibility: visible;
-  }
+	.top.show {
+		position: fixed;
+		font-size: 50px;
+		right: 3px;
+		bottom: 3vh;
+		z-index: 3;
+		visibility: visible;
+	}
 }
 @media screen and (orientation: portrait) {
-  body {
-    margin: 8px;
-  }
-  input[type="text"] {
-    min-width: 65vw;
-  }
-  nav ul li, input, select {
-    margin-bottom: 8px;
-  }
-  canvas.noSize {
-    width: 85svw;
-  }
-  #game + #wasd.show {
-    margin-top: 5px;
-    float: none;
-    position: static;
-  }
-  #wasd.show button {
-    width: 15vw;
-    font-size: 11vw;
-    aspect-ratio: 1 / 1;
-  }
-  #wasd.show + * {
-    margin-top: 1rem;
-  }
-  button[data-key="w"], button[data-key="Pause"] {
-    margin-left: 16vw;
-  }
+	body {
+		margin: 8px;
+	}
+	input[type="text"] {
+		min-width: 65vw;
+	}
+	nav ul li, input, select {
+		margin-bottom: 8px;
+	}
+	canvas.noSize {
+		width: 85svw;
+	}
+	#game + #wasd.show {
+		margin-top: 5px;
+		float: none;
+		position: static;
+	}
+	#wasd.show button {
+		width: 15vw;
+		font-size: 11vw;
+		aspect-ratio: 1 / 1;
+	}
+	#wasd.show + * {
+		margin-top: 1rem;
+	}
+	button[data-key="w"], button[data-key="Pause"] {
+		margin-left: 16vw;
+	}
 }
